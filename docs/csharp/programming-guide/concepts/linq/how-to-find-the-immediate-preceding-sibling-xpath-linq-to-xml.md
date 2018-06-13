@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318556"
 ---
 # <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a><span data-ttu-id="d823b-102">方法: 直前の兄弟を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="d823b-102">How to: Find the Immediate Preceding Sibling (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="d823b-103">ノードの直前の兄弟を検索することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="d823b-103">Sometimes you want to find the immediate preceding sibling to a node.</span></span> <span data-ttu-id="d823b-104">

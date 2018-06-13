@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332560"
 ---
 # <a name="sorting-data-c"></a><span data-ttu-id="51225-102">データの並べ替え (C#)</span><span class="sxs-lookup"><span data-stu-id="51225-102">Sorting Data (C#)</span></span>
 <span data-ttu-id="51225-103">並べ替え操作では、1 つ以上の属性に基づいてシーケンスの要素を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="51225-103">A sorting operation orders the elements of a sequence based on one or more attributes.</span></span> <span data-ttu-id="51225-104">並べ替えの第 1 条件で、要素に対して一回目の並べ替えが実行されます。</span><span class="sxs-lookup"><span data-stu-id="51225-104">The first sort criterion performs a primary sort on the elements.</span></span> <span data-ttu-id="51225-105">第 2 条件を指定すると、第 1 条件で並べ替えられた各グループ内の要素を並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="51225-105">By specifying a second sort criterion, you can sort the elements within each primary sort group.</span></span>  

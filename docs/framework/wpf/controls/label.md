@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553729"
 ---
 # <a name="label"></a><span data-ttu-id="e95d1-102">group1</span><span class="sxs-lookup"><span data-stu-id="e95d1-102">Label</span></span>
 <span data-ttu-id="e95d1-103"><xref:System.Windows.Controls.Label> コントロールが通常の情報を提供して、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="e95d1-103"><xref:System.Windows.Controls.Label> controls usually provide information in the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].</span></span>  <span data-ttu-id="e95d1-104">従来、<xref:System.Windows.Controls.Label>テキストのみが格納されているが、<xref:System.Windows.Controls.Label>に付属している[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は、 <xref:System.Windows.Controls.ContentControl>、いずれかのテキストを含めることができます、または<xref:System.Windows.UIElement>です。</span><span class="sxs-lookup"><span data-stu-id="e95d1-104">Historically, a <xref:System.Windows.Controls.Label> has contained only text, but because the <xref:System.Windows.Controls.Label> that ships with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] is a <xref:System.Windows.Controls.ContentControl>, it can contain either text or a <xref:System.Windows.UIElement>.</span></span>  

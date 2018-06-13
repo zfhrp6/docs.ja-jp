@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328189"
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a><span data-ttu-id="2baae-102">方法: テキストから XML へのストリーミング変換を実行する (C#)</span><span class="sxs-lookup"><span data-stu-id="2baae-102">How to: Perform Streaming Transformations of Text to XML (C#)</span></span>
 <span data-ttu-id="2baae-103">テキスト ファイルを処理する方法の 1 つは、`yield return` 構造を使用して、テキスト ファイルを一度に 1 行ずつストリーム出力する拡張メソッドを記述することです。</span><span class="sxs-lookup"><span data-stu-id="2baae-103">One approach to processing a text file is to write an extension method that streams the text file a line at a time using the `yield return` construct.</span></span> <span data-ttu-id="2baae-104">その後、テキスト ファイルをレイジー遅延方式で処理する LINQ クエリを記述できます。</span><span class="sxs-lookup"><span data-stu-id="2baae-104">You then can write a LINQ query that processes the text file in a lazy deferred fashion.</span></span> <span data-ttu-id="2baae-105">次に <xref:System.Xml.Linq.XStreamingElement> を使用してストリーム出力すると、ソース テキスト ファイルのサイズにかかわらず、メモリを最小限しか使用しないテキスト ファイルから XML への変換を作成できます。</span><span class="sxs-lookup"><span data-stu-id="2baae-105">If you then use <xref:System.Xml.Linq.XStreamingElement> to stream output, you then can create a transformation from the text file to XML that uses a minimal amount of memory, regardless of the size of the source text file.</span></span>  

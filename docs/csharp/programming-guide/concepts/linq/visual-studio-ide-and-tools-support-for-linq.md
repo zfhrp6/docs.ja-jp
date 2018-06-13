@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330721"
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a><span data-ttu-id="c33d8-102">Visual Studio IDE およびツールの LINQ のサポート (C#)</span><span class="sxs-lookup"><span data-stu-id="c33d8-102">Visual Studio IDE and Tools Support for LINQ (C#)</span></span>
 <span data-ttu-id="c33d8-103">Visual Studio 統合開発環境 (IDE) では、LINQ アプリケーションの開発をサポートする次の機能が提供されています。</span><span class="sxs-lookup"><span data-stu-id="c33d8-103">The Visual Studio integrated development environment (IDE) provides the following features that support LINQ application development:</span></span>  

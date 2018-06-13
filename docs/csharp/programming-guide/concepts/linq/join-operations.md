@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325345"
 ---
 # <a name="join-operations-c"></a><span data-ttu-id="585c8-102">結合操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="585c8-102">Join Operations (C#)</span></span>
 <span data-ttu-id="585c8-103">2 つのデータ ソースの "*結合*" とは、あるデータ ソースのオブジェクトを、共通の属性を共有する別のデータ ソースのオブジェクトと関連付けることです。</span><span class="sxs-lookup"><span data-stu-id="585c8-103">A *join* of two data sources is the association of objects in one data source with objects that share a common attribute in another data source.</span></span>  

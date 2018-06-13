@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318088"
 ---
 # <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a><span data-ttu-id="3f350-102">方法: 特定の属性を持つ要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="3f350-102">How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="3f350-103">特定の属性を持つすべての要素を検索しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="3f350-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="3f350-104">属性の内容は問わず、</span><span class="sxs-lookup"><span data-stu-id="3f350-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="3f350-105">属性の存在に基づいて選択を行うような場合です。</span><span class="sxs-lookup"><span data-stu-id="3f350-105">Instead, you want to select based on the existence of the attribute.</span></span>  

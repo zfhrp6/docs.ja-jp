@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319989"
 ---
 # <a name="how-to-load-xml-from-a-file-c"></a><span data-ttu-id="0884f-102">方法: ファイルから XML を読み込む (C#)</span><span class="sxs-lookup"><span data-stu-id="0884f-102">How to: Load XML from a File (C#)</span></span>
 <span data-ttu-id="0884f-103">このトピックでは、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> メソッドを使用して URI から XML を読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0884f-103">This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> method.</span></span>  

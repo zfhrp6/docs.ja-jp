@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749970"
 ---
 # <a name="ltissuedtokenauthenticationgt-of-ltservicecredentialsgt"></a><span data-ttu-id="00a8e-102">&lt;serviceCredentials&gt; の &lt;issuedTokenAuthentication&gt;</span><span class="sxs-lookup"><span data-stu-id="00a8e-102">&lt;issuedTokenAuthentication&gt; of &lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="00a8e-103">サービス資格情報として発行されるカスタム トークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="00a8e-103">Specifies a custom token issued as a service credential.</span></span>  

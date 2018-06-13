@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320575"
 ---
 # <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="c0057-102">方法: 複数のキーに基づいて要素を並べ替える (C#)</span><span class="sxs-lookup"><span data-stu-id="c0057-102">How to: Sort Elements on Multiple Keys (C#)</span></span>
 <span data-ttu-id="c0057-103">このトピックでは、複数のキーに基づく並べ替えの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c0057-103">This topic shows how to sort on multiple keys.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316323"
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a><span data-ttu-id="9667c-102">XML ツリーへの要素、属性、およびノードの追加</span><span class="sxs-lookup"><span data-stu-id="9667c-102">Adding Elements, Attributes, and Nodes to an XML Tree (C#)</span></span>
 <span data-ttu-id="9667c-103">コンテンツ (要素、属性、コメント、処理命令、テキスト、および CDATA) を既存の XML ツリーに追加できます。</span><span class="sxs-lookup"><span data-stu-id="9667c-103">You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.</span></span>  

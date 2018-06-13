@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317844"
 ---
 # <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-c"></a><span data-ttu-id="f6cee-102">方法: 属性のコレクションを取得する (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="f6cee-102">How to: Retrieve a Collection of Attributes (LINQ to XML) (C#)</span></span>
 <span data-ttu-id="f6cee-103">このトピックでは、<xref:System.Xml.Linq.XElement.Attributes%2A> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="f6cee-103">This topic introduces the <xref:System.Xml.Linq.XElement.Attributes%2A> method.</span></span> <span data-ttu-id="f6cee-104">このメソッドは、要素の属性を取得します。</span><span class="sxs-lookup"><span data-stu-id="f6cee-104">This method retrieves the attributes of an element.</span></span>  

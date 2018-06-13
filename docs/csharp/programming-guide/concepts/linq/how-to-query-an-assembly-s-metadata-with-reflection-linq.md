@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319499"
 ---
 # <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-c"></a><span data-ttu-id="44356-102">方法: リフレクションを使用してアセンブリのメタデータをクエリする (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="44356-102">How to: Query An Assembly&#39;s Metadata with Reflection (LINQ) (C#)</span></span>
 <span data-ttu-id="44356-103">次の例では、LINQ でリフレクションを使用して、指定した検索条件に一致するメソッドについてのメタデータを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="44356-103">The following example shows how LINQ can be used with reflection to retrieve specific metadata about methods that match a specified search criterion.</span></span> <span data-ttu-id="44356-104">この例のクエリでは、配列などの列挙可能な型を返すすべてのメソッドの名前をアセンブリ内で検索します。</span><span class="sxs-lookup"><span data-stu-id="44356-104">In this case, the query will find the names of all the methods in the assembly that return enumerable types such as arrays.</span></span>  

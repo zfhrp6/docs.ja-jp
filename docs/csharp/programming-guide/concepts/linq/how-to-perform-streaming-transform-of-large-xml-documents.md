@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325605"
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a><span data-ttu-id="7a978-102">方法: 大きな XML ドキュメントのストリーミング変換を実行する (C#)</span><span class="sxs-lookup"><span data-stu-id="7a978-102">How to: Perform Streaming Transform of Large XML Documents (C#)</span></span>
 <span data-ttu-id="7a978-103">大きな XML ファイルを変換して、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="7a978-103">Sometimes you have to transform large XML files, and write your application so that the memory footprint of the application is predictable.</span></span> <span data-ttu-id="7a978-104">非常に大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。</span><span class="sxs-lookup"><span data-stu-id="7a978-104">If you try to populate an XML tree with a very large XML file, your memory usage will be proportional to the size of the file (that is, excessive).</span></span> <span data-ttu-id="7a978-105">したがって、代わりにストリーミングの手法を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7a978-105">Therefore, you should use a streaming technique instead.</span></span>  

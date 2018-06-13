@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319645"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a><span data-ttu-id="78bc4-102">方法: コマンド ラインを使用してアセンブリを作成および使用する (C#)</span><span class="sxs-lookup"><span data-stu-id="78bc4-102">How to: Create and Use Assemblies Using the Command Line (C#)</span></span>
 <span data-ttu-id="78bc4-103">アセンブリとは、ダイナミック リンク ライブラリ (DLL) のことで、実行時にプログラムにリンクされます。</span><span class="sxs-lookup"><span data-stu-id="78bc4-103">An assembly, or a dynamic linking library (DLL), is linked to your program at run time.</span></span> <span data-ttu-id="78bc4-104">DLL のビルド例および使用例として、次に示すシナリオを考えてみます。</span><span class="sxs-lookup"><span data-stu-id="78bc4-104">To demonstrate building and using a DLL, consider the following scenario:</span></span>  

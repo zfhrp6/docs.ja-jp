@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326333"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a><span data-ttu-id="ba740-102">名前付き引数と省略可能な引数 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="ba740-102">Named and Optional Arguments (C# Programming Guide)</span></span>
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]<span data-ttu-id="ba740-103"> では、名前付き引数と省略可能な引数が導入されています。</span><span class="sxs-lookup"><span data-stu-id="ba740-103"> introduces named and optional arguments.</span></span> <span data-ttu-id="ba740-104">*名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。</span><span class="sxs-lookup"><span data-stu-id="ba740-104">*Named arguments* enable you to specify an argument for a particular parameter by associating the argument with the parameter's name rather than with the parameter's position in the parameter list.</span></span> <span data-ttu-id="ba740-105">*省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。</span><span class="sxs-lookup"><span data-stu-id="ba740-105">*Optional arguments* enable you to omit arguments for some parameters.</span></span> <span data-ttu-id="ba740-106">両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。</span><span class="sxs-lookup"><span data-stu-id="ba740-106">Both techniques can be used with methods, indexers, constructors, and delegates.</span></span>  

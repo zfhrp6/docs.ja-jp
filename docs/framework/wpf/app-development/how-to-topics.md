@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546004"
 ---
 # <a name="how-to-topics"></a><span data-ttu-id="58d66-102">方法のトピック</span><span class="sxs-lookup"><span data-stu-id="58d66-102">How-to Topics</span></span>
 <span data-ttu-id="58d66-103">次のトピックでは、Windows Presentation Foundation (WPF)、アドインを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="58d66-103">The following topics show how to create Windows Presentation Foundation (WPF) add-ins.</span></span>  

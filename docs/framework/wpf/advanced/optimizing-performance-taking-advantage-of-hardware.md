@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547255"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a><span data-ttu-id="4a035-102">パフォーマンスの最適化 : ハードウェアの活用</span><span class="sxs-lookup"><span data-stu-id="4a035-102">Optimizing Performance: Taking Advantage of Hardware</span></span>
 <span data-ttu-id="4a035-103">内部アーキテクチャ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、2 つのレンダリング パイプライン、ハードウェアおよびソフトウェア。</span><span class="sxs-lookup"><span data-stu-id="4a035-103">The internal architecture of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] has two rendering pipelines, hardware and software.</span></span> <span data-ttu-id="4a035-104">このトピックをアプリケーションのパフォーマンスの最適化に関する決定を行うには、これらのレンダリング パイプラインについて情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="4a035-104">This topic provides information about these rendering pipelines to help you make decisions about performance optimizations of your applications.</span></span>  

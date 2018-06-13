@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330097"
 ---
 # <a name="scope-of-default-namespaces-in-c"></a><span data-ttu-id="6d95d-102">C# での既定の名前空間のスコープ</span><span class="sxs-lookup"><span data-stu-id="6d95d-102">Scope of Default Namespaces in C#</span></span>
 <span data-ttu-id="6d95d-103">XML ツリーで表される既定の名前空間は、クエリのスコープ内にありません。</span><span class="sxs-lookup"><span data-stu-id="6d95d-103">Default namespaces as represented in the XML tree are not in scope for queries.</span></span> <span data-ttu-id="6d95d-104">既定の名前空間に含まれる XML が存在する場合は、<xref:System.Xml.Linq.XNamespace> 変数を宣言し、この変数をローカル名と組み合わせて作成した修飾名をクエリで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d95d-104">If you have XML that is in a default namespace, you still must declare an <xref:System.Xml.Linq.XNamespace> variable, and combine it with the local name to make a qualified name to be used in the query.</span></span>  

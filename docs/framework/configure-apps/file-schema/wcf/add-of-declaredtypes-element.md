@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754120"
 ---
 # <a name="ltaddgt-of-ltdeclaredtypesgt-element"></a><span data-ttu-id="157d5-102">&lt;declaredTypes&gt; 要素の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="157d5-102">&lt;add&gt; of &lt;declaredTypes&gt; Element</span></span>
 <span data-ttu-id="157d5-103">逆シリアル化中に、<xref:System.Runtime.Serialization.DataContractSerializer> で使用される型を追加します。</span><span class="sxs-lookup"><span data-stu-id="157d5-103">Adds a type used by the <xref:System.Runtime.Serialization.DataContractSerializer> during deserialization.</span></span> <span data-ttu-id="157d5-104">各宣言型は、宣言型のフィールドまたはプロパティとして返される既知の型を含みます。</span><span class="sxs-lookup"><span data-stu-id="157d5-104">Each declared type includes the known types that will be returned as a field or property of the declared type.</span></span>  

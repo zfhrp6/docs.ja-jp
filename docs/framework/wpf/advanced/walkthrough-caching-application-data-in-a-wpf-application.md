@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548900"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a><span data-ttu-id="9cc0f-102">チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ</span><span class="sxs-lookup"><span data-stu-id="9cc0f-102">Walkthrough: Caching Application Data in a WPF Application</span></span>
 <span data-ttu-id="9cc0f-103">キャッシュを使用すると、メモリにデータを格納して高速にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9cc0f-103">Caching enables you to store data in memory for rapid access.</span></span> <span data-ttu-id="9cc0f-104">データを再度アクセスすると、アプリケーションは、代わりに、元のソースから取得するキャッシュからデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="9cc0f-104">When the data is accessed again, applications can get the data from the cache instead retrieving it from the original source.</span></span> <span data-ttu-id="9cc0f-105">そのため、パフォーマンスとスケーラビリティが向上します。</span><span class="sxs-lookup"><span data-stu-id="9cc0f-105">This can improve performance and scalability.</span></span> <span data-ttu-id="9cc0f-106">また、データ ソースが一時的に使用できない場合でも、キャッシュのデータを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9cc0f-106">In addition, caching makes data available when the data source is temporarily unavailable.</span></span>  

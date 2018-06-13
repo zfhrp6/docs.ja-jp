@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334351"
 ---
 # <a name="namespaces-c-programming-guide"></a><span data-ttu-id="fac61-102">名前空間 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="fac61-102">Namespaces (C# Programming Guide)</span></span>
 <span data-ttu-id="fac61-103">C# プログラミングでは、名前空間が 2 つの方法でよく使用されます。</span><span class="sxs-lookup"><span data-stu-id="fac61-103">Namespaces are heavily used in C# programming in two ways.</span></span> <span data-ttu-id="fac61-104">最初の方法では、次のように .NET Framework で名前空間を使用して、その多くのクラスを整理します。</span><span class="sxs-lookup"><span data-stu-id="fac61-104">First, the .NET Framework uses namespaces to organize its many classes, as follows:</span></span>  

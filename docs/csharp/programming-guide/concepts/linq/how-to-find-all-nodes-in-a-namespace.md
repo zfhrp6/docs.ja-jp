@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317779"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a><span data-ttu-id="0cc09-102">方法: 名前空間内のすべてのノードを検索する (C#)</span><span class="sxs-lookup"><span data-stu-id="0cc09-102">How to: Find All Nodes in a Namespace (C#)</span></span>
 <span data-ttu-id="0cc09-103">各要素または各属性の名前空間をフィルター処理することで、特定の名前空間内にあるすべてのノードを検索できます。</span><span class="sxs-lookup"><span data-stu-id="0cc09-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321065"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a><span data-ttu-id="33f6e-102">方法: XmlReader から XML フラグメントをストリーム出力する (C#)</span><span class="sxs-lookup"><span data-stu-id="33f6e-102">How to: Stream XML Fragments from an XmlReader (C#)</span></span>
 <span data-ttu-id="33f6e-103">大きな XML ファイルを処理する必要があるときに、XML ツリー全体をメモリに読み込むことができない場合があります。</span><span class="sxs-lookup"><span data-stu-id="33f6e-103">When you have to process large XML files, it might not be feasible to load the whole XML tree into memory.</span></span> <span data-ttu-id="33f6e-104">このトピックでは、<xref:System.Xml.XmlReader> を使用してフラグメントをストリーム出力する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="33f6e-104">This topic shows how to stream fragments using an <xref:System.Xml.XmlReader>.</span></span>  

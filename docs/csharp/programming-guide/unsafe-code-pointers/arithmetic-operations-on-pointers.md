@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324302"
 ---
 # <a name="arithmetic-operations-on-pointers-c-programming-guide"></a><span data-ttu-id="9a4a8-102">ポインターに対する算術演算 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="9a4a8-102">Arithmetic Operations on Pointers (C# Programming Guide)</span></span>
 <span data-ttu-id="9a4a8-103">このトピックでは、算術演算子 `+` と **-** を使用したポインター操作について説明します。</span><span class="sxs-lookup"><span data-stu-id="9a4a8-103">This topic discusses using the arithmetic operators `+` and **-** to manipulate pointers.</span></span>  

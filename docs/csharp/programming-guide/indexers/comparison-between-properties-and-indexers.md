@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330373"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a><span data-ttu-id="b23d9-102">プロパティとインデクサーの比較 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="b23d9-102">Comparison Between Properties and Indexers (C# Programming Guide)</span></span>
 <span data-ttu-id="b23d9-103">インデクサーはプロパティと似ています。</span><span class="sxs-lookup"><span data-stu-id="b23d9-103">Indexers are like properties.</span></span> <span data-ttu-id="b23d9-104">次の表で示す相違点を除けば、プロパティのアクセサーに対して定義されているすべての規則が、インデクサーのアクセサーにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="b23d9-104">Except for the differences shown in the following table, all the rules that are defined for property accessors apply to indexer accessors also.</span></span>  

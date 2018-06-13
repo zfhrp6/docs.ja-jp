@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319551"
 ---
 # <a name="aggregation-operations-c"></a><span data-ttu-id="18c28-102">集計処理 (C#)</span><span class="sxs-lookup"><span data-stu-id="18c28-102">Aggregation Operations (C#)</span></span>
 <span data-ttu-id="18c28-103">集計の操作では、値の集合体から単一の値が計算されます。</span><span class="sxs-lookup"><span data-stu-id="18c28-103">An aggregation operation computes a single value from a collection of values.</span></span> <span data-ttu-id="18c28-104">たとえば、1 か月分の毎日の気温値から 1 日あたりの平均の気温値を計算することが集計操作です。</span><span class="sxs-lookup"><span data-stu-id="18c28-104">An example of an aggregation operation is calculating the average daily temperature from a month's worth of daily temperature values.</span></span>  

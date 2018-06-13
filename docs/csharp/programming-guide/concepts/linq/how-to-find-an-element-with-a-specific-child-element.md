@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323889"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a><span data-ttu-id="2e7ae-102">方法: 特定の子要素を持つ要素を検索する (C#)</span><span class="sxs-lookup"><span data-stu-id="2e7ae-102">How to: Find an Element with a Specific Child Element (C#)</span></span>
 <span data-ttu-id="2e7ae-103">このトピックでは、特定の値を含む子要素を持つ特定の要素を検索する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2e7ae-103">This topic shows how to find a particular element that has a child element with a specific value.</span></span>  

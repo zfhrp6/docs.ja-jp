@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328446"
 ---
 # <a name="polymorphism-c-programming-guide"></a><span data-ttu-id="5449b-102">ポリモーフィズム (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="5449b-102">Polymorphism (C# Programming Guide)</span></span>
 <span data-ttu-id="5449b-103">ポリモーフィズムは、カプセル化と継承に次ぐ、オブジェクト指向プログラミングの第 3 の柱と言われることがよくあります。</span><span class="sxs-lookup"><span data-stu-id="5449b-103">Polymorphism is often referred to as the third pillar of object-oriented programming, after encapsulation and inheritance.</span></span> <span data-ttu-id="5449b-104">ポリモーフィズムは、ギリシャ語で "多形" を意味し、次の 2 つの側面を持っています。</span><span class="sxs-lookup"><span data-stu-id="5449b-104">Polymorphism is a Greek word that means "many-shaped" and it has two distinct aspects:</span></span>  

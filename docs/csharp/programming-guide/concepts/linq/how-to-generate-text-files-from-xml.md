@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316479"
 ---
 # <a name="how-to-generate-text-files-from-xml-c"></a><span data-ttu-id="3fc86-102">方法: XML からテキスト ファイルを生成する (C#)</span><span class="sxs-lookup"><span data-stu-id="3fc86-102">How to: Generate Text Files from XML (C#)</span></span>
 <span data-ttu-id="3fc86-103">この例では、XML ファイルからコンマ区切り (CSV) ファイルを生成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3fc86-103">This example shows how to generate a comma-separated values (CSV) file from an XML file.</span></span>  

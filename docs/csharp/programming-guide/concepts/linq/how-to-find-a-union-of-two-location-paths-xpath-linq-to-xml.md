@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333298"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a><span data-ttu-id="c5ec2-102">方法: 2 つのロケーション パスの和集合を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="c5ec2-102">How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="c5ec2-103">XPath を使用すると、2 つの XPath ロケーション パスの結果の和集合を検索できます。</span><span class="sxs-lookup"><span data-stu-id="c5ec2-103">XPath allows you to find the union of the results of two XPath location paths.</span></span>  

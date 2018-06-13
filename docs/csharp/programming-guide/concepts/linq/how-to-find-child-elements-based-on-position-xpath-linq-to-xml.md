@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317503"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a><span data-ttu-id="c3f1a-102">方法: 位置に基づいて子要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="c3f1a-102">How to: Find Child Elements Based on Position (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="c3f1a-103">要素をその位置に基づいて検索しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="c3f1a-103">Sometimes you want to find elements based on their position.</span></span> <span data-ttu-id="c3f1a-104">2 番目の要素を検索したり、3 番目から 5 番目の要素を検索したりすることがあります。</span><span class="sxs-lookup"><span data-stu-id="c3f1a-104">You might want to find the second element, or you might want to find the third through the fifth element.</span></span>  

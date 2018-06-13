@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329548"
 ---
 # <a name="using-namespaces-c-programming-guide"></a><span data-ttu-id="ee3f9-102">名前空間の使用 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="ee3f9-102">Using Namespaces (C# Programming Guide)</span></span>
 <span data-ttu-id="ee3f9-103">C# プログラム内では名前空間が 2 つの方法でよく使用されます。</span><span class="sxs-lookup"><span data-stu-id="ee3f9-103">Namespaces are heavily used within C# programs in two ways.</span></span> <span data-ttu-id="ee3f9-104">最初の方法では、.NET Framework クラスで名前空間を使用して、その多くのクラスを整理します。</span><span class="sxs-lookup"><span data-stu-id="ee3f9-104">Firstly, the .NET Framework classes use namespaces to organize its many classes.</span></span> <span data-ttu-id="ee3f9-105">2 つ目の方法では、独自の名前空間を宣言します。これは、より大きなプログラミング プロジェクトでクラス名とメソッド名のスコープを制御するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="ee3f9-105">Secondly, declaring your own namespaces can help control the scope of class and method names in larger programming projects.</span></span>  

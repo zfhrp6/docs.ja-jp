@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323711"
 ---
 # <a name="tutorial-chaining-queries-together-c"></a><span data-ttu-id="4185e-102">チュートリアル: クエリの連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="4185e-102">Tutorial: Chaining Queries Together (C#)</span></span>
 <span data-ttu-id="4185e-103">このチュートリアルでは、クエリを連結する際の処理モデルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="4185e-103">This tutorial illustrates the processing model when you chain queries together.</span></span> <span data-ttu-id="4185e-104">クエリの連結は、関数型変換を記述する際の重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="4185e-104">Chaining queries together is a key part of writing functional transformations.</span></span> <span data-ttu-id="4185e-105">連結されたクエリがどのように動作するのかを正確に把握することが重要です。</span><span class="sxs-lookup"><span data-stu-id="4185e-105">It is important to understand exactly how chained queries work.</span></span>  

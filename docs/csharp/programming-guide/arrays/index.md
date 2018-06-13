@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313502"
 ---
 # <a name="arrays-c-programming-guide"></a><span data-ttu-id="b503c-102">配列 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="b503c-102">Arrays (C# Programming Guide)</span></span>
 <span data-ttu-id="b503c-103">配列データ構造体には、同じ型の複数の変数を格納できます。</span><span class="sxs-lookup"><span data-stu-id="b503c-103">You can store multiple variables of the same type in an array data structure.</span></span> <span data-ttu-id="b503c-104">配列は、要素の型を指定することで宣言します。</span><span class="sxs-lookup"><span data-stu-id="b503c-104">You declare an array by specifying the type of its elements.</span></span>  

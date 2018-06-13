@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323382"
 ---
 # <a name="concatenation-operations-c"></a><span data-ttu-id="a4699-102">連結演算 (C#)</span><span class="sxs-lookup"><span data-stu-id="a4699-102">Concatenation Operations (C#)</span></span>
 <span data-ttu-id="a4699-103">連結とは、1 つのシーケンスを別のシーケンスに追加する演算を指します。</span><span class="sxs-lookup"><span data-stu-id="a4699-103">Concatenation refers to the operation of appending one sequence to another.</span></span>  

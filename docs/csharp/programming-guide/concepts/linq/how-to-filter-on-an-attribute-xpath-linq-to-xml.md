@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326119"
 ---
 # <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a><span data-ttu-id="58c08-102">方法: 属性をフィルター処理する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="58c08-102">How to: Filter on an Attribute (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="58c08-103">このトピックでは、指定した名前を持ち、かつ指定した値の属性を持つ子孫要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="58c08-103">This topic shows how to get the descendant elements with a specified name, and with an attribute with a specified value.</span></span>  

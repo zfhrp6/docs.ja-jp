@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334413"
 ---
 # <a name="set-operations-c"></a><span data-ttu-id="a3d1c-102">セット操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="a3d1c-102">Set Operations (C#)</span></span>
 <span data-ttu-id="a3d1c-103">LINQ のセット操作は、同一または別個のコレクション (またはセット) に等しい要素があるかどうかに基づいて、結果を生成するクエリ操作です。</span><span class="sxs-lookup"><span data-stu-id="a3d1c-103">Set operations in LINQ refer to query operations that produce a result set that is based on the presence or absence of equivalent elements within the same or separate collections (or sets).</span></span>  

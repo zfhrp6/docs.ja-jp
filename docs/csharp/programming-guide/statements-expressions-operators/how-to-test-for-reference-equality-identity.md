@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322342"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a><span data-ttu-id="1eee3-102">方法: 参照の等価性 (同値) をテストする (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="1eee3-102">How to: Test for Reference Equality (Identity) (C# Programming Guide)</span></span>
 <span data-ttu-id="1eee3-103">独自の型で参照の等価性の比較をサポートするためにカスタム ロジックを実装する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1eee3-103">You do not have to implement any custom logic to support reference equality comparisons in your types.</span></span> <span data-ttu-id="1eee3-104">この機能は、すべての型に対して <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> 静的メソッドとして用意されています。</span><span class="sxs-lookup"><span data-stu-id="1eee3-104">This functionality is provided for all types by the static <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> method.</span></span>  

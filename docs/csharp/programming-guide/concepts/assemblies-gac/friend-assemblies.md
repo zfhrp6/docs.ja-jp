@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320867"
 ---
 # <a name="friend-assemblies-c"></a><span data-ttu-id="10e21-102">フレンド アセンブリ (C#)</span><span class="sxs-lookup"><span data-stu-id="10e21-102">Friend Assemblies (C#)</span></span>
 <span data-ttu-id="10e21-103">"*フレンド アセンブリ*" とは、別のアセンブリに [internal](../../../../csharp/language-reference/keywords/internal.md) として宣言されている型やメンバーにアクセスできるアセンブリです。</span><span class="sxs-lookup"><span data-stu-id="10e21-103">A *friend assembly* is an assembly that can access another assembly's [internal](../../../../csharp/language-reference/keywords/internal.md) types and members.</span></span> <span data-ttu-id="10e21-104">フレンド アセンブリとして指定した場合、public として宣言されていないその型とメンバーに、他のアセンブリからアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="10e21-104">If you identify an assembly as a friend assembly, you no longer have to mark types and members as public in order for them to be accessed by other assemblies.</span></span> <span data-ttu-id="10e21-105">この方法は、特に次の状況で利便性を発揮します。</span><span class="sxs-lookup"><span data-stu-id="10e21-105">This is especially convenient in the following scenarios:</span></span>  

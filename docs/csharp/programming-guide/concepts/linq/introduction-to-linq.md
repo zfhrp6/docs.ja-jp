@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323317"
 ---
 # <a name="introduction-to-linq-c"></a><span data-ttu-id="9736a-102">LINQ の概要 (C#)</span><span class="sxs-lookup"><span data-stu-id="9736a-102">Introduction to LINQ (C#)</span></span>
 <span data-ttu-id="9736a-103">統合言語クエリ (LINQ) は、.NET Framework Version 3.5 で導入された、オブジェクトとデータの溝を埋める画期的な手法です。</span><span class="sxs-lookup"><span data-stu-id="9736a-103">Language-Integrated Query (LINQ) is an innovation introduced in the .NET Framework version 3.5 that bridges the gap between the world of objects and the world of data.</span></span>  

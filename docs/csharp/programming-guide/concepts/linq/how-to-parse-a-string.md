@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320145"
 ---
 # <a name="how-to-parse-a-string-c"></a><span data-ttu-id="58cd8-102">方法: 文字列を解析する (C#)</span><span class="sxs-lookup"><span data-stu-id="58cd8-102">How to: Parse a String (C#)</span></span>
 <span data-ttu-id="58cd8-103">このトピックでは、C# で文字列を解析して XML ツリーを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="58cd8-103">This topic shows how to parse a string to create an XML tree in C#.</span></span>  

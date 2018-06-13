@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328176"
 ---
 # <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a><span data-ttu-id="00399-102">方法: ファイル システムから XML ツリーを設定する (C#)</span><span class="sxs-lookup"><span data-stu-id="00399-102">How to: Populate an XML Tree from the File System (C#)</span></span>
 <span data-ttu-id="00399-103">XML ツリーの一般的で便利な用途の 1 つに、名前と値の階層データ ストアとしての用途があります。</span><span class="sxs-lookup"><span data-stu-id="00399-103">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="00399-104">階層データを XML ツリーに設定し、そのツリーをクエリや変換の対象としたり、必要に応じてシリアル化したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="00399-104">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="00399-105">この使用シナリオでは、名前空間や空白の扱いなど XML 固有のセマンティクスの多くは重要ではありません。</span><span class="sxs-lookup"><span data-stu-id="00399-105">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="00399-106">この場合は、XML ツリーをメモリ内の小さなシングル ユーザー階層データベースとして使用します。</span><span class="sxs-lookup"><span data-stu-id="00399-106">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  

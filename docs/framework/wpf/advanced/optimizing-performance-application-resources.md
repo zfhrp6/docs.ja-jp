@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546596"
 ---
 # <a name="optimizing-performance-application-resources"></a><span data-ttu-id="ab709-102">パフォーマンスの最適化 : アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="ab709-102">Optimizing Performance: Application Resources</span></span>
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="ab709-103"> 同様に型指定された要素の間で一貫した外観や動作をサポートできるように、アプリケーションのリソースを共有できます。</span><span class="sxs-lookup"><span data-stu-id="ab709-103"> allows you to share application resources so that you can support a consistent look or behavior across similar-typed elements.</span></span> <span data-ttu-id="ab709-104">このトピックでは、アプリケーションのパフォーマンスが向上するのに役立つこの領域で、いくつかの推奨事項を説明します。</span><span class="sxs-lookup"><span data-stu-id="ab709-104">This topic provides a few recommendations in this area that can help you improve the performance of your applications.</span></span>  
