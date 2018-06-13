@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580885"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a><span data-ttu-id="ea491-102">方法: Parallel.Invoke を使用して並列操作を実行する</span><span class="sxs-lookup"><span data-stu-id="ea491-102">How to: Use Parallel.Invoke to Execute Parallel Operations</span></span>
 <span data-ttu-id="ea491-103">この例では、タスク並列ライブラリの <xref:System.Threading.Tasks.Parallel.Invoke%2A> を使用して操作を並列化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ea491-103">This example shows how to parallelize operations by using <xref:System.Threading.Tasks.Parallel.Invoke%2A> in the Task Parallel Library.</span></span> <span data-ttu-id="ea491-104">共有データ ソースで 3 つの操作が実行されます。</span><span class="sxs-lookup"><span data-stu-id="ea491-104">Three operations are performed on a shared data source.</span></span> <span data-ttu-id="ea491-105">操作によってソースが変更されるわけではないため、簡単に並列実行できます。</span><span class="sxs-lookup"><span data-stu-id="ea491-105">Because none of the operations modifies the source, they can be executed in parallel in a straightforward manner.</span></span>  

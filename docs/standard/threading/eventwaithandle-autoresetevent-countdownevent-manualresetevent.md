@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582944"
 ---
 # <a name="eventwaithandle-autoresetevent-countdownevent-manualresetevent"></a><span data-ttu-id="96118-102">EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent</span><span class="sxs-lookup"><span data-stu-id="96118-102">EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent</span></span>
 <span data-ttu-id="96118-103">イベント待機ハンドルを使用して、スレッドでお互いにシグナル通知し、それぞれのシグナルを待機することで、スレッドの動作を同期できます。</span><span class="sxs-lookup"><span data-stu-id="96118-103">Event wait handles allow threads to synchronize activities by signaling each other and by waiting on each other's signals.</span></span> <span data-ttu-id="96118-104">これらの同期イベントは Win32 待機ハンドルに基づいており、通知を受けると自動的にリセットされるものと、手動でリセットされるものの 2 種類があります。</span><span class="sxs-lookup"><span data-stu-id="96118-104">These synchronization events are based on Win32 wait handles and can be divided into two types: those that reset automatically when signaled and those that are reset manually.</span></span>  

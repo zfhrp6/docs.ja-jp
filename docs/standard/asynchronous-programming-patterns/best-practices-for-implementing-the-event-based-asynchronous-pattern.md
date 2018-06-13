@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578422"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a><span data-ttu-id="a5b2d-102">イベントベースの非同期パターンを実装するための推奨される手順</span><span class="sxs-lookup"><span data-stu-id="a5b2d-102">Best Practices for Implementing the Event-based Asynchronous Pattern</span></span>
 <span data-ttu-id="a5b2d-103">イベントベースの非同期パターンは、使い慣れたイベントおよびデリゲートのセマンティクスと共に、クラス内の非同期動作を公開する効果的な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="a5b2d-103">The Event-based Asynchronous Pattern provides you with an effective way to expose asynchronous behavior in classes, with familiar event and delegate semantics.</span></span> <span data-ttu-id="a5b2d-104">イベント ベースの非同期パターンを実装するには、いくつかの固有の動作要件に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5b2d-104">To implement Event-based Asynchronous Pattern, you need to follow some specific behavioral requirements.</span></span> <span data-ttu-id="a5b2d-105">以降のセクションでは、イベントベースの非同期パターンに従うクラスを実装する際に検討すべき要件とガイドラインについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a5b2d-105">The following sections describe requirements and guidelines you should consider when you implement a class that follows the Event-based Asynchronous Pattern.</span></span>  

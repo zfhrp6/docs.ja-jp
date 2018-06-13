@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584028"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a><span data-ttu-id="a1947-102">方法 : Visual Basic でシリアル ポートに文字列を送信する</span><span class="sxs-lookup"><span data-stu-id="a1947-102">How to: Send Strings to Serial Ports in Visual Basic</span></span>
 <span data-ttu-id="a1947-103">このトピックでは、`My.Computer.Ports` を使用して、Visual Basic でコンピューターのシリアルポートに文字列を送信する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a1947-103">This topic describes how to use `My.Computer.Ports` to send strings to the computer's serial ports in Visual Basic.</span></span>  

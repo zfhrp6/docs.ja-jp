@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586726"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a><span data-ttu-id="934ca-102">方法 : Visual Basic で利用可能なシリアル ポートを表示する</span><span class="sxs-lookup"><span data-stu-id="934ca-102">How to: Show Available Serial Ports in Visual Basic</span></span>
 <span data-ttu-id="934ca-103">このトピックでは、`My.Computer.Ports` を使用して、コンピューターで利用可能なシリアルポートを Visual Basic で表示する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="934ca-103">This topic describes how to use `My.Computer.Ports` to show the available serial ports of the computer in Visual Basic.</span></span>  

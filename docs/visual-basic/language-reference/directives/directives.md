@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584645"
 ---
 # <a name="directives-visual-basic"></a><span data-ttu-id="fea41-102">ディレクティブ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fea41-102">Directives (Visual Basic)</span></span>
 <span data-ttu-id="fea41-103">このセクションのトピックでは、Visual Basic ソース コードのコンパイラ ディレクティブについて説明します。</span><span class="sxs-lookup"><span data-stu-id="fea41-103">The topics in this section document the Visual Basic source code compiler directives.</span></span>  

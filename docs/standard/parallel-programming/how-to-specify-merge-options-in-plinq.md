@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580446"
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a><span data-ttu-id="92987-102">方法: PLINQ のマージ オプションを指定する</span><span class="sxs-lookup"><span data-stu-id="92987-102">How to: Specify Merge Options in PLINQ</span></span>
 <span data-ttu-id="92987-103">この例では、PLINQ クエリの後続のすべての演算子に適用されるマージ オプションを指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="92987-103">This example shows how to specify the merge options that will apply to all subsequent operators in a PLINQ query.</span></span> <span data-ttu-id="92987-104">マージ オプションを明示的に設定する必要はありませんが、設定することでパフォーマンスが向上する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="92987-104">You do not have to set merge options explicitly, but doing so may improve performance.</span></span> <span data-ttu-id="92987-105">マージ オプションの詳細については、「[PLINQ のマージ オプション](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="92987-105">For more information about merge options, see [Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).</span></span>  

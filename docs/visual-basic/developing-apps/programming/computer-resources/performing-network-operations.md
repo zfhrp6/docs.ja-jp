@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583436"
 ---
 # <a name="performing-network-operations-visual-basic"></a><span data-ttu-id="cca27-102">ネットワーク操作の実行 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cca27-102">Performing Network Operations (Visual Basic)</span></span>
 <span data-ttu-id="cca27-103">次の表は、`My.Computer.Network` オブジェクトに関連付けられているタスクの一覧です。</span><span class="sxs-lookup"><span data-stu-id="cca27-103">The following tables list tasks associated with the `My.Computer.Network` object.</span></span>  

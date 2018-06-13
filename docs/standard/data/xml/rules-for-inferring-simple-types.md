@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576394"
 ---
 # <a name="rules-for-inferring-simple-types"></a><span data-ttu-id="42da2-102">単純型を推論するときの規則</span><span class="sxs-lookup"><span data-stu-id="42da2-102">Rules for Inferring Simple Types</span></span>
 <span data-ttu-id="42da2-103"><xref:System.Xml.Schema.XmlSchemaInference> クラスが属性と要素のデータ型を推論する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="42da2-103">Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.</span></span>  

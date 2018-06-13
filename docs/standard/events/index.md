@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578585"
 ---
 # <a name="handling-and-raising-events"></a><span data-ttu-id="09756-102">イベントの処理と発生</span><span class="sxs-lookup"><span data-stu-id="09756-102">Handling and Raising Events</span></span>
 <span data-ttu-id="09756-103">.NET Framework でのイベントは、デリゲート モデルに基づいています。</span><span class="sxs-lookup"><span data-stu-id="09756-103">Events in the .NET Framework are based on the delegate model.</span></span> <span data-ttu-id="09756-104">デリゲート モデルはオブザーバー デザイン パターンに従って、サブスクライバーがプロバイダーに登録して通知を受信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="09756-104">The delegate model follows the observer design pattern, which enables a subscriber to register with, and receive notifications from, a provider.</span></span> <span data-ttu-id="09756-105">イベントの送信元がイベント発生の通知をプッシュしたら、イベント レシーバーはその通知を受信して、通知に対する応答を定義します。</span><span class="sxs-lookup"><span data-stu-id="09756-105">An event sender pushes a notification that an event has happened, and an event receiver receives that notification and defines a response to it.</span></span> <span data-ttu-id="09756-106">ここでは、デリゲート モデルの主要コンポーネント、アプリケーションでイベントを利用する方法、およびコードでイベントを実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="09756-106">This article describes the major components of the delegate model, how to consume events in applications, and how to implement events in your code.</span></span>  

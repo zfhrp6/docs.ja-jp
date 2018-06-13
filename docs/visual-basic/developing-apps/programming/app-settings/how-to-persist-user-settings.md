@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584567"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a><span data-ttu-id="f2b12-102">方法 : Visual Basic でユーザー設定を永続化する</span><span class="sxs-lookup"><span data-stu-id="f2b12-102">How to: Persist User Settings in Visual Basic</span></span>
 <span data-ttu-id="f2b12-103">`My.Settings.Save` メソッドを使用して、ユーザー設定の変更を永続化できます。</span><span class="sxs-lookup"><span data-stu-id="f2b12-103">You can use the `My.Settings.Save` method to persist changes to the user settings.</span></span>  

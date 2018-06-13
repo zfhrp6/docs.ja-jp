@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577216"
 ---
 # <a name="editing-xml-schemas"></a><span data-ttu-id="0ad28-102">XML スキーマの編集</span><span class="sxs-lookup"><span data-stu-id="0ad28-102">Editing XML Schemas</span></span>
 <span data-ttu-id="0ad28-103">XML スキーマの編集は、スキーマ オブジェクト モデル (SOM) の最も重要な機能の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="0ad28-103">Editing an XML schema is one of the most important features of the Schema Object Model (SOM).</span></span> <span data-ttu-id="0ad28-104">XML スキーマの既存の値を変更する場合、SOM のスキーマ コンパイル前のすべてのプロパティを使用できます。</span><span class="sxs-lookup"><span data-stu-id="0ad28-104">All of the pre-schema-compilation properties of the SOM can be used to change the existing values in an XML schema.</span></span> <span data-ttu-id="0ad28-105">その後、XML スキーマを再コンパイルすると、変更が反映されます。</span><span class="sxs-lookup"><span data-stu-id="0ad28-105">The XML schema can then be recompiled to reflect the changes.</span></span>  

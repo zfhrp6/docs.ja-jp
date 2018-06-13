@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582900"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a><span data-ttu-id="aea64-103">従来の Web アプリケーションかシングル ページ アプリケーション (SPA) を選択する</span><span class="sxs-lookup"><span data-stu-id="aea64-103">Choose Between Traditional Web Apps and Single Page Apps (SPAs)</span></span>
 

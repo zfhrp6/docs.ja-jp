@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583748"
 ---
 # <a name="how-to-listen-for-cancellation-requests-by-polling"></a><span data-ttu-id="5fb89-102">方法: ポーリングによりキャンセル要求を待機する</span><span class="sxs-lookup"><span data-stu-id="5fb89-102">How to: Listen for Cancellation Requests by Polling</span></span>
 <span data-ttu-id="5fb89-103">次の例は、ユーザー コードで取り消しトークンを定期的にポーリングし、呼び出し元のスレッドから取り消しが要求されているかどうかを確認する 1 つの方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5fb89-103">The following example shows one way that user code can poll a cancellation token at regular intervals to see whether cancellation has been requested from the calling thread.</span></span> <span data-ttu-id="5fb89-104">この例では <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 型を使用しますが、<xref:System.Threading.ThreadPool?displayProperty=nameWithType> 型または <xref:System.Threading.Thread?displayProperty=nameWithType> 型で直接作成される非同期操作にも同じパターンが適用されます。</span><span class="sxs-lookup"><span data-stu-id="5fb89-104">This example uses the <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> type, but the same pattern applies to asynchronous operations created directly by the <xref:System.Threading.ThreadPool?displayProperty=nameWithType> type or the <xref:System.Threading.Thread?displayProperty=nameWithType> type.</span></span>  

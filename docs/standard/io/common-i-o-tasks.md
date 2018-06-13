@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577656"
 ---
 # <a name="common-io-tasks"></a><span data-ttu-id="62abb-102">共通 I/O タスク</span><span class="sxs-lookup"><span data-stu-id="62abb-102">Common I/O Tasks</span></span>
 <span data-ttu-id="62abb-103"><xref:System.IO> 名前空間には、読み取り、書き込みなどの各種アクションをファイル、ディレクトリ、およびストリーム上で実行できるようにするいくつかのクラスが用意されています。</span><span class="sxs-lookup"><span data-stu-id="62abb-103">The <xref:System.IO> namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams.</span></span> <span data-ttu-id="62abb-104">詳細については、「[ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="62abb-104">For more information, see [File and Stream I/O](../../../docs/standard/io/index.md).</span></span>  

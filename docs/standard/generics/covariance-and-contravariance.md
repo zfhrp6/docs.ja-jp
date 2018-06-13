@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579744"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a><span data-ttu-id="b8826-102">ジェネリックの共変性と反変性</span><span class="sxs-lookup"><span data-stu-id="b8826-102">Covariance and Contravariance in Generics</span></span>
 <a name="top"></a> <span data-ttu-id="b8826-103">共変性と反変性は、元の指定よりも強い派生型 (具体性が高い) と弱い派生型 (具体性が低い) を使用する能力を示す用語です。</span><span class="sxs-lookup"><span data-stu-id="b8826-103">Covariance and contravariance are terms that refer to the ability to use a more derived type (more specific) or a less derived type (less specific) than originally specified.</span></span> <span data-ttu-id="b8826-104">ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="b8826-104">Generic type parameters support covariance and contravariance to provide greater flexibility in assigning and using generic types.</span></span> <span data-ttu-id="b8826-105">型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="b8826-105">When you are referring to a type system, covariance, contravariance, and invariance have the following definitions.</span></span> <span data-ttu-id="b8826-106">各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived`という名前であるとします。</span><span class="sxs-lookup"><span data-stu-id="b8826-106">The examples assume a base class named `Base` and a derived class named `Derived`.</span></span>  

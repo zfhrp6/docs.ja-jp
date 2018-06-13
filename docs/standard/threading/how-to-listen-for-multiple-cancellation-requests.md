@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583131"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a><span data-ttu-id="4737c-102">方法: 複数のキャンセル要求を待機する</span><span class="sxs-lookup"><span data-stu-id="4737c-102">How to: Listen for Multiple Cancellation Requests</span></span>
 <span data-ttu-id="4737c-103">この例では、2 つのキャンセル トークンを同時にリッスンして、いずれかのトークンからキャンセルが要求された場合に操作を取り消す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4737c-103">This example shows how to listen to two cancellation tokens simultaneously so that you can cancel an operation if either token requests it.</span></span>  

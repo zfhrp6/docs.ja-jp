@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580797"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a><span data-ttu-id="68a92-102">方法: PLINQ を使用してファイル ディレクトリを反復処理する</span><span class="sxs-lookup"><span data-stu-id="68a92-102">How to: Iterate File Directories with PLINQ</span></span>
 <span data-ttu-id="68a92-103">この例では、ファイル ディレクトリに対する操作を簡単に並列化する 2 とおりの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="68a92-103">This example shows two simple ways to parallelize operations on file directories.</span></span> <span data-ttu-id="68a92-104">最初のクエリでは、<xref:System.IO.Directory.GetFiles%2A> メソッドを使用して、ディレクトリとすべてのサブディレクトリ内のファイル名の配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="68a92-104">The first query uses the <xref:System.IO.Directory.GetFiles%2A> method to populate an array of file names in a directory and all subdirectories.</span></span> <span data-ttu-id="68a92-105">配列全体の値が設定されるまでこのメソッドから制御が戻らないため、操作の開始時に待機時間が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="68a92-105">This method does not return until the entire array is populated, and therefore it can introduce latency at the beginning of the operation.</span></span> <span data-ttu-id="68a92-106">ただし、配列が作成されたら、PLINQ は配列を迅速に並列処理できます。</span><span class="sxs-lookup"><span data-stu-id="68a92-106">However, after the array is populated, PLINQ can process it in parallel very quickly.</span></span>  

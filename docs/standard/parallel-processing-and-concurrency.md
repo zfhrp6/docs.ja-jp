@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582637"
 ---
 # <a name="parallel-processing-concurrency-and-async-programming-in-net"></a><span data-ttu-id="3f10c-103">.NET での並列処理、同時実行、および非同期プログラミング</span><span class="sxs-lookup"><span data-stu-id="3f10c-103">Parallel Processing, Concurrency, and Async Programming in .NET</span></span>
 <span data-ttu-id="3f10c-104">.NET で提供されている複数の方法を使用すると、ユーザーに対するアプリケーションの応答性を高くする非同期コードや、複数の実行スレッドを使用してユーザーのコンピューターのパフォーマンスを最大化する並列コードを、記述することができます。</span><span class="sxs-lookup"><span data-stu-id="3f10c-104">.NET provides several ways for you to write asynchronous code to make your application more responsive to a user and write parallel code that uses multiple threads of execution to maximize the performance of your user's computer.</span></span>  

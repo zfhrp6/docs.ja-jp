@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579380"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a><span data-ttu-id="d110b-102">XPathNavigator による XML データの挿入</span><span class="sxs-lookup"><span data-stu-id="d110b-102">Insert XML Data using XPathNavigator</span></span>
 <span data-ttu-id="d110b-103"><xref:System.Xml.XPath.XPathNavigator> クラスは、XML ドキュメント内に兄弟ノード、子ノード、および属性ノードを挿入するためのメソッドのセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="d110b-103">The <xref:System.Xml.XPath.XPathNavigator> class provides a set of methods used to insert sibling, child, and attribute nodes in an XML document.</span></span> <span data-ttu-id="d110b-104">これらのメソッドを使用するには、<xref:System.Xml.XPath.XPathNavigator> オブジェクトが編集可能である必要があります。つまり、その <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> プロパティを `true` にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d110b-104">In order to use these methods, the <xref:System.Xml.XPath.XPathNavigator> object must be editable, that is, its <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> property must be `true`.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578990"
 ---
 # <a name="dispose-pattern"></a><span data-ttu-id="56d90-102">Dispose パターン</span><span class="sxs-lookup"><span data-stu-id="56d90-102">Dispose Pattern</span></span>
 <span data-ttu-id="56d90-103">すべてのプログラムは、それらの実行の進行中にメモリ、システムのハンドル、またはデータベース接続など、1 つまたは複数のシステム リソースを取得します。</span><span class="sxs-lookup"><span data-stu-id="56d90-103">All programs acquire one or more system resources, such as memory, system handles, or database connections, during the course of their execution.</span></span> <span data-ttu-id="56d90-104">開発者は、取得し、使用後に解放する必要があるためには、このようなシステム リソースを使用する場合は注意が必要があります。</span><span class="sxs-lookup"><span data-stu-id="56d90-104">Developers have to be careful when using such system resources, because they must be released after they have been acquired and used.</span></span>  

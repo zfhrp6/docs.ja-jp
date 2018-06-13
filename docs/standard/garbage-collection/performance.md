@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579796"
 ---
 # <a name="garbage-collection-and-performance"></a><span data-ttu-id="ee65c-102">ガベージ コレクションとパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="ee65c-102">Garbage Collection and Performance</span></span>
 <a name="top"></a> <span data-ttu-id="ee65c-103">ここでは、ガベージ コレクションおよびメモリ使用に関連する問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="ee65c-103">This topic describes issues related to garbage collection and memory usage.</span></span> <span data-ttu-id="ee65c-104">マネージ ヒープに関する問題について取り上げ、ガベージ コレクションによるアプリケーションに対する影響を最小限に抑える方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="ee65c-104">It addresses issues that pertain to the managed heap and explains how to minimize the effect of garbage collection on your applications.</span></span> <span data-ttu-id="ee65c-105">問題を調査するために使用できる手順のリンクを問題ごとに示してあります。</span><span class="sxs-lookup"><span data-stu-id="ee65c-105">Each issue has links to procedures that you can use to investigate problems.</span></span>  

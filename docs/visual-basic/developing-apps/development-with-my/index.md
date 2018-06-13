@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584425"
 ---
 # <a name="development-with-my-visual-basic"></a><span data-ttu-id="fdf31-102">My による開発 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fdf31-102">Development with My (Visual Basic)</span></span>
 <span data-ttu-id="fdf31-103">Visual Basic には、多彩な機能を提供する一方で生産性や使いやすさを向上させる、迅速なアプリケーション開発用の新しい機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="fdf31-103">Visual Basic provides new features for rapid application development that improve productivity and ease of use while delivering power.</span></span> <span data-ttu-id="fdf31-104">こうした機能の 1 つである `My` という機能は、情報へのアクセス、およびアプリケーションやそのランタイム環境に関連する既定のオブジェクト インスタンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="fdf31-104">One of these features, called `My`, provides access to information and default object instances that are related to the application and its run-time environment.</span></span> <span data-ttu-id="fdf31-105">この情報は、IntelliSense によって検出可能な形式で編成され、用途に応じて論理的に区別されます。</span><span class="sxs-lookup"><span data-stu-id="fdf31-105">This information is organized in a format that is discoverable through IntelliSense and logically delineated according to use.</span></span>  

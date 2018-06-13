@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579289"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a><span data-ttu-id="804b4-102">Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート</span><span class="sxs-lookup"><span data-stu-id="804b4-102">.NET Framework Support for Windows Store Apps and Windows Runtime</span></span>
 <span data-ttu-id="804b4-103">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は [!INCLUDE[wrt](../../../includes/wrt-md.md)]のさまざまなソフトウェア開発シナリオをサポートします。</span><span class="sxs-lookup"><span data-stu-id="804b4-103">The [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] supports a number of software development scenarios with the [!INCLUDE[wrt](../../../includes/wrt-md.md)].</span></span> <span data-ttu-id="804b4-104">これらのシナリオは次の 3 つのカテゴリに分類されます。</span><span class="sxs-lookup"><span data-stu-id="804b4-104">These scenarios fall into three categories:</span></span>  

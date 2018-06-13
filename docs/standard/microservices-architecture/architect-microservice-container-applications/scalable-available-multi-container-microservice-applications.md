@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578886"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a><span data-ttu-id="0301b-103">高いスケーラビリティと可用性のためにマイクロサービスと複数のコンテナー アプリケーションを調整する</span><span class="sxs-lookup"><span data-stu-id="0301b-103">Orchestrating microservices and multi-container applications for high scalability and availability</span></span>
 

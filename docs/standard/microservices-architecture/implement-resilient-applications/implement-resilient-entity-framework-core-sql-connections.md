@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579224"
 ---
 # <a name="implementing-resilient-entity-framework-core-sql-connections"></a><span data-ttu-id="5b8ce-103">回復力の高い Entity Framework Core SQL 接続の実装</span><span class="sxs-lookup"><span data-stu-id="5b8ce-103">Implementing resilient Entity Framework Core SQL connections</span></span>
 

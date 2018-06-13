@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579588"
 ---
 # <a name="common-type-system"></a><span data-ttu-id="4f2f3-102">共通型システム</span><span class="sxs-lookup"><span data-stu-id="4f2f3-102">Common Type System</span></span>
 <span data-ttu-id="4f2f3-103">共通型システム (CTS: Common Type System) は、共通言語ランタイムにおける型の宣言、使用、および管理の方法を定義しており、ランタイムによる言語間統合のサポートにおいても重要な役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="4f2f3-103">The common type system defines how types are declared, used, and managed in the common language runtime, and is also an important part of the runtime's support for cross-language integration.</span></span> <span data-ttu-id="4f2f3-104">共通型システムには次のような機能があります。</span><span class="sxs-lookup"><span data-stu-id="4f2f3-104">The common type system performs the following functions:</span></span>  

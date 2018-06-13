@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579497"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a><span data-ttu-id="0b180-102">タスク ベースの非同期パターンの利用</span><span class="sxs-lookup"><span data-stu-id="0b180-102">Consuming the Task-based Asynchronous Pattern</span></span>
 <span data-ttu-id="0b180-103">タスク ベースの非同期パターン (TAP) を使用して非同期操作を行うと、コールバックを使用して、ブロックすることなく待機できます。</span><span class="sxs-lookup"><span data-stu-id="0b180-103">When you use the Task-based Asynchronous Pattern (TAP) to work with asynchronous operations, you can use callbacks to achieve waiting without blocking.</span></span>  <span data-ttu-id="0b180-104">タスクの場合、これは <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> などのメソッドによって行われます。</span><span class="sxs-lookup"><span data-stu-id="0b180-104">For tasks, this is achieved through methods such as <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="0b180-105">言語ベースの非同期サポートが、通常の制御フロー内での非同期操作の待機を許可することで、コールバックを隠し、コンパイラにより生成されたコードはこの同じ API レベルのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="0b180-105">Language-based asynchronous support hides callbacks by allowing asynchronous operations to be awaited within normal control flow, and compiler-generated code provides this same API-level support.</span></span>  

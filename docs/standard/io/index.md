@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579043"
 ---
 # <a name="file-and-stream-io"></a><span data-ttu-id="a23b1-102">ファイルおよびストリーム入出力</span><span class="sxs-lookup"><span data-stu-id="a23b1-102">File and Stream I/O</span></span>
 <span data-ttu-id="a23b1-103">ファイルおよびストリーム I/O (入出力) とは、ストレージ メディアとの間のデータの転送を指します。</span><span class="sxs-lookup"><span data-stu-id="a23b1-103">File and stream I/O (input/output) refers to the transfer of data either to or from a storage medium.</span></span> <span data-ttu-id="a23b1-104">.NET Framework では、`System.IO` 名前空間に、データ ストリームおよびファイルで同期的および非同期的に読み取りと書き込みを有効にする型が用意されています。</span><span class="sxs-lookup"><span data-stu-id="a23b1-104">In the .NET Framework, the `System.IO` namespaces contain types that enable reading and writing, both synchronously and asynchronously, on data streams and files.</span></span> <span data-ttu-id="a23b1-105">これらの名前空間には、ファイルを圧縮および圧縮解除する型、パイプとシリアル ポート経由の通信を有効にする型もあります。</span><span class="sxs-lookup"><span data-stu-id="a23b1-105">These namespaces also contain types that perform compression and decompression on files, and types that enable communication through pipes and serial ports.</span></span>  
