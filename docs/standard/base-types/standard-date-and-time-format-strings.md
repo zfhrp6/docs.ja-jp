@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579809"
 ---
 # <a name="standard-date-and-time-format-strings"></a><span data-ttu-id="6ece2-102">標準の日時書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="6ece2-102">Standard Date and Time Format Strings</span></span>
 <span data-ttu-id="6ece2-103">標準の日時書式指定文字列は、単一の書式指定子を使用して日付と時刻の値のテキスト表現を定義します。</span><span class="sxs-lookup"><span data-stu-id="6ece2-103">A standard date and time format string uses a single format specifier to define the text representation of a date and time value.</span></span> <span data-ttu-id="6ece2-104">空白を含む複数の文字で構成される日時書式指定文字列は、カスタム日時書式指定文字列として解釈されます。詳細については、「[カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6ece2-104">Any date and time format string that contains more than one character, including white space, is interpreted as a custom date and time format string; for more information, see [Custom Date and Time Format Strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md).</span></span> <span data-ttu-id="6ece2-105">標準またはカスタムの書式指定文字列には、次の 2 とおりの使用方法があります。</span><span class="sxs-lookup"><span data-stu-id="6ece2-105">A standard or custom format string can be used in two ways:</span></span>  

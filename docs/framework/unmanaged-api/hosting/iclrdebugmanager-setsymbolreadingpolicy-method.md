@@ -20,9 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1ee21861ed3911303d4661721b65e9e147c6953a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33433820"
 ---
 # <a name="iclrdebugmanagersetsymbolreadingpolicy-method"></a><span data-ttu-id="381c7-102">ICLRDebugManager::SetSymbolReadingPolicy メソッド</span><span class="sxs-lookup"><span data-stu-id="381c7-102">ICLRDebugManager::SetSymbolReadingPolicy Method</span></span>
 <span data-ttu-id="381c7-103">プログラム データベース (PDB) ファイルを読み取るためのポリシーを設定します。</span><span class="sxs-lookup"><span data-stu-id="381c7-103">Sets the policy for reading program database (PDB) files.</span></span> <span data-ttu-id="381c7-104">ポリシーは、呼び出し履歴に行番号およびファイルに関する情報が含まれているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="381c7-104">The policy determines whether information about line numbers and files is included in call stacks.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496228"
 ---
 # <a name="routing-service"></a><span data-ttu-id="aaa44-102">ルーティング サービス</span><span class="sxs-lookup"><span data-stu-id="aaa44-102">Routing Service</span></span>
 <span data-ttu-id="aaa44-103">ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。</span><span class="sxs-lookup"><span data-stu-id="aaa44-103">The Routing Service is a generic SOAP intermediary that acts as a message router.</span></span> <span data-ttu-id="aaa44-104">ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。</span><span class="sxs-lookup"><span data-stu-id="aaa44-104">The core functionality of the Routing Service is the ability to route messages based on message content, which allows a message to be forwarded to a client endpoint based on a value within the message itself, in either the header or the message body.</span></span>  

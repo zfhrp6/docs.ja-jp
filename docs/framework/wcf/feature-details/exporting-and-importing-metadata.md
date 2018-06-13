@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495425"
 ---
 # <a name="exporting-and-importing-metadata"></a><span data-ttu-id="c3f82-102">メタデータのエクスポートとインポート</span><span class="sxs-lookup"><span data-stu-id="c3f82-102">Exporting and Importing Metadata</span></span>
 <span data-ttu-id="c3f82-103">Windows Communication Foundation (WCF) では、サービス エンドポイントを記述するそれらを並行してクライアントを使用してサービスを使用する方法を理解する標準化表現のプロセスではメタデータのエクスポートです。</span><span class="sxs-lookup"><span data-stu-id="c3f82-103">In Windows Communication Foundation (WCF), exporting metadata is the process of describing service endpoints and projecting them into a parallel, standardized representation that clients can use to understand how to use the service.</span></span> <span data-ttu-id="c3f82-104">サービス メタデータのインポートは <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、またはサービス メタデータの一部を生成するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="c3f82-104">Importing service metadata is the process of generating <xref:System.ServiceModel.Description.ServiceEndpoint> instances or parts from service metadata.</span></span>  

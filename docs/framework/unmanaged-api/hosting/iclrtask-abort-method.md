@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 46d60ff6ab64d57ca5c7020877758657b61125ad
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434838"
 ---
 # <a name="iclrtaskabort-method"></a><span data-ttu-id="7d3f9-102">ICLRTask::Abort メソッド</span><span class="sxs-lookup"><span data-stu-id="7d3f9-102">ICLRTask::Abort Method</span></span>
 <span data-ttu-id="7d3f9-103">共通言語ランタイム (CLR) が、タスクを中止する要求を現在[ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)インスタンスが表すです。</span><span class="sxs-lookup"><span data-stu-id="7d3f9-103">Requests that the common language runtime (CLR) abort the task that the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance represents.</span></span>  

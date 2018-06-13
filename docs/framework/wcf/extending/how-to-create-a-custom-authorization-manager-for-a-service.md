@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490444"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a><span data-ttu-id="c4c9a-102">方法 : サービスで使用するカスタム承認マネージャーを作成する</span><span class="sxs-lookup"><span data-stu-id="c4c9a-102">How to: Create a Custom Authorization Manager for a Service</span></span>
 <span data-ttu-id="c4c9a-103">Id モデル インフラストラクチャ Windows Communication Foundation (WCF) では、拡張可能なクレーム ベースの承認モデルをサポートします。</span><span class="sxs-lookup"><span data-stu-id="c4c9a-103">The Identity Model infrastructure in Windows Communication Foundation (WCF) supports an extensible claims-based authorization model.</span></span> <span data-ttu-id="c4c9a-104">クレームはトークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、<xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。</span><span class="sxs-lookup"><span data-stu-id="c4c9a-104">Claims are extracted from tokens and optionally processed by custom authorization policies and then placed into an <xref:System.IdentityModel.Policy.AuthorizationContext>.</span></span> <span data-ttu-id="c4c9a-105">承認マネージャーは、<xref:System.IdentityModel.Policy.AuthorizationContext> 内のクレームを検査して承認に関する決定を行います。</span><span class="sxs-lookup"><span data-stu-id="c4c9a-105">An authorization manager examines the claims in the <xref:System.IdentityModel.Policy.AuthorizationContext> to make authorization decisions.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489399"
 ---
 # <a name="hosting"></a><span data-ttu-id="b7df2-102">ホスト</span><span class="sxs-lookup"><span data-stu-id="b7df2-102">Hosting</span></span>
 <span data-ttu-id="b7df2-103">このセクションのトピックでは、サービス ホスティングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b7df2-103">The topics in the section describe service hosting.</span></span> <span data-ttu-id="b7df2-104">インターネット インフォメーション サービス (IIS)、Windows プロセス アクティブ化サービス (WAS)、Windows Server AppFabric、Windows サービス、またはマネージ アプリケーションによっては、サービスをホストされていることができます: このオプションは、多くの場合と呼びます*セルフ ホスト*です。</span><span class="sxs-lookup"><span data-stu-id="b7df2-104">A service can be hosted by Internet Information Services (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, a Windows service, or by a managed application—this option is often referred to as *self hosting*.</span></span>  

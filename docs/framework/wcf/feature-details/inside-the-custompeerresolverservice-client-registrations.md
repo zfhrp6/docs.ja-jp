@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494057"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a><span data-ttu-id="94f99-102">CustomPeerResolverService 内部 : クライアント登録</span><span class="sxs-lookup"><span data-stu-id="94f99-102">Inside the CustomPeerResolverService: Client Registrations</span></span>
 <span data-ttu-id="94f99-103">メッシュ内の各ノードは、`Register` 関数を介してエンドポイント情報をリゾルバー サービスに公開します。</span><span class="sxs-lookup"><span data-stu-id="94f99-103">Each node in the mesh publishes its endpoint information to the resolver service through the `Register` function.</span></span> <span data-ttu-id="94f99-104">リゾルバー サービスは、登録レコードとしてこの情報を保存します。</span><span class="sxs-lookup"><span data-stu-id="94f99-104">The resolver service stores this information as a registration record.</span></span> <span data-ttu-id="94f99-105">このレコードには、ノードの一意の識別子 (RegistrationID) およびエンドポイント情報 \`(PeerNodeAddress) が格納されます。</span><span class="sxs-lookup"><span data-stu-id="94f99-105">This record contains a unique identifier (RegistrationID) and endpoint information (PeerNodeAddress) for the node.</span></span>  

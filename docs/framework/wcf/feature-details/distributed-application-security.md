@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496166"
 ---
 # <a name="distributed-application-security"></a><span data-ttu-id="ad9b5-102">分散アプリケーションのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="ad9b5-102">Distributed Application Security</span></span>
 <span data-ttu-id="ad9b5-103">Windows Communication Foundation (WCF) のセキュリティは、次の 3 つの主要な機能領域に分割します。 セキュリティ、アクセス制御、および監査を転送します。</span><span class="sxs-lookup"><span data-stu-id="ad9b5-103">Windows Communication Foundation (WCF) security is broken into three major functional areas: transfer security, access control, and auditing.</span></span> <span data-ttu-id="ad9b5-104">転送セキュリティは、整合性、機密性、および認証を実現します。</span><span class="sxs-lookup"><span data-stu-id="ad9b5-104">Transfer security provides integrity, confidentiality, and authentication.</span></span> <span data-ttu-id="ad9b5-105">転送セキュリティは、トランスポート セキュリティ、メッセージ セキュリティ、または `TransportWithMessageCredential` のいずれかによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="ad9b5-105">Transfer security is provided by one of the following: transport security, message security, or `TransportWithMessageCredential`.</span></span>  

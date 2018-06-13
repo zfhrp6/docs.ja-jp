@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508775"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a><span data-ttu-id="8e646-102">.NET Framework で互換性のために残されているメンバー</span><span class="sxs-lookup"><span data-stu-id="8e646-102">Obsolete Members in the .NET Framework</span></span>
 <span data-ttu-id="8e646-103">この記事の表には、.NET Framework 4.5 以降のバージョンで互換性のために残されている型メンバーがアセンブリ別にまとめられています。</span><span class="sxs-lookup"><span data-stu-id="8e646-103">The tables in this article list the type members that are obsolete in the .NET Framework 4.5 and later versions organized by assembly.</span></span> <span data-ttu-id="8e646-104">各アセンブリで互換性のために残されているメンバーと推奨される代替メンバーの一覧を表示するには、以下のリンクを使用してください。</span><span class="sxs-lookup"><span data-stu-id="8e646-104">Use the following links to see a list of the obsolete members and the recommended alternatives in each assembly.</span></span> <span data-ttu-id="8e646-105">このトピックでは、廃止された型のメンバーの一覧は表示されていません。</span><span class="sxs-lookup"><span data-stu-id="8e646-105">This topic doesn't list the members of obsolete types.</span></span> <span data-ttu-id="8e646-106">廃止された型の一覧については、[互換性のために残されている型](../../../docs/framework/whats-new/obsolete-types.md)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8e646-106">For a list of obsolete types, see [Obsolete Types](../../../docs/framework/whats-new/obsolete-types.md).</span></span>  

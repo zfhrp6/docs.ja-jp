@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492750"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a><span data-ttu-id="f5f4c-102">方法 : Svcutil.exe を使用してコンパイル済みのサービス コードからメタデータをエクスポートする</span><span class="sxs-lookup"><span data-stu-id="f5f4c-102">How to: Use Svcutil.exe to Export Metadata from Compiled Service Code</span></span>
 <span data-ttu-id="f5f4c-103">Svcutil.exe は、次のように、コンパイル済みアセンブリのサービス、コントラクト、およびデータ型のメタデータをエクスポートできます。</span><span class="sxs-lookup"><span data-stu-id="f5f4c-103">Svcutil.exe can export metadata for services, contracts, and data types in compiled assemblies, as follows:</span></span>  

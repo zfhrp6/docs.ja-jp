@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494018"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a><span data-ttu-id="bdcc3-102">サービス メタデータからの WCF クライアントの生成</span><span class="sxs-lookup"><span data-stu-id="bdcc3-102">Generating a WCF Client from Service Metadata</span></span>
 <span data-ttu-id="bdcc3-103">ここでは、Svcutil.exe の各種のスイッチを使用して、メタデータ ドキュメントからクライアントを生成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="bdcc3-103">This topic describes how to use the various switches in Svcutil.exe to generate clients from metadata documents.</span></span>  

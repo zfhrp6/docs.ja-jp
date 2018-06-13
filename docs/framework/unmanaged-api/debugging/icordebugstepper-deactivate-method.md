@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bcd7bfb52cadf740d8fe3cb92a09b071f530b7ee
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417402"
 ---
 # <a name="icordebugstepperdeactivate-method"></a><span data-ttu-id="144ba-102">ICorDebugStepper::Deactivate メソッド</span><span class="sxs-lookup"><span data-stu-id="144ba-102">ICorDebugStepper::Deactivate Method</span></span>
 <span data-ttu-id="144ba-103">Icordebugstepper にすると、受信した最後のステップ コマンドをキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="144ba-103">Causes this ICorDebugStepper to cancel the last step command that it received.</span></span>  

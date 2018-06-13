@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494782"
 ---
 # <a name="message-security-with-a-windows-client"></a><span data-ttu-id="96ccf-102">Windows クライアントとのメッセージ セキュリティ</span><span class="sxs-lookup"><span data-stu-id="96ccf-102">Message Security with a Windows Client</span></span>
 <span data-ttu-id="96ccf-103">このシナリオでは、Windows Communication Foundation (WCF) クライアントとメッセージ セキュリティ モードによって保護されたサーバーを示します。</span><span class="sxs-lookup"><span data-stu-id="96ccf-103">This scenario shows a Windows Communication Foundation (WCF) client and server secured by message security mode.</span></span> <span data-ttu-id="96ccf-104">クライアントとサービスは、Windows 資格情報を使用して認証します。</span><span class="sxs-lookup"><span data-stu-id="96ccf-104">The client and service are authenticated using Windows credentials.</span></span>  

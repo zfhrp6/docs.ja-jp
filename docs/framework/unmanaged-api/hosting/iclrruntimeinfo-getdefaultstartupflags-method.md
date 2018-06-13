@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 546a26306a1faaeceb1337b79bd2d27970d9f5be
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434214"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a><span data-ttu-id="25f1e-102">ICLRRuntimeInfo::GetDefaultStartupFlags メソッド</span><span class="sxs-lookup"><span data-stu-id="25f1e-102">ICLRRuntimeInfo::GetDefaultStartupFlags Method</span></span>
 <span data-ttu-id="25f1e-103">スタートアップ フラグとランタイムの起動に使用されるホストの構成ファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="25f1e-103">Gets the startup flags and host configuration file that will be used to start the runtime.</span></span>  

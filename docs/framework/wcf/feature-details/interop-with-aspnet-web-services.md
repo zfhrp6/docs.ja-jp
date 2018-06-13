@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494297"
 ---
 # <a name="interoperability-with-aspnet-web-services"></a><span data-ttu-id="0fb45-102">ASP.NET Web サービスとの相互運用</span><span class="sxs-lookup"><span data-stu-id="0fb45-102">Interoperability with ASP.NET Web Services</span></span>
 <span data-ttu-id="0fb45-103">相互運用性[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Web サービスと Windows Communication Foundation (WCF) Web サービスは、両方のテクノロジを使用して実装されているサービスが、WS に準拠していることを確認して実現できます-基本プロファイル 1.1 の仕様です。</span><span class="sxs-lookup"><span data-stu-id="0fb45-103">Interoperability between [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web services and Windows Communication Foundation (WCF) Web services can be achieved by ensuring that services implemented using both technologies conform to the WS-I Basic Profile 1.1 specification.</span></span> [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]<span data-ttu-id="0fb45-104"> Web WS に準拠するサービスの WCF のシステム指定のバインディングを使用して WCF クライアントと相互運用は、Basic Profile 1.1<xref:System.ServiceModel.BasicHttpBinding>です。</span><span class="sxs-lookup"><span data-stu-id="0fb45-104"> Web services that conform to WS-I Basic Profile 1.1 are interoperable with WCF clients by using WCF system-provided binding, <xref:System.ServiceModel.BasicHttpBinding>.</span></span>  

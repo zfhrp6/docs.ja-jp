@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756320"
 ---
 # <a name="ltargumentgt"></a><span data-ttu-id="479bf-102">&lt;argument&gt;</span><span class="sxs-lookup"><span data-stu-id="479bf-102">&lt;argument&gt;</span></span>
 <span data-ttu-id="479bf-103">アクティビティ状態クエリに関連付けられている引数を表す構成要素。</span><span class="sxs-lookup"><span data-stu-id="479bf-103">A configuration element that represents an argument associated with an activity state query.</span></span>  

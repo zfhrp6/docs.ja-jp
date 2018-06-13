@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493030"
 ---
 # <a name="how-to-create-a-basic-atom-feed"></a><span data-ttu-id="37b94-102">方法 : 基本的な ATOM フィードを作成する</span><span class="sxs-lookup"><span data-stu-id="37b94-102">How to: Create a Basic Atom Feed</span></span>
 <span data-ttu-id="37b94-103">Windows Communication Foundation (WCF) では、配信フィードを公開するサービスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="37b94-103">Windows Communication Foundation (WCF) allows you to create a service that exposes a syndication feed.</span></span> <span data-ttu-id="37b94-104">ここでは、ATOM 配信フィードを公開する配信サービスを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="37b94-104">This topic discusses how to create a syndication service that exposes an Atom syndication feed.</span></span>  

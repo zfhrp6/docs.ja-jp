@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744276"
 ---
 # <a name="64-bit-applications"></a><span data-ttu-id="409a1-102">64 ビット アプリケーション</span><span class="sxs-lookup"><span data-stu-id="409a1-102">64-bit Applications</span></span>
 <span data-ttu-id="409a1-103">アプリケーションをコンパイルするときに、Windows 64 ビット オペレーティング システム上で、ネイティブ アプリケーションとして実行するか、WOW64 (Windows 64 ビット上の Windows 32 ビット) の制御下で実行するかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="409a1-103">When you compile an application, you can specify that it should run on a Windows 64-bit operating system either as a native application or under WOW64 (Windows 32-bit on Windows 64-bit).</span></span> <span data-ttu-id="409a1-104">WOW64 は互換環境であり、32 ビット アプリケーションを 64 ビット オペレーティング システム上で実行できるようにします。</span><span class="sxs-lookup"><span data-stu-id="409a1-104">WOW64 is a compatibility environment that enables a 32-bit application to run on a 64-bit system.</span></span> <span data-ttu-id="409a1-105">WOW64 は、Windows オペレーティング システムのすべての 64 ビット バージョンに含まれています。</span><span class="sxs-lookup"><span data-stu-id="409a1-105">WOW64 is included in all 64-bit versions of the Windows operating system.</span></span>  

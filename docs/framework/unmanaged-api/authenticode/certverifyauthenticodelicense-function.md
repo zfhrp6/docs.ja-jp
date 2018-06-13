@@ -12,9 +12,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d79a8c5bc204b6479741c32c47e6b41ff873a1bc
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406924"
 ---
 # <a name="certverifyauthenticodelicense-function"></a><span data-ttu-id="9b494-102">CertVerifyAuthenticodeLicense 関数</span><span class="sxs-lookup"><span data-stu-id="9b494-102">CertVerifyAuthenticodeLicense Function</span></span>
 <span data-ttu-id="9b494-103">Authenticode XrML ライセンスの有効性を検証します。</span><span class="sxs-lookup"><span data-stu-id="9b494-103">Verifies the validity of an Authenticode XrML license.</span></span>  

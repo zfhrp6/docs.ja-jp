@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215051"
 ---
 # <a name="break-c-reference"></a><span data-ttu-id="c6dd4-102">break (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="c6dd4-102">break (C# Reference)</span></span>
 <span data-ttu-id="c6dd4-103">`break` ステートメントは、これを囲むループまたは [switch](../../../csharp/language-reference/keywords/switch.md) ステートメントのうち、最も内側のものを終了させます。</span><span class="sxs-lookup"><span data-stu-id="c6dd4-103">The `break` statement terminates the closest enclosing loop or [switch](../../../csharp/language-reference/keywords/switch.md) statement in which it appears.</span></span> <span data-ttu-id="c6dd4-104">終了したステートメントの次にステートメントがある場合は、そこに制御が移動します。</span><span class="sxs-lookup"><span data-stu-id="c6dd4-104">Control is passed to the statement that follows the terminated statement, if any.</span></span>  

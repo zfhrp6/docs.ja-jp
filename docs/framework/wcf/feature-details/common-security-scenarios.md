@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490904"
 ---
 # <a name="common-security-scenarios"></a><span data-ttu-id="870de-102">一般的なセキュリティ シナリオ</span><span class="sxs-lookup"><span data-stu-id="870de-102">Common Security Scenarios</span></span>
 <span data-ttu-id="870de-103">ここでは、考えられるさまざまなクライアントおよびサービスのセキュリティ構成の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="870de-103">The topics in this section catalog a number of possible client and service security configurations.</span></span> <span data-ttu-id="870de-104">構成はさまざまな要因により異なります。</span><span class="sxs-lookup"><span data-stu-id="870de-104">Configurations vary according to a number of factors.</span></span> <span data-ttu-id="870de-105">たとえば、サービスやクライアントがイントラネット上にあるかどうか、また、セキュリティが Windows とトランスポート (HTTPS など) のどちらで提供されるかなどが考えられます。</span><span class="sxs-lookup"><span data-stu-id="870de-105">For example, whether a service or client is on an intranet, or whether the security is provided by Windows or transport (such as HTTPS).</span></span>  

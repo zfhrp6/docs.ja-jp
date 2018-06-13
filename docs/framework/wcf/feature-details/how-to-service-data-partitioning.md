@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491803"
 ---
 # <a name="how-to-service-data-partitioning"></a><span data-ttu-id="80989-102">サービス データのパーティションを分割する方法</span><span class="sxs-lookup"><span data-stu-id="80989-102">How To: Service Data Partitioning</span></span>
 <span data-ttu-id="80989-103">このトピックでは、メッセージを同じ送信先サービスの複数のインスタンスにパーティション分割するのに必要な、基本的な手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="80989-103">This topic outlines the basic steps required to partition messages across multiple instances of the same destination service.</span></span> <span data-ttu-id="80989-104">サービス データのパーティション分割は、一般的に、優れた品質のサービスを提供するためにサービスを拡張する必要がある場合や、さまざまな顧客からの要求を特定の方法で処理する必要がある場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="80989-104">Service data partitioning is typically used when you need to scale a service in order to provide better quality of service, or when you need to handle requests from different customers in a specific way.</span></span> <span data-ttu-id="80989-105">たとえば、高い値または「ゴールド」顧客からのメッセージは、標準的な顧客からのメッセージよりも高い優先順位で処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="80989-105">For example, messages from high value or "Gold" customers may need to be processed at a higher priority than messages from a standard customer.</span></span>  

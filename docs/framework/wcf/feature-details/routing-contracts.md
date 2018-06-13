@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494255"
 ---
 # <a name="routing-contracts"></a><span data-ttu-id="6c4ae-102">ルーティング コントラクト</span><span class="sxs-lookup"><span data-stu-id="6c4ae-102">Routing Contracts</span></span>
 <span data-ttu-id="6c4ae-103">ルーティング コントラクトは、ルーティング サービスが処理できるメッセージ パターンを定義します。</span><span class="sxs-lookup"><span data-stu-id="6c4ae-103">Routing contracts define the message patterns that the Routing Service can process.</span></span>  <span data-ttu-id="6c4ae-104">各コントラクトは型指定されておらず、サービスは、メッセージ スキーマやアクションを認識していない場合でもメッセージを受信できます。</span><span class="sxs-lookup"><span data-stu-id="6c4ae-104">Each contract is typeless and allows the service to receive a message without knowledge of the message schema or action.</span></span> <span data-ttu-id="6c4ae-105">このため、ルーティング サービスは、ルーティングされる基盤のメッセージの詳細構成を追加することなく、メッセージをジェネリックにルーティングできます。</span><span class="sxs-lookup"><span data-stu-id="6c4ae-105">This allows the Routing Service to generically route messages without additional configuration for the specifics of the underlying messages being routed.</span></span>  

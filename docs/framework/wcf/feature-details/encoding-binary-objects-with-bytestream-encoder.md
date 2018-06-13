@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489483"
 ---
 # <a name="encoding-binary-objects-with-bytestream-encoder"></a><span data-ttu-id="25fa6-102">バイトストリーム エンコーダーを使用したバイナリ オブジェクトのエンコーディング</span><span class="sxs-lookup"><span data-stu-id="25fa6-102">Encoding Binary Objects with ByteStream Encoder</span></span>
 <span data-ttu-id="25fa6-103">Windows Communication Foundation (WCF) の生のバイナリ データを送受信するを使用して、構成<xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>です。</span><span class="sxs-lookup"><span data-stu-id="25fa6-103">Sending and receiving raw binary data with Windows Communication Foundation (WCF) is configured using <xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494164"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a><span data-ttu-id="adc7a-102">方法 : WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する</span><span class="sxs-lookup"><span data-stu-id="adc7a-102">How to: Create a Service That Accepts Arbitrary Data using the WCF REST Programming Model</span></span>
 <span data-ttu-id="adc7a-103">開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。</span><span class="sxs-lookup"><span data-stu-id="adc7a-103">Sometimes developers must have full control of how data is returned from a service operation.</span></span> <span data-ttu-id="adc7a-104">これは、サービス操作の形式でのデータがサポートされていません byWCF を返す必要がある場合です。</span><span class="sxs-lookup"><span data-stu-id="adc7a-104">This is the case when a service operation must return data in a format not supported byWCF.</span></span> <span data-ttu-id="adc7a-105">このトピックでは、WCF REST プログラミング モデルを使用して、任意のデータを受信するサービスを作成するについて説明します。</span><span class="sxs-lookup"><span data-stu-id="adc7a-105">This topic discusses using the WCF REST Programming Model to create a service that receives arbitrary data.</span></span>  

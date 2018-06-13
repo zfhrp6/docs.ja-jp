@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742485"
 ---
 # <a name="ltipv6gt-element-network-settings"></a><span data-ttu-id="be6d7-102">&lt;ipv6&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="be6d7-102">&lt;ipv6&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="be6d7-103">により、インターネット プロトコル バージョン 6 (IPv6) の廃止されたメンバーからの応答、<xref:System.Net.Dns>クラスです。</span><span class="sxs-lookup"><span data-stu-id="be6d7-103">Enables Internet Protocol version 6 (IPv6) responses from obsolete members of the <xref:System.Net.Dns> class.</span></span>  

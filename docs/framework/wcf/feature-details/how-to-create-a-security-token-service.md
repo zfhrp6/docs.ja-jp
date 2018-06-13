@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493879"
 ---
 # <a name="how-to-create-a-security-token-service"></a><span data-ttu-id="8c1a6-102">方法 : セキュリティ トークン サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="8c1a6-102">How to: Create a Security Token Service</span></span>
 <span data-ttu-id="8c1a6-103">セキュリティ トークン サービスは、WS-Trust 仕様に定義されているプロトコルを実装します。</span><span class="sxs-lookup"><span data-stu-id="8c1a6-103">A security token service implements the protocol defined in the WS-Trust specification.</span></span> <span data-ttu-id="8c1a6-104">このプロトコルでは、セキュリティ トークンの発行、更新、キャンセル、および検証を行うためのメッセージ形式とメッセージ交換パターンが定義されています。</span><span class="sxs-lookup"><span data-stu-id="8c1a6-104">This protocol defines message formats and message exchange patterns for issuing, renewing, canceling, and validating security tokens.</span></span> <span data-ttu-id="8c1a6-105">セキュリティ トークン サービスでは、これらの機能が 1 つ以上提供されます。</span><span class="sxs-lookup"><span data-stu-id="8c1a6-105">A given security token service provides one or more of these capabilities.</span></span> <span data-ttu-id="8c1a6-106">ここでは、最も一般的なシナリオであるトークンの発行の実装について説明します。</span><span class="sxs-lookup"><span data-stu-id="8c1a6-106">This topic looks at the most common scenario: implementing token issuance.</span></span>  

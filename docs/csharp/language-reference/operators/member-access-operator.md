@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33271030"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="083f2-103">である必要があります。</span><span class="sxs-lookup"><span data-stu-id="083f2-103">.</span></span> <span data-ttu-id="083f2-104">演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="083f2-104">Operator (C# Reference)</span></span>
 <span data-ttu-id="083f2-105">ドット演算子 (`.`) は、メンバー アクセスに使用されます。</span><span class="sxs-lookup"><span data-stu-id="083f2-105">The dot operator (`.`) is used for member access.</span></span> <span data-ttu-id="083f2-106">ドット演算子は、型または名前空間のメンバーを指定します。</span><span class="sxs-lookup"><span data-stu-id="083f2-106">The dot operator specifies a member of a type or namespace.</span></span> <span data-ttu-id="083f2-107">たとえば、ドット演算子は、.NET Framework クラス ライブラリ内の特定のメソッドにアクセスするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="083f2-107">For example, the dot operator is used to access specific methods within the .NET Framework class libraries:</span></span>  

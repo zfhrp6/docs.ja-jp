@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 03839a2c6e52f9d2dcdd2e0941ff4fdbeb8a3a17
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435642"
 ---
 # <a name="clr-hosting-interfaces"></a><span data-ttu-id="430fc-102">CLR ホスト インターフェイス</span><span class="sxs-lookup"><span data-stu-id="430fc-102">CLR Hosting Interfaces</span></span>
 <span data-ttu-id="430fc-103">このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) をアプリケーションに統合します。</span><span class="sxs-lookup"><span data-stu-id="430fc-103">This section describes the interfaces that unmanaged hosts can use to integrate the common language runtime (CLR) into their applications.</span></span> <span data-ttu-id="430fc-104">情報は、.NET Framework バージョン 2.0 およびそれ以降のバージョンに関連します。</span><span class="sxs-lookup"><span data-stu-id="430fc-104">The information pertains to the .NET Framework version 2.0 and later versions.</span></span> <span data-ttu-id="430fc-105">これらのインターフェイスは、ランタイムは、バージョン 1.0 および 1.1 よりも多くの面を制御するホストを有効にし、CLR とホストの実行モデルの間でより緊密に統合を提供します。</span><span class="sxs-lookup"><span data-stu-id="430fc-105">These interfaces enable the host to control many more aspects of the runtime than was possible in versions 1.0 and 1.1, and provide much tighter integration between the CLR and the host's execution model.</span></span>  

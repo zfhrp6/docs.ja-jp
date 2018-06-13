@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7bc6c9079b6f233946fa38979800e28097e849f8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428590"
 ---
 # <a name="fusion-unmanaged-api-reference"></a><span data-ttu-id="ee9c7-102">fusion (アンマネージ API リファレンス)</span><span class="sxs-lookup"><span data-stu-id="ee9c7-102">Fusion (Unmanaged API Reference)</span></span>
 <span data-ttu-id="ee9c7-103">Fusion API では、ランタイム ホストが、アプリケーションのリソースの正しいバージョンを見つけるために、アプリケーションのリソースのプロパティにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="ee9c7-103">The fusion API enables a runtime host to access the properties of an application's resources in order to locate the correct versions of those resources for the application.</span></span>  

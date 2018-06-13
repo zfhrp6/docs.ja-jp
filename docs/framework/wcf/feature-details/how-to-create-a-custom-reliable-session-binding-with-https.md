@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492763"
 ---
 # <a name="how-to-create-a-custom-reliable-session-binding-with-https"></a><span data-ttu-id="a3321-102">方法 : カスタムの信頼できるセッションによる HTTPS を使用したバインディングを作成する</span><span class="sxs-lookup"><span data-stu-id="a3321-102">How to: Create a Custom Reliable Session Binding with HTTPS</span></span>
 

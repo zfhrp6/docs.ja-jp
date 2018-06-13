@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492545"
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a><span data-ttu-id="ee43c-102">方法 : メタデータをサービス エンドポイントにインポートする</span><span class="sxs-lookup"><span data-stu-id="ee43c-102">How to: Import Metadata into Service Endpoints</span></span>
 <span data-ttu-id="ee43c-103">このトピックで定義されているサービスを使用してサービス エンドポイントのコレクションにメタデータをインポートする方法について説明、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="ee43c-103">This topic explains how to import metadata into a collection of service endpoints and use the service defined in the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span> <span data-ttu-id="ee43c-104">また、サービスからメタデータをインポートし、次にそのサービスに対して `Add` メソッドを呼び出すクライアント アプリケーションを作成する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="ee43c-104">This topic show how to create a client application that imports metadata from the service and then calls the `Add` method on the service.</span></span>  

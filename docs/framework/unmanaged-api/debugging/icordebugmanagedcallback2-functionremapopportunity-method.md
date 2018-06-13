@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dc900ca20ac87ddecfd8f7adf0894af21ca5d2f0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418091"
 ---
 # <a name="icordebugmanagedcallback2functionremapopportunity-method"></a><span data-ttu-id="8b981-102">ICorDebugManagedCallback2::FunctionRemapOpportunity メソッド</span><span class="sxs-lookup"><span data-stu-id="8b981-102">ICorDebugManagedCallback2::FunctionRemapOpportunity Method</span></span>
 <span data-ttu-id="8b981-103">コードの実行が編集された関数の古いバージョンのシーケンス ポイントに達したことをデバッガーに通知します。</span><span class="sxs-lookup"><span data-stu-id="8b981-103">Notifies the debugger that code execution has reached a sequence point in an older version of an edited function.</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c375fdffacccb27c20878c4e6adef9dd947148e1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435525"
 ---
 # <a name="iclrpolicymanagersettimeoutandaction-method"></a><span data-ttu-id="56129-102">ICLRPolicyManager::SetTimeoutAndAction メソッド</span><span class="sxs-lookup"><span data-stu-id="56129-102">ICLRPolicyManager::SetTimeoutAndAction Method</span></span>
 <span data-ttu-id="56129-103">指定された操作のタイムアウト値を設定し、操作が発生したときに、共通言語ランタイム (CLR) が実行するポリシー アクションを指定します。</span><span class="sxs-lookup"><span data-stu-id="56129-103">Sets a timeout value for the specified operation, and specifies the policy action the common language runtime (CLR) should take when the operation occurs.</span></span>  

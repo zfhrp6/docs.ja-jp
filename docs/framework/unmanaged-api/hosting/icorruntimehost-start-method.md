@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 96e8d80e2dff88aa5a589f864278b4a4e9cc76ef
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437015"
 ---
 # <a name="icorruntimehoststart-method"></a><span data-ttu-id="fac95-102">ICorRuntimeHost::Start メソッド</span><span class="sxs-lookup"><span data-stu-id="fac95-102">ICorRuntimeHost::Start Method</span></span>
 <span data-ttu-id="fac95-103">共通言語ランタイム (CLR) を開始します。</span><span class="sxs-lookup"><span data-stu-id="fac95-103">Starts the common language runtime (CLR).</span></span>  

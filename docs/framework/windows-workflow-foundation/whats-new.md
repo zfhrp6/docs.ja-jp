@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518438"
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a><span data-ttu-id="51253-102">どのような&#39;Windows Workflow Foundation の新機能として s</span><span class="sxs-lookup"><span data-stu-id="51253-102">What&#39;s New in Windows Workflow Foundation</span></span>
 <span data-ttu-id="51253-103">Windows Workflow Foundation (WF) で[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以前のバージョンから開発パラダイムを変更します。</span><span class="sxs-lookup"><span data-stu-id="51253-103">Windows Workflow Foundation (WF) in [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] changes several development paradigms from previous versions.</span></span> <span data-ttu-id="51253-104">ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。</span><span class="sxs-lookup"><span data-stu-id="51253-104">Workflows are now easier to create, execute, and maintain, and implement a host of new functionality.</span></span> <span data-ttu-id="51253-105">最新バージョンを使用する .NET 3.0、および .NET 3.5 ワークフロー アプリケーションの移行の詳細については、次を参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。</span><span class="sxs-lookup"><span data-stu-id="51253-105">For more information about migrating .NET 3.0 and .NET 3.5 workflow applications to use the latest version, see [Migration Guidance](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).</span></span>  

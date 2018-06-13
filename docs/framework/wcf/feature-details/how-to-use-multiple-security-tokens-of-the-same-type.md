@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490748"
 ---
 # <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a><span data-ttu-id="7c064-102">方法 : 同じ型の複数のセキュリティ トークンを使用する</span><span class="sxs-lookup"><span data-stu-id="7c064-102">How to: Use Multiple Security Tokens of the Same Type</span></span>
 -   <span data-ttu-id="7c064-103">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0 では、クライアント メッセージには任意の型のトークンを 1 つしか含めることができませんでしたが、</span><span class="sxs-lookup"><span data-stu-id="7c064-103">In [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0, a client message only contained one token of any given type.</span></span> <span data-ttu-id="7c064-104">現在は、同じ型の複数のトークンをクライアント メッセージに含めることができるようになりました。</span><span class="sxs-lookup"><span data-stu-id="7c064-104">Now client messages can contain multiple tokens of a type.</span></span> <span data-ttu-id="7c064-105">このトピックでは、同じ型の複数のトークンをクライアント メッセージに含める方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7c064-105">This topic shows how to include multiple tokens of the same type in a client message.</span></span>  

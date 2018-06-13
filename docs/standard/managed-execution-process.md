@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578977"
 ---
 # <a name="managed-execution-process"></a><span data-ttu-id="b1c85-102">マネージ実行プロセス</span><span class="sxs-lookup"><span data-stu-id="b1c85-102">Managed Execution Process</span></span>
 <a name="introduction"></a> <span data-ttu-id="b1c85-103">マネージ実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。</span><span class="sxs-lookup"><span data-stu-id="b1c85-103">The managed execution process includes the following steps, which are discussed in detail later in this topic:</span></span>  

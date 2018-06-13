@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494609"
 ---
 # <a name="peer-resolvers"></a><span data-ttu-id="0d88a-102">ピア リゾルバー</span><span class="sxs-lookup"><span data-stu-id="0d88a-102">Peer Resolvers</span></span>
 <span data-ttu-id="0d88a-103">メッシュに接続するには、ピア ノードに他のノードの IP アドレスが必要です。</span><span class="sxs-lookup"><span data-stu-id="0d88a-103">In order to connect to a mesh, a peer node requires the IP addresses of other nodes.</span></span> <span data-ttu-id="0d88a-104">IP アドレスを取得するには、リゾルバー サービスにアクセスします。このサービスは、メッシュ ID を受け取り、そのメッシュ ID で登録されているノードに対応するアドレスの一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="0d88a-104">IP addresses are obtained by contacting a resolver service, which takes the mesh ID and returns a list of addresses corresponding to nodes registered with that particular mesh ID.</span></span> <span data-ttu-id="0d88a-105">リゾルバーは登録されたアドレスのリストを保持します。そのリストには、メッシュ レジスタの各ノードとサービスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="0d88a-105">The resolver keeps a list of registered addresses, which it creates by having each node in the mesh register with the service.</span></span>  

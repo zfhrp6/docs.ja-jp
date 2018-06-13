@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33297369"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a><span data-ttu-id="a1d58-102">ジャグ配列 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="a1d58-102">Jagged Arrays (C# Programming Guide)</span></span>
 <span data-ttu-id="a1d58-103">ジャグ配列とは、その要素も配列である配列です。</span><span class="sxs-lookup"><span data-stu-id="a1d58-103">A jagged array is an array whose elements are arrays.</span></span> <span data-ttu-id="a1d58-104">ジャグ配列の要素には、異なるディメンションとサイズを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a1d58-104">The elements of a jagged array can be of different dimensions and sizes.</span></span> <span data-ttu-id="a1d58-105">ジャグ配列は、"配列の配列" と呼ばれることがあります。</span><span class="sxs-lookup"><span data-stu-id="a1d58-105">A jagged array is sometimes called an "array of arrays."</span></span> <span data-ttu-id="a1d58-106">次の例では、ジャグ配列の宣言、初期化、およびアクセスの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a1d58-106">The following examples show how to declare, initialize, and access jagged arrays.</span></span>  

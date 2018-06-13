@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492126"
 ---
 # <a name="data-member-default-values"></a><span data-ttu-id="c8518-102">データ メンバーの既定値</span><span class="sxs-lookup"><span data-stu-id="c8518-102">Data Member Default Values</span></span>
 <span data-ttu-id="c8518-103">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]、型の概念がある*既定値*です。</span><span class="sxs-lookup"><span data-stu-id="c8518-103">In the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], types have a concept of *default values*.</span></span> <span data-ttu-id="c8518-104">たとえば、参照型の既定値は `null` で、整数型の既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="c8518-104">For example, for any reference type the default value is `null`, and for an integer type it is zero.</span></span> <span data-ttu-id="c8518-105">しかし、データ メンバーが既定値に設定されている場合は、シリアル化されたデータからそのデータ メンバーを省略することが望ましいことがあります。</span><span class="sxs-lookup"><span data-stu-id="c8518-105">It is occasionally desirable to omit a data member from serialized data when it is set to its default value.</span></span> <span data-ttu-id="c8518-106">それは、メンバーが既定値に設定されているために実際の値をシリアル化する必要がなく、パフォーマンスの点で有利だからです。</span><span class="sxs-lookup"><span data-stu-id="c8518-106">Because the member has a default value, an actual value need not be serialized; this has a performance advantage.</span></span>  

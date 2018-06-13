@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268121"
 ---
 # <a name="null-c-reference"></a><span data-ttu-id="0e0f8-102">null (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="0e0f8-102">null (C# Reference)</span></span>
 <span data-ttu-id="0e0f8-103">`null` キーワードは、いかなるオブジェクトも参照していない null 参照を表すリテラルです。</span><span class="sxs-lookup"><span data-stu-id="0e0f8-103">The `null` keyword is a literal that represents a null reference, one that does not refer to any object.</span></span> <span data-ttu-id="0e0f8-104">`null` は参照型変数の既定値です。</span><span class="sxs-lookup"><span data-stu-id="0e0f8-104">`null` is the default value of reference-type variables.</span></span> <span data-ttu-id="0e0f8-105">通常の値の型を null にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="0e0f8-105">Ordinary value types cannot be null.</span></span> <span data-ttu-id="0e0f8-106">ただし、C# 2.0 では null 許容値型が導入されました。</span><span class="sxs-lookup"><span data-stu-id="0e0f8-106">However, C# 2.0 introduced nullable value types.</span></span> <span data-ttu-id="0e0f8-107">「[Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0e0f8-107">See [Nullable Types](../../../csharp/programming-guide/nullable-types/index.md).</span></span>  
