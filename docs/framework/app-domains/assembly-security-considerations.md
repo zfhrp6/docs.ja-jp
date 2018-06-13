@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743421"
 ---
 # <a name="assembly-security-considerations"></a><span data-ttu-id="01517-102">アセンブリのセキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="01517-102">Assembly Security Considerations</span></span>
 <a name="top"></a> <span data-ttu-id="01517-103">アセンブリを作成する場合は、アセンブリの実行に必要となるアクセス許可セットを指定できます。</span><span class="sxs-lookup"><span data-stu-id="01517-103">When you build an assembly, you can specify a set of permissions that the assembly requires to run.</span></span> <span data-ttu-id="01517-104">アセンブリに対して特定のアクセス許可を付与するかどうかは、証拠に基づいて決定されます。</span><span class="sxs-lookup"><span data-stu-id="01517-104">Whether certain permissions are granted or not granted to an assembly is based on evidence.</span></span>  

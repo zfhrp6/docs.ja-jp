@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 36b15c607026ea9ce583ecda02bcb8ac43900310
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435752"
 ---
 # <a name="corbindtoruntime-function"></a><span data-ttu-id="9ba2c-102">CorBindToRuntime 関数</span><span class="sxs-lookup"><span data-stu-id="9ba2c-102">CorBindToRuntime Function</span></span>
 <span data-ttu-id="9ba2c-103">アンマネージ ホストが共通言語ランタイム (CLR: Common Language Runtime) をプロセスに読み込むことを有効にします。</span><span class="sxs-lookup"><span data-stu-id="9ba2c-103">Enables unmanaged hosts to load the common language runtime (CLR) into a process.</span></span>  

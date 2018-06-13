@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2a5972ad555b6c3286777b5da79598fc7f1239b3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438628"
 ---
 # <a name="ihostautoeventset-method"></a><span data-ttu-id="80dd1-102">IHostAutoEvent::Set メソッド</span><span class="sxs-lookup"><span data-stu-id="80dd1-102">IHostAutoEvent::Set Method</span></span>
 <span data-ttu-id="80dd1-103">現在の設定[IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)インスタンスがシグナル状態にします。</span><span class="sxs-lookup"><span data-stu-id="80dd1-103">Sets the current [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance to a signaled state.</span></span>  

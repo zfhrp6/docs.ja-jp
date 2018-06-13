@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742875"
 ---
 # <a name="cryptography-settings-schema"></a><span data-ttu-id="95bd4-102">暗号設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="95bd4-102">Cryptography Settings Schema</span></span>
 <span data-ttu-id="95bd4-103">暗号設定スキーマには、アルゴリズムの表示名を、暗号化アルゴリズムを実装するクラスに割り当てる方法を指定する要素が含まれます。</span><span class="sxs-lookup"><span data-stu-id="95bd4-103">The cryptography settings schema contains elements that specify how to map friendly algorithm names to classes that implement cryptography algorithms.</span></span>  

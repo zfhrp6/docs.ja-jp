@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ad77aba02c819749794534ca2ecd478661bc363f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444982"
 ---
 # <a name="imetadatafilter-interface"></a><span data-ttu-id="0a7d4-102">IMetaDataFilter インターフェイス</span><span class="sxs-lookup"><span data-stu-id="0a7d4-102">IMetaDataFilter Interface</span></span>
 <span data-ttu-id="0a7d4-103">メタデータ トークンにマークを付け、フィルター処理をして、既に実行されたアクションが繰り返し行われないようにするメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="0a7d4-103">Provides methods for marking and filtering metadata tokens to avoid repeating actions that have already been taken.</span></span>  

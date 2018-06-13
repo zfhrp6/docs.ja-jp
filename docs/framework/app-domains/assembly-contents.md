@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741829"
 ---
 # <a name="assembly-contents"></a><span data-ttu-id="295c1-102">アセンブリの内容</span><span class="sxs-lookup"><span data-stu-id="295c1-102">Assembly Contents</span></span>
 <span data-ttu-id="295c1-103">一般に、静的アセンブリは次の 4 つの要素から構成されます。</span><span class="sxs-lookup"><span data-stu-id="295c1-103">In general, a static assembly can consist of four elements:</span></span>  

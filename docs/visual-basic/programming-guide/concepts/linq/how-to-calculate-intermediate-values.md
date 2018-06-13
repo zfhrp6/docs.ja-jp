@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642483"
 ---
 # <a name="how-to-calculate-intermediate-values-visual-basic"></a><span data-ttu-id="fd56c-102">方法: 計算の中間値 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fd56c-102">How to: Calculate Intermediate Values (Visual Basic)</span></span>
 <span data-ttu-id="fd56c-103">この例では、並べ替え、フィルタリング、および選択を実行する際に使用できる中間値を計算する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fd56c-103">This example shows how to calculate intermediate values that can be used in sorting, filtering, and selecting.</span></span>  

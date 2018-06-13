@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 83f6190872ecf4435688f3b7c82a61f5f15d9f62
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443327"
 ---
 # <a name="assemblymetadata-structure"></a><span data-ttu-id="727a5-102">ASSEMBLYMETADATA 構造体</span><span class="sxs-lookup"><span data-stu-id="727a5-102">ASSEMBLYMETADATA Structure</span></span>
 <span data-ttu-id="727a5-103">そのバージョンと、ロケール、プロセッサ、およびオペレーティング システムのサポートのレベルを含む、参照先アセンブリに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="727a5-103">Contains information about the referenced assembly, including its version and its level of support for locales, processors, and operating systems.</span></span>  

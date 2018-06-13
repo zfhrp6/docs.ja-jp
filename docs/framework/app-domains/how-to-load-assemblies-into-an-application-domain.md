@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741907"
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a><span data-ttu-id="81b97-102">方法 : アプリケーション ドメインにアセンブリを読み込む</span><span class="sxs-lookup"><span data-stu-id="81b97-102">How to: Load Assemblies into an Application Domain</span></span>
 <span data-ttu-id="81b97-103">アプリケーション ドメインにアセンブリを読み込むには、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="81b97-103">There are several ways to load an assembly into an application domain.</span></span> <span data-ttu-id="81b97-104">推奨されているのは、<xref:System.Reflection.Assembly?displayProperty=nameWithType> クラスの `static` (Visual Basic では `Shared`) <xref:System.Reflection.Assembly.Load%2A> メソッドを使用する方法です。</span><span class="sxs-lookup"><span data-stu-id="81b97-104">The recommended way is to use the `static` (`Shared` in Visual Basic) <xref:System.Reflection.Assembly.Load%2A> method of the <xref:System.Reflection.Assembly?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="81b97-105">それ以外には、以下の方法でアセンブリを読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="81b97-105">Other ways assemblies can be loaded include:</span></span>  
