@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571018"
 ---
 # <a name="equality-operators"></a><span data-ttu-id="800e1-102">等値演算子</span><span class="sxs-lookup"><span data-stu-id="800e1-102">Equality Operators</span></span>
 <span data-ttu-id="800e1-103">このセクションでは、オーバー ロードの等値演算子について説明しを指す`operator==`と`operator!=`等値演算子として。</span><span class="sxs-lookup"><span data-stu-id="800e1-103">This section discusses overloading equality operators and refers to `operator==` and `operator!=` as equality operators.</span></span>  

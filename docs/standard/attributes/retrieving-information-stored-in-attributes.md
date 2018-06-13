@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570408"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a><span data-ttu-id="1511e-102">属性に格納されている情報の取得</span><span class="sxs-lookup"><span data-stu-id="1511e-102">Retrieving Information Stored in Attributes</span></span>
 <span data-ttu-id="1511e-103">カスタム属性の取得は簡単なプロセスです。</span><span class="sxs-lookup"><span data-stu-id="1511e-103">Retrieving a custom attribute is a simple process.</span></span> <span data-ttu-id="1511e-104">まず、取得する属性のインスタンスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="1511e-104">First, declare an instance of the attribute you want to retrieve.</span></span> <span data-ttu-id="1511e-105">次に、<xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> メソッドを使用して、取得する属性の値に新しい属性を初期化します。</span><span class="sxs-lookup"><span data-stu-id="1511e-105">Then, use the <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> method to initialize the new attribute to the value of the attribute you want to retrieve.</span></span> <span data-ttu-id="1511e-106">新しい属性が初期化されたら、そのプロパティを使用して値を取得できるようになります。</span><span class="sxs-lookup"><span data-stu-id="1511e-106">Once the new attribute is initialized, you simply use its properties to get the values.</span></span>  

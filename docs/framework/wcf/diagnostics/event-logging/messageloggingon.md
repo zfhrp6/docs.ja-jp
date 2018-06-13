@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33472174"
 ---
 # <a name="messageloggingon"></a><span data-ttu-id="e910c-102">MessageLoggingOn</span><span class="sxs-lookup"><span data-stu-id="e910c-102">MessageLoggingOn</span></span>
 <span data-ttu-id="e910c-103">ID : 116</span><span class="sxs-lookup"><span data-stu-id="e910c-103">Id: 116</span></span>  

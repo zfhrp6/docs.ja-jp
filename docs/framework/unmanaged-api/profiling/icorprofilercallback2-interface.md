@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c6a218b58ed2ab40505204768f7d6071dea6db5e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461051"
 ---
 # <a name="icorprofilercallback2-interface"></a><span data-ttu-id="b8e73-102">ICorProfilerCallback2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="b8e73-102">ICorProfilerCallback2 Interface</span></span>
 <span data-ttu-id="b8e73-103">プロファイラーがサブスクライブしているイベントが発生したときに、コード プロファイラーに通知を共通言語ランタイム (CLR) によって使用されるメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="b8e73-103">Provides methods that are used by the common language runtime (CLR) to notify a code profiler when the events to which the profiler has subscribed occur.</span></span> <span data-ttu-id="b8e73-104">`ICorProfilerCallback2`インターフェイスの拡張機能は、 [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="b8e73-104">The `ICorProfilerCallback2` interface is an extension of the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) interface.</span></span> <span data-ttu-id="b8e73-105">つまり、.NET Framework version 2.0 で導入された新しいコールバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="b8e73-105">That is, it provides new callbacks introduced in the .NET Framework version 2.0.</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e0e96ba458edfe7261fd5857b7bcb8486f4a6636
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460046"
 ---
 # <a name="qualifiersetdelete-function"></a><span data-ttu-id="c4ef9-103">QualifierSet_Delete 関数</span><span class="sxs-lookup"><span data-stu-id="c4ef9-103">QualifierSet_Delete function</span></span>
 <span data-ttu-id="c4ef9-104">名前で指定された修飾子を削除します。</span><span class="sxs-lookup"><span data-stu-id="c4ef9-104">Deletes a specified qualifier by name.</span></span>  

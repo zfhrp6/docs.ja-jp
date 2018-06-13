@@ -15,6 +15,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472517"
 ---
 # <a name="c-compiler-options"></a><span data-ttu-id="43b0b-102">C# コンパイラ オプション</span><span class="sxs-lookup"><span data-stu-id="43b0b-102">C# Compiler Options</span></span>
 <span data-ttu-id="43b0b-103">コンパイラは、実行可能ファイル (.exe)、ダイナミック リンク ライブラリ (.dll)、またはコード モジュール (.netmodule) を生成します。</span><span class="sxs-lookup"><span data-stu-id="43b0b-103">The compiler produces executable (.exe) files, dynamic-link libraries (.dll), or code modules (.netmodule).</span></span>  

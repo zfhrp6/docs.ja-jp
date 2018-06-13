@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fe93b7ee28db8151345871b0dd716d41227ed565
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462300"
 ---
 # <a name="spawnderivedclass-function"></a><span data-ttu-id="9d83d-103">SpawnDerivedClass 関数</span><span class="sxs-lookup"><span data-stu-id="9d83d-103">SpawnDerivedClass function</span></span>
 <span data-ttu-id="9d83d-104">指定したオブジェクトから新しく派生クラス オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="9d83d-104">Creates a newly derived class object from a specified object.</span></span>    

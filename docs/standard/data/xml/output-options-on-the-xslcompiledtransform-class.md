@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572097"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a><span data-ttu-id="6898b-102">XslCompiledTransform クラスの出力オプション</span><span class="sxs-lookup"><span data-stu-id="6898b-102">Output Options on the XslCompiledTransform Class</span></span>
 <span data-ttu-id="6898b-103">このトピックでは、XSLT で使用できる出力オプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="6898b-103">This topic discusses the available XSLT output options.</span></span> <span data-ttu-id="6898b-104">出力オプションは、スタイル シート内で、または <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドで指定できます。</span><span class="sxs-lookup"><span data-stu-id="6898b-104">You can specify output options in the style sheet, or on the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span>  

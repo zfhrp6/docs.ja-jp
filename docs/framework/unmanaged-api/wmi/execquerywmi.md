@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b482f2ca2e2d5c06e69945adb71aa6c0f5d26465
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462092"
 ---
 # <a name="execquerywmi-function"></a><span data-ttu-id="ae379-103">ExecQueryWmi 関数</span><span class="sxs-lookup"><span data-stu-id="ae379-103">ExecQueryWmi function</span></span>
 <span data-ttu-id="ae379-104">オブジェクトを取得するクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="ae379-104">Executes a query to retrieve objects.</span></span>  

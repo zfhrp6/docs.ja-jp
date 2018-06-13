@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ea8a74633d3e950f6cf7ba87c00a9efa45206545
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459565"
 ---
 # <a name="verifyclientkey-function"></a><span data-ttu-id="ee91f-103">VerifyClientKey 関数</span><span class="sxs-lookup"><span data-stu-id="ee91f-103">VerifyClientKey function</span></span>
 <span data-ttu-id="ee91f-104">により、クライアント キーは、適切なセキュリティ。</span><span class="sxs-lookup"><span data-stu-id="ee91f-104">Ensures that the client key has the correct security.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34234374"
 ---
 # <a name="checked-and-unchecked-c-reference"></a><span data-ttu-id="ffced-102">Checked と Unchecked (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="ffced-102">Checked and Unchecked (C# Reference)</span></span>
 <span data-ttu-id="ffced-103">C# のステートメントは、checked または unchecked のいずれかのコンテキストで実行できます。</span><span class="sxs-lookup"><span data-stu-id="ffced-103">C# statements can execute in either checked or unchecked context.</span></span> <span data-ttu-id="ffced-104">checked コンテキストでは、算術オーバーフローにより例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="ffced-104">In a checked context, arithmetic overflow raises an exception.</span></span> <span data-ttu-id="ffced-105">unchecked コンテキストでは、算術オーバーフローが無視され、結果の格納先の型に収まらない上位ビットが破棄されて、結果が切り詰められます。</span><span class="sxs-lookup"><span data-stu-id="ffced-105">In an unchecked context, arithmetic overflow is ignored and the result is truncated by discarding any high-order bits that don't fit in the destination type.</span></span>  

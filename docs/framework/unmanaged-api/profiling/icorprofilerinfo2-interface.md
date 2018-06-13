@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8cec2a622a1a30881949ad5a9f2050077e195015
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461400"
 ---
 # <a name="icorprofilerinfo2-interface"></a><span data-ttu-id="e1be8-102">ICorProfilerInfo2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="e1be8-102">ICorProfilerInfo2 Interface</span></span>
 <span data-ttu-id="e1be8-103">コード プロファイラーが共通言語ランタイム (CLR) イベントの監視の制御と要求情報を通信に使用するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="e1be8-103">Provides methods that code profilers use to communicate with the common language runtime (CLR) to control event monitoring and request information.</span></span> <span data-ttu-id="e1be8-104">`ICorProfilerInfo2`インターフェイスの拡張機能は、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="e1be8-104">The `ICorProfilerInfo2` interface is an extension of the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) interface.</span></span> <span data-ttu-id="e1be8-105">つまり、.NET Framework バージョン 2.0 およびそれ以降のバージョンでサポートされている新しいメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="e1be8-105">That is, it provides new methods supported in the .NET Framework version 2.0 and later versions.</span></span>  

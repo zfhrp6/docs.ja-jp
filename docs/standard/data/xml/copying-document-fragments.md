@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568018"
 ---
 # <a name="copying-document-fragments"></a><span data-ttu-id="b0d3c-102">ドキュメント フラグメントのコピー</span><span class="sxs-lookup"><span data-stu-id="b0d3c-102">Copying Document Fragments</span></span>
 <span data-ttu-id="b0d3c-103">**XmlDocumentFragment** ノードを作成し、その下にノードを追加できます。</span><span class="sxs-lookup"><span data-stu-id="b0d3c-103">You can create an **XmlDocumentFragment** node and then add nodes under it.</span></span> <span data-ttu-id="b0d3c-104">**InsertNode** メソッドを使って **XmlDocumentFragment** を挿入する場合、**XmlDocumentFragment** ノードはコピーされず、その子ノードが XML ドキュメント オブジェクト モデル (DOM) に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="b0d3c-104">When the **XmlDocumentFragment** is inserted with the **InsertNode** method, the **XmlDocumentFragment** node is not copied, but its child nodes are inserted in the XML Document Object Model (DOM).</span></span>  

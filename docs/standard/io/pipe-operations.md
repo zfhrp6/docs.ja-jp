@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574367"
 ---
 # <a name="pipe-operations-in-the-net-framework"></a><span data-ttu-id="3166f-102">.NET Framework でのパイプ操作</span><span class="sxs-lookup"><span data-stu-id="3166f-102">Pipe Operations in the .NET Framework</span></span>
 <span data-ttu-id="3166f-103">パイプは、プロセス間通信の手段となります。</span><span class="sxs-lookup"><span data-stu-id="3166f-103">Pipes provide a means for interprocess communication.</span></span> <span data-ttu-id="3166f-104">パイプには、2 種類あります。</span><span class="sxs-lookup"><span data-stu-id="3166f-104">There are two types of pipes:</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569721"
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a><span data-ttu-id="72e8d-102">XML ドキュメントの DOM への読み取り</span><span class="sxs-lookup"><span data-stu-id="72e8d-102">Reading an XML Document into the DOM</span></span>
 <span data-ttu-id="72e8d-103">XML 情報は、さまざまな形式からメモリに読み取られます。</span><span class="sxs-lookup"><span data-stu-id="72e8d-103">XML information is read into memory from different formats.</span></span> <span data-ttu-id="72e8d-104">XML 情報は、文字列、ストリーム、URL、テキスト リーダー、および <xref:System.Xml.XmlReader> から派生したクラスから読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="72e8d-104">It can be read from a string, stream, URL, text reader, or a class derived from the <xref:System.Xml.XmlReader>.</span></span>  

@@ -31,9 +31,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b38b64e1c86174bea11086e722ed86b0a0046e2c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461914"
 ---
 # <a name="profiling-overview"></a><span data-ttu-id="f63d9-102">プロファイリングの概要</span><span class="sxs-lookup"><span data-stu-id="f63d9-102">Profiling Overview</span></span>
 <a name="top"></a> <span data-ttu-id="f63d9-103">プロファイラーは、別のアプリケーションの実行を監視するツールです。</span><span class="sxs-lookup"><span data-stu-id="f63d9-103">A profiler is a tool that monitors the execution of another application.</span></span> <span data-ttu-id="f63d9-104">共通言語ランタイム (CLR: Common Language Runtime) プロファイラーは、プロファイル API を使用して CLR とのメッセージの送受信を行う関数で構成されるダイナミック リンク ライブラリ (DLL: Dynamic Link Library) です。</span><span class="sxs-lookup"><span data-stu-id="f63d9-104">A common language runtime (CLR) profiler is a dynamic link library (DLL) that consists of functions that receive messages from, and send messages to, the CLR by using the profiling API.</span></span> <span data-ttu-id="f63d9-105">プロファイラー DLL は、実行時に CLR によって読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="f63d9-105">The profiler DLL is loaded by the CLR at run time.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571486"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a><span data-ttu-id="10656-102">XmlSchemaCollection スキーマのコンパイル</span><span class="sxs-lookup"><span data-stu-id="10656-102">XmlSchemaCollection Schema Compilation</span></span>
 <span data-ttu-id="10656-103">**XmlSchemaCollection** は、XDR (XML-Data Reduced) スキーマや XML スキーマ定義言語 (XSD) スキーマを格納および検証できるキャッシュ (ライブラリ) です。</span><span class="sxs-lookup"><span data-stu-id="10656-103">The **XmlSchemaCollection** is a cache or library where XML-Data Reduced (XDR) and XML Schema definition language (XSD) schemas can be stored and validated.</span></span> <span data-ttu-id="10656-104">**XmlSchemaCollection** は、ファイルや URL からスキーマにアクセスしなくて済むようにスキーマをメモリにキャッシュすることによって、パフォーマンスの向上を図ります。</span><span class="sxs-lookup"><span data-stu-id="10656-104">**XmlSchemaCollection** improves performance by caching schemas in memory instead of accessing them from a file or URL.</span></span>  

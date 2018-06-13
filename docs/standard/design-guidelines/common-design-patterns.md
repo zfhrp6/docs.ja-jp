@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570345"
 ---
 # <a name="common-design-patterns"></a><span data-ttu-id="281d1-102">共通デザイン パターン</span><span class="sxs-lookup"><span data-stu-id="281d1-102">Common Design Patterns</span></span>
 <span data-ttu-id="281d1-103">ソフトウェア パターン、パターン言語、およびアドレスのパターンの非常に幅広いサブジェクト antipatterns で多くの書籍があります。</span><span class="sxs-lookup"><span data-stu-id="281d1-103">There are numerous books on software patterns, pattern languages, and antipatterns that address the very broad subject of patterns.</span></span> <span data-ttu-id="281d1-104">したがって、ガイドラインと非常に限定された一連の .NET Framework Api の設計で頻繁に使用するパターンに関連付けられているディスカッションについても説明します。</span><span class="sxs-lookup"><span data-stu-id="281d1-104">Thus, this chapter provides guidelines and discussion related to a very limited set of patterns that are used frequently in the design of the .NET Framework APIs.</span></span>  

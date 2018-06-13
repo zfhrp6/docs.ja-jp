@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569331"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a><span data-ttu-id="b895a-102">ドキュメントに埋め込まれたスタイル シート ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="b895a-102">Style Sheet Directives Embedded in a Document</span></span>
 <span data-ttu-id="b895a-103">既存の XML に `<?xml:stylesheet?>` というスタイル シート ディレクティブが含まれていることがあります。</span><span class="sxs-lookup"><span data-stu-id="b895a-103">Occasionally, existing XML contains the style sheet directive of `<?xml:stylesheet?>`.</span></span> <span data-ttu-id="b895a-104">Microsoft Internet Explorer は、これを `<?xml-stylesheet?>` 構文に代わるものとして受け入れます。</span><span class="sxs-lookup"><span data-stu-id="b895a-104">Microsoft Internet Explorer accepts this as an alternative to the `<?xml-stylesheet?>` syntax.</span></span> <span data-ttu-id="b895a-105">次のように `<?xml:stylesheet?>` ディレクティブが含まれている XML データを XML ドキュメント オブジェクト モデル (DOM) に読み込もうとすると、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="b895a-105">When the XML data contains an `<?xml:stylesheet?>` directive, as shown in the following data, attempting to load this data into the XML Document Object Model (DOM) throws an exception.</span></span>  
