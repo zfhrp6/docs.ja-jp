@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525955"
 ---
 # <a name="recoloring-images"></a>イメージの色の変更
 色の変更は、イメージの色を調整するプロセスです。 色の変更の例をいくつかは、別、別の色の基準とした色の輝度を調整する、明るさやすべての色コントラストを調整および色をグレースケールに変換する 1 つの色を変更します。  

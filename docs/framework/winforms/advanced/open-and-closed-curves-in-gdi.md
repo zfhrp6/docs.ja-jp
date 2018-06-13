@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527149"
 ---
 # <a name="open-and-closed-curves-in-gdi"></a>GDI+ での開いた曲線と閉じた曲線
 次の図に、2 つの曲線: 1 つが開いて、もう 1 つが終了します。  

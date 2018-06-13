@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526489"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>方法 : 描画する Graphics オブジェクトを作成する
 線と形状を描画することができます、前に、テキストのレンダリングまたは表示し、操作を使用してイメージ[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、作成する必要があります、<xref:System.Drawing.Graphics>オブジェクト。 <xref:System.Drawing.Graphics>オブジェクトが表す、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]画面を描画し、グラフィカル イメージを作成するために使用するオブジェクトです。  

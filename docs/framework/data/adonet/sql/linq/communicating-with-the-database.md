@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353658"
 ---
 # <a name="communicating-with-the-database"></a>データベースとの通信
 このセクションのトピックでは、データベースとの通信を確立および維持するうえでの基本的な事項について説明します。  

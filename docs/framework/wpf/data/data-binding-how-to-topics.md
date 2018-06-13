@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557694"
 ---
 # <a name="data-binding-how-to-topics"></a>データ バインドに関する「方法」トピック
 このセクションのトピックでは、データ バインディングを使用して要素をさまざまな共通言語ランタイム (CLR) オブジェクトと XML の形式でデータ ソースからデータにバインドする方法について説明します。  

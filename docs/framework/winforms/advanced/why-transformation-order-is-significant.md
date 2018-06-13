@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526078"
 ---
 # <a name="why-transformation-order-is-significant"></a>変換順序が重要となる理由
 1 つ<xref:System.Drawing.Drawing2D.Matrix>オブジェクトは、単一の変換または変換のシーケンスを格納できます。 後者を複合変換と呼びます。 複合変換のマトリックスは、個々 の変換行列を乗算することによって取得されます。  

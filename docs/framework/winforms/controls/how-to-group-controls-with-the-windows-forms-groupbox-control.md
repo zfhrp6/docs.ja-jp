@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531925"
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>方法 : Windows フォーム GroupBox コントロールを使用してコントロールをグループ化する
 Windows フォーム<xref:System.Windows.Forms.GroupBox>コントロールを使用すると、その他のコントロールをグループ化します。 グループ コントロールに次の 3 つの理由があります。  

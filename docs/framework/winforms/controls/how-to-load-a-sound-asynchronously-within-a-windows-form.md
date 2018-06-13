@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533570"
 ---
 # <a name="how-to-load-a-sound-asynchronously-within-a-windows-form"></a>方法 : Windows フォーム内でサウンドを非同期的に読み込む
 次のコード例では、URL からサウンドを非同期的に読み込み、新しいスレッド上で再生します。  

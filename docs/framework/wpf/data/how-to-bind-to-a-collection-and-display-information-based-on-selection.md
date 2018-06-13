@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557410"
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>方法 : コレクションにバインドして選択に基づく情報を表示する
 マスター/詳細形式の単純なシナリオでデータ バインドがある<xref:System.Windows.Controls.ItemsControl>など、<xref:System.Windows.Controls.ListBox>です。 詳細については、選択した項目を表示するユーザーの選択に基づいて、です。 この例では、このシナリオを実装する方法を示します。  

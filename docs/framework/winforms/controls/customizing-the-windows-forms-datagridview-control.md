@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529845"
 ---
 # <a name="customizing-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールのカスタマイズ
 `DataGridView`コントロールの基本的な動作 (ルック アンド フィール) のセル、行、列と外観を調整するために使用できるいくつかのプロパティを提供します。 機能以外に特別なニーズがあるかどうか、<xref:System.Windows.Forms.DataGridViewCellStyle>クラス、ただし、またオーナー描画コントロールを実装したり、カスタムのセル、列、および行を作成してそのような機能を拡張します。  

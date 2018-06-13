@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526836"
 ---
 # <a name="working-with-images-bitmaps-icons-and-metafiles"></a>イメージ、ビットマップ、アイコン、およびメタファイルの操作
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、ラスター イメージを操作するための `Bitmap` クラスと、ベクター イメージを操作するための `Metafile` クラスを提供します。 `Bitmap` クラスおよび `Metafile` クラスは、どちらも `Image` クラスから継承されます。  

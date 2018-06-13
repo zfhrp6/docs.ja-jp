@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358430"
 ---
 # <a name="multiple-active-result-sets-mars"></a>複数のアクティブな結果セット (MARS)
 複数のアクティブな結果セット (MARS : Multiple Active Result Set) は、複数のバッチを単一の接続で実行できる機能です。 従来のバージョンでは、単一の接続で同時に実行できるバッチは 1 つだけでした。 MARS で複数のバッチを実行することは、同時に操作を実行することではありません。  

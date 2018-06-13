@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362738"
 ---
 # <a name="sql-xml-column-values"></a>SQL XML 列値
 SQL Server では、`xml`データ型、および開発者の標準動作を使用してこの型を含む結果セットを取得できます、<xref:System.Data.SqlClient.SqlCommand>クラスです。 `xml` 列は、その他の列と同じようにして (<xref:System.Data.SqlClient.SqlDataReader> などに) 取得することができますが、その列の内容を XML として使用する場合は、<xref:System.Xml.XmlReader> を使用する必要があります。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356514"
 ---
 # <a name="how-to-add-modify-and-delete-entities-wcf-data-services"></a>方法: エンティティを追加、変更、および削除する (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クライアント ライブラリ、することができますを作成、更新、および内のオブジェクトに相当する操作を実行することによってデータ サービスでエンティティ データを削除、<xref:System.Data.Services.Client.DataServiceContext>です。 詳細については、次を参照してください。[データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)です。  

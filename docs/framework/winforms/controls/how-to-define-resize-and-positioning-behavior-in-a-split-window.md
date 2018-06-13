@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531636"
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>方法 : 分割ウィンドウでのサイズ変更および位置指定動作を定義する
 パネル、<xref:System.Windows.Forms.SplitContainer>コントロール役立つ中に適切にサイズ変更され、ユーザーが操作されます。 ただしがあるプログラムから分割線を制御する場合は、場所が配置されているしにどの程度まで移動できます。  
