@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216185"
 ---
 # <a name="contextual-keywords-c-reference"></a><span data-ttu-id="45d7a-102">コンテキスト キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="45d7a-102">Contextual Keywords (C# Reference)</span></span>
 <span data-ttu-id="45d7a-103">コンテキスト キーワードを使用して、コード内で特定の意味を付与することができます。ただし C# ではコンテキスト キーワードは予約語ではありません。</span><span class="sxs-lookup"><span data-stu-id="45d7a-103">A contextual keyword is used to provide a specific meaning in the code, but it is not a reserved word in C#.</span></span> <span data-ttu-id="45d7a-104">このセクションでは、次のコンテキスト キーワードを紹介します。</span><span class="sxs-lookup"><span data-stu-id="45d7a-104">The following contextual keywords are introduced in this section:</span></span>  

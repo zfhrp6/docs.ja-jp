@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539030"
 ---
 # <a name="advanced-ink-handling"></a><span data-ttu-id="28f98-102">高度なインク処理</span><span class="sxs-lookup"><span data-stu-id="28f98-102">Advanced Ink Handling</span></span>
 <span data-ttu-id="28f98-103">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]が付属しています、 <xref:System.Windows.Controls.InkCanvas>、収集して表示するインクをすぐに開始するアプリケーションに配置できる要素であるとします。</span><span class="sxs-lookup"><span data-stu-id="28f98-103">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ships with the <xref:System.Windows.Controls.InkCanvas>, and is an element you can put in your application to immediately start collecting and displaying ink.</span></span> <span data-ttu-id="28f98-104">ただし場合、<xref:System.Windows.Controls.InkCanvas>コントロールが、正常なレベルの制御を提供していない、独自のインクの収集とを使用してインクのレンダリング クラスをカスタマイズすることにより、高いレベルで制御を維持できます<xref:System.Windows.Input.StylusPlugIns>です。</span><span class="sxs-lookup"><span data-stu-id="28f98-104">However, if the <xref:System.Windows.Controls.InkCanvas> control does not provide a fine enough level of control, you can maintain control at a higher level by customizing your own ink collection and ink rendering classes using <xref:System.Windows.Input.StylusPlugIns>.</span></span>  

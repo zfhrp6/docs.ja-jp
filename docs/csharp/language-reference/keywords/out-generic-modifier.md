@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269615"
 ---
 # <a name="out-generic-modifier-c-reference"></a><span data-ttu-id="d92c7-102">out (ジェネリック修飾子) (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="d92c7-102">out (Generic Modifier) (C# Reference)</span></span>
 <span data-ttu-id="d92c7-103">ジェネリック型パラメーターの `out` キーワードは、型パラメーターが共変であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="d92c7-103">For generic type parameters, the `out` keyword specifies that the type parameter is covariant.</span></span> <span data-ttu-id="d92c7-104">`out` キーワードは、ジェネリック インターフェイスとデリゲートで使用できます。</span><span class="sxs-lookup"><span data-stu-id="d92c7-104">You can use the `out` keyword in generic interfaces and delegates.</span></span>  
