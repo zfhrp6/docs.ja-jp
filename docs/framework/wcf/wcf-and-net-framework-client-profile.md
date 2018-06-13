@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500979"
 ---
 # <a name="wcf-and-net-framework-client-profile"></a>WCF および .NET Framework のクライアント プロファイル
 [!INCLUDE[arrowhead](../../../includes/arrowhead-md.md)] は、完全版の .Net Framework の軽量バージョンで、フレームワーク全体を必要としないクライアント向けに設計されています。 クライアント フレームワークでは、Windows Communication Foundation のすべてがサポートされるわけではありません。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498988"
 ---
 # <a name="renaming-a-wcf-service"></a>WCF サービス名の変更
 このトピックでは、Windows Communication Foundation (WCF) サービスの名前を変更する方法について説明します。  

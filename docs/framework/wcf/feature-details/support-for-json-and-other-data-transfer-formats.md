@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497517"
 ---
 # <a name="support-for-json-and-other-data-transfer-formats"></a>JSON などのデータ転送形式のサポート
 JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX (Asynchronous JavaScript and XML) 対応の Web サービスとの間で少量のデータを高速に交換できる効率的なデータ エンコード形式です。  

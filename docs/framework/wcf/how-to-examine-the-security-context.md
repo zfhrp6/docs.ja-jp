@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499477"
 ---
 # <a name="how-to-examine-the-security-context"></a>方法 : セキュリティ コンテキストを調べる
 Windows Communication Foundation (WCF) サービスをプログラムするときにサービスのセキュリティ コンテキストでは、クライアントの資格情報とサービスで認証するために使用するクレームの詳細を確認することができます。 これは、<xref:System.ServiceModel.ServiceSecurityContext> クラスのプロパティを使用することで可能になります。  

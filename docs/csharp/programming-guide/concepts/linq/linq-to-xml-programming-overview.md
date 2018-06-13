@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339801"
 ---
 # <a name="linq-to-xml-programming-overview-c"></a>LINQ to XML プログラミングの概要 (C#)
 以下のトピックでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クラスに関する概要情報と、最も重要な 3 つのクラスに関する詳細情報について説明します。  

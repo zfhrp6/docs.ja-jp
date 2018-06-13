@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537753"
 ---
 # <a name="toolstripprogressbar-control-overview"></a>ToolStripProgressBar コントロールの概要
 <xref:System.Windows.Forms.ToolStripProgressBar>ラフティングとすべての表示機能を組み合わせた<xref:System.Windows.Forms.ToolStrip>の一般的なプロセスの追跡機能を持つコントロール。 A<xref:System.Windows.Forms.ToolStripProgressBar>によってホストされる最も通常<xref:System.Windows.Forms.StatusStrip>、によって頻繁に小さく、<xref:System.Windows.Forms.ToolStrip>です。  

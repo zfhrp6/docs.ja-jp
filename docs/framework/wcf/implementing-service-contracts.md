@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499376"
 ---
 # <a name="implementing-service-contracts"></a>サービス コントラクトの実装
 サービスは、1 つ以上のエンドポイントでクライアントが使用できる機能を公開するクラスです。 サービスを作成するには、Windows Communication Foundation (WCF) コントラクトを実装するクラスを記述します。 2 つの方法のいずれかでこれを行うことができます。 コントラクトを個別にインターフェイスとして定義し、そのインターフェイスを実装するクラスを作成できます。 または、クラスに <xref:System.ServiceModel.ServiceContractAttribute> 属性を配置し、サービスのクライアントが使用できるメソッドに <xref:System.ServiceModel.OperationContractAttribute> 属性を配置することによって、クラスとコントラクトを直接作成することもできます。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497413"
 ---
 # <a name="securing-services-and-clients"></a>サービスおよびクライアントのセキュリティ保護
 このセクションの情報は、Windows Communication Foundation (WCF) でのセキュリティのプログラミングについて説明します。 一般に、これには、システムが提供する適切なバインディングを選択すること、セキュリティ要素のプロパティを適切に設定すること、サービス側/クライアント側で使う資格情報の検索方法にまつわる、サービスの動作に関するプロパティを適切に設定することなどが含まれます。 ように、これらの手法はほとんどのシナリオでは、ほとんどのユーザーのセキュリティ要件をカバー[一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。 シナリオには、多くの機能が必要とする場合が初めて表示[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md); ソリューションが明らかなかどうかは、次を参照してください。[拡張セキュリティ](../../../../docs/framework/wcf/extending/extending-security.md)です。 作成する (またはとの相互運用) は豊富な要求を使用するシステムでは、トピックを参照してください。[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)です。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496839"
 ---
 # <a name="configuring-system-provided-bindings"></a>システムが提供するバインディングの構成
 バインディングにより、エンドポイントとの通信で使用する通信メカニズムが指定され、エンドポイントへの接続方法が示されます。 バインドは、どの Windows Communication Foundation (WCF) チャネルを階層化する必要な通信機能を提供するを定義する要素で構成されます。 バインディングには次の 3 種類の要素が含まれます。  

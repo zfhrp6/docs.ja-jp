@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544551"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-blocks-property"></a>方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する
 これらの例では、を介してフロー コンテンツ要素に対して実行できる一般的な操作の点を示しています、**ブロック**プロパティです。 このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.BlockCollection>です。 フロー コンテンツ要素で、その機能、**ブロック**プロパティが含まれます。  

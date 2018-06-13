@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498216"
 ---
 # <a name="transport-security"></a>トランスポート セキュリティ
 Windows Communication Foundation (WCF) でのトランスポート セキュリティは、選択したバインディングによって異なります。 バインディングが実装するトランスポートによって実際のセキュリティ機構が決まります。 このセクションの各トピックでは、実装される機構とそのオプションについて説明します。  

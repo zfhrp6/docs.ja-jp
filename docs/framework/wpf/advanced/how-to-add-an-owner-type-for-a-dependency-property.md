@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542777"
 ---
 # <a name="how-to-add-an-owner-type-for-a-dependency-property"></a>方法 : 依存関係プロパティの所有者の種類を追加する
 この例では、異なる種類の登録されている依存関係プロパティの所有者としてクラスを追加する方法を示します。 これには、手順を実行して、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]リーダーとプロパティ システムの両方のプロパティの追加の所有者として、クラスを認識することができます。 必要に応じて、所有者として追加すると、型固有のメタデータを提供する追加のクラスができます。  

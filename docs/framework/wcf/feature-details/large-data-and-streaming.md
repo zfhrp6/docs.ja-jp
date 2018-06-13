@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496563"
 ---
 # <a name="large-data-and-streaming"></a>大規模データとストリーミング
 Windows Communication Foundation (WCF) は、XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  

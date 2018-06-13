@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496972"
 ---
 # <a name="how-to-create-a-federated-client"></a>方法 : フェデレーション クライアントを作成する
 Windows Communication Foundation (WCF) でのクライアントの作成、*フェデレーション サービス*3 つの主要な手順で構成されます。  

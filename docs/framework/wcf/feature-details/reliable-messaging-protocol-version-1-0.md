@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497053"
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>信頼できるメッセージング プロトコル バージョン 1.0
 このトピックでは、Windows Communication Foundation (WCF) の実装の詳細を説明 Ws-reliable メッセージングの 2005 年 2 月 (バージョン 1.0) プロトコル、HTTP トランスポートを使用して相互運用のために必要です。 WCF では、制約とこのトピックで説明されている説明 Ws-reliablemessaging 仕様に従います。 WS-ReliableMessaging バージョン 1.0 プロトコルは、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] 以降に実装されています。  

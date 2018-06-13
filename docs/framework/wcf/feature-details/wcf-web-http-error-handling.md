@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498486"
 ---
 # <a name="wcf-web-http-error-handling"></a>WCF Web HTTP エラー処理
 Windows Communication Foundation (WCF) Web HTTP エラー処理を使用すると、HTTP ステータス コードを指定し、操作 (たとえば、XML または JSON) と同じ形式を使用してエラーの詳細を返す WCF Web HTTP サービスからエラーが返されることができます。  

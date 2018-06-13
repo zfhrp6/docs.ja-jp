@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498063"
 ---
 # <a name="supported-deployment-scenarios"></a>サポートされている配置シナリオ
 部分的に信頼されたアプリケーションで使用できるサポートされる Windows Communication Foundation (WCF) 機能のサブセットは、WCF を使用するためのすべてではなく、一部のシナリオの要件を満たす設計されています。 WCF がインターネット規模の要件を満たしているサーバーで、サード パーティ製のアプリケーションを実行しているホスティング プロバイダーが共有に、[!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]中程度の信頼アクセス許可がセキュリティ上の理由を設定します。 クライアントでは、WCF 部分信頼サポートするものではなどの配置テクノロジの要件を満たす[ClickOnce 配置](http://go.microsoft.com/fwlink/?LinkId=83712)または[!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]の XAML ブラウザー アプリケーション テクノロジは、シームレスかつ安全に許可します。信頼されていないサイトからのデスクトップ アプリケーションを展開します。  

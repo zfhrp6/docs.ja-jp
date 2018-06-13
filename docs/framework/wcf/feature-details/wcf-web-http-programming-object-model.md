@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507376"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>WCF Web HTTP プログラミング オブジェクト モデル
 WCF WEB HTTP プログラミング モデルでは、SOAP は必要ありません基本的な HTTP 要求を通じて Windows Communication Foundation (WCF) Web サービスの公開をすることができます。 WCF WEB HTTP プログラミング モデルは、既存の WCF 拡張モデルが構築されます。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  

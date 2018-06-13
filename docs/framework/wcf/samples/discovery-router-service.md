@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500335"
 ---
 # <a name="discovery-router-service"></a>探索ルーター サービス
 このサンプルでは、探索メッセージを別のエンドポイントに転送する方法を示します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502833"
 ---
 # <a name="http-acknowledgement-channel"></a>HTTP 受信確認チャネル
 HTTP 受信確認チャネルは、一方向メッセージング パターンを変える階層チャネルの例です。これにより、サービスでは、受信確認を自動的に送信するのではなく受信メッセージを承認または拒否できるようになります。 また、HTTP 受信確認チャネルにより、サービスでは、メッセージが処理されるというビジネス レベルの保証がなされるまで受信確認を遅らせることができます。  

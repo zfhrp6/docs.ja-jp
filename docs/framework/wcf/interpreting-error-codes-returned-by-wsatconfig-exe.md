@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507362"
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>wsatConfig.exe によって返されたエラー コードの解釈
 ここでは、WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe) によって生成されるすべてのエラー コードと、実行する必要のある推奨アクションを示します。  

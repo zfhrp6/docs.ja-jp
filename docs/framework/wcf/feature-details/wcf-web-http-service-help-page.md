@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500953"
 ---
 # <a name="wcf-web-http-service-help-page"></a>WCF Web HTTP サービスのヘルプ ページ
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、WCF WEB HTTP サービスの自動的なヘルプ ページが用意されています。 このヘルプ ページには、各操作の説明、要求と応答の形式、およびスキーマが一覧表示されます。 この機能は、既定では無効になっています。 ときにユーザー WCF WEB HTTP サービスを参照し、追加"/help"例については、URL の最後にログオンhttp://localhost:8000/Customers/Help、ヘルプ ページが、次が表示されるようにします。  

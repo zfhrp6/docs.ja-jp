@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561749"
 ---
 # <a name="how-to-set-the-tile-size-for-a-tilebrush"></a>方法 : TileBrush のタイル サイズを設定する
 この例のタイルのサイズを設定する方法を示しています、<xref:System.Windows.Media.TileBrush>です。 既定では、<xref:System.Windows.Media.TileBrush>完全に領域に描画している 1 つのタイルが生成されます。 この動作をオーバーライドするには、設定、<xref:System.Windows.Media.TileBrush.Viewport%2A>と<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティです。  

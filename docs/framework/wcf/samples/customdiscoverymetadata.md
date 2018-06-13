@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501050"
 ---
 # <a name="customdiscoverymetadata"></a>CustomDiscoveryMetadata
 このサンプルでは、サービスによって公開される探索可能なエンドポイントの探索メタデータにカスタム XML メタデータを挿入する方法を説明します。 次に、クライアントがサービスを検索してこのカスタム データを抽出する方法を示します。 このサンプルは、2 つのプロジェクト (サービスとクライアント) で構成されます。  

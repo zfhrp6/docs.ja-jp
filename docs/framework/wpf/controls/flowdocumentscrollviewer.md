@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550827"
 ---
 # <a name="flowdocumentscrollviewer"></a>FlowDocumentScrollViewer
 <xref:System.Windows.Controls.FlowDocumentScrollViewer>コントロールを使用して、表示<xref:System.Windows.Documents.FlowDocument>スクロール コンテナー内のコンテンツ。 比較して<xref:System.Windows.Controls.FlowDocumentPageViewer>、ページごとにコンテンツを表示します。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537721"
 ---
 # <a name="how-to-stretch-a-toolstriptextbox-to-fill-the-remaining-width-of-a-toolstrip-windows-forms"></a>方法 : ToolStripTextBox を拡大して ToolStrip の残りの幅に合わせる (Windows フォーム)
 設定すると、<xref:System.Windows.Forms.ToolStrip.Stretch%2A>のプロパティ、<xref:System.Windows.Forms.ToolStrip>に制御を`true`コントロールのコンテナーをエンド ツー エンドで塗りつぶし、コンテナーのサイズを変更すると、サイズ変更します。 この構成では有用なことなど、コントロールでは、項目をストレッチする、<xref:System.Windows.Forms.ToolStripTextBox>空き領域の塗りつぶし、およびコントロールのサイズを変更するとサイズ変更します。 この拡大役に立ちます、たとえば、外観と Microsoft® Internet Explorer のアドレス バーのような動作を実現したい場合。  

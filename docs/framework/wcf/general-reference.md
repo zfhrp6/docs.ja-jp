@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498229"
 ---
 # <a name="general-reference"></a>一般的なリファレンス
 セクション[ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) Windows Communication Foundation (WCF) クライアントとサービスの構成に使用される要素について説明します。

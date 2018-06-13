@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509119"
 ---
 # <a name="stand-alone-json-serialization"></a>スタンドアロン JSON のシリアル化
 JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで実行される JavaScript コードで使用するために特別に設計されたデータ形式です。 これは、Windows Communication Foundation (WCF) を作成する ASP.NET AJAX サービスで使用される既定のデータ形式です。  

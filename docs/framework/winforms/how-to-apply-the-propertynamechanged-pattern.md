@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536747"
 ---
 # <a name="how-to-apply-the-propertynamechanged-pattern"></a>方法 : PropertyNameChanged パターンを適用する
 次のコード例を適用する方法を示しています、 *PropertyName*Changed パターンをカスタム コントロールです。 Windows フォーム データ バインディング エンジンで使用されるカスタム コントロールを実装する場合は、このパターンを適用します。  

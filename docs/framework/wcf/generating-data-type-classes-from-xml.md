@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498668"
 ---
 # <a name="generating-data-type-classes-from-xml"></a>XML からのデータ型クラスの生成
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] には、XML からデータ型クラスを生成するための新しい機能があります。 このトピックでは、自動的に、.NET ブログの RSS フィードのデータ型を生成する方法について説明します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505168"
 ---
 # <a name="wcf-web-http-formatting"></a>WCF Web HTTP 形式
 WCF Web HTTP プログラミング モデルでは、サービス操作で返す応答の最適な形式を動的に判断できます。 適切な形式を判断するための方法として、自動と明示的の 2 つがサポートされます。  

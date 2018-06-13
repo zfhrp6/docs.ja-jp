@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545512"
 ---
 # <a name="how-to-return-from-a-page-function"></a>方法 : ページ関数から戻る
 この例では、ページ関数から結果を返す方法を示します。  

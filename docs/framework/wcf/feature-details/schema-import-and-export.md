@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497283"
 ---
 # <a name="schema-import-and-export"></a>スキーマのインポートとエクスポート
 Windows Communication Foundation (WCF) には新しいシリアル化エンジンが含まれています、<xref:System.Runtime.Serialization.DataContractSerializer>です。 `DataContractSerializer` は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 このシリアライザー自体だけでなく WCF には、関連するスキーマ インポート機構とスキーマ エクスポート機構が含まれています。 *スキーマ*シリアライザーが生成するか、デシリアライザーがアクセスできる、または XML の形状の正式かつ正確であり、コンピューターが判読できる説明を示します。 WCF は、多数のサードパーティ プラットフォームと相互運用広くスキーマ表現として、World Wide Web Consortium (W3C) XML スキーマ定義言語 (XSD) を使用します。  

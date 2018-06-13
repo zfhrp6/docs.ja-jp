@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496959"
 ---
 # <a name="reliable-messaging-protocol-version-11"></a>信頼できるメッセージング プロトコル バージョン 1.1
 このトピックでは、Windows Communication Foundation (WCF) の実装の詳細を説明の Ws-reliablemessaging 2007/02 (バージョン 1.1) プロトコルは HTTP トランスポートを使用して相互運用のために必要なです。 WCF では、制約とこのトピックで説明した説明は、Ws-reliablemessaging 仕様に従います。 以降では、Ws-reliablemessaging 1.1 プロトコルを実装することに注意してください、[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]です。  

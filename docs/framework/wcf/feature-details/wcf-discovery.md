@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497959"
 ---
 # <a name="wcf-discovery"></a>WCF Discovery
 Windows Communication Foundation (WCF) では、WS 探索プロトコルを使用して、相互運用可能な方法で実行時に検出するサービスを有効にするのには、サポートを提供します。 WCF サービスは、マルチキャスト メッセージを使用してネットワークまたは探索プロキシ サーバーには、その可用性をアナウンスできます。 クライアント アプリケーションは、ネットワークまたは探索プロキシ サーバーを検索して、一連の基準を満たすサービスを見つけることができます。 このセクションのトピックでは、この機能の概要を示し、そのプログラミング モデルについて説明します。  

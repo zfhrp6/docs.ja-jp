@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499402"
 ---
 # <a name="using-a-data-contract-resolver"></a>データ コントラクト リゾルバーの使用
 データ コントラクト リゾルバーでは、既知の型を動的に構成できます。 データ コントラクトが予期しない型をシリアル化または逆シリアル化するときには、既知の型が必要です。 既知の型の詳細については、次を参照してください。[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。 通常、既知の型は静的に指定されます。 これは、操作を実装する間に操作が受け取る可能性のあるすべての型を把握しておく必要があることを意味します。 これが当てはまらず、既知の型を動的に指定できることが重要である場合もあります。  

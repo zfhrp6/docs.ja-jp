@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499129"
 ---
 # <a name="how-to-host-a-wcf-service-written-with-net-framework-35-in-iis-running-under-net-framework-4"></a>.NET Framework 4 で実行されている IIS 内の .NET Framework 3.5 で作成された WCF サービスをホストする方法
 記述された Windows Communication Foundation (WCF) サービスをホストする場合に[!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)]実行しているコンピューターで[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]、受け取ることがあります、<xref:System.ServiceModel.ProtocolException>を次のテキスト。  

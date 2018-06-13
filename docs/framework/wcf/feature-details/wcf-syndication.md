@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499168"
 ---
 # <a name="wcf-syndication"></a>WCF 配信
 Windows Communication Foundation (WCF) では、Atom、RSS、またはその他のカスタム形式で配信フィードを簡単に操作をサポートすると、読み取り、作成し、サービス エンドポイントで公開することができますを提供します。 このセクションのトピックでは、配信用のこのプログラミング モデルについて詳細に説明します。  

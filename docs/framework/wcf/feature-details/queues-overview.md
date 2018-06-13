@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497014"
 ---
 # <a name="queues-overview"></a>キューの概要
 ここでは、キューを使った通信の概要とその基本概念を解説します。 以降のセクションでは、ここで説明されている、キューの概念が Windows Communication Foundation (WCF) を指す方法の詳細に移動します。  

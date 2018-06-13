@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509080"
 ---
 # <a name="security-considerations-for-data"></a>セキュリティに関するデータの考慮事項
 Windows Communication Foundation (WCF) でのデータを扱う場合、脅威の分類の数を検討する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 WCF には、これらの脅威を軽減するためのツールが用意されています。  

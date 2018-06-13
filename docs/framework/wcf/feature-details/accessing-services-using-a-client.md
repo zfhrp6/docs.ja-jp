@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495997"
 ---
 # <a name="accessing-services-using-a-client"></a>クライアントを使用したサービスへのアクセス
 クライアント アプリケーションは、作成、構成、およびサービスと通信する WCF クライアントまたはチャネル オブジェクトを使用する必要があります。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)トピックは、オブジェクトと基本的なチャネルとクライアント オブジェクトを作成すると、それらを使用して関連する手順の概要を説明します。  

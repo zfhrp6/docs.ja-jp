@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496988"
 ---
 # <a name="mapping-between-json-and-xml"></a>JSON と XML 間のマッピング
 <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> によって作成されるリーダーとライターには、JSON (JavaScript Object Notation) コンテンツでの XML API が備わっています。 JSON は、JavaScript のオブジェクト リテラルのサブセットを使用してデータをエンコードします。 リーダーとライターがこのファクトリによって生成されるも使用するときに JSON コンテンツが使用する Windows Communication Foundation (WCF) アプリケーションによって送信または受信、<xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>または<xref:System.ServiceModel.WebHttpBinding>です。  

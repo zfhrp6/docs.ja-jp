@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537074"
 ---
 # <a name="keyboard-input-in-a-windows-forms-application"></a>Windows フォーム アプリケーションにおけるキーボード入力
 Windows フォームでは、標準のキーボードおよびイベントを特定のキー入力に応答することは、傍受、変更、およびアプリケーションでは、フォーム、キーの押下を消費およびレベルを制御するための方法も含まれます。  

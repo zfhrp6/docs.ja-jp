@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499312"
 ---
 # <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a>方法 : Windows Communication Foundation サービス コントラクトを実装する
 これは、2 番目の基本的な Windows Communication Foundation (WCF) サービスとサービスを呼び出すことができるクライアントを作成するために必要な 6 つのタスクです。 6 つのすべてのタスクの概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  

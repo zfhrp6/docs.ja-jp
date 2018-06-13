@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549436"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>WPF と Direct3D9 の相互運用性
 Windows Presentation Foundation (WPF) アプリケーションでは、Direct3D9 コンテンツを含めることができます。 このトピックでは、WPF と効率的に相互運用できるように、Direct3D9 コンテンツを作成する方法について説明します。  

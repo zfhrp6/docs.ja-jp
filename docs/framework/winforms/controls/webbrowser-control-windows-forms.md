@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538594"
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser コントロール (Windows フォーム)
 Windows フォーム`WebBrowser`コントロールは、Web ページをホストし、Web 参照をアプリケーションに機能を提供します。  

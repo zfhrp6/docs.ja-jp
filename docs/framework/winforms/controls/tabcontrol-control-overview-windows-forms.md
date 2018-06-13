@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536681"
 ---
 # <a name="tabcontrol-control-overview-windows-forms"></a>TabControl コントロールの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.TabControl> は、ノートの仕切りや書類キャビネットのフォルダー セットのラベルに似た、複数のタブを表示します。 タブには画像やその他のコントロールを含めることができます。 タブ コントロールは、Windows オペレーティング システムのコントロール パネルの表示プロパティなどの多くの場所に表示される複数のページ ダイアログ ボックスの種類を生成するために使用できます。 さらに、<xref:System.Windows.Forms.TabControl>関連するプロパティのグループの設定に使用されるプロパティ ページの作成に使用できます。  

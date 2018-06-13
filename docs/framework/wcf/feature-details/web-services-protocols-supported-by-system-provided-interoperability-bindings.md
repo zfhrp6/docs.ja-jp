@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508736"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル
 Windows Communication Foundation (WCF) は、一連の Web サービス仕様と呼ばれる仕様をサポートする Web サービスと相互運用するために作成されています。 WCF サービスの相互運用性のベスト プラクティスに関する構成を簡略化するには次の 3 つの相互運用可能なシステム指定のバインディングが導入されています: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>、 <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>、および<xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>です。 WCF には Advancement の構造化情報標準 (OASIS) 標準の組織と相互運用性には 1 つの相互運用可能なシステム指定のバインディングが含まれています:<xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>です。 WCF にはメタデータの公開には 2 つの相互運用可能なシステム指定のバインディングが含まれています: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)と[ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)です。 このトピックでは、システム指定の相互運用可能なバインディングがサポートする仕様を示します。  

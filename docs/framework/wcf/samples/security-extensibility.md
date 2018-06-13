@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501037"
 ---
 # <a name="security-extensibility"></a>セキュリティ拡張
 このセクションには、カスタム セキュリティ Windows Communication Foundation (WCF) を示すサンプルが含まれています。  
