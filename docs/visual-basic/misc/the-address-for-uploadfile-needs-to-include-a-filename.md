@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638486"
 ---
 # <a name="the-address-for-uploadfile-needs-to-include-a-filename"></a>UploadFile のアドレスにはファイル名が含まれていなければなりません
 `UploadFile` メソッドでファイルをアップロードする場合、アップロード先のパスにファイル名を指定する必要があります。  

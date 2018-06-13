@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585650"
 ---
 # <a name="error-saving-temporary-win32-resource-file-39ltfilenamegt39-lterror-messagegt"></a>一時 Win32 リソース ファイルを保存中にエラー &#39; &lt;filename&gt;&#39;:&lt;エラー メッセージ&gt;
 Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出します。 リンカーが、インメモリ リソースの書き込み先となるファイルの名前の取得エラーを報告しています。  

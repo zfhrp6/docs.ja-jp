@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598856"
 ---
 # <a name="statement-is-not-valid-inside-a-methodmultiline-lambda"></a>メソッドや複数行のラムダの内部では有効でないステートメントです。
 ステートメントが内で無効な`Sub`、 `Function`、プロパティ`Get`、またはプロパティ`Set`プロシージャです。 モジュールまたはクラス レベルでは、いくつかのステートメントを配置できます。 他のユーザーなど`Option Strict`、する必要があります名前空間レベルであるし、その他のすべての宣言の前にします。  

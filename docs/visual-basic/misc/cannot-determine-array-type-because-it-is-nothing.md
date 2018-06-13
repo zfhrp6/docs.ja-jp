@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637557"
 ---
 # <a name="cannot-determine-array-type-because-it-is-nothing"></a>配列が Nothing であるため、配列型を指定できません
 `Nothing`の値に設定されているため、配列の型を判断できません。  
