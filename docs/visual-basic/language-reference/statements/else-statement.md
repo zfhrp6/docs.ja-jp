@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597687"
 ---
 # <a name="else-statement-visual-basic"></a><span data-ttu-id="305a2-102">Else ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="305a2-102">Else Statement (Visual Basic)</span></span>
 <span data-ttu-id="305a2-103">実行またはステートメントのない他の条件付きグループが実行またはコンパイルされた場合にコンパイルするステートメントのグループが導入されています。</span><span class="sxs-lookup"><span data-stu-id="305a2-103">Introduces a group of statements to be run or compiled if no other conditional group of statements has been run or compiled.</span></span>  

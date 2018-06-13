@@ -14,6 +14,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172111"
 ---
 # <a name="delegate-c-reference"></a><span data-ttu-id="49a07-102">delegate (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="49a07-102">delegate (C# Reference)</span></span>
 <span data-ttu-id="49a07-103">デリゲート型の宣言は、メソッド シグネチャに似ています。</span><span class="sxs-lookup"><span data-stu-id="49a07-103">The declaration of a delegate type is similar to a method signature.</span></span> <span data-ttu-id="49a07-104">戻り値 1 つのほか、任意の型のパラメーターをいくつでも指定することができます。</span><span class="sxs-lookup"><span data-stu-id="49a07-104">It has a return value and any number of parameters of any type:</span></span>  

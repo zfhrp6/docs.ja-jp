@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575495"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a><span data-ttu-id="41215-102">同期メソッドの非同期呼び出し</span><span class="sxs-lookup"><span data-stu-id="41215-102">Calling Synchronous Methods Asynchronously</span></span>
 <span data-ttu-id="41215-103">.NET Framework では、すべてのメソッドを非同期的に呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="41215-103">The .NET Framework enables you to call any method asynchronously.</span></span> <span data-ttu-id="41215-104">これを行うには、呼び出すメソッドと同じシグネチャを持つデリゲートを定義します。これにより、共通言語ランタイムによって、適切なシグネチャを持つ、このデリゲートの `BeginInvoke` メソッドと `EndInvoke` メソッドが自動的に定義されます。</span><span class="sxs-lookup"><span data-stu-id="41215-104">To do this you define a delegate with the same signature as the method you want to call; the common language runtime automatically defines `BeginInvoke` and `EndInvoke` methods for this delegate, with the appropriate signatures.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592367"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a><span data-ttu-id="d626b-102">PLINQ および TPL 用のカスタム パーティショナー</span><span class="sxs-lookup"><span data-stu-id="d626b-102">Custom Partitioners for PLINQ and TPL</span></span>
 <span data-ttu-id="d626b-103">データ ソース上で操作を並列化する場合の必須の手順の 1 つは、ソースを複数のスレッドによって同時にアクセスできる複数のセクションに*パーティション分割*することです。</span><span class="sxs-lookup"><span data-stu-id="d626b-103">To parallelize an operation on a data source, one of the essential steps is to *partition* the source into multiple sections that can be accessed concurrently by multiple threads.</span></span> <span data-ttu-id="d626b-104">PLINQ およびタスク並列ライブラリ (TPL: Task Parallel Library) には、並列クエリまたは <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループを記述するときに透過的に機能する既定のパーティショナーが用意されています。</span><span class="sxs-lookup"><span data-stu-id="d626b-104">PLINQ and the Task Parallel Library (TPL) provide default partitioners that work transparently when you write a parallel query or <xref:System.Threading.Tasks.Parallel.ForEach%2A> loop.</span></span> <span data-ttu-id="d626b-105">より高度なシナリオでは、独自のパーティショナーをプラグインできます。</span><span class="sxs-lookup"><span data-stu-id="d626b-105">For more advanced scenarios, you can plug in your own partitioner.</span></span>  

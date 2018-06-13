@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456789"
 ---
 # <a name="1432---concurrentsessionsratio"></a><span data-ttu-id="e8acc-102">1432 - ConcurrentSessionsRatio</span><span class="sxs-lookup"><span data-stu-id="e8acc-102">1432 - ConcurrentSessionsRatio</span></span>
 ## <a name="properties"></a><span data-ttu-id="e8acc-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e8acc-103">Properties</span></span>  

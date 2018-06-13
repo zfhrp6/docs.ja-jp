@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599884"
 ---
 # <a name="argument-cannot-be-less-than-zero"></a><span data-ttu-id="f80fd-102">引数を 0 未満にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="f80fd-102">Argument cannot be less than zero</span></span>
 <span data-ttu-id="f80fd-103">0 未満の値が指定されていますが、引数を 0 未満にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="f80fd-103">A value that is less than zero has been supplied, but the argument cannot be less than zero.</span></span>  

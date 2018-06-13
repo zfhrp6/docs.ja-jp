@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573660"
 ---
 # <a name="nested-types"></a><span data-ttu-id="13c60-102">入れ子にされた型</span><span class="sxs-lookup"><span data-stu-id="13c60-102">Nested Types</span></span>
 <span data-ttu-id="13c60-103">入れ子になった型は、それを囲む型と呼ばれる別の種類のスコープ内で定義された型です。</span><span class="sxs-lookup"><span data-stu-id="13c60-103">A nested type is a type defined within the scope of another type, which is called the enclosing type.</span></span> <span data-ttu-id="13c60-104">入れ子になった型は、その外側の型のすべてのメンバーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="13c60-104">A nested type has access to all members of its enclosing type.</span></span> <span data-ttu-id="13c60-105">たとえば、それを囲む型のすべての先祖で定義されたフィールドを保護して、それを囲む型で定義されてプライベート フィールドにアクセス権を持ちます。</span><span class="sxs-lookup"><span data-stu-id="13c60-105">For example, it has access to private fields defined in the enclosing type and to protected fields defined in all ascendants of the enclosing type.</span></span>  

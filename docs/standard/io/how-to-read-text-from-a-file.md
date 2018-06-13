@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574531"
 ---
 # <a name="how-to-read-text-from-a-file"></a><span data-ttu-id="f5cd7-102">方法 : ファイルからテキストを読み取る</span><span class="sxs-lookup"><span data-stu-id="f5cd7-102">How to: Read Text from a File</span></span>
 <span data-ttu-id="f5cd7-103">次に、.NET デスクトップ アプリを使用してテキスト ファイルから同期でテキストを読み取る方法と非同期でテキストを読み取る方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="f5cd7-103">The following examples show how to read text synchronously and asynchronously from a text file using .NET for desktop apps.</span></span> <span data-ttu-id="f5cd7-104">どちらの例でも、<xref:System.IO.StreamReader> クラスのインスタンスを作成する場合に、ファイルの相対パスまたは絶対パスを指定します。</span><span class="sxs-lookup"><span data-stu-id="f5cd7-104">In both examples, when you create the instance of the <xref:System.IO.StreamReader> class, you provide the relative or absolute path to the file.</span></span> <span data-ttu-id="f5cd7-105">次の例では、TestFile.txt という名前のファイルがアプリケーションと同じフォルダーにあることを前提とします。</span><span class="sxs-lookup"><span data-stu-id="f5cd7-105">The following examples assume that the file named TestFile.txt is in the same folder as the application.</span></span>  

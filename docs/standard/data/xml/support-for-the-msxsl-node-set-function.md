@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570545"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a><span data-ttu-id="c7b5d-102">msxsl:node-set() 関数のサポート</span><span class="sxs-lookup"><span data-stu-id="c7b5d-102">Support for the msxsl:node-set() Function</span></span>
 <span data-ttu-id="c7b5d-103">`msxsl:node-set` 関数を使用すると、結果ツリー フラグメントをノード セットに変換できます。</span><span class="sxs-lookup"><span data-stu-id="c7b5d-103">The `msxsl:node-set` function enables you to convert a result tree fragment into a node set.</span></span> <span data-ttu-id="c7b5d-104">結果として得られるノード セットには、常に単一のノードが含まれています。また、このノード セットは、常にそのツリーのルート ノードです。</span><span class="sxs-lookup"><span data-stu-id="c7b5d-104">The resulting node set always contains a single node and is the root node of the tree.</span></span>  

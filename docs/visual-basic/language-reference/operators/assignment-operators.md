@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600715"
 ---
 # <a name="assignment-operators-visual-basic"></a><span data-ttu-id="2c497-102">代入演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c497-102">Assignment Operators (Visual Basic)</span></span>
 <span data-ttu-id="2c497-103">Visual Basic で定義された代入演算子を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2c497-103">The following are the assignment operators defined in Visual Basic.</span></span>  

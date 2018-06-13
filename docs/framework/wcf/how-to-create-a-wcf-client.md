@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806274"
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a><span data-ttu-id="e855c-102">方法 : Windows Communication Foundation クライアントを作成する</span><span class="sxs-lookup"><span data-stu-id="e855c-102">How to: Create a Windows Communication Foundation Client</span></span>
 <span data-ttu-id="e855c-103">これは、Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクのうちの 4 番目です。</span><span class="sxs-lookup"><span data-stu-id="e855c-103">This is the fourth of six tasks required to create a Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="e855c-104">タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="e855c-104">For an overview of all six of the tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.</span></span>  

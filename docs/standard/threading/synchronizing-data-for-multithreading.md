@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591532"
 ---
 # <a name="synchronizing-data-for-multithreading"></a><span data-ttu-id="7b328-102">マルチスレッド処理のためのデータの同期</span><span class="sxs-lookup"><span data-stu-id="7b328-102">Synchronizing Data for Multithreading</span></span>
 <span data-ttu-id="7b328-103">複数のスレッドが同じオブジェクトのプロパティとメソッドを呼び出す場合は、これらの呼び出しを同期することが重要です。</span><span class="sxs-lookup"><span data-stu-id="7b328-103">When multiple threads can make calls to the properties and methods of a single object, it is critical that those calls be synchronized.</span></span> <span data-ttu-id="7b328-104">同期しないと、1 つのスレッドが行っていることを別のスレッドが中断し、オブジェクトが無効な状態になってしまう可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7b328-104">Otherwise one thread might interrupt what another thread is doing, and the object could be left in an invalid state.</span></span> <span data-ttu-id="7b328-105">メンバーがこのように中断されないように保護されているクラスを、スレッドセーフと呼びます。</span><span class="sxs-lookup"><span data-stu-id="7b328-105">A class whose members are protected from such interruptions is called thread-safe.</span></span>  

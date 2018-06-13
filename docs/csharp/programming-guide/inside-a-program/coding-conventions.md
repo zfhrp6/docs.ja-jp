@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336938"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a><span data-ttu-id="16bc5-102">C# のコーディング規則 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="16bc5-102">C# Coding Conventions (C# Programming Guide)</span></span>
  <span data-ttu-id="16bc5-103">コーディング規則には、次の目的があります。</span><span class="sxs-lookup"><span data-stu-id="16bc5-103">Coding conventions serve the following purposes:</span></span>  

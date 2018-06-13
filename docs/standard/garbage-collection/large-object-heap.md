@@ -16,6 +16,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457402"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a><span data-ttu-id="c2542-102">Windows システムの大きなオブジェクト ヒープ</span><span class="sxs-lookup"><span data-stu-id="c2542-102">The large object heap on Windows systems</span></span>
 

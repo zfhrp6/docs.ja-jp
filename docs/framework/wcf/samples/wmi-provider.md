@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807307"
 ---
 # <a name="wmi-provider"></a><span data-ttu-id="99c29-102">WMI プロバイダー</span><span class="sxs-lookup"><span data-stu-id="99c29-102">WMI Provider</span></span>
 <span data-ttu-id="99c29-103">このサンプルでは、実行時に Windows Communication Foundation (WCF) サービスから WCF に組み込まれている Windows Management Instrumentation (WMI) プロバイダーを使用してデータを収集する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="99c29-103">This sample demonstrates how to gather data from Windows Communication Foundation (WCF) services at runtime by using the Windows Management Instrumentation (WMI) provider that is built into WCF.</span></span> <span data-ttu-id="99c29-104">また、このサンプルでは、ユーザー定義の WMI オブジェクトをサービスに追加する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="99c29-104">Also, this sample demonstrates how to add a user-defined WMI object to a service.</span></span> <span data-ttu-id="99c29-105">サンプル用の WMI プロバイダーをアクティブ化、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)からデータを収集する方法を説明し、`ICalculator`実行時にサービス。</span><span class="sxs-lookup"><span data-stu-id="99c29-105">The sample activates the WMI provider for the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and demonstrates how to gather data from the `ICalculator` service at runtime.</span></span>  

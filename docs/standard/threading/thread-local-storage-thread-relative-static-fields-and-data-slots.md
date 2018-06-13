@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589855"
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a><span data-ttu-id="77cdc-102">スレッド ローカル ストレージ : スレッド相対静的フィールドとデータ スロット</span><span class="sxs-lookup"><span data-stu-id="77cdc-102">Thread Local Storage: Thread-Relative Static Fields and Data Slots</span></span>
 <span data-ttu-id="77cdc-103">1 つのスレッドとアプリケーション ドメインに固有のデータを格納するには、マネージ スレッド ローカル ストレージ (TLS: Thread Local Storage) を使用します。</span><span class="sxs-lookup"><span data-stu-id="77cdc-103">You can use managed thread local storage (TLS) to store data that is unique to a thread and application domain.</span></span> <span data-ttu-id="77cdc-104">.NET Framework は、マネージ TLS の使用に関して、スレッド相対静的フィールドとデータ スロットという 2 つの機構を備えています。</span><span class="sxs-lookup"><span data-stu-id="77cdc-104">The .NET Framework provides two ways to use managed TLS: thread-relative static fields and data slots.</span></span>  
