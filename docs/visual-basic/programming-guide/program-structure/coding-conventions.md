@@ -36,7 +36,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
 -   タブを空白として挿入し、4 文字インデントによるスマート インデントを使用します。  
   
--   使用して**かなりコードのフォーマット の一覧表示する**コード エディターでコードを書式設定を変更します。 詳細については、次を参照してください。[オプション、[テキスト エディター]、基本 (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic)です。  
+-   コード エディターでコードの書式を再整形するときは**コードの再フォーマット**を使用します。 詳細については、次を参照してください。[オプション、[テキスト エディター]、基本 (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic)です。  
   
 -   1 つの行には 1 つのステートメントのみを記述します。 Visual Basic の行区切り記号 (:) は使用しないでください。  
   
@@ -44,7 +44,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
 -   1 つの行には 1 つの宣言のみを記述します。  
   
--   場合**かなりコードのフォーマット の一覧表示する**しない形式継続行に自動的に、手動でインデント継続行 1 タブ ストップ。 ただし、リストの項目は常に左揃えにします。  
+-   **コードの再フォーマット**が自動で行継続を整形しないなら、手動で継続行を1個のタブ ストップでインデントします。 ただし、リストの項目は常に左揃えにします。  
   
     ```  
     a As Integer,  
@@ -63,7 +63,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
      [!code-vb[VbVbalrGuidelines#2](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_1.vb)]  
   
--   アスタリスク (*) を整形したブロックでコメントを囲まないようにします。  
+-   整形されたアスタリスク (*) のブロックでコメントを囲まないようにします。  
   
 ## <a name="program-structure"></a>プログラムの構造  
   
@@ -157,7 +157,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
      [!code-vb[VbVbalrGuidelines#26](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_18.vb)]  
   
--   `Nothing` メソッドを呼び出す前にイベントが `RaiseEvent` (null) かどうか確認しないようにします。 `RaiseEvent` は、イベントを発生させる前に `Nothing` かどうか確認します。  
+-   `RaiseEvent` メソッドを呼び出す前にイベントが `Nothing` (null) かどうか確認しないようにします。 `RaiseEvent` は、イベントを発生させる前に `Nothing` かどうか確認します。  
   
 ### <a name="using-shared-members"></a>共有メンバーの使用  
  `Shared` メンバーの呼び出しにはクラス名を使用し、インスタンス変数からは行わないようにします。  
@@ -201,7 +201,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
      [!code-vb[VbVbalrGuidelines#33](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_25.vb)]  
   
--   `Join` 句を使用して暗黙的に結合操作を定義する代わりに、`Where` 句を使用して明示的に結合操作を定義します。  
+-   `Where` 句を使用して暗黙的に結合操作を定義する代わりに、`Join` 句を使用して明示的に結合操作を定義します。  
   
      [!code-vb[VbVbalrGuidelines#34](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_26.vb)]  
   
