@@ -3044,25 +3044,26 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 44bc5647fe740a4900b99794fe7af907e6328665
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 413765a6feebab3be8196552d11ade30bce28496
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231464"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>申し訳ありません&#39;t この Visual Basic エラーに関する詳細があります。
 申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用して他の開発者に尋ねることができます。  
   
- [Visual Basic 言語](http://go.microsoft.com/fwlink/?LinkId=145963)  
+ [Visual Basic 言語](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vblanguage)  
  質問や議論の Visual Basic 言語の構文およびコンパイラのフォーラムを提供します。  
   
- [Visual Basic の相互運用とアップグレード](http://go.microsoft.com/fwlink/?LinkId=145966)  
+ [Visual Basic の相互運用とアップグレード](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbinterop)  
  に関する質問については、フォーラムを提供し、Visual Basic にアップグレードして、相互運用性機能の使用を発行します。  
   
- [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
+ [Visual Basic IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbide)  
  Visual Studio 環境で作業する方法に関する質問をフォーラムを提供します。  
   
- [Visual Basic 全般](http://go.microsoft.com/fwlink/?LinkId=145973)  
+ [Visual Basic 全般](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=vbgeneral)  
  に関する質問については、フォーラムを提供し、その他のフォーラムで取り上げていない Visual Basic を使用して発行します。  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  
