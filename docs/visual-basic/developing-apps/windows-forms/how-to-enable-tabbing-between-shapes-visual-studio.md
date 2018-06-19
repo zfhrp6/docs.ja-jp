@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589548"
 ---
 # <a name="how-to-enable-tabbing-between-shapes-visual-studio"></a><span data-ttu-id="2ce8b-102">方法 : 図形間のタブ移動を有効にする (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="2ce8b-102">How to: Enable Tabbing Between Shapes (Visual Studio)</span></span>
 <span data-ttu-id="2ce8b-103">ライン コントロールとシェイプ コントロールはありません`TabStop`または`TabIndex`プロパティも、することができますも有効にそれらの間のタブ移動します。</span><span class="sxs-lookup"><span data-stu-id="2ce8b-103">Line and shape controls do not have `TabStop` or `TabIndex` properties, but you can still enable tabbing among them.</span></span> <span data-ttu-id="2ce8b-104">次の例では、図形間で、ctrl キーと TAB キーを押してはタブします。ボタンの間 タブは TAB キーのみです。</span><span class="sxs-lookup"><span data-stu-id="2ce8b-104">In the following example, pressing both the CTRL and the TAB keys will tab between shapes; pressing only the TAB key will tab between the buttons.</span></span>  

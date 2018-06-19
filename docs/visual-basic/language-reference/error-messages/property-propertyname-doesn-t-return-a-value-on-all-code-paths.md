@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594215"
 ---
 # <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a><span data-ttu-id="54acc-102">プロパティ&#39; &lt;propertyname&gt; &#39;しません&#39;t は、すべてのコード パスで値を返しません</span><span class="sxs-lookup"><span data-stu-id="54acc-102">Property &#39;&lt;propertyname&gt;&#39; doesn&#39;t return a value on all code paths</span></span>
 <span data-ttu-id="54acc-103">プロパティ '\<propertyname >' は、すべてのコード パスで値を返しません。</span><span class="sxs-lookup"><span data-stu-id="54acc-103">Property '\<propertyname>' doesn't return a value on all code paths.</span></span> <span data-ttu-id="54acc-104">この結果が使用されると、実行時に Null 参照例外が生じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="54acc-104">A null reference exception could occur at run time when the result is used.</span></span>  
