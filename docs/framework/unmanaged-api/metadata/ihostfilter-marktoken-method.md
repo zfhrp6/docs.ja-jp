@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 52375486eb9d7780a51808dedc5f876587efb115
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444565"
 ---
 # <a name="ihostfiltermarktoken-method"></a><span data-ttu-id="bf422-102">IHostFilter::MarkToken メソッド</span><span class="sxs-lookup"><span data-stu-id="bf422-102">IHostFilter::MarkToken Method</span></span>
 <span data-ttu-id="bf422-103">指定したメタデータ トークンが処理されることを示します。</span><span class="sxs-lookup"><span data-stu-id="bf422-103">Indicates that the specified metadata token will be processed.</span></span>  
