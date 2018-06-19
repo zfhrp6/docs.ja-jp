@@ -5,5 +5,5 @@
 ### [Visual Studio 2017 での Hello World アプリケーションの発行](../../core/tutorials/publishing-with-visual-studio.md)
 ## [Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](../../core/tutorials/library-with-visual-studio.md)
 ### [Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト](../../core/tutorials/testing-library-with-visual-studio.md)
-### [Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用](../../core/tutorials/consuming-library-with-visual-studio.md)
+### [Visual Studio 2017 での .NET 標準ライブラリの使用](../../core/tutorials/consuming-library-with-visual-studio.md)
 ## [C# および Visual Studio Code の概要](../../core/tutorials/with-visual-studio-code.md)

@@ -1,25 +1,26 @@
 ---
-title: .NET Framework アプリケーションのグローバライズとローカライズ
-ms.date: 03/30/2017
+title: .NET アプリケーションのグローバライズとローカライズ
+ms.date: 06/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- international applications [.NET Framework]
-- globalization [.NET Framework], encoding
+- international applications [.NET]
+- globalization [.NET], encoding
 - global applications
 - internationalization
 - world-ready applications
-- application development [.NET Framework], globalization
+- application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 26c237d082a56d17b2d8493bff52dbac6faca8b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f03935c1ee38cec4ee20c4306213be484933f0bb
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251000"
 ---
-# <a name="globalizing-and-localizing-net-framework-applications"></a>.NET Framework アプリケーションのグローバライズとローカライズ
+# <a name="globalizing-and-localizing-net-applications"></a>.NET アプリケーションのグローバライズとローカライズ
 1 つ以上の言語にローカライズされるアプリケーションなど、[国際対応アプリケーション](http://msdn.microsoft.com/goglobal/bb978433.aspx)を開発するには、グローバリゼーション、ローカライズ対象の確認、およびローカリゼーションの 3 つの手順が必要です。  
   
  [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)  
@@ -37,7 +38,7 @@ ms.lasthandoff: 05/04/2018
   
 -   ローカライズされたアプリケーションが、より安定してバグがより少ないものになります。  
   
- .NET Framework には、国際対応アプリケーションやローカライズされたアプリケーションの開発の拡張サポートが備わっています。 特に、.NET Framework クラス ライブラリの多くの型メンバーは、現在のユーザーのカルチャまたは特定のカルチャの規則を表す値を返すことができ、グローバリゼーションに役立ちます。 また、.NET Framework はサテライト アセンブリをサポートし、アプリケーションのローカライズ プロセスを容易にします。  
+ .NET には、国際対応アプリケーションやローカライズされたアプリケーションの開発の拡張サポートが備わっています。 特に、.NET クラス ライブラリの多くの型メンバーは、現在のユーザーのカルチャまたは特定のカルチャの規則を表す値を返すことができ、グローバリゼーションに役立ちます。 また、.NET はサテライト アセンブリをサポートし、アプリケーションのローカライズ プロセスを容易にします。  
   
  詳細については、[グローバリゼーションのドキュメント](/globalization/)をご覧ください。  
   
@@ -52,7 +53,7 @@ ms.lasthandoff: 05/04/2018
  ローカライズされたアプリケーションを作成するための最後の手順を説明します。特定の地域またはカルチャのために、アプリケーションのユーザー インターフェイスをカスタマイズします。  
   
  [カルチャを認識しない文字列操作](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
- 既定ではカルチャが識別される .NET Framework のメソッドやクラスを使用して、カルチャが識別されない結果を取得する方法について説明します。  
+ 既定ではカルチャが識別される .NET のメソッドやクラスを使用して、カルチャが識別されない結果を取得する方法について説明します。  
   
  [推奨される国際対応アプリケーション開発手順](../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md)  
  国際対応 ASP.NET アプリケーションのグローバリゼーション、ローカリゼーション、および開発の推奨手順について説明します。  

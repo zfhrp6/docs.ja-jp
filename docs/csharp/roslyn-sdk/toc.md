@@ -7,11 +7,11 @@
 ## クイック スタート
 ### [構文の解析](get-started/syntax-analysis.md)
 ### [セマンティック解析](get-started/semantic-analysis.md)
+### [構文の変換](get-started/syntax-transformation.md)
+
 
 <!-- Taken from https://github.com/dotnet/roslyn/wiki/Samples-and-Walkthroughs -->
 <!--
-### Get started with semantic analysis
-### Get started with Syntax transformation
 ### Get started writing custom analyzers and code fixes
 
 <!--

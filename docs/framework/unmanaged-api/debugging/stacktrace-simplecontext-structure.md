@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: acf2ba752ace49ae288857dc22819a8e7e429a34
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424054"
 ---
 # <a name="stacktracesimplecontext-structure"></a>StackTrace_SimpleContext 構造体
 完全な `CONTEXT` 構造の代わりに使用できる単純なコンテキストを提供します。  

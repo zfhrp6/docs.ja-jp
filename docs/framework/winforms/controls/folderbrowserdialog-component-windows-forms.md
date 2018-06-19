@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524453"
 ---
 # <a name="folderbrowserdialog-component-windows-forms"></a>FolderBrowserDialog コンポーネント (Windows フォーム)
 Windows フォーム`FolderBrowserDialog`コンポーネントが使用するユーザーが参照しフォルダーを選択または新規に作成インターフェイスを表示します。 補完することが、 [OpenFileDialog コンポーネント](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)参照してファイルを選択するに使用されるコンポーネントです。  
