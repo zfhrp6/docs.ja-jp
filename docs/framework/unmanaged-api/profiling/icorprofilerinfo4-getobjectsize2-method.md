@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8ebbc3422f48c0c2b8ff7b807228c63fbb35dd7b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454103"
 ---
 # <a name="icorprofilerinfo4getobjectsize2-method"></a><span data-ttu-id="e0d2b-102">ICorProfilerInfo4::GetObjectSize2 メソッド</span><span class="sxs-lookup"><span data-stu-id="e0d2b-102">ICorProfilerInfo4::GetObjectSize2 Method</span></span>
 <span data-ttu-id="e0d2b-103">指定したオブジェクトのサイズを返します。</span><span class="sxs-lookup"><span data-stu-id="e0d2b-103">Returns the size of a specified object.</span></span> <span data-ttu-id="e0d2b-104">置換、 [icorprofilerinfo::getobjectsize](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md)メソッドで表現できる内容よりも大きいオブジェクトのサイズを報告することによって、`ULONG`です。</span><span class="sxs-lookup"><span data-stu-id="e0d2b-104">Replaces the [ICorProfilerInfo::GetObjectSize](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) method by reporting sizes of objects that are larger than what can be expressed in a `ULONG`.</span></span>  

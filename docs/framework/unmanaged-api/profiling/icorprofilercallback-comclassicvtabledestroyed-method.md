@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 30d1e80d05344448c19c9f8f2d261442e4041487
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33451718"
 ---
 # <a name="icorprofilercallbackcomclassicvtabledestroyed-method"></a><span data-ttu-id="19d42-102">ICorProfilerCallback::COMClassicVTableDestroyed メソッド</span><span class="sxs-lookup"><span data-stu-id="19d42-102">ICorProfilerCallback::COMClassicVTableDestroyed Method</span></span>
 <span data-ttu-id="19d42-103">COM 相互運用機能の vtable が破棄されていることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="19d42-103">Notifies the profiler that a COM interop vtable is being destroyed.</span></span>  

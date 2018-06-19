@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6d603d9bc7a343a41224cf8d889a69823875d9db
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453591"
 ---
 # <a name="icorprofilerinfogetinprocinspectionithisthread-method"></a><span data-ttu-id="486f0-102">ICorProfilerInfo::GetInprocInspectionIThisThread メソッド</span><span class="sxs-lookup"><span data-stu-id="486f0-102">ICorProfilerInfo::GetInprocInspectionIThisThread Method</span></span>
 <span data-ttu-id="486f0-103">ICorDebugThread インターフェイスの照会されるオブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="486f0-103">Gets an object that can be queried for the ICorDebugThread interface.</span></span> <span data-ttu-id="486f0-104">このメソッドは、.NET Framework version 2.0 廃止されています。</span><span class="sxs-lookup"><span data-stu-id="486f0-104">This method is obsolete in the .NET Framework version 2.0.</span></span>  

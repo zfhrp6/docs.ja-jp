@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648409"
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a><span data-ttu-id="3db49-102">方法: プロパティから値を取得する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3db49-102">How to: Get a Value from a Property (Visual Basic)</span></span>
 <span data-ttu-id="3db49-103">プロパティの値を取得するには、式の中で、プロパティ名を含めます。</span><span class="sxs-lookup"><span data-stu-id="3db49-103">You retrieve a property's value by including the property name in an expression.</span></span>  

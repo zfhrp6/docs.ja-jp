@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6a36f9b54ce7ac6a0a5a22b33a4d07150a96f40b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452544"
 ---
 # <a name="functionenter3withinfo-function"></a><span data-ttu-id="32210-102">FunctionEnter3WithInfo 関数</span><span class="sxs-lookup"><span data-stu-id="32210-102">FunctionEnter3WithInfo Function</span></span>
 <span data-ttu-id="32210-103">コントロールが、関数に渡されることをプロファイラーに通知しに渡すことができるハンドルを提供、 [icorprofilerinfo 3::getfunctionenter3info メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md)スタック フレームと関数の引数を取得します。</span><span class="sxs-lookup"><span data-stu-id="32210-103">Notifies the profiler that control is being passed to a function, and provides a handle that can be passed to the [ICorProfilerInfo3::GetFunctionEnter3Info method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) to retrieve the stack frame and function arguments.</span></span>  

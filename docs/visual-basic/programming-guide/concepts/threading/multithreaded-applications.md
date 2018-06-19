@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650479"
 ---
 # <a name="multithreaded-applications-visual-basic"></a><span data-ttu-id="8ea9b-102">マルチ スレッド アプリケーション (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8ea9b-102">Multithreaded Applications (Visual Basic)</span></span>
 <span data-ttu-id="8ea9b-103">Visual Basic では、同時に複数のタスクを実行するアプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="8ea9b-103">With Visual Basic, you can write applications that perform multiple tasks at the same time.</span></span> <span data-ttu-id="8ea9b-104">他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。</span><span class="sxs-lookup"><span data-stu-id="8ea9b-104">Tasks with the potential of holding up other tasks can execute on separate threads, a process known as *multithreading* or *free threading*.</span></span>  

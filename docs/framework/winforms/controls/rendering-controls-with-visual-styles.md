@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540905"
 ---
 # <a name="rendering-controls-with-visual-styles"></a><span data-ttu-id="35cb4-102">visual スタイルが使用されているコントロールのレンダリング</span><span class="sxs-lookup"><span data-stu-id="35cb4-102">Rendering Controls with Visual Styles</span></span>
 <span data-ttu-id="35cb4-103">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] は、視覚スタイルをサポートするオペレーティング システムでの、それらを使用したコントロールと他の Windows ユーザー インターフェイス (UI) 要素のレンダリングをサポートします。</span><span class="sxs-lookup"><span data-stu-id="35cb4-103">The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] provides support for rendering controls and other Windows user interface (UI) elements using visual styles in operating systems that support them.</span></span> <span data-ttu-id="35cb4-104">このトピックでは、オペレーティング システムの現在の視覚スタイルを使用したコントロールと他の UI 要素のレンダリングに関して [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] でのいくつかのサポート レベルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="35cb4-104">This topic discusses the several levels of support in the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] for rendering controls and other UI elements with the current visual style of the operating system.</span></span>  

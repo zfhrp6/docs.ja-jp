@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649140"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a><span data-ttu-id="28b3c-102">方法: 継承された変数を隠す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28b3c-102">How to: Hide an Inherited Variable (Visual Basic)</span></span>
 <span data-ttu-id="28b3c-103">派生クラスでは、その基本クラスのすべての定義を継承します。</span><span class="sxs-lookup"><span data-stu-id="28b3c-103">A derived class inherits all the definitions of its base class.</span></span> <span data-ttu-id="28b3c-104">基本クラスの要素として同じ名前を使用して変数を定義する場合は、非表示にできます、または*シャドウ*、派生クラスで変数を定義するときにその基本クラスの要素。</span><span class="sxs-lookup"><span data-stu-id="28b3c-104">If you want to define a variable using the same name as an element of the base class, you can hide, or *shadow*, that base class element when you define your variable in the derived class.</span></span> <span data-ttu-id="28b3c-105">これを行うと、派生クラス内のコードにアクセスする場合、変数シャドウ機構が明示的にバイパスされる場合を除き、します。</span><span class="sxs-lookup"><span data-stu-id="28b3c-105">If you do this, code in the derived class accesses your variable unless it explicitly bypasses the shadowing mechanism.</span></span>  

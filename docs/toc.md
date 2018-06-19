@@ -72,6 +72,8 @@
 ## [macOS の前提条件](core/macos-prerequisites.md)
 ## [Linux の前提条件](core/linux-prerequisites.md)
 ## [.NET Core の新機能](core/whats-new/index.md)
+### [.NET Core 2.1 の新機能](core/whats-new/dotnet-core-2-1.md)
+### [.NET Core 2.0 の新機能](core/whats-new/dotnet-core-2-0.md)
 ## [チュートリアル](core/tutorials/index.md)
 ### [Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築](core/tutorials/using-on-windows-full-solution.md)
 ### [macOS での .NET Core の概要](core/tutorials/using-on-macos.md)
@@ -96,6 +98,7 @@
 ### [CLI ツールを使用したアプリの展開](core/deploying/deploy-with-cli.md)
 ### [Visual Studio からのアプリの展開](core/deploying/deploy-with-vs.md)
 ### [クロス プラットフォーム ツールによる NuGet パッケージの作成](core/deploying/creating-nuget-packages.md)
+### [自己完結型展開ランタイムのロール フォワード](core/deploying/runtime-patch-selection.md)
 ### [ランタイム パッケージ ストア](core/deploying/runtime-store.md)
 ## [Docker](core/docker/index.md)
 ### [.NET および Docker の概要](core/docker/intro-net-docker.md)
@@ -122,20 +125,23 @@
 ## [.NET Core SDK の概要](core/sdk.md)
 ## [.NET Core CLI ツール](core/tools/index.md)
 ### [製品利用統計情報](core/tools/telemetry.md)
+### [グローバル ツール](core/tools/global-tools.md)
 ### [機能拡張モデル](core/tools/extensibility.md)
 ### [継続的インテグレーション](core/tools/using-ci-with-cli.md)
 ### [カスタム テンプレート](core/tools/custom-templates.md)
 ### [dotnet](core/tools/dotnet.md)
 ### [dotnet build](core/tools/dotnet-build.md)
+### [dotnet build-server](core/tools/dotnet-build-server.md)
 ### [dotnet clean](core/tools/dotnet-clean.md)
 ### [dotnet help](core/tools/dotnet-help.md)
 ### [dotnet install-script](core/tools/dotnet-install-script.md)
 ### [dotnet migrate](core/tools/dotnet-migrate.md)
 ### [dotnet msbuild](core/tools/dotnet-msbuild.md)
 ### [dotnet new](core/tools/dotnet-new.md)
-### [dotnet nuget delete](core/tools/dotnet-nuget-delete.md)
-### [dotnet nuget locals](core/tools/dotnet-nuget-locals.md)
-### [dotnet nuget push](core/tools/dotnet-nuget-push.md)
+### dotnet nuget
+#### [dotnet nuget delete](core/tools/dotnet-nuget-delete.md)
+#### [dotnet nuget locals](core/tools/dotnet-nuget-locals.md)
+#### [dotnet nuget push](core/tools/dotnet-nuget-push.md)
 ### [dotnet pack](core/tools/dotnet-pack.md)
 ### [dotnet publish](core/tools/dotnet-publish.md)
 ### [dotnet restore](core/tools/dotnet-restore.md)
@@ -143,6 +149,11 @@
 ### [dotnet sln](core/tools/dotnet-sln.md)
 ### [dotnet store](core/tools/dotnet-store.md)
 ### [dotnet test](core/tools/dotnet-test.md)
+### dotnet tool
+#### [dotnet tool install](core/tools/dotnet-tool-install.md)
+#### [dotnet tool list](core/tools/dotnet-tool-list.md)
+#### [dotnet tool uninstall](core/tools/dotnet-tool-uninstall.md)
+#### [dotnet tool update](core/tools/dotnet-tool-update.md)
 ### [dotnet vstest](core/tools/dotnet-vstest.md)
 ### プロジェクトの変更コマンド
 #### 参照
@@ -155,6 +166,7 @@
 ### [global.json](core/tools/global-json.md)
 ## [.NET Core の追加ツール](core/additional-tools/index.md)
 ### [WCF Web サービス リファレンス プロバイダー](core/additional-tools/wcf-web-service-reference-guide.md)
+### [dotnet-svcutil](core/additional-tools/dotnet-svcutil-guide.md)
 ### [XML シリアライザー ジェネレーター](core/additional-tools/xml-serializer-generator.md)
 ## [.NET Framework からの移植](core/porting/index.md)
 ### [.NET Core のプロジェクトの整理](core/porting/project-structure.md)
@@ -215,10 +227,11 @@
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
 ## [C# の新機能](csharp/whats-new/index.md)
-### [C# 7.2 の新機能](csharp/whats-new/csharp-7-2.md)
-### [C# 7.1 の新機能](csharp/whats-new/csharp-7-1.md)
-### [C# 7.0 の新機能](csharp/whats-new/csharp-7.md)
-### [C# 6 の新機能](csharp/whats-new/csharp-6.md)
+### [C# 7.3](csharp/whats-new/csharp-7-3.md)
+### [C# 7.2](csharp/whats-new/csharp-7-2.md)
+### [C# 7.1](csharp/whats-new/csharp-7-1.md)
+### [C# 7.0](csharp/whats-new/csharp-7.md)
+### [C# 6](csharp/whats-new/csharp-6.md)
 ### [C# バージョン履歴](csharp/whats-new/csharp-version-history.md)
 ### [言語とフレームワークの関係](csharp/whats-new/relationships-between-language-and-library.md)
 <!-- End What's New -->
@@ -549,6 +562,7 @@
 ### [チュートリアル : COM オブジェクトによる継承の実装](visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 
 ## [言語リファレンス](visual-basic/language-reference/index.md)
+### [言語バージョンの構成](visual-basic/language-reference/configure-language-version.md)
 ### [表記規則とコード規則](visual-basic/language-reference/typographic-and-code-conventions.md)
 ### [Visual Basic ランタイム ライブラリのメンバー](visual-basic/language-reference/runtime-library-members.md)
 ### [キーワード](visual-basic/language-reference/keywords/index.md)
@@ -1117,11 +1131,12 @@
 <!-- ML.NET Content -->
 # [ML.NET ガイド](machine-learning/index.md)
 ## [チュートリアル](machine-learning/tutorials/index.md)
-### [感情分析 (分類)](machine-learning/tutorials/sentiment-analysis.md)
+### [感情分析 (二項分類)](machine-learning/tutorials/sentiment-analysis.md)
 ### [タクシー代予測 (回帰)](machine-learning/tutorials/taxi-fare.md)
 ## [リソース](machine-learning/resources/index.md)
 ### [Machine Learning 用語集](machine-learning/resources/glossary.md)
 ### [Machine Learning の基本](machine-learning/resources/basics.md)
+### [Machine Learning のタスク](machine-learning/resources/tasks.md)
 
 <!-- End ML.NET Content -->
 

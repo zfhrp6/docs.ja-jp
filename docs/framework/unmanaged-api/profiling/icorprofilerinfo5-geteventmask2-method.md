@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8973e100694be0f50b575d978f3327b8b3a1d334
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455666"
 ---
 # <a name="icorprofilerinfo5geteventmask2-method"></a><span data-ttu-id="7d1a1-102">ICorProfilerInfo5::GetEventMask2 メソッド</span><span class="sxs-lookup"><span data-stu-id="7d1a1-102">ICorProfilerInfo5::GetEventMask2 Method</span></span>
 <span data-ttu-id="7d1a1-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="7d1a1-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

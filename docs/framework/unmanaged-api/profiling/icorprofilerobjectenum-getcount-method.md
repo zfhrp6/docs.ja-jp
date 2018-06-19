@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a5f23950eea94cde0655d364ad0c6701e04a7c1b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453852"
 ---
 # <a name="icorprofilerobjectenumgetcount-method"></a><span data-ttu-id="f1528-102">ICorProfilerObjectEnum::GetCount メソッド</span><span class="sxs-lookup"><span data-stu-id="f1528-102">ICorProfilerObjectEnum::GetCount Method</span></span>
 <span data-ttu-id="f1528-103">コレクション内で固定されたオブジェクトの合計数を取得します。</span><span class="sxs-lookup"><span data-stu-id="f1528-103">Gets the total number of frozen objects in the collection.</span></span>  
