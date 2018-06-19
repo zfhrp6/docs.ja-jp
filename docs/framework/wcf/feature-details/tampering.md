@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498632"
 ---
 # <a name="tampering"></a>改変
 *改ざん*は、メッセージまたはメッセージの配信を変更しの意図された以外の目的の変更後のメッセージを使用して動作します。  

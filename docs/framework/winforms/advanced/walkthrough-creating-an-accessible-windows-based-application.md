@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529624"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成
 ユーザー補助に対応するアプリケーションを作成することは、ビジネスに重要な影響を与えます。 多くの政府は、ソフトウェアの購入に関するユーザー補助の規制があります。 Certified for Windows ロゴには、ユーザー補助に関する要件が含まれています。 米国だけでも 3000 万人 (その多くは潜在的な顧客) が、ソフトウェアのアクセシビリティ機能によって影響を受けると推定されています。  

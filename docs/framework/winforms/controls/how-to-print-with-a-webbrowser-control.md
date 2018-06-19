@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532851"
 ---
 # <a name="how-to-print-with-a-webbrowser-control"></a>方法 : WebBrowser コントロールを使用して印刷する
 次のコード例で使用方法、<xref:System.Windows.Forms.WebBrowser>表示せず、Web ページを印刷するコントロール。  

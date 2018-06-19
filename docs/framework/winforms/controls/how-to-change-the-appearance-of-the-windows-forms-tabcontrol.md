@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531041"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-tabcontrol"></a>方法 : Windows フォーム TabControl の表示形式を変更する
 プロパティを使用して Windows フォーム内のタブの外観を変更することができます、<xref:System.Windows.Forms.TabControl>と<xref:System.Windows.Forms.TabPage>コントロールの個々 のタブを構成するオブジェクト。 これらのプロパティを設定することができますタブ上のイメージを表示、水平方向にではなく垂直方向にタブが表示されます、 タブの複数の行を表示および有効または無効にタブ プログラムで。  
