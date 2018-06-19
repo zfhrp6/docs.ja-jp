@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544289"
 ---
 # <a name="input-and-commands-how-to-topics"></a>入力およびコマンドに関する「方法」トピック
 このセクションのトピックでは、Windows Presentation Foundation (WPF) の入力およびコマンド実行のインフラストラクチャを使用する方法について説明します。  

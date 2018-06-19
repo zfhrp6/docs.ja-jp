@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560643"
 ---
 # <a name="how-to-paint-an-area-with-a-radial-gradient"></a>方法 : 放射状グラデーションを使用して領域を塗りつぶす
 この例を使用する方法を示しています、<xref:System.Windows.Media.RadialGradientBrush>放射状グラデーションで領域を塗りつぶすクラス。  

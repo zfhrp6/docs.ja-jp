@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573582"
 ---
 # <a name="choosing-between-class-and-struct"></a>クラスまたは構造体の選択
 すべての framework デザイナーに直面して基本的な設計上の決定の 1 つは、クラス (参照型)、または構造体 (値型) として型をデザインするかどうかです。 参照型と値の型の動作の違いをよく理解は、このオプションを選択する際に非常に重要です。  
