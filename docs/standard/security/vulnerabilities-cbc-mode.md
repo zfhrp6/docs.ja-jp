@@ -4,16 +4,16 @@ description: 検出して暗号ブロック チェーン (CBC) モードで埋�
 ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
-ms.openlocfilehash: a07acbb943c430f6e26bec44f55a5c84306da513
-ms.sourcegitcommit: 73a662360bbe2f43c19aca1fbcc2565025c60cd8
-ms.translationtype: HT
+ms.openlocfilehash: 26f4d19f591ac02d792bebbd648e90b07d84de56
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35327455"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208688"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>CBC モード対称復号化の埋め込みを使用してタイミング脆弱性
 
-既知の暗号リサーチに基づいて、Microsoft では、非常に特定の状況を除くが不要になった検証可能なスペースになったときに、対称暗号化の暗号ブロック チェーン (CBC) モードで暗号化されたデータの暗号化を解除しても安全と考えています最初に、暗号化テキストの整合性を確認せずに適用されます。
+Microsoft では、安全を除き、暗号化テキストの整合性を確認せずに検証可能な埋め込みが適用されたときに、対称暗号化の暗号ブロック チェーン (CBC) モードで暗号化されたデータを復号化には不要になったと見なす非常に限定ような場合にします。 この判断は、現在認識されている暗号研究は常に基づいています。 
 
 ## <a name="introduction"></a>はじめに
 

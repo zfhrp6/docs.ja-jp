@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-ms.openlocfilehash: 511721c3ffffb3b80b339c4671ad99e16bafda93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 53e89b664b3885bea7d2da8633505488438a1af5
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565900"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207548"
 ---
 # <a name="xkey-directive"></a>x:Key ディレクティブ
 XAML で定義されたディクショナリで作成および参照される要素を一意に識別します。 `x:Key` 値を XAML オブジェクトに追加するのは、リソース ディクショナリ (<xref:System.Windows.ResourceDictionary> など) のリソースを識別するための最も一般的な方法です。  
@@ -47,7 +47,7 @@ XAML で定義されたディクショナリで作成および参照される要
 |`stringKeyValue`|キーとして使用するテキスト文字列。 テキスト文字列に準拠する必要があります、 [XamlName の文法](../../../docs/framework/xaml-services/xamlname-grammar.md)です。|  
 |`markupExtensionUsage`|マークアップ拡張機能の区切り文字で{}、マークアップ拡張機能の使用をキーとして使用するオブジェクトを提供します。 「解説」を参照してください。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
  `x:Key` は XAML のリソース ディクショナリの概念をサポートしています。 言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。 Wpf XAML リソース ディクショナリを実装する方法の詳細については、次を参照してください。 [XAML リソース](../../../docs/framework/wpf/advanced/xaml-resources.md)です。  
   
  XAML 2006 および WPF では、`x:Key`属性として指定する必要があります。 文字列ではないキーも使用できますが、文字列ではない値を属性形式で提供するためには、マークアップ拡張機能を使用する必要があります。 XAML 2009 を使用している場合`x:Key`マークアップ拡張機能の仲介を必要とせず、文字列以外のオブジェクトの種類をキーとするディクショナリを明示的にサポートを要素として指定できます。 このトピックの「XAML 2009」セクションを参照してください。 「解説」セクションの残りの部分は、特定 XAML 2006 の実装に適用します。  
@@ -73,7 +73,7 @@ XAML で定義されたディクショナリで作成および参照される要
   
  基本的な XAML 定義では、キーと名前で異なるディレクティブと言語要素 (`x:Key` と `x:Name`) が使用されます。 また、キーと名前は、それらの概念の WPF 定義およびアプリケーションにより異なる状況において使用されます。 詳細については、「 [WPF XAML 名前スコープ](../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
   
- 既に説明したように、キー値はマークアップ拡張機能によって指定され、文字列値以外になる場合があります。 WPF シナリオの例は、の値を提供する`x:Key`可能性があります、[ComponentResourceKey](../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)です。 特定のコントロールでは、スタイルを完全に置き換えることなく、そのコントロールの外観と動作の一部に影響を与えるカスタム スタイル リソースの型に対応するスタイル キーが公開されます。 このようなキーの例として、<xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A> が挙げられます。  
+ 既に説明したように、キー値はマークアップ拡張機能によって指定され、文字列値以外になる場合があります。 WPF シナリオの例は、の値を提供する`x:Key`可能性があります、 [ComponentResourceKey](../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)です。 特定のコントロールでは、スタイルを完全に置き換えることなく、そのコントロールの外観と動作の一部に影響を与えるカスタム スタイル リソースの型に対応するスタイル キーが公開されます。 このようなキーの例として、<xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A> が挙げられます。  
   
  WPF のマージされたディクショナリ機能では、キーの一意性およびキーの検索動作について考慮を要する点があります。 詳細については、「[Merged Resource Dictionaries](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   

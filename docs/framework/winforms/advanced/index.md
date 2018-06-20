@@ -5,11 +5,12 @@ helpviewer_keywords:
 - Windows Forms, enhancing
 - Windows Forms, adding features
 ms.assetid: 733d1219-d6ad-4256-a55b-9eccf47f5a06
-ms.openlocfilehash: 750d94caf08776ae457dbff153afbc8ec9368f07
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ab1a79bc3a799edc8b0472bb31983a7215f6f9e
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208638"
 ---
 # <a name="enhancing-windows-forms-applications"></a>Windows フォーム アプリケーションの拡張
 Windows フォームには、ユーザーの固有のニーズに合わせて、Windows ベースのアプリケーションを強化するために使用できる多くの機能が含まれます。 次のトピックは、これらの機能とその使用方法について説明します。  
@@ -30,7 +31,7 @@ Windows フォームには、ユーザーの固有のニーズに合わせて、
  [Windows フォーム アプリケーションにおけるネットワーク](../../../../docs/framework/winforms/advanced/networking-in-windows-forms-applications.md)  
  Windows フォームのネットワーキングを使用する方法について説明したトピックへのリンクが含まれます。  
   
- [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
+ [Windows フォーム アプリケーションのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
  Windows フォーム アプリケーションをグローバル化する方法を示すトピックへのリンクが含まれます。  
   
  [Windows フォームとアンマネージ アプリケーション](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  

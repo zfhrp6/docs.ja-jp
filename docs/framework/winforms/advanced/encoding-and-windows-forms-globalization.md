@@ -19,11 +19,12 @@ helpviewer_keywords:
 - localization [Windows Forms], character sets
 - globalization [Windows Forms], character sets
 ms.assetid: 22e8965d-a712-42b3-8167-3ee346bd70f9
-ms.openlocfilehash: e610b4fc5506043835377bf9f5750550d8aec694
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9257a6b725839d8f433988ab76c4ce9ae349d950
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208608"
 ---
 # <a name="encoding-and-windows-forms-globalization"></a>エンコード方式および Windows フォームのグローバリゼーション
 Windows フォーム アプリケーションは、Unicode に完全対応しているため、プラットフォーム、プログラム、または言語に関係なく、文字がそれぞれ一意の数字で表されます。 Unicode の詳細については、次を参照してください。、 [Unicode コンソーシアムの Web サイト](http://www.unicode.org)です。  
@@ -35,5 +36,6 @@ Windows フォーム アプリケーションは、Unicode に完全対応して
   
  <xref:System.Windows.Forms.ToolBar> コントロールと <xref:System.Windows.Forms.StatusBar> コントロールの Unicode 対応の代替手段として、これらの古いコントロールを置換する <xref:System.Windows.Forms.ToolStrip> コントロールと <xref:System.Windows.Forms.StatusStrip> コントロールを使用します。 アプリケーションの視覚要素の間で同様のルック アンド フィールを維持するには、メニューの表示に <xref:System.Windows.Forms.MainMenu> の代わりに <xref:System.Windows.Forms.MenuStrip> コントロールを使用します。 <xref:System.Windows.Forms.ToolStrip> と <xref:System.Windows.Forms.StatusStrip> のように、<xref:System.Windows.Forms.MenuStrip> も Unicode 文字を処理して表示することができます。  
   
-## <a name="see-also"></a>関連項目  
- [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)
+## <a name="see-also"></a>関連項目
+
+[Windows フォーム アプリケーションのグローバル化](globalizing-windows-forms.md)

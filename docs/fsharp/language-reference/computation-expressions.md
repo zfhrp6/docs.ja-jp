@@ -2,12 +2,12 @@
 title: コンピュテーション式 (F#)
 description: F# でシーケンス処理することができ、制御フローの構成要素とバインディングを使用して結合する計算を作成するための便利な構文を作成する方法を説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: a4ddb3fde284452bc901c5270551611e43742c1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4995efc757d99a575ee9fad3abf0465a32398c44
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566614"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207434"
 ---
 # <a name="computation-expressions"></a>コンピュテーション式
 
@@ -15,6 +15,7 @@ F# コンピュテーション式は、シーケンス処理することがで�
 
 
 ## <a name="built-in-workflows"></a>組み込みのワークフロー
+
 シーケンス式では、非同期ワークフローおよびクエリ式とコンピュテーション式の例があります。 詳細については、次を参照してください。[シーケンス](sequences.md)、[非同期ワークフロー](asynchronous-workflows.md)、および[クエリ式](query-expressions.md)です。
 
 特定の機能は、シーケンス式と非同期のワークフローの両方に共通して、コンピュテーション式の基本構文を示しています。

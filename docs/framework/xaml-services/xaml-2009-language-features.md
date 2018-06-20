@@ -5,15 +5,15 @@ helpviewer_keywords:
 - XAML 2009 [XAML Services]
 - XAML [XAML Services], XAML 2009
 ms.assetid: f6bb18d8-c86a-4549-8862-323e6b32a8dd
-ms.openlocfilehash: 5014891b4edfa062f16d2c4b97c4d162d014fcd4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed0f638975c232638de4a46db5db82bb1e85668c
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563559"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207470"
 ---
 # <a name="xaml-2009-language-features"></a>XAML 2009 言語機能
-XAML 2009 とは、既存の XAML 言語仕様を拡張した、XAML の新しい言語機能の短縮名です。 XAML 2009 には、いくつかの新しいディレクティブとコンストラクトが導入されています。 たとえば、[x:Arguments Directive](../../../docs/framework/xaml-services/x-arguments-directive.md)、 [x:FactoryMethod Directive](../../../docs/framework/xaml-services/x-factorymethod-directive.md)、 [x:Reference Markup Extension](../../../docs/framework/xaml-services/x-reference-markup-extension.md)、 [x:TypeArguments Directive](../../../docs/framework/xaml-services/x-typearguments-directive.md)、共通言語プリミティブの組み込み型 ( `x:Char`など) があります。  
+XAML 2009 とは、既存の XAML 言語仕様を拡張した、XAML の新しい言語機能の短縮名です。 XAML 2009 には、いくつかの新しいディレクティブとコンストラクトが導入されています。 含まれます、 [X:arguments ディレクティブ](../../../docs/framework/xaml-services/x-arguments-directive.md); [X:factorymethod ディレクティブ](../../../docs/framework/xaml-services/x-factorymethod-directive.md); [X:reference マークアップ拡張機能](../../../docs/framework/xaml-services/x-reference-markup-extension.md); [X:typearguments ディレクティブ](../../../docs/framework/xaml-services/x-typearguments-directive.md); 共通言語プリミティブの組み込み型 (たとえば`x:Char`)。  
   
 <a name="xaml_2009_support_in_wpf_and_visual_studio"></a>   
 ## <a name="xaml-2009-support-in-wpf-and-visual-studio"></a>XAML 2009 は、WPF および Visual Studio でサポートされています。  

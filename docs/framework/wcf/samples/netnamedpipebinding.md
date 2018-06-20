@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-ms.openlocfilehash: 7b64bcc1625fb5d0c7ca4af29e1b883b39141a52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d07350dc8b999dfeb47dc1f61049d90a3faf874b
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33503198"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207291"
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 このサンプルでは `netNamedPipeBinding` バインディングについて説明します。このバインディングは、同一コンピュータでのプロセス間通信を実現します。 名前付きパイプは、異なるコンピューター間では動作しません。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービス。  
@@ -19,7 +19,7 @@ ms.locfileid: "33503198"
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- バインディングは、クライアントとサービスの構成ファイルに指定されます。 バインドの種類がで指定された、`binding`の属性、[\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の次のサンプル構成で示すように。  
+ バインディングは、クライアントとサービスの構成ファイルに指定されます。 バインドの種類がで指定された、`binding`の属性、 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の次のサンプル構成で示すように。  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  
