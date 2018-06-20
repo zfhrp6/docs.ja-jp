@@ -51,11 +51,11 @@ ms.locfileid: "33496813"
   
     1.  構成ファイルで下にある、 [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)要素を追加、 [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)要素。  
   
-    2.  追加、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)または[ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)バインディング セクションに要素。 WCF バインド要素の作成の詳細については、次を参照してください。[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
+    2.  [\<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) または [\<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) 要素をバインディング セクションに追加します。 WCF バインド要素の作成の詳細については　[方法: 構成でサービス バインディングを指定する](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md) を参照してください。  
   
     3.  設定、`mode`の属性、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)または[\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)に`Message`、 `Transport`、`or``TransportWithMessageCredential`です。  
   
-    4.  設定、`clientCredentialType`の属性、 [\<メッセージ >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md)または[\<トランスポート >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md)です。  
+    4.  [\<message>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) または　[\<transport>](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) の　`clientCredentialType` 属性を設定します。  
   
          メッセージ セキュリティを使用する場合は、設定、`clientCredentialType`の属性、 [\<メッセージ >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md)に`UserName`です。  
   
@@ -64,7 +64,7 @@ ms.locfileid: "33496813"
         > [!NOTE]
         >  WCF サービスがホストされている場合にインターネット インフォメーション サービス (IIS) トランスポート レベル セキュリティを使用して、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A>プロパティに設定されている<xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>、カスタム認証方式は Windows 認証のサブセットを使用しています。 このシナリオでは IIS が WCF のカスタム認証システムを起動する前に Windows 認証を実行するためです。  
   
-     WCF バインド要素の作成の詳細については、次を参照してください。[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
+     WCF バインド要素の作成の詳細については　[方法: 構成でサービス バインディングを指定する](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md) を参照してください。  
   
      次のコード例は、バインディングの構成コードを示しています。  
   
