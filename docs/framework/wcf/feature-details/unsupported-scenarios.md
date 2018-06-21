@@ -30,7 +30,7 @@ ms.locfileid: "33507715"
   
  状態ベースの SCT はカスタム バインドの使用によってのみ作成できます。 詳細については、次を参照してください[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)。)。コードでトークンを有効にするには、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> メソッドまたは <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> メソッドを使用して、セキュリティ バインディング要素 (<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> または <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType>) を作成し、`requireCancellation` パラメーターを `false` に設定します。 このパラメーターは、SCT のキャッシュを参照します。 値を `false` に設定することによって、状態ベースの SCT 機能が有効になります。  
   
- または、構成において、<`customBinding`> を作成し、<`security`> 要素を追加して `authenticationMode` 属性に SecureConversation および `requireSecurityContextCancellation` 属性に `true` を設定することによってもトークンが有効になります。
+ または、構成において、<`customBinding`> を作成し、<`security`> 要素を追加して `authenticationMode` 属性に SecureConversation および `requireSecurityContextCancellation` 属性に `true` を設定することによってもトークンが有効になります。  
   
 > [!NOTE]
 >  上記の要件は限定的です。 たとえば、<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> は Windows ID を生成するバインド要素を作成しますが、SCT を確立しません。 したがって、`Required` で [!INCLUDE[wxp](../../../../includes/wxp-md.md)] オプションと共に使用できます。  
