@@ -5,12 +5,12 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.openlocfilehash: 0914320c18818fb9d69fb1e0dbd89c0ec78acd61
-ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
+ms.openlocfilehash: a62586689d1fe1c3352171fe71d92620269d9a72
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35231541"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314906"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -584,7 +584,7 @@ ms.locfileid: "35231541"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="https://www.visualstudio.com/vs/game-development">
+                                                <a href="https://visualstudio.microsoft.com/vs/game-development">
                                                     <h3>Visual Studio を使用したゲーム開発</h3>
                                                     <p>Visual Studio で任意のゲーム エンジンを使用して、ゲームを作成してデバッグします。
                                                     </p>
