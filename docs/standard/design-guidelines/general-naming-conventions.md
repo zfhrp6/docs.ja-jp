@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc54b8bdc96a5038dc75111d9833e70e7ffd2e9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 207227b3e5c52b7c6e0f704543379874f3708c03
+ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578041"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36338105"
 ---
 # <a name="general-naming-conventions"></a>一般的な名前付け規則
 このセクションでは、一般的な名前付け規則単語の選択に関連する言語固有の名前を使用しないようにする方法の省略形と頭字語、および推奨事項の使用に関するガイドラインについて説明します。  
@@ -85,7 +85,7 @@ ms.locfileid: "33578041"
   
  **✓ しないで**を既存の API の新しいバージョンを示すプレフィックスではなく、サフィックスを追加することを希望します。  
   
- これは、役立ちます探索ドキュメントについてを参照するときに Intellisense を使用してまたはします。 古いバージョンの API はほとんどのブラウザーおよび Intellisense は、アルファベット順に識別子を表示するため、新しい Api の近くに編成できます。  
+ これは、役立ちます探索ドキュメントについてを参照するときに IntelliSense を使用してまたはします。 古いバージョンの API はほとんどのブラウザーおよび IntelliSense は、アルファベット順に識別子を表示するため、新しい Api の近くに編成できます。  
   
  **✓ を検討してください**サフィックスまたはプリフィックスを追加する代わりに、まったく新しいが意味のある識別子を使用します。  
   
