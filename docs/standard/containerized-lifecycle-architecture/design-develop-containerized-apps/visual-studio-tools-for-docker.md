@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 05db5cf8e8dc073dd341fbffab619c326b48f136
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62da6a3ff595422e42450cb1341976424acc5a52
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569292"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314712"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
 
@@ -23,7 +23,7 @@ Docker for Windows の最新のバージョンでは、これまでにアプリ�
 
 Visual Studio 2015 を使用している場合は、更新プログラム 3 またはそれ以降のバージョンと Visual Studio Tools for Docker が必要です。
 
-**詳細情報:** Visual Studio をインストールする方法の詳細についてを参照してください[ https://www.visualstudio.com/\ 製品/vs-2015-製品のエディション](https://www.visualstudio.com/products/vs-2015-product-editions)です。
+**詳細情報:** Visual Studio をインストールする方法の詳細についてを参照してください[https://visualstudio.microsoft.com/\製品/vs-2015-製品のエディション](https://visualstudio.microsoft.com/products/vs-2015-product-editions)です。
 
 Visual Studio Tools for Docker のインストールに関する詳細を参照するには、するには<http://aka.ms/vstoolsfordocker>と<https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>です。
 

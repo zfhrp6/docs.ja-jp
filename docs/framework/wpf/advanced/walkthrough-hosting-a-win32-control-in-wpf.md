@@ -8,49 +8,49 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: d7ea869c2e42e045149faa522b615c19a8ec5f60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af8491a2887f4a35e2cd9926304948c12a67623a
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33549086"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314979"
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>チュートリアル: WPF での Win32 コントロールのホスト
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、アプリケーションの作成に適した環境を提供します。 ただしがある場合、かなりの投資[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]コードである可能性がありますには、少なくともを再利用すると効率的では、そのコードの一部、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]完全に修正するのではなくアプリケーションです。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ホストするための簡単なメカニズムを提供、 [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]  ウィンドウで、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。  
+Windows Presentation Foundation (WPF) は、アプリケーションを作成するための有用な環境を提供します。 ただし、Win32 コード内には、かなりの投資がある、ある可能性があります、少なくともいくつ再利用すると効率的の WPF アプリケーション内のコードではなく完全にように書き直します。 WPF では、WPF ページ上の Win32 ウィンドウをホストするための簡単なメカニズムを提供します。  
   
- このトピックを紹介アプリケーション、 [WPF サンプルでは Win32 ListBox コントロールをホストしている](http://go.microsoft.com/fwlink/?LinkID=159998)、そのホスト、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]リスト ボックス コントロールです。 この一般的な手順は、いずれかのホストに拡張できます[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ウィンドウです。  
+ このトピックを紹介アプリケーション、 [WPF サンプルでは Win32 ListBox コントロールをホストしている](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control)Win32 のリスト ボックス コントロールがホストされます。 この一般的な手順は、いずれかの Win32 ウィンドウをホストに拡張できます。  
   
   
 <a name="requirements"></a>   
-## <a name="requirements"></a>要件  
- このトピックは、両方の基礎知識を前提と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]プログラミングします。 基本的な概要については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プログラミングを参照してください[作業の開始](../../../../docs/framework/wpf/getting-started/index.md)です。 概要については[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]プログラミングでは、参照してください、多数の書籍を受け、特に*プログラミング Windows* Charles Petzold でします。  
+## <a name="requirements"></a>必要条件  
+ このトピックは、WPF と Win32 の両方のプログラミングの基礎知識を前提とします。 WPF のプログラミングに基本的な概要については、次を参照してください。[作業の開始](../../../../docs/framework/wpf/getting-started/index.md)です。 Win32 プログラミングの概要については、参照してください、多数の書籍を受け、特に*プログラミング Windows* Charles Petzold でします。  
   
- C# の場合は、このトピックに付属するサンプルが実装されているので使用[!INCLUDE[TLA#tla_pinvoke](../../../../includes/tlasharptla-pinvoke-md.md)]にアクセスする、 [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)][!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)]です。 ある程度[!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)]は便利ですが必須ではありません。  
+ C# の場合は、このトピックに付属するサンプルが実装されているためが、Win32 API にアクセスするプラットフォーム呼び出しサービス (PInvoke) を使用します。 PInvoke をある程度は便利な必須ではありません。  
   
 > [!NOTE]
->  このトピックには、関連するサンプルのコード例の数が含まれます。 しかし、読みやすくするため、完全なサンプル コードは含まれていません。 取得するか、完全なコードを閲覧[WPF サンプルでは Win32 ListBox コントロールをホストしている](http://go.microsoft.com/fwlink/?LinkID=159998)です。  
+>  このトピックには、関連するサンプルのコード例の数が含まれます。 しかし、読みやすくするため、完全なサンプル コードは含まれていません。 取得するか、完全なコードを閲覧[WPF サンプルでは Win32 ListBox コントロールをホストしている](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control)です。  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>基本手順  
- ホストするための基本的な手順を概説する[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]上のウィンドウ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。 残りのセクションでは、各ステップの詳細を通過します。  
+ このセクションでは、WPF ページ上の Win32 ウィンドウをホストするための基本的な手順について説明します。 残りのセクションでは、各ステップの詳細を通過します。  
   
  基本的なホスティング手順です。  
   
-1.  実装する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ウィンドウをホストするページ。 1 つの方法は、<xref:System.Windows.Controls.Border>にホストされているウィンドウのページのセクションを予約する要素。  
+1.  ウィンドウをホストする WPF ページを実装します。 1 つの方法は、<xref:System.Windows.Controls.Border>にホストされているウィンドウのページのセクションを予約する要素。  
   
 2.  継承されるコントロールをホストするクラスを実装する<xref:System.Windows.Interop.HwndHost>です。  
   
 3.  そのクラスでは、オーバーライド、<xref:System.Windows.Interop.HwndHost>クラス メンバー<xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>です。  
   
-4.  含むウィンドウの子としてホストされているウィンドウを作成、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。 従来は[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プログラミングが明示的に作成する必要はありませんそれを使用する、ホストのページは、ウィンドウ ハンドル (HWND) を使用します。 HWND ページが表示されるを通じて、`hwndParent`のパラメーター、<xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>メソッドです。 この HWND の子としてホストされているウィンドウを作成する必要があります。  
+4.  WPF ページを含むウィンドウの子としてホストされているウィンドウを作成します。 従来の WPF プログラミングが明示的に作成する必要はありませんが、それを使用する、ホストのページは、ウィンドウ ハンドル (HWND) を使用します。 HWND ページが表示されるを通じて、`hwndParent`のパラメーター、<xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>メソッドです。 この HWND の子としてホストされているウィンドウを作成する必要があります。  
   
-5.  ホスト ウィンドウを作成した後は、ホストされたウィンドウの HWND を返します。 1 つまたは複数をホストする場合[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]コントロール、通常、HWND の子としてホスト ウィンドウを作成してそのホスト ウィンドウのコントロールの子を作成します。 ホスト ウィンドウにコントロールをラップする簡単な方法を提供、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]いくつかの特定と、コントロールから通知を受け取るページ[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]HWND の境界を越えて通知に関する問題です。  
+5.  ホスト ウィンドウを作成した後は、ホストされたウィンドウの HWND を返します。 1 つまたは複数の Win32 コントロールをホストする場合は、通常、HWND の子としてホスト ウィンドウを作成してそのホスト ウィンドウのコントロールの子を作成します。 HWND の境界を越えてな特定の Win32 問題の通知を処理する、WPF ページ、コントロールから通知を受信する簡単な方法を提供するホスト ウィンドウにコントロールをラップします。  
   
 6.  子コントロールからの通知など、ホスト ウィンドウに送信された選択したメッセージを処理します。 これには、2 つの方法があります。  
   
     -   ホストするクラスでメッセージを処理する場合は、上書き、<xref:System.Windows.Interop.HwndHost.WndProc%2A>のメソッド、<xref:System.Windows.Interop.HwndHost>クラスです。  
   
-    -   たい場合、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 、メッセージの処理、処理、<xref:System.Windows.Interop.HwndHost>クラス<xref:System.Windows.Interop.HwndHost.MessageHook>分離コードでイベント。 このイベントは、ホストされているウィンドウによって受信されるすべてのメッセージに対して発生します。 まだをオーバーライドする必要がある場合、このオプションを選択すると、 <xref:System.Windows.Interop.HwndHost.WndProc%2A>、最小限の実装のみ必要があります。  
+    -   WPF の処理、メッセージを処理する場合、<xref:System.Windows.Interop.HwndHost>クラス<xref:System.Windows.Interop.HwndHost.MessageHook>分離コードでイベント。 このイベントは、ホストされているウィンドウによって受信されるすべてのメッセージに対して発生します。 まだをオーバーライドする必要がある場合、このオプションを選択すると、 <xref:System.Windows.Interop.HwndHost.WndProc%2A>、最小限の実装のみ必要があります。  
   
 7.  上書き、<xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A>と<xref:System.Windows.Interop.HwndHost.WndProc%2A>のメソッド<xref:System.Windows.Interop.HwndHost>です。 満たすためにこれらのメソッドをオーバーライドする必要があります、<xref:System.Windows.Interop.HwndHost>コントラクト、ですが、最小限の実装を提供する必要がありますのみです。  
   
@@ -60,9 +60,9 @@ ms.locfileid: "33549086"
   
 <a name="page_layout"></a>   
 ## <a name="implement-the-page-layout"></a>ページ レイアウトを実装します。  
- レイアウト、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ListBox コントロールをホストしているページは、2 つの領域で構成されます。 いくつかのページの左側にあるホスト[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を提供するコントロール、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]を操作することができます、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]コントロール。 ページの右上隅には、ホスト型のリスト ボックス コントロールの正方形の領域があります。  
+ ListBox コントロールをホストする WPF ページのレイアウトは、2 つの領域で構成されます。 ページの左側にあるホストを提供するいくつかの WPF コントロール、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] Win32 コントロールを操作することができます。 ページの右上隅には、ホスト型のリスト ボックス コントロールの正方形の領域があります。  
   
- このレイアウトを実装するコードは、非常にシンプルです。 ルート要素が、<xref:System.Windows.Controls.DockPanel>を持つ 2 つの子要素です。 1 つは、 <xref:System.Windows.Controls.Border> ListBox コントロールをホストする要素。 200 x 200 正方形インチのページの右上隅を占有します。 2 番目、<xref:System.Windows.Controls.StackPanel>要素のセットを含む[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を設定して、リスト ボックス コントロールを操作するための情報を表示したり、コントロールを相互運用性のプロパティを公開します。 各要素の子である、<xref:System.Windows.Controls.StackPanel>の詳細については、これらの要素とは何かがどのように使用されるさまざまな要素のリファレンスを参照して、これらの次のコード例に一覧表示されますが、されません (基本的なここで説明されています。相互運用のモデルではそれらのいずれかの必要はありませんは提供されたサンプルにいくつかの対話機能を追加する)。  
+ このレイアウトを実装するコードは、非常にシンプルです。 ルート要素が、<xref:System.Windows.Controls.DockPanel>を持つ 2 つの子要素です。 1 つは、 <xref:System.Windows.Controls.Border> ListBox コントロールをホストする要素。 200 x 200 正方形インチのページの右上隅を占有します。 2 番目は、 <xref:System.Windows.Controls.StackPanel> WPF 情報を表示したり、コントロールを設定して、リスト ボックス コントロールを操作するためのセットを含む要素が相互運用性のプロパティを公開します。 各要素の子である、<xref:System.Windows.Controls.StackPanel>の詳細については、これらの要素とは何かがどのように使用されるさまざまな要素のリファレンスを参照して、これらの次のコード例に一覧表示されますが、されません (基本的なここで説明されています。相互運用のモデルではそれらのいずれかの必要はありませんは提供されたサンプルにいくつかの対話機能を追加する)。  
   
  [!code-xaml[WPFHostingWin32Control#WPFUI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml#wpfui)]  
   
@@ -73,20 +73,20 @@ ms.locfileid: "33549086"
  [!code-csharp[WPFHostingWin32Control#ControlHostClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostclass)]
  [!code-vb[WPFHostingWin32Control#ControlHostClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostclass)]  
   
- 定数のセットもします。 これらの定数の Winuser.h をから取得されます。 主とを呼び出すときに、従来の名前を使用できるように[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]関数。  
+ 定数のセットもします。 これらの定数は Winuser.h から取得されます。 主と、Win32 関数を呼び出すときに、従来の名前を使用できるようにします。  
   
  [!code-csharp[WPFHostingWin32Control#ControlHostConstants](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostconstants)]
  [!code-vb[WPFHostingWin32Control#ControlHostConstants](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostconstants)]  
   
 <a name="buildwindowcore"></a>   
 ### <a name="override-buildwindowcore-to-create-the-microsoft-win32-window"></a>Microsoft Win32 ウィンドウを作成する BuildWindowCore をオーバーライドします。  
- 作成するには、このメソッドをオーバーライドする、 [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]  ページで、によってホストされ、ウィンドウで、ページ間を接続するウィンドウです。 このサンプルでは、リスト ボックス コントロールをホストしている、2 つのウィンドウが作成されます。 1 つは、実際にホストされているウィンドウ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。 ListBox コントロールは、そのウィンドウの子として作成されます。  
+ ページによってホストされ、ウィンドウで、ページ間を接続する Win32 ウィンドウを作成するには、このメソッドをオーバーライドするとします。 このサンプルでは、リスト ボックス コントロールをホストしている、2 つのウィンドウが作成されます。 最初は、実際には、WPF ページによってホストされるウィンドウです。 ListBox コントロールは、そのウィンドウの子として作成されます。  
   
- このアプローチの理由をコントロールから通知を受け取るプロセスを簡略化を開始します。 <xref:System.Windows.Interop.HwndHost>クラスでは、それをホストしているウィンドウに送信されたメッセージを処理することができます。 ホストしている場合、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]直接コントロールをコントロールの内部メッセージ ループに送信されたメッセージを受信します。 コントロールとにメッセージを送信を表示することができますが、コントロールから親ウィンドウに送信される通知を受け取ることはありません。 つまり、特にがあるないユーザーがコントロールを操作するときを検出する方法です。 代わりに、ホスト ウィンドウを作成し、そのウィンドウの子コントロールを作成します。 これにより、コントロールによって送信された通知など、ホスト ウィンドウのメッセージを処理することができます。 便宜上、ホスト ウィンドウが単純なラッパー コントロールより小さな以上であるため、パッケージが参照されます ListBox コントロールとして。  
+ このアプローチの理由をコントロールから通知を受け取るプロセスを簡略化を開始します。 <xref:System.Windows.Interop.HwndHost>クラスでは、それをホストしているウィンドウに送信されたメッセージを処理することができます。 Win32 にホストを直接制御するコントロールの内部メッセージ ループに送信されるメッセージが表示されます。 コントロールとにメッセージを送信を表示することができますが、コントロールから親ウィンドウに送信される通知を受け取ることはありません。 つまり、特にがあるないユーザーがコントロールを操作するときを検出する方法です。 代わりに、ホスト ウィンドウを作成し、そのウィンドウの子コントロールを作成します。 これにより、コントロールによって送信された通知など、ホスト ウィンドウのメッセージを処理することができます。 便宜上、ホスト ウィンドウが単純なラッパー コントロールより小さな以上であるため、パッケージが参照されます ListBox コントロールとして。  
   
 <a name="create_the_window_and_listbox"></a>   
 #### <a name="create-the-host-window-and-listbox-control"></a>ListBox コントロールとホスト ウィンドウを作成します。  
- 使用することができます[!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)]を作成し、ウィンドウ クラスを登録するコントロールのホスト ウィンドウを作成します。 はるかに簡単な方法が定義済みの「静的」ウィンドウ クラスにウィンドウを作成します。 これにより、ウィンドウ プロシージャと、コントロールから通知を受信するために必要とする最小限のコーディングが必要です。  
+ PInvoke を使用して作成し、ウィンドウ クラスを登録するコントロールのホスト ウィンドウを作成しにできます。 はるかに簡単な方法が定義済みの「静的」ウィンドウ クラスにウィンドウを作成します。 これにより、ウィンドウ プロシージャと、コントロールから通知を受信するために必要とする最小限のコーディングが必要です。  
   
  ホスト ページを使用するとコントロールにメッセージを送信に使用できるように、コントロールの HWND は読み取り専用のプロパティを通じて公開されます。  
   
@@ -118,7 +118,7 @@ ms.locfileid: "33549086"
  このサンプルにハンドラーをアタッチする、<xref:System.Windows.Interop.HwndHost.MessageHook>のイベント、`ControlHost`コントロールからメッセージを受信します。 このイベントは、ホスト ウィンドウに送信されるすべてのメッセージに対して発生します。 この場合、これらのコントロールからの通知を含む実際の ListBox コントロールをラップするウィンドウに送信されるメッセージはします。 サンプルは、コントロールから情報を取得し、その内容を変更する 1 つを呼び出します。 ページが、コントロールとやり取りする方法の詳細については、次のセクションで説明します。  
   
 > [!NOTE]
->  含まれている 2 つ[!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)]SendMessage を宣言します。 これは、1 つを使用するために必要な`wParam`文字列と、その他に渡すパラメーターが、整数値を渡すために使用します。 データが正しくマーシャ リングすることを確認するには、各署名の個別の宣言する必要があります。  
+>  1 つの 2 つの PInvoke 宣言があることに注意してください。 これは、1 つを使用するために必要な`wParam`文字列と、その他に渡すパラメーターが、整数値を渡すために使用します。 データが正しくマーシャ リングすることを確認するには、各署名の個別の宣言する必要があります。  
   
  [!code-csharp[WPFHostingWin32Control#HostWindowClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#hostwindowclass)]
  [!code-vb[WPFHostingWin32Control#HostWindowClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#hostwindowclass)]  
@@ -128,7 +128,7 @@ ms.locfileid: "33549086"
   
 <a name="communication"></a>   
 ## <a name="implement-communication-between-the-control-and-the-page"></a>コントロールと、ページ間の通信を実装します。  
- コントロールを操作するには、Windows メッセージを送信します。 コントロールは、ユーザーがそのホスト ウィンドウに通知を送信することによってこれを操作するときに通知します。 [WPF サンプルでは Win32 ListBox コントロールをホストしている](http://go.microsoft.com/fwlink/?LinkID=159998)サンプルには、この数式の動作のいくつかの例を提供する UI が含まれています。  
+ コントロールを操作するには、Windows メッセージを送信します。 コントロールは、ユーザーがそのホスト ウィンドウに通知を送信することによってこれを操作するときに通知します。 [WPF の Win32 ListBox コントロールをホストしている](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control)サンプルには、この数式の動作のいくつかの例を提供する UI が含まれています。  
   
 -   一覧に項目を追加します。  
   
@@ -138,18 +138,18 @@ ms.locfileid: "33549086"
   
 -   一覧に項目の数を表示します。  
   
- ユーザーを選択できます項目、リスト ボックスをクリックすると同じような従来の[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]アプリケーションです。 項目を追加することを選択すると、追加、またはによっては、表示されているデータが、ユーザーがリスト ボックスの状態を変更するたびにでを更新します。  
+ ユーザー選択もできます項目、リスト ボックスをクリックして、従来の Win32 アプリケーションのと同様。 項目を追加することを選択すると、追加、またはによっては、表示されているデータが、ユーザーがリスト ボックスの状態を変更するたびにでを更新します。  
   
- 項目を追加するには、リスト ボックス LB_ADDSTRING メッセージを送信します。 項目を削除するには、LB_GETCURSEL を現在の選択範囲のインデックスを取得し、項目を削除する LB_DELETESTRING を送信します。 サンプルも LB_GETCOUNT を送信し、項目の数を表示する表示を更新する、返される値を使用します。 SendMessage のこれら両方のインスタンスがのいずれかを使用して、[!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)]宣言の前のセクションで説明します。  
+ 項目を追加するには、送信、リスト ボックス、 [ `LB_ADDSTRING`メッセージ](https://msdn.microsoft.com/library/windows/desktop/bb775181(v=vs.85).aspx)です。 項目を削除するには、次のように送信します。 [ `LB_GETCURSEL` ](https://msdn.microsoft.com/library/windows/desktop/bb775197(v=vs.85).aspx)を現在の選択範囲のインデックスを取得し、 [ `LB_DELETESTRING` ](https://msdn.microsoft.com/library/windows/desktop/bb775183(v=vs.85).aspx)アイテムを削除します。 サンプルでは送信も[ `LB_GETCOUNT` ](https://msdn.microsoft.com/library/windows/desktop/bb775195(v=vs.85).aspx)、返された値を使用して項目の数を表示する表示を更新するとします。 これらのすべてのインスタンス[ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx)前のセクションで説明した PInvoke 宣言の 1 つを使用します。  
   
  [!code-csharp[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#appenddeletetext)]
  [!code-vb[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#appenddeletetext)]  
   
- ユーザーが項目を選択するか、選択項目を変更、コントロールに通知ホスト ウィンドウを生成する WM_COMMAND メッセージを送信することによって、<xref:System.Windows.Interop.HwndHost.MessageHook>ページのイベントです。 ハンドラーは、ホスト ウィンドウのメイン ウィンドウ プロシージャと同じ情報を受け取ります。 ブール値への参照を渡します`handled`です。 設定する`handled`に`true`をメッセージを処理して、それ以上の処理が必要なことを示します。  
+ ユーザーが項目を選択するか、選択項目を変更、コントロールに通知ホスト ウィンドウに送信することによって、 [ `WM_COMMAND`メッセージ](https://msdn.microsoft.com/library/windows/desktop/ms647591(v=vs.85).aspx)、どのが発生し、<xref:System.Windows.Interop.HwndHost.MessageHook>ページのイベントです。 ハンドラーは、ホスト ウィンドウのメイン ウィンドウ プロシージャと同じ情報を受け取ります。 ブール値への参照を渡します`handled`です。 設定する`handled`に`true`をメッセージを処理して、それ以上の処理が必要なことを示します。  
   
- WM_COMMAND は、さまざまな理由により、送信されるため、イベントを処理するかどうかを判別通知 ID を確認する必要があります。 上位ワードに ID が含まれている、`wParam`パラメーター。 [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)]はくださいマクロでなく、このサンプルでは、ビットごとの演算子を使用して ID を抽出 ユーザーが行われた、または場合、選択項目を変更、ID が LBN_SELCHANGE になります。  
+ [`WM_COMMAND`](https://msdn.microsoft.com/library/windows/desktop/ms647591(v=vs.85).aspx) イベントを処理するかどうかを判別通知 ID を確認する必要がありますので、さまざまな理由から、ため送信されます。 上位ワードに ID が含まれている、`wParam`パラメーター。 このサンプルでは、ビットごとの演算子を使用して ID を抽出 ID がありますが、ユーザーが行われた、または場合、選択項目を変更、 [ `LBN_SELCHANGE`](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx)です。  
   
- LBN_SELCHANGE が受信したときに、サンプルは、コントロール LB_GETCURSEL メッセージを送信することによって、選択した項目のインデックスを取得します。 テキストを取得するには、まずを作成する、<xref:System.Text.StringBuilder>です。 メッセージを送信する、コントロール、LB_GETTEXT です。 空の渡す<xref:System.Text.StringBuilder>オブジェクトとして、`wParam`パラメーター。 SendMessage が返されるときに、<xref:System.Text.StringBuilder>選択された項目のテキストが含まれます。 この SendMessage の使用がまだ必要別[!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)]宣言します。  
+ ときに[ `LBN_SELCHANGE` ](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx)が受信されると、サンプルのインデックスを取得、選択したアイテム コントロールを送信することによって、 [ `LB_GETCURSEL`メッセージ](https://msdn.microsoft.com/library/windows/desktop/bb775197(v=vs.85).aspx)です。 テキストを取得するには、まずを作成する、<xref:System.Text.StringBuilder>です。 コントロールを送信、 [ `LB_GETTEXT`メッセージ](https://msdn.microsoft.com/library/windows/desktop/bb761313(v=vs.85).aspx)です。 空の渡す<xref:System.Text.StringBuilder>オブジェクトとして、`wParam`パラメーター。 ときに[ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx)が返される、<xref:System.Text.StringBuilder>選択された項目のテキストが含まれます。 この使用[ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx)さらに別の PInvoke 宣言が必要です。  
   
  最後に、設定`handled`に`true`メッセージが処理されたことを示すためにします。  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: e27c56d9a6d745c7d1ff83986e7996aa1bebc879
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0018b9f8644ec7d222a416bb5f71a7c61671009e
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529884"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314764"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Windows フォームにおける自動スケーリング
 自動スケーリングによって、特定のディスプレイの解像度またはシステムのフォントを持つマシンに合わせて設計されたフォームとコントロールを、ディスプレイの別の解像度やシステム フォントを持つ別のマシンで適切に表示することができます。 フォームとコントロールが、ユーザーとその他の開発者のマシンのネイティブ ウィンドウとその他のアプリケーションで、一貫性を持つよう適切にサイズ変更され、 自動スケーリングと視覚スタイルに対する [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のサポートにより、各ユーザーのマシンのネイティブの Windows アプリケーションと比較した場合、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アプリケーションが一貫したルック アンド フィールを維持することができます。
@@ -42,14 +42,6 @@ ms.locfileid: "33529884"
 - 自動スケーリングは <xref:System.Windows.Forms.Form> クラスでのみ実装されており、<xref:System.Windows.Forms.ContainerControl> クラスでは実装されていませんでした。 その結果、ユーザー コントロールは、それがフォームと同じ解像度で設計されていて、かつデザイン時にそのユーザー コントロールがそのフォームに配置された場合にのみ、正しくスケーリングされるということになっていました。
 
 - フォームとその子コントロールの設計作業を複数の開発者によって並行して進めることができたのは、マシンの解像度が同じ場合に限られていました。 同じように、フォームの継承は、親フォームに関連付けられている解像度に依存していました。
-
-> [!NOTE]
-> ディスプレイ Dpi、特に最新の 2-1 のデバイスでの極端な相違点とこれ可能性があります、.NET Framework と Visual Studio の最新のバージョンとします。 異なる DPI ディスプレイを使用して、チームでこの問題に対処をすることを確認してクトリ常には、DPI 対応でないモードでを起動して Windows フォーム デザイナーは、常に 96 DPI のレイアウトの計算のベースします。 このため、単に Visual Studio の HighDPI 認識を無効にするのには、次のレジストリ キーを設定します。
->
-> ```
-> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
-> "dpiAwareness"=dword:00000000
-> ```
 
 - <xref:System.Windows.Forms.FlowLayoutPanel> や <xref:System.Windows.Forms.TableLayoutPanel> など、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] バージョン 2.0 で導入された新しいレイアウト マネージャーと互換性がありません。
 
