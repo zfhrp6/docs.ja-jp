@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 4e2585d7fdeb89e7267f2615113f819d71236dc7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45917a9dbfbd6610c3cca9ab7dcf9f924c329c10
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580173"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314927"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Docker コンテナー用 .Net Core を選択するタイミング
 
@@ -25,9 +25,9 @@ Docker (Linux と Windows) でサポートされている複数のプラット�
 
 .NET Core は開発プラットフォームとして macOS もサポートしています。 ただし、コンテナーを Docker ホストに展開する場合、(現時点で) ホストは Linux または Windows をベースにしている必要があります。 たとえば、開発環境では Mac 上で動作する Linux VM を使用できます。
 
-[Visual Studio](https://www.visualstudio.com/) には Windows 用の統合開発環境 (IDE) が用意されています。また、Docker 開発をサポートしています。 
+[Visual Studio](https://visualstudio.microsoft.com/) には Windows 用の統合開発環境 (IDE) が用意されています。また、Docker 開発をサポートしています。 
 
-[Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) は macOS で動作する IDE であり、Xamarin Studio が進化したものです。2017 年中頃から Docker をサポートしています。
+[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/) は macOS で動作する IDE であり、Xamarin Studio が進化したものです。2017 年中頃から Docker をサポートしています。
 
 また、macOS、Linux、および Windows 上で [Visual Studio Code](https://code.visualstudio.com/) (VS Code) も使用できます。 VS Code は、IntelliSense、デバッグなどの .NET Core を完全にサポートしています。 VS Code は軽量なエディターなので、Docker CLI や [.NET Core コマンドライン インターフェイス (CLI) ツール](../../../core/tools/index.md)と組み合わせて、コンテナー化されたアプリケーションを Mac 上で開発することができます。 Sublime Text、Emacs、vi、.NET 言語の IntelliSense サポートを提供するオープンソースの OmniSharp プロジェクトなど、ほとんどのサードパーティ製エディターで .NET Core を対象にすることもできます。 IDE とエディターだけでなく、サポートされているすべてのプラットフォームで .NET Core CLI を使用できます。
 

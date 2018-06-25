@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7887c1142b721249526a318257149e419affd967
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 89989b4b7730f4e252dc846377b385cb359dbee1
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572292"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315122"
 ---
 # <a name="common-language-runtime-clr-overview"></a>共通言語ランタイム (CLR) の概要
 
@@ -32,7 +32,7 @@ ms.locfileid: "33572292"
 コンパイラとツールにより、共通言語ランタイムの機能が公開されることによって、このマネージ実行環境の利点を活用するコードを記述できるようになります。 このような共通言語ランタイムに対応した言語コンパイラを使用して作成したコードはマネージ コードと呼ばれます。マネージ コードは、言語間の統合、言語間の例外処理、強化されたセキュリティ、バージョン管理と配置のサポート、コンポーネント間の対話の簡易モデル、デバッグ サービスとプロファイル サービスなど、さまざまな機能を利用できます。
 
 > [!NOTE]
-> 型システム、メタデータの書式、およびランタイム環境 (仮想実行システム) はすべて公的な標準規格の ECMA 共通言語基盤仕様により定義されているため、コンパイラおよびツールは共通言語ランタイムが使用できる出力を生成できます。 詳細については、「[ECMA C# and Common Language Infrastructure Specifications (ECMA C# および共通言語基盤の仕様)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/)」を参照してください。
+> 型システム、メタデータの書式、およびランタイム環境 (仮想実行システム) はすべて公的な標準規格の ECMA 共通言語基盤仕様により定義されているため、コンパイラおよびツールは共通言語ランタイムが使用できる出力を生成できます。 詳細については、「[ECMA C# and Common Language Infrastructure Specifications (ECMA C# および共通言語基盤の仕様)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/)」を参照してください。
 
 マネージ コードが共通言語ランタイムからサービスを受けられるようにするために、言語コンパイラは、そのコード内の型、メンバー、および参照を記述したメタデータを生成する必要があります。 メタデータはコード内に格納されます。つまり、共通言語ランタイムの読み込み可能なすべてのポータブル実行可能 (PE) ファイルには、メタデータが含まれていることになります。 共通言語ランタイムは、クラスの検索と読み込み、メモリ内でのインスタンスのレイアウト、メソッドの呼び出しの解決、ネイティブ コードの生成、セキュリティの強化、およびランタイムのコンテキスト境界の設定にメタデータを使用します。
 

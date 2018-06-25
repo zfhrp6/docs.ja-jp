@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 2eb205e85300f22108b866e8446d6730d89ae6cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e29e88a104050230b7816da6793120d61de7bc6
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579679"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314953"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Docker アプリの開発ワークフロー
 
@@ -67,7 +67,7 @@ Visual Studio 2017 もインストールされている必要があります。 
     [*https://docs.docker.com/docker-for-windows/*](https://docs.docker.com/docker-for-windows/)
 
 -   **Visual Studio 2017**
-    [*https://www.visualstudio.com/downloads/*](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+    [*https://visualstudio.microsoft.com/downloads/*](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
 ![](./media/image4.png)
 
@@ -278,7 +278,7 @@ Visual Studio でソリューションに Docker のサポートを追加する�
 
 **図 5-8**. Visual Studio 2017 のソリューション エクスプローラーに追加された **docker-compose** ツリー ノード
 
-docker-compose up コマンドを使用すると、1 つの docker-compose.yml ファイルで、マルチコンテナー アプリケーションを展開することができます。 ただし、Visual Studio がそれらのグループを追加するので、環境 (開発対本番) と実行の種類 (リリース対デバッグ) に応じて値を上書きする必要があります。 この機能は、後のセクションで説明します。
+docker-compose up コマンドを使用すると、1 つの docker-compose.yml ファイルで、マルチコンテナー アプリケーションを展開することができます。 ただし、Visual Studio がそれらのグループを追加するので、環境 (開発対本番) と実行の種類 (リリース対デバッグ) に応じて値をオーバーライドする必要があります。 この機能は、後のセクションで説明します。
 
 ![](./media/image12.png)
 

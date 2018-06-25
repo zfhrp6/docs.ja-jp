@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: interpolated-strings.yml
   nextTutorialTitle: C# における文字列補間
-  ms.openlocfilehash: 787ea7c8eb7724fba82bf40621bde429450b1850
-  ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+  ms.openlocfilehash: 83061e2dfac30ce9b6012404259a223f7504e918
+  ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/07/2018
-  ms.locfileid: "33805643"
+  ms.lasthandoff: 06/20/2018
+  ms.locfileid: "36270319"
 items:
 - durationInMinutes: 1
   content: >
@@ -54,4 +54,30 @@ items:
     > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 課題完了
   durationInMinutes: 1
+  content: >
+    コードは次のようになりましたか?
+
+
+    ```csharp
+
+    int sum = 0;
+
+    for (int number = 1; number < 21; number++)
+
+    {
+      if (number % 3 == 0)
+      {
+        sum = sum + number;
+      }
+    }
+
+    Console.WriteLine($"The sum is {sum}");
+
+    ```
+
+
+    > [!NOTE]
+
+    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
+- title: 'おめでとうございます! '
   content: "これで \"分岐とループ\" に関するクイックスタートは終了です。 \n\nこれまでのクイック スタートを、ご自身の開発環境でも使い続けることができます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイックスタートから始めることもできます。\n\n次のトピックでこれらの概念の詳細を学習できます。\n\n[if と else ステートメント](../language-reference/keywords/if-else.md)   \n[while ステートメント](../language-reference/keywords/while.md)   \n[do ステートメント](../language-reference/keywords/do.md)   \n[for ステートメント](../language-reference/keywords/for.md)"

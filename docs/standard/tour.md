@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: b1925397fb7cad5e55f992feaa5be2e2d837aac8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de5ff06e660d3c4e976c10043a7ebc72d102cff5
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592263"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314644"
 ---
 # <a name="tour-of-net"></a>.NET のツアー
 
@@ -25,7 +25,7 @@ ms.locfileid: "33592263"
 
 ## <a name="programming-languages"></a>プログラミング言語
 
-.NET は複数のプログラミング言語をサポートしています。 .NET 実装では、[共通言語基盤 (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/) が実装されています。CLI では特に、言語に依存しないランタイムと言語の相互運用性が指定されています。 つまり、任意の .NET 言語を選んで、.NET でアプリとサービスを作成します。
+.NET は複数のプログラミング言語をサポートしています。 .NET 実装では、[共通言語基盤 (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/) が実装されています。CLI では特に、言語に依存しないランタイムと言語の相互運用性が指定されています。 つまり、任意の .NET 言語を選んで、.NET でアプリとサービスを作成します。
 
 Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#、F#、Visual Basic (VB) の 3 つです。 
 
