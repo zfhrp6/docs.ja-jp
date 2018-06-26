@@ -2,12 +2,12 @@
 title: C# 言語のバージョンの選択 - C# ガイド
 description: 特定のコンパイラ バージョンを使用して構文の検証を実行するコンパイラを構成します。
 ms.date: 05/24/2018
-ms.openlocfilehash: 2056a99544d0cac94bc7cc79e8cd8793b1bcff78
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 9b91e62168ced0f373e1a55def8b279dc64833d8
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34566335"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207983"
 ---
 # <a name="select-the-c-language-version"></a>C# 言語のバージョンの選択
 
@@ -88,7 +88,7 @@ Visual Studio のバージョンを設定できます。 ソリューション �
 </Project>
 ```
 
-これで、そのファイルを含むディレクトリのすべてのサブディレクトリ内のビルドで、C# バージョン 7.3 構文が使用されます。 詳しくは、「[ビルドのカスタマイズ](/visualstudio/msbuild/customize-your-build.md)」を参照してください。
+これで、そのファイルを含むディレクトリのすべてのサブディレクトリ内のビルドで、C# バージョン 7.3 構文が使用されます。 詳しくは、「[ビルドのカスタマイズ](/visualstudio/msbuild/customize-your-build)」を参照してください。
 
 ## <a name="set-the-langversion-compiler-option"></a>言語コンパイラ オプションを設定する
 

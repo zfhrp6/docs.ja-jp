@@ -3,12 +3,13 @@ title: dotnet run コマンド - .NET Core CLI
 description: dotnet run コマンドは、ソース コードからアプリケーションを実行する便利なオプションを提供します。
 author: mairaw
 ms.author: mairaw
-ms.date: 03/10/2018
-ms.openlocfilehash: b45d6772cabd6be90ea8e8b5da57c16692b20322
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 82c6e44e52aa6af7044edf72fd6e57b7614a70f3
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696313"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
@@ -20,20 +21,23 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 ```
-dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies] [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [[--] [application arguments]]
+dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
+    [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [-v|--verbosity] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
-
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+```
+dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
+    [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [[--] [application arguments]]
+dotnet run [-h|--help]
+```
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
 ```
 dotnet run [-c|--configuration] [-f|--framework] [-p|--project] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
-
 ---
 
 ## <a name="description"></a>説明
@@ -46,23 +50,23 @@ dotnet run [-h|--help]
 
 `dotnet run` コマンドは、ビルド済みのアセンブリではなく、プロジェクトのコンテキストで使用されます。 代わりにフレームワークに依存するアプリケーション DLL の実行を試みる場合は、コマンドなしで [dotnet](dotnet.md) を実行する必要があります。 たとえば、`myapp.dll` を実行する場合は、次のコードを使用します。
 
-```
+```console
 dotnet myapp.dll
 ```
 
 `dotnet` ドライバーの詳細については、「[.NET Core Command Line Tools (CLI)](index.md)」 (.NET Core コマンド ライン ツール (CLI)) を参照してください。
 
-アプリケーションを実行するために、`dotnet run` コマンドは、NuGet キャッシュから共有ランタイムの外にあるアプリケーションの依存関係を解決します。 このコマンドではキャッシュされた依存関係を使用するため、`dotnet run` を使用してアプリケーションを実稼働環境で実行することは推奨されません。 代わりに、[`dotnet publish`](dotnet-publish.md) コマンドを使用して[展開を作成](../deploying/index.md)し、発行された出力を展開します。
+アプリケーションを実行するため、`dotnet run` コマンドは、NuGet キャッシュから共有ランタイムの外にあるアプリケーションの依存関係を解決します。 このコマンドではキャッシュされた依存関係を使用するため、`dotnet run` を使用してアプリケーションを実稼働環境で実行することは推奨されません。 代わりに、[`dotnet publish`](dotnet-publish.md) コマンドを使用して[展開を作成](../deploying/index.md)し、発行された出力を展開します。
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
 ## <a name="options"></a>オプション
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--`
 
-実行中のアプリケーションの引数と `dotnet run` の引数を区切ります。 この後の引数はすべて実行中のアプリケーションに渡されます。
+実行中のアプリケーションの引数と `dotnet run` の引数を区切ります。 この区切り記号の後の引数はすべて実行中のアプリケーションに渡されます。
 
 `-c|--configuration {Debug|Release}`
 
@@ -74,7 +78,7 @@ dotnet myapp.dll
 
 `--force`
 
-最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 これは、*project.assets.json* を削除する処理に相当します。
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 このフラグを指定することは、*project.assets.json* ファイルを削除することと同じです。
 
 `-h|--help`
 
@@ -82,11 +86,65 @@ dotnet myapp.dll
 
 `--launch-profile <NAME>`
 
-アプリケーションを起動する場合に使用する起動プロファイル (存在する場合) の名前です。 起動プロファイルは *launchSettings.json* ファイル内に定義されており、通常は、`Development`、`Staging`、および `Production` と呼ばれています。 詳細については、[「Working with multiple environments」](/aspnet/core/fundamentals/environments) (複数の環境での使用) をご覧ください。
+アプリケーションを起動する場合に使用する起動プロファイル (存在する場合) の名前です。 起動プロファイルは *launchSettings.json* ファイル内に定義されており、通常は、`Development`、`Staging`、`Production` と呼ばれています。 詳細については、[「Working with multiple environments」](/aspnet/core/fundamentals/environments) (複数の環境での使用) をご覧ください。
 
 `--no-build`
 
-実行前にプロジェクトをビルドしません。
+実行前にプロジェクトをビルドしません。 また、`--no-restore` フラグが暗黙的に設定されます。
+
+`--no-dependencies`
+
+プロジェクト間 (P2P) 参照を含むプロジェクトを復元する場合は、参照ではなく、ルート プロジェクトを復元します。
+
+`--no-launch-profile`
+
+アプリケーションを構成するための *launchSettings.json* の使用を試みません。
+
+`--no-restore`
+
+コマンドを実行するときに、暗黙的な復元を実行しません。
+
+`-p|--project <PATH>`
+
+実行するプロジェクト ファイルのパスを指定します (フォルダー名または完全なパス)。 指定しない場合は、既定で現在のディレクトリに設定されます。
+
+`--runtime <RUNTIME_IDENTIFIER>`
+
+パッケージを復元するターゲット ランタイムを指定します。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。
+
+`-v|--verbosity <LEVEL>`
+
+コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
+
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+
+`--`
+
+実行中のアプリケーションの引数と `dotnet run` の引数を区切ります。 この区切り記号の後の引数はすべて実行中のアプリケーションに渡されます。
+
+`-c|--configuration {Debug|Release}`
+
+ビルド構成を定義します。 既定値は `Debug` です。
+
+`-f|--framework <FRAMEWORK>`
+
+指定された[フレームワーク](../../standard/frameworks.md)を使用してアプリをビルドし、実行します。 フレームワークはプロジェクト ファイルに指定する必要があります。
+
+`--force`
+
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 このフラグを指定することは、*project.assets.json* ファイルを削除することと同じです。
+
+`-h|--help`
+
+コマンドの短いヘルプを印刷します。
+
+`--launch-profile <NAME>`
+
+アプリケーションを起動する場合に使用する起動プロファイル (存在する場合) の名前です。 起動プロファイルは *launchSettings.json* ファイル内に定義されており、通常は、`Development`、`Staging`、`Production` と呼ばれています。 詳細については、[「Working with multiple environments」](/aspnet/core/fundamentals/environments) (複数の環境での使用) をご覧ください。
+
+`--no-build`
+
+実行前にプロジェクトをビルドしません。 また、`--no-restore` フラグが暗黙的に設定されます。
 
 `--no-dependencies`
 
@@ -112,7 +170,7 @@ dotnet myapp.dll
 
 `--`
 
-実行中のアプリケーションの引数と `dotnet run` の引数を区切ります。 この後の引数はすべて実行中のアプリケーションに渡されます。
+実行中のアプリケーションの引数と `dotnet run` の引数を区切ります。 この区切り記号の後の引数はすべて実行中のアプリケーションに渡されます。
 
 `-c|--configuration {Debug|Release}`
 

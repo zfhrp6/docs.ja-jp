@@ -3,12 +3,13 @@ title: dotnet vstest コマンド - .NET Core CLI
 description: dotnet vstest コマンドは、プロジェクトとそのすべての依存関係をビルドします。
 author: guardrex
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 981b56aa46afd5ca313ee0be0ca10843ef70e939
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/30/2018
+ms.openlocfilehash: 84b9d9eebfbf20fefe8153dd3ae9bec0f34986c8
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696339"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -20,7 +21,26 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-`dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath] [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger] [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]`
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+```
+dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
+    [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
+    [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [--Blame|/Blame] [--InIsolation|/InIsolation]
+    [[--] <args>...]] [-?|--Help|/?|/Help]
+```
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+```
+dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath] 
+    [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
+    [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
+```
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+```
+dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
+    [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger] 
+    [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
+```
+---
 
 ## <a name="description"></a>説明
 
@@ -33,6 +53,8 @@ ms.lasthandoff: 05/04/2018
 指定されたアセンブリからテストを実行します。 複数のテスト アセンブリ名を指定するときは、空白で区切ります。
 
 ## <a name="options"></a>オプション
+
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -52,7 +74,7 @@ ms.lasthandoff: 05/04/2018
 
 `--Framework|/Framework:<Framework Version>`
 
-テストの実行に使用する対象の .NET Framework バージョンです。 有効な値の例としては、`.NETFramework,Version=v4.6`、`.NETCoreApp,Version=v1.0` などがあります。サポートされるその他の値は、`Framework35`、`Framework40`、`Framework45`、および `FrameworkCore10` です。
+テストの実行に使用する対象の .NET Framework バージョンです。 有効な値の例としては、`.NETFramework,Version=v4.6` や `.NETCoreApp,Version=v1.0` などがあります。 サポートされるその他の値は、`Framework35`、`Framework40`、`Framework45`、`FrameworkCore10`、`FrameworkUap10` です。
 
 `--Parallel|/Parallel`
 
@@ -60,7 +82,7 @@ ms.lasthandoff: 05/04/2018
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-指定した式に一致するテストを実行します。 `<Expression>` の形式は `<property>Operator<value>[|&<Expression>]` です。この場合の演算子は `=`、`!=`、または `~` のいずれかになります。  演算子 `~` は 'contains' セマンティクスを持ち、`DisplayName` などの文字列プロパティに適用できます。 かっこ `()` はサブ式をグループ化するために使用します。
+指定した式に一致するテストを実行します。 `<Expression>` の形式は `<property>Operator<value>[|&<Expression>]` です。この場合の演算子は `=`、`!=`、または `~` のいずれかになります。 演算子 `~` は 'contains' セマンティクスを持ち、`DisplayName` などの文字列プロパティに適用できます。 かっこ `()` はサブ式をグループ化するために使用します。
 
 `-?|--Help|/?|/Help`
 
@@ -68,7 +90,7 @@ ms.lasthandoff: 05/04/2018
 
 `--logger|/logger:<Logger Uri/FriendlyName>`
 
-テスト結果のロガーを指定します。  
+テスト結果のロガーを指定します。
 
 * Team Foundation Server にテスト結果を発行するには、次のように `TfsPublisher` ロガー プロバイダーを使用します。
 
@@ -90,7 +112,96 @@ ms.lasthandoff: 05/04/2018
 
 `-lt|--ListTests|/lt|/ListTests:<File Name>`
 
-指定されたテスト コンテナーから探索されたテストを一覧表示します。
+指定されたテスト コンテナーから探索されたテストをすべて一覧表示します。
+
+`--ParentProcessId|/ParentProcessId:<ParentProcessId>`
+
+現在のプロセスを起動する親プロセスのプロセス ID です。
+
+`--Port|/Port:<Port>`
+
+ソケット接続およびイベント メッセージの受信用のポートを指定します。
+
+`--Diag|/Diag:<Path to log file>`
+
+テスト プラットフォームの詳細ログを有効にします。 指定されたファイルにログが書き込まれます。
+
+`--Blame|/Blame`
+
+変更履歴モードでテストを実行します。 このオプションは、テスト ホストのクラッシュを引き起こす問題のあるテストを分離するのに役立ちます。 これは、現在のディレクトリ内に出力ファイルを *Sequence.xml* として作成します。このファイルは、クラッシュ前にテストの実行順序をキャプチャします。
+
+`--InIsolation|/InIsolation`
+
+分離プロセスでテストを実行します。 これにより、テストでエラーが発生しても *vstest.console.exe* プロセスが停止することは少なくなりますが、テストの実行速度は低下する可能性があります。
+
+`@<file>`
+
+応答ファイルを読み込んで、オプションを追加します。
+
+
+`args`
+
+アダプターに渡す追加の引数を指定します。 引数は `<n>=<v>` 形式の名前と値のペアとして指定されます。この場合の `<n>` は引数名、`<v>` は引数値です。 複数の引数を指定する場合は、空白で区切ります。
+
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+
+`--Settings|/Settings:<Settings File>`
+
+テストの実行時に使用される設定です。
+
+`--Tests|/Tests:<Test Names>`
+
+指定した値に一致する名前のテストを実行します。 複数の値を指定するときは、コンマで区切ります。
+
+`--TestAdapterPath|/TestAdapterPath`
+
+テストの実行では、指定されたパス (存在する場合) からカスタム テスト アダプターを使用します。
+
+`--Platform|/Platform:<Platform type>`
+
+テストの実行に使用する対象のプラットフォーム アーキテクチャです。 有効な値は `x86`、`x64`、`ARM` です。
+
+`--Framework|/Framework:<Framework Version>`
+
+テストの実行に使用する対象の .NET Framework バージョンです。 有効な値の例としては、`.NETFramework,Version=v4.6` や `.NETCoreApp,Version=v1.0` などがあります。 サポートされるその他の値は、`Framework35`、`Framework40`、`Framework45`、および `FrameworkCore10` です。
+
+`--Parallel|/Parallel`
+
+テストを並列で実行します。 既定では、コンピューター上のすべての使用可能なコアを使用できます。 設定ファイルを使用して、明示的なコア数を設定します。
+
+`--TestCaseFilter|/TestCaseFilter:<Expression>`
+
+指定した式に一致するテストを実行します。 `<Expression>` の形式は `<property>Operator<value>[|&<Expression>]` です。この場合の演算子は `=`、`!=`、または `~` のいずれかになります。 演算子 `~` は 'contains' セマンティクスを持ち、`DisplayName` などの文字列プロパティに適用できます。 かっこ `()` はサブ式をグループ化するために使用します。
+
+`-?|--Help|/?|/Help`
+
+コマンドの短いヘルプを印刷します。
+
+`--logger|/logger:<Logger Uri/FriendlyName>`
+
+テスト結果のロガーを指定します。
+
+* Team Foundation Server にテスト結果を発行するには、次のように `TfsPublisher` ロガー プロバイダーを使用します。
+
+  ```
+  /logger:TfsPublisher;
+      Collection=<team project collection url>;
+      BuildName=<build name>;
+      TeamProject=<team project name>
+      [;Platform=<Defaults to "Any CPU">]
+      [;Flavor=<Defaults to "Debug">]
+      [;RunTitle=<title>]
+  ```
+
+* Visual Studio テスト結果ファイル (TRX) に結果のログを書き込むには、`trx` ロガー プロバイダーを使用します。 このように切り替えることで、テスト結果ディレクトリに指定のログ ファイル名でファイルが作成されます。 `LogFileName` が指定されていない場合は、テスト結果を保持するために一意のファイル名が作成されます。
+
+  ```
+  /logger:trx [;LogFileName=<Defaults to unique file name>]
+  ```
+
+`-lt|--ListTests|/lt|/ListTests:<File Name>`
+
+指定されたテスト コンテナーから探索されたテストをすべて一覧表示します。
 
 `--ParentProcessId|/ParentProcessId:<ParentProcessId>`
 
@@ -107,6 +218,84 @@ ms.lasthandoff: 05/04/2018
 `args`
 
 アダプターに渡す追加の引数を指定します。 引数は `<n>=<v>` 形式の名前と値のペアとして指定されます。この場合の `<n>` は引数名、`<v>` は引数値です。 複数の引数を指定する場合は、空白で区切ります。
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`--Settings|/Settings:<Settings File>`
+
+テストの実行時に使用される設定です。
+
+`--Tests|/Tests:<Test Names>`
+
+指定した値に一致する名前のテストを実行します。 複数の値を指定するときは、コンマで区切ります。
+
+`--TestAdapterPath|/TestAdapterPath`
+
+テストの実行では、指定されたパス (存在する場合) からカスタム テスト アダプターを使用します。
+
+`--Platform|/Platform:<Platform type>`
+
+テストの実行に使用する対象のプラットフォーム アーキテクチャです。 有効な値は `x86`、`x64`、`ARM` です。
+
+`--Framework|/Framework:<Framework Version>`
+
+テストの実行に使用する対象の .NET Framework バージョンです。 有効な値の例としては、`.NETFramework,Version=v4.6` や `.NETCoreApp,Version=v1.0` などがあります。 サポートされるその他の値は、`Framework35`、`Framework40`、`Framework45`、および `FrameworkCore10` です。
+
+`--Parallel|/Parallel`
+
+テストを並列で実行します。 既定では、コンピューター上のすべての使用可能なコアを使用できます。 設定ファイルを使用して、明示的なコア数を設定します。
+
+`--TestCaseFilter|/TestCaseFilter:<Expression>`
+
+指定した式に一致するテストを実行します。 `<Expression>` の形式は `<property>Operator<value>[|&<Expression>]` です。この場合の演算子は `=`、`!=`、または `~` のいずれかになります。 演算子 `~` は 'contains' セマンティクスを持ち、`DisplayName` などの文字列プロパティに適用できます。 かっこ `()` はサブ式をグループ化するために使用します。
+
+`-?|--Help|/?|/Help`
+
+コマンドの短いヘルプを印刷します。
+
+`--logger|/logger:<Logger Uri/FriendlyName>`
+
+テスト結果のロガーを指定します。
+
+* Team Foundation Server にテスト結果を発行するには、次のように `TfsPublisher` ロガー プロバイダーを使用します。
+
+  ```
+  /logger:TfsPublisher;
+      Collection=<team project collection url>;
+      BuildName=<build name>;
+      TeamProject=<team project name>
+      [;Platform=<Defaults to "Any CPU">]
+      [;Flavor=<Defaults to "Debug">]
+      [;RunTitle=<title>]
+  ```
+
+* Visual Studio テスト結果ファイル (TRX) に結果のログを書き込むには、`trx` ロガー プロバイダーを使用します。 このように切り替えることで、テスト結果ディレクトリに指定のログ ファイル名でファイルが作成されます。 `LogFileName` が指定されていない場合は、テスト結果を保持するために一意のファイル名が作成されます。
+
+  ```
+  /logger:trx [;LogFileName=<Defaults to unique file name>]
+  ```
+
+`-lt|--ListTests|/lt|/ListTests:<File Name>`
+
+指定されたテスト コンテナーから探索されたテストをすべて一覧表示します。
+
+`--ParentProcessId|/ParentProcessId:<ParentProcessId>`
+
+現在のプロセスを起動する親プロセスのプロセス ID です。
+
+`--Port|/Port:<Port>`
+
+ソケット接続およびイベント メッセージの受信用のポートを指定します。
+
+`--Diag|/Diag:<Path to log file>`
+
+テスト プラットフォームの詳細ログを有効にします。 指定されたファイルにログが書き込まれます。
+
+`args`
+
+アダプターに渡す追加の引数を指定します。 引数は `<n>=<v>` 形式の名前と値のペアとして指定されます。この場合の `<n>` は引数名、`<v>` は引数値です。 複数の引数を指定する場合は、空白で区切ります。
+
+---
 
 ## <a name="examples"></a>使用例
 
@@ -129,4 +318,3 @@ ms.lasthandoff: 05/04/2018
 `TestMethod1` および `TestMethod2` テストを実行する:
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`
-

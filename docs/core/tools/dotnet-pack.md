@@ -3,12 +3,13 @@ title: dotnet pack コマンド - .NET Core CLI
 description: dotnet pack コマンドでは、.NET Core プロジェクトの NuGet パッケージを作成します。
 author: mairaw
 ms.author: mairaw
-ms.date: 03/10/2018
-ms.openlocfilehash: 6e6136e22c4bac201cfa0e4af321329432c04936
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 8c2569ec7598b21fe9b673176143d0e54b9eb065
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696820"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -21,16 +22,15 @@ ms.lasthandoff: 05/04/2018
 ## <a name="synopsis"></a>構文
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
-dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
+    [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 ---
@@ -41,7 +41,7 @@ dotnet pack [-h|--help]
 
 パックされるプロジェクトの NuGet 依存関係が *.nuspec* ファイルに追加されるため、パッケージのインストール時に適切に解決されます。 プロジェクト間参照はプロジェクト内にはパッケージ化されません。 現時点では、プロジェクト間の依存関係がある場合は、プロジェクトごとにパッケージが必要になります。
 
-既定では、`dotnet pack` は最初にプロジェクトをビルドします。 この動作を避けたい場合は、`--no-build` オプションを渡します。 これは、コードが既にビルドされていることがわかっている場合の継続的インテグレーション (CI) ビルド シナリオで役立つことがよくあります。
+既定では、`dotnet pack` は最初にプロジェクトをビルドします。 この動作を避けたい場合は、`--no-build` オプションを渡します。 このオプションは、コードが既にビルドされていることがわかっている場合の継続的インテグレーション (CI) ビルド シナリオで役立つことがよくあります。
 
 パッキング プロセスのために `dotnet pack` コマンドに MSBuild のプロパティを使用できます。 詳細については、「[NuGet メタデータ プロパティ](csproj.md#nuget-metadata-properties)」と「[MSBuild コマンド ライン リファレンス](/visualstudio/msbuild/msbuild-command-line-reference)」を参照してください。 「[例](#examples)」のセクションでは、MSBuild の /p スイッチを使用する方法について、2 つの異なるシナリオで説明します。
 
@@ -51,7 +51,7 @@ dotnet pack [-h|--help]
 
 `PROJECT`
 
-パックするプロジェクトです。 [csproj ファイル](csproj.md)またはディレクトリのいずれかへのパスです。 省略すると、既定で現在のディレクトリに設定されます。
+パックするプロジェクトです。 [csproj ファイル](csproj.md)またはディレクトリのいずれかへのパスです。 指定しない場合は、既定で現在のディレクトリに設定されます。
 
 ## <a name="options"></a>オプション
 
@@ -61,7 +61,9 @@ dotnet pack [-h|--help]
 
 ビルド構成を定義します。 既定値は `Debug` です。
 
-`--force` 最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 これは、*project.assets.json* ファイルを削除する処理に相当します。
+`--force`
+
+最後の復元が成功した場合でも、すべての依存関係が強制的に解決されます。 このフラグを指定することは、*project.assets.json* ファイルを削除することと同じです。
 
 `-h|--help`
 
@@ -77,7 +79,7 @@ NuGet パッケージにソース ファイルを含めます。 ソース フ�
 
 `--no-build`
 
-パッキングの前にプロジェクトをビルドしません。
+パッキングの前にプロジェクトをビルドしません。 また、`--no-restore` フラグが暗黙的に設定されます。
 
 `--no-dependencies`
 
@@ -91,7 +93,7 @@ NuGet パッケージにソース ファイルを含めます。 ソース フ�
 
 指定したディレクトリにビルド済みパッケージを配置します。
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+`--runtime <RUNTIME_IDENTIFIER>`
 
 パッケージを復元するターゲット ランタイムを指定します。 ランタイム ID (RID) の一覧については、[RID カタログ](../rid-catalog.md)に関するページをご覧ください。
 
