@@ -3,11 +3,12 @@ title: C# の歴史 - C# ガイド
 description: この言語の最初のバージョンがどのようなものであったか、そしてそれ以降どのように進化してきたかについて説明します。
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 1c7b91a3a5c77059ca8d7acef95252b4a3557b28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e659f2438e9785a02f7016e49b78015ad46b9133
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696976"
 ---
 # <a name="the-history-of-c"></a>C# の歴史 #
 
@@ -98,7 +99,7 @@ C# バージョン 3.0 と 5.0 では、いくつかの優れた機能がオブ�
 - [Null 伝達子](https://davefancher.com/2014/08/14/c-6-0-null-propagation-operator/)
 - [文字列補間](../language-reference/tokens/interpolated.md)
 - [nameof 演算子](https://stackoverflow.com/questions/31695900/what-is-the-purpose-of-nameof)
-- [辞書初期化子](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md)
+- [インデックス初期化子](csharp-6.md#index-initializers)
 
 これらの機能は、単独でも興味深い機能ですが、 全体として見てみると、興味深いパターンが見えます。 このバージョンで、コードをより簡潔で読みやすくするため、C# から定型表現が排除されました。 そのため、クリーンで単純なコードが好きな人に、この言語バージョンは大当たりしました。
 

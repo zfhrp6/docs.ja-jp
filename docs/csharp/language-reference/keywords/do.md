@@ -1,38 +1,44 @@
 ---
 title: do (C# リファレンス)
-ms.date: 07/20/2015
+ms.date: 05/28/2018
 f1_keywords:
 - do_CSharpKeyword
 - do
 helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-ms.openlocfilehash: 5599f079e29fd094c4d6a6a75afba89fb562a166
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b918b378623a239803fb4e0a65fcf82fd677b21f
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566086"
 ---
 # <a name="do-c-reference"></a>do (C# リファレンス)
-`do` ステートメントでは、指定された式が `false` になるまで、ステートメントまたはステートメント ブロックが繰り返し実行されます。 ループの本体は、単一のステートメントで構成されている場合を除いて、中かっこ (`{}`) で囲む必要があります。 単一ステートメントで構成されている場合、中かっこはオプションです。  
-  
-## <a name="example"></a>例  
- 次の例では、変数 `x` が 5 未満である限り、`do-while` ループ ステートメントが実行されます。  
-  
- [!code-csharp[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]  
-  
- [while](../../../csharp/language-reference/keywords/while.md) ステートメントとは異なり、`do-while` ループは条件式が評価される前に 1 回実行されます。  
-  
- `do-while` ブロック内の任意の位置で、[break](../../../csharp/language-reference/keywords/break.md) ステートメントを使用してループを抜けることができます。 [continue](../../../csharp/language-reference/keywords/continue.md) ステートメントを使用すると、`while` 式の評価ステートメントを直接ステップ実行できます。 `while` 式の評価が true の場合、ループの最初のステートメントから実行が続行されます。 式の評価が false の場合、`do-while` ループの後の最初のステートメントから実行が続行されます。  
-  
- [goto](../../../csharp/language-reference/keywords/goto.md) ステートメント、[return](../../../csharp/language-reference/keywords/return.md) ステートメント、または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを使用して `do-while` ループを抜けることもできます。  
-  
-## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>参照  
- [C# リファレンス](../../../csharp/language-reference/index.md)  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+
+`do` ステートメントでは、指定されたブール式が `true` と評価される間に、ステートメントまたはステートメント ブロックが実行されます。 ループの各実行の後に式が評価されるため、`do-while` ループは 1 回以上実行されます。 [while](while.md) ループは、これとは異なり、0 回以上実行されます。
+
+`do` ステートメント ブロック内の任意の位置で、[break](break.md) ステートメントを使用してループを抜けることができます。
+
+[continue](continue.md) ステートメントを使用すると、`while` 式の評価に直接ステップ実行できます。 式の評価が `true` の場合、ループの最初のステートメントから実行が続行されます。 それ以外の場合、実行は、ループの後の最初のステートメントから続行されます。
+
+また、[goto](goto.md)、[return](return.md)、[throw](throw.md) ステートメントのいずれかを使って `do-while` ループを終了することもできます。
+
+## <a name="example"></a>例
+
+`do` ステートメントの使用方法を次の例に示します。 **[実行]** を選択して、コード例を実行します。 その後に、コードを変更し、もう一度実行することができます。
+
+[!code-csharp-interactive[do loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#4)]
+
+## <a name="c-language-specification"></a>C# 言語仕様
+
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a>関連項目
+
+ [C# リファレンス](../index.md)  
+ [C# プログラミング ガイド](../../programming-guide/index.md)  
+ [C# のキーワード](index.md)  
  [do-while ステートメント (C++)](/cpp/cpp/do-while-statement-cpp)  
- [繰り返しステートメント](../../../csharp/language-reference/keywords/iteration-statements.md)
+ [繰り返しステートメント](iteration-statements.md)  
+ [while ステートメント](while.md)  
