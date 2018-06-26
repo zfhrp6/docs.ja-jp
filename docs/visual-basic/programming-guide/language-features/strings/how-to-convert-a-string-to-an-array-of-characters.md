@@ -19,7 +19,7 @@ ms.locfileid: "33648620"
 文字、文字列および文字列を解析する際など、文字列内の文字の位置に関するデータが存在すると便利ですがあります。 この例を呼び出して、文字列の文字列の文字の配列を取得する方法を示しています。<xref:System.String.ToCharArray%2A>メソッドです。  
   
 ## <a name="example"></a>例  
- 文字列を分割する方法を示します、`Char`に文字列を分割する方法と、配列、 `String` Unicode テキスト文字の配列。 この違いの理由は 2 つ以上の Unicode テキスト文字を構成することできます`Char`文字 (サロゲート ペアなど、組み合わせ文字のシーケンス)。 詳細については、次を参照してください。 <xref:System.Globalization.TextElementEnumerator> "で Unicode 標準"とhttp://www.unicode.orgです。  
+ 文字列を分割する方法を示します、`Char`に文字列を分割する方法と、配列、 `String` Unicode テキスト文字の配列。 この違いの理由は 2 つ以上の Unicode テキスト文字を構成することできます`Char`文字 (サロゲート ペアなど、組み合わせ文字のシーケンス)。 詳細については、次を参照してください。 <xref:System.Globalization.TextElementEnumerator> "で Unicode 標準"とhttp://www.unicode.org です。  
   
  [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_1.vb)]  
   
