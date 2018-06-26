@@ -1,18 +1,18 @@
 ---
 title: .NET Framework のバージョンおよび依存関係
 ms.custom: updateeachrelease
-ms.date: 04/10/2018
+ms.date: 05/31/2018
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9b3a32e21573ae7f2e59655b191278e4aec7c4ab
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 7c2c3ca038508b63533a7e17f6ceb6ebf1ad6842
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457616"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34728616"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework のバージョンおよび依存関係
 .NET Framework の各バージョンには、共通言語ランタイム (CLR)、基底クラス ライブラリ、およびその他のマネージ ライブラリが含まれています。 このトピックでは、.NET Framework の各バージョンの主要な機能について説明し、基になっている CLR のバージョンおよび関連する開発環境に関する情報と、Windows オペレーティング システムでインストールされる .NET Framework のバージョンを示します。  
@@ -45,9 +45,13 @@ ms.locfileid: "34457616"
 |2.0|2.0|- ジェネリック<br />- ASP.NET の機能追加<br />-   [その他...](http://msdn.microsoft.com/library/t357fb32\(v=vs.80\).aspx)|2005|-|✓ 2008 R2 SP1<br />✓ 2008 SP2<br />✓ 2003|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
 |1.1|1.1|- ASP.NET と ADO.NET の更新<br />- side-by-side 実行<br />-   [その他...](http://msdn.microsoft.com/library/9wtde3k4\(v=vs.80\).aspx)|2003|-|✓ 2003|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
 |1|1|.NET Framework の最初のバージョン。|Visual Studio .NET|-|-|[手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照|  
-  
- 一般に、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。使用するアプリケーションが特定のバージョンに依存しており、バージョンが削除されると破損する可能性があるからです。 1 台のコンピューターに複数バージョンの .NET Framework を同時に読み込むことができます。 これは、以前のバージョンをアンインストールすることなく、.NET Framework をインストールできることを意味します。 詳細については、[概要](../../../docs/framework/get-started/index.md)に関するページを参照してください。  
-  
+
+**ノート**
+
+<sup>\*</sup>&nbsp;&nbsp;このオペレーティング システムで [[コントロール パネル] (Windows の場合) または [サーバー マネージャー] (Windows Server の場合)](../install/dotnet-35-windows-10.md#enable-the-net-framework-35-in-control-panel) を使用して、.NET Framework を有効にする必要があります。
+
+ 一般に、コンピューターにインストールされている .NET Framework のバージョンはアンインストールしないでください。使用するアプリケーションが特定のバージョンに依存しており、バージョンが削除されると破損する可能性があるからです。 1 台のコンピューターに複数バージョンの .NET Framework を同時に読み込むことができます。 これは、以前のバージョンをアンインストールすることなく、.NET Framework をインストールできることを意味します。 詳細については、[概要](../../../docs/framework/get-started/index.md)に関するページを参照してください。
+
 ## <a name="targeting-and-running-net-framework-apps-for-version-45-and-later"></a>.NET Framework 4.5 以降のバージョンをターゲットにして実行する  
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] はコンピューターの [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] を置き換えるインプレース更新であり、[!INCLUDE[net_v451](../../../includes/net-v451-md.md)] 4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1 は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインプレース更新です。つまり、同じバージョンのランタイムを使用しますが、アセンブリのバージョンが更新され、新しい型とメンバーが含まれます。 これらの更新プログラムのいずれかをインストールした後、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] アプリ、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] アプリ、NET Framework 4.6 アプリ、.NET Framework 4.7 アプリは再コンパイルせずに実行を継続します。 ただし、逆はできません。 .NET Framework の新しいバージョンをターゲットとするアプリを .NET Framework の以前のバージョンで実行することは推奨されていません。 たとえば、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] をターゲットとするアプリを [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で実行することは推奨されていません。 次のガイドラインが適用されます。  
   

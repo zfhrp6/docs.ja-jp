@@ -8,11 +8,12 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b75429d0de69c60e7c24551bf1d9218e74d0c5ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31d14a8ef6a4b17eea1b9160e811bb92946d775b
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34728642"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>.NET Framework のアプリケーションの互換性
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 05/04/2018
 * プロジェクト ファイルでターゲット フレームワークを指定する。
 * <xref:System.Runtime.Versioning.TargetFrameworkAttribute> をソース コードに適用する。
 
-ターゲットに指定されたバージョンより新しいバージョンでアプリが実行されると、.NET Framework は後方互換動作によって、ターゲットに指定されている古いバージョンを模倣します。 つまり、アプリは、Framework の新しいバージョンで実行されていても、古いバージョンで実行されているように機能します。 .NET Framework のバージョン間の互換性の問題の多くは、この後方互換モデルを通して対応されます。
+ターゲットに指定されたバージョンより新しいバージョンでアプリが実行されると、.NET Framework は後方互換動作によって、ターゲットに指定されている古いバージョンを模倣します。 つまり、アプリは、Framework の新しいバージョンで実行されていても、古いバージョンで実行されているように機能します。 .NET Framework のバージョン間の互換性の問題の多くは、この後方互換モデルを通して対応されます。 アプリケーションがターゲットとする .NET Framework のバージョンは、コードが実行されているアプリケーション ドメインのエントリ アセンブリのターゲット バージョンによって決まります。 そのアプリケーション ドメインに読み込まれたすべての追加アセンブリは、その .NET Framework バージョンをターゲットとします。 たとえば、実行可能ファイルの場合、実行可能ファイルのターゲットとなるフレームワークは、その AppDomain 内のすべてのアセンブリが実行される互換モードになります。
 
 ## <a name="runtime-changes"></a>ランタイムの変更
 

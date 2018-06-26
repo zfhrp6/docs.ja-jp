@@ -13,11 +13,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: 0d426d8cf174a61c724e97b5e7af5c1428679716
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0801b3d2a0e34c1ac28569a164e140010ba36ab7
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805673"
 ---
 # <a name="commanding-overview"></a>コマンド実行の概要
 <a name="introduction"></a> コマンド実行は [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の入力メカニズムであり、デバイス入力よりいっそうセマンティックなレベルでの入力処理を提供します。 コマンドの例は、多くのアプリケーションで見られる**コピー**、**切り取り**、**貼り付け**などの操作です。  
@@ -40,15 +41,15 @@ ms.lasthandoff: 05/04/2018
 ## <a name="what-are-commands"></a>コマンドとは  
  コマンドには、いくつかの目的があります。 第 1 の目的は、コマンドを呼び出すセマンティクスとオブジェクトを、コマンドを実行するロジックから分離することです。 これにより、複数の異なるソースから同じコマンド ロジックを呼び出すことができ、異なるターゲットに合わせてコマンド ロジックをカスタマイズできます。 たとえば、多くのアプリケーションで使われる編集操作である**コピー**、**切り取り**、**貼り付け**は、コマンドを使って実装されていれば、異なるユーザー アクションを使って呼び出すことができます。 ユーザーは、ボタンをクリックして、メニューの項目を選択して、または Ctrl + X などのキーの組み合わせを使って、選んだオブジェクトやテキストを切り取ることができます。 コマンドを使うことにより、各種のユーザー アクションを同じロジックにバインドできます。  
   
- コマンドのもう 1 つの目的は、アクションを実行できるかどうかを示すことです。 再びオブジェクトやテキストの切り取りを例にすると、アクションは何かを選択したときにのみ意味があります。 何も選ばないでオブジェクトまたはテキストを切り取ろうとすると、何も起こりません。 ユーザーにこのことを示すため、多くのアプリケーションでは、ボタンやメニュー項目を無効にして、アクションを実行できるかどうかをユーザーが認識できるようにしています。 コマンドは、アクションは、実装することによって可能かどうかを示すことができます、<xref:System.Windows.Input.ICommand.CanExecute%2A>メソッドです。 サブスクライブするボタン、<xref:System.Windows.Input.ICommand.CanExecuteChanged>イベント場合無効にして<xref:System.Windows.Input.ICommand.CanExecute%2A>を返します`false`場合に有効にするか<xref:System.Windows.Input.ICommand.CanExecute%2A>を返します`true`です。  
+ コマンドのもう 1 つの目的は、アクションを実行できるかどうかを示すことです。 再びオブジェクトやテキストの切り取りを例にすると、アクションは何かを選択したときにのみ意味があります。 何も選ばないでオブジェクトまたはテキストを切り取ろうとすると、何も起こりません。 ユーザーにこのことを示すため、多くのアプリケーションでは、ボタンやメニュー項目を無効にして、アクションを実行できるかどうかをユーザーが認識できるようにしています。 コマンドでは、<xref:System.Windows.Input.ICommand.CanExecute%2A> メソッドを実装することで、アクションが実行可能かどうかを示すことができます。 ボタンは、<xref:System.Windows.Input.ICommand.CanExecuteChanged> イベントをサブスクライブでき、<xref:System.Windows.Input.ICommand.CanExecute%2A> で `false` が返された場合は無効に、<xref:System.Windows.Input.ICommand.CanExecute%2A> で `true` が返された場合は有効にできます。  
   
- コマンドのセマンティクスはアプリケーションおよびクラス全体で統一できますが、アクションのロジックは対象となる特定のオブジェクトに固有です。 キーの組み合わせ Ctrl + X キーはテキスト クラス、イメージ クラス、Web ブラウザーの**切り取り**コマンドを呼び出しますが、**切り取り**操作を実行する実際のロジックは、切り取りを実行するアプリケーションによって定義されています。 A<xref:System.Windows.Input.RoutedCommand>ロジックの実装にクライアントを有効にします。 テキスト オブジェクトは選択されたテキストを切り取ってクリップボードに移動できるのに対し、イメージ オブジェクトは選択されたイメージを切り取ることができます。 アプリケーションで処理すると、<xref:System.Windows.Input.CommandManager.Executed>イベント、コマンドのターゲットにアクセスし、ターゲットの種類に応じて適切な対策を実施できます。  
+ コマンドのセマンティクスはアプリケーションおよびクラス全体で統一できますが、アクションのロジックは対象となる特定のオブジェクトに固有です。 キーの組み合わせ Ctrl + X キーはテキスト クラス、イメージ クラス、Web ブラウザーの**切り取り**コマンドを呼び出しますが、**切り取り**操作を実行する実際のロジックは、切り取りを実行するアプリケーションによって定義されています。 <xref:System.Windows.Input.RoutedCommand> では、クライアントでロジックを実装できます。 テキスト オブジェクトは選択されたテキストを切り取ってクリップボードに移動できるのに対し、イメージ オブジェクトは選択されたイメージを切り取ることができます。 アプリケーションは、<xref:System.Windows.Input.CommandManager.Executed> イベントを処理するときに、コマンドのターゲットにアクセスし、ターゲットの種類に応じた適切なアクションを実行できます。  
   
 <a name="simple_command"></a>   
 ## <a name="simple-command-example-in-wpf"></a>WPF での簡単なコマンドの例  
- コマンドを使用する最も簡単な方法[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を使用して、定義済み<xref:System.Windows.Input.RoutedCommand>コマンド ライブラリ クラス; のいずれかのコマンドを処理するためのネイティブ サポートしているコントロールを使用し、コマンドを呼び出すためのネイティブ サポートしているコントロールを使用します。  <xref:System.Windows.Input.ApplicationCommands.Paste%2A>定義済みのコマンドのいずれかのコマンドは、<xref:System.Windows.Input.ApplicationCommands>クラスです。  <xref:System.Windows.Controls.TextBox>コントロールを処理するためのロジックが組み込まれています、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンド。  および<xref:System.Windows.Controls.MenuItem>クラスには、コマンドを呼び出すためのネイティブ サポート。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でコマンドを使う最も簡単な方法は、いずれかのコマンド ライブラリ クラスの定義済みの <xref:System.Windows.Input.RoutedCommand> を使用するか、コマンドの処理をネイティブにサポートするコントロールを使用するか、コマンドの呼び出しをネイティブにサポートするコントロールを使用することです。  <xref:System.Windows.Input.ApplicationCommands.Paste%2A> コマンドは、<xref:System.Windows.Input.ApplicationCommands> クラスで定義済みのコマンドのいずれかです。  <xref:System.Windows.Controls.TextBox> コントロールには、<xref:System.Windows.Input.ApplicationCommands.Paste%2A> コマンドを処理するためのロジックが組み込まれています。  <xref:System.Windows.Controls.MenuItem> クラスはコマンドの呼び出しをネイティブにサポートします。  
   
- 次の例を設定する方法を示しています、<xref:System.Windows.Controls.MenuItem>が呼び出さがクリックされたときにできるように、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンドを<xref:System.Windows.Controls.TextBox>と見なし、<xref:System.Windows.Controls.TextBox>キーボード フォーカスがあります。  
+ 次に示すのは、<xref:System.Windows.Controls.TextBox> にキーボード フォーカスがある場合に、クリックされたときに <xref:System.Windows.Controls.TextBox> で <xref:System.Windows.Input.ApplicationCommands.Paste%2A> コマンドを呼び出すように <xref:System.Windows.Controls.MenuItem> を設定する方法の例です。  
   
  [!code-xaml[CommandingOverviewSnippets#CommandingOverviewSimpleCommand](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewsimplecommand)]  
   
@@ -67,77 +68,77 @@ ms.lasthandoff: 05/04/2018
   
 -   "*コマンド バインディング*" は、コマンド ロジックをコマンドにマップするオブジェクトです。  
   
- 前の例で、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>は、コマンド、<xref:System.Windows.Controls.MenuItem>コマンド ソースが、<xref:System.Windows.Controls.TextBox>コマンド ターゲットでは、コマンドのバインドは、によって提供される、<xref:System.Windows.Controls.TextBox>コントロール。  常に大文字と小文字の注目すべきであること、<xref:System.Windows.Input.CommandBinding>コマンド ターゲット クラスにあるコントロールによって提供されます。  多くの場合、<xref:System.Windows.Input.CommandBinding>アプリケーション開発者によって作成する必要がありますまたは<xref:System.Windows.Input.CommandBinding>コマンド ターゲットの親にアタッチする場合があります。  
+ 前の例では、<xref:System.Windows.Input.ApplicationCommands.Paste%2A> コマンドがコマンド、<xref:System.Windows.Controls.MenuItem> がコマンド ソース、<xref:System.Windows.Controls.TextBox> がコマンド ターゲットで、コマンド バインドは <xref:System.Windows.Controls.TextBox> コントロールによって提供されます。  注意しなければならないのは、<xref:System.Windows.Input.CommandBinding> はコマンド ターゲット クラスであるコントロールによって常に提供されるわけではないということです。  多くの場合は、アプリケーション開発者が <xref:System.Windows.Input.CommandBinding> を作成する必要があるか、または <xref:System.Windows.Input.CommandBinding> はコマンド ターゲットの先祖に関連付けられています。  
   
 <a name="Commands"></a>   
 ### <a name="commands"></a>コマンド  
- コマンド内[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]実装することによって作成された、<xref:System.Windows.Input.ICommand>インターフェイスです。  <xref:System.Windows.Input.ICommand> 2 つのメソッドを公開<xref:System.Windows.Input.ICommand.Execute%2A>、および<xref:System.Windows.Input.ICommand.CanExecute%2A>、およびイベントが、<xref:System.Windows.Input.ICommand.CanExecuteChanged>です。 <xref:System.Windows.Input.ICommand.Execute%2A> コマンドに関連付けられているアクションを実行します。 <xref:System.Windows.Input.ICommand.CanExecute%2A> 現在のコマンド ターゲットでコマンドを実行できるかどうかを判断します。 <xref:System.Windows.Input.ICommand.CanExecuteChanged> コマンド実行の操作を一元化コマンド マネージャーされた発生がコマンドのバインドによって実行されていないコマンドが無効になるコマンド ソースで変更が検出される場合に発生します。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の実装<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>クラスし、この概要でのフォーカスが置かれています。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のコマンドは、<xref:System.Windows.Input.ICommand> インターフェイスを実装することで作成されます。  <xref:System.Windows.Input.ICommand> では、2 つのメソッド (<xref:System.Windows.Input.ICommand.Execute%2A> と <xref:System.Windows.Input.ICommand.CanExecute%2A>)、およびイベント (<xref:System.Windows.Input.ICommand.CanExecuteChanged>) を公開します。 <xref:System.Windows.Input.ICommand.Execute%2A> では、コマンドに関連付けられているアクションを実行します。 <xref:System.Windows.Input.ICommand.CanExecute%2A> では、現在のコマンド ターゲットでコマンドを実行できるかどうかを判断します。 コマンド実行操作を集中管理するコマンド マネージャーが、既に発生しているがコマンド バインドによってまだ実行されていないコマンドを無効にする可能性のある変更をコマンド ソースで検出した場合、<xref:System.Windows.Input.ICommand.CanExecuteChanged> が発生します。  <xref:System.Windows.Input.ICommand> での [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の実装は <xref:System.Windows.Input.RoutedCommand> クラスであり、この概要の焦点になります。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] での主な入力ソースは、マウス、キーボード、インク、およびルーティング コマンドです。  デバイス指向の入力を使用して、<xref:System.Windows.RoutedEvent>入力イベントが発生したアプリケーション ページで、オブジェクトに通知します。  A<xref:System.Windows.Input.RoutedCommand>に違いはありません。  <xref:System.Windows.Input.RoutedCommand.Execute%2A>と<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>のメソッド、<xref:System.Windows.Input.RoutedCommand>コマンドは、アプリケーション ロジックが含まれていませんが、トンネルのルーティング イベントを発生させるし、持つオブジェクトに遭遇するまで、要素ツリーを通じてバブルではなく、、<xref:System.Windows.Input.CommandBinding>です。  <xref:System.Windows.Input.CommandBinding>これらのイベントのハンドラーを含むコマンドを実行するハンドラーであるとします。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でのルーティング イベントについて詳しくは、「[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)」をご覧ください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] での主な入力ソースは、マウス、キーボード、インク、およびルーティング コマンドです。  デバイス指向性の高い入力では、<xref:System.Windows.RoutedEvent> を使って、入力イベントが発生したことをアプリケーション ページのオブジェクトに通知します。  <xref:System.Windows.Input.RoutedCommand> も同様です。  <xref:System.Windows.Input.RoutedCommand> の <xref:System.Windows.Input.RoutedCommand.Execute%2A> メソッドと <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> メソッドにはコマンドのアプリケーション ロジックは含まれませんが、これらのメソッドが発生させたルーティング イベントは、<xref:System.Windows.Input.CommandBinding> を含むオブジェクトに遭遇するまで、要素ツリー内をトンネリングおよびバブリングします。  <xref:System.Windows.Input.CommandBinding> にはこれらのイベント用のハンドラーが含まれ、そのハンドラーがコマンドを実行します。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でのルーティング イベントについて詳しくは、「[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)」をご覧ください。  
   
- <xref:System.Windows.Input.RoutedCommand.Execute%2A>メソッドを<xref:System.Windows.Input.RoutedCommand>を生成、<xref:System.Windows.Input.CommandManager.PreviewExecuted>と<xref:System.Windows.Input.CommandManager.Executed>コマンド ターゲットでのイベントです。  <xref:System.Windows.Input.RoutedCommand.CanExecute%2A>メソッドを<xref:System.Windows.Input.RoutedCommand>を生成、<xref:System.Windows.Input.CommandManager.CanExecute>と<xref:System.Windows.Input.CommandManager.PreviewCanExecute>コマンド ターゲットでのイベントです。  これらのイベント トンネルおよびバブルがオブジェクトに遭遇するまで、要素ツリーを通じて、<xref:System.Windows.Input.CommandBinding>その特定のコマンド。  
+ <xref:System.Windows.Input.RoutedCommand> の <xref:System.Windows.Input.RoutedCommand.Execute%2A> メソッドは、コマンド ターゲットで <xref:System.Windows.Input.CommandManager.PreviewExecuted> イベントと <xref:System.Windows.Input.CommandManager.Executed> イベントを発生させます。  <xref:System.Windows.Input.RoutedCommand> の <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> メソッドは、コマンド ターゲットで <xref:System.Windows.Input.CommandManager.CanExecute> イベントと <xref:System.Windows.Input.CommandManager.PreviewCanExecute> イベントを発生させます。  これらのイベントは、その特定のコマンドの <xref:System.Windows.Input.CommandBinding> を持つオブジェクトに遭遇するまで、要素ツリー内をトンネリングおよびバブリングします。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 一連の一般的なルーティング コマンドがいくつかのクラスに分散装置: <xref:System.Windows.Input.MediaCommands>、 <xref:System.Windows.Input.ApplicationCommands>、 <xref:System.Windows.Input.NavigationCommands>、 <xref:System.Windows.Input.ComponentCommands>、および<xref:System.Windows.Documents.EditingCommands>です。  これらのクラスのみで構成、<xref:System.Windows.Input.RoutedCommand>オブジェクトとコマンドの実装ロジックではありません。  実装ロジックは、コマンドが実行されるオブジェクトに存在します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、<xref:System.Windows.Input.MediaCommands>、<xref:System.Windows.Input.ApplicationCommands>、<xref:System.Windows.Input.NavigationCommands>、<xref:System.Windows.Input.ComponentCommands>、<xref:System.Windows.Documents.EditingCommands> などの複数のクラスにわたる共通のルーティング コマンドのセットが提供されます。  これらのクラスは <xref:System.Windows.Input.RoutedCommand> オブジェクトのみで構成され、コマンドの実装ロジックは含みません。  実装ロジックは、コマンドが実行されるオブジェクトに存在します。  
   
 <a name="Command_Sources"></a>   
 ### <a name="command-sources"></a>コマンド ソース  
- コマンド ソースは、コマンドを呼び出すオブジェクトです。  コマンド ソースの例としては<xref:System.Windows.Controls.MenuItem>、 <xref:System.Windows.Controls.Button>、および<xref:System.Windows.Input.KeyGesture>です。  
+ コマンド ソースは、コマンドを呼び出すオブジェクトです。  コマンド ソースの例は、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Input.KeyGesture> などです。  
   
- コマンド内のソース[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]実装では、通常、<xref:System.Windows.Input.ICommandSource>インターフェイスです。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のコマンド ソースでは、通常、<xref:System.Windows.Input.ICommandSource> インターフェイスを実装します。  
   
- <xref:System.Windows.Input.ICommandSource> 次の 3 つのプロパティを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>、および<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>:  
+ <xref:System.Windows.Input.ICommandSource> では、<xref:System.Windows.Input.ICommandSource.Command%2A>、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>、<xref:System.Windows.Input.ICommandSource.CommandParameter%2A> という 3 つのプロパティを公開します。  
   
--   <xref:System.Windows.Input.ICommandSource.Command%2A> コマンド ソースが呼び出されたときに実行されるコマンドです。  
+-   <xref:System.Windows.Input.ICommandSource.Command%2A> は、コマンド ソースが呼び出されたときに実行されるコマンドです。  
   
--   <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> コマンドを実行するオブジェクトです。  点に注意が[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>プロパティ<xref:System.Windows.Input.ICommandSource>のみ該当する場合は、<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>です。  場合、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>に設定されている、 <xref:System.Windows.Input.ICommandSource> 、対応するコマンドが、<xref:System.Windows.Input.RoutedCommand>コマンドの対象は無視されます。 場合、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>が設定された場合、キーボード フォーカスを持つ要素がコマンドの対象となります。  
+-   <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> は、コマンドを実行するオブジェクトです。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、<xref:System.Windows.Input.ICommandSource> の <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> プロパティは、<xref:System.Windows.Input.ICommand> が <xref:System.Windows.Input.RoutedCommand> である場合にのみ適用可能であることに注意してください。  <xref:System.Windows.Input.ICommandSource> で <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> が設定されていて、対応するコマンドが <xref:System.Windows.Input.RoutedCommand> ではない場合、コマンド ターゲットは無視されます。 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> が設定されていない場合は、キーボード フォーカスを持つ要素がコマンド ターゲットになります。  
   
--   <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> ハンドラーに情報を渡すユーザー定義データ型は、コマンドの実装です。  
+-   <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> は、コマンドを実装しているハンドラーに情報を渡すために使われるユーザー定義データ型です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を実装するクラス<xref:System.Windows.Input.ICommandSource>は<xref:System.Windows.Controls.Primitives.ButtonBase>、 <xref:System.Windows.Controls.MenuItem>、 <xref:System.Windows.Documents.Hyperlink>、および<xref:System.Windows.Input.InputBinding>です。  <xref:System.Windows.Controls.Primitives.ButtonBase>、 <xref:System.Windows.Controls.MenuItem>、および<xref:System.Windows.Documents.Hyperlink>がクリックされたときに、コマンドを呼び出す<xref:System.Windows.Input.InputBinding>コマンドを呼び出すときに、<xref:System.Windows.Input.InputGesture>関連付けられているで実行されます。  
+ <xref:System.Windows.Input.ICommandSource> を実装する [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] クラスは、<xref:System.Windows.Controls.Primitives.ButtonBase>、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Documents.Hyperlink>、<xref:System.Windows.Input.InputBinding> です。  <xref:System.Windows.Controls.Primitives.ButtonBase>、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Documents.Hyperlink> は、クリックされたときにコマンドを呼び出します。<xref:System.Windows.Input.InputBinding> は、関連付けられている <xref:System.Windows.Input.InputGesture> が実行されたときにコマンドを呼び出します。  
   
- 次の例を使用する方法を示しています、<xref:System.Windows.Controls.MenuItem>で、<xref:System.Windows.Controls.ContextMenu>用コマンドのソースとして、<xref:System.Windows.Input.ApplicationCommands.Properties%2A>コマンド。  
+ 次の例では、<xref:System.Windows.Input.ApplicationCommands.Properties%2A> コマンドのコマンド ソースとして、<xref:System.Windows.Controls.ContextMenu> で <xref:System.Windows.Controls.MenuItem> を使用する方法を示します。  
   
  [!code-xaml[CommandingOverviewSnippets#CommandingOverviewCmdSourceXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdsourcexaml)]  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCmdSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdsource)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewCmdSource](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdsource)]  
   
- コマンド ソースがリッスンする通常、<xref:System.Windows.Input.RoutedCommand.CanExecuteChanged>イベント。  このイベントは、現在のコマンド ターゲットでのコマンド実行機能が変化した可能性があることを、コマンド ソースに通知します。  コマンド ソースがの現在の状態を照会できます、<xref:System.Windows.Input.RoutedCommand>を使用して、<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>メソッドです。  コマンドを実行できない場合、コマンド ソースはそれ自体を無効にできます。  この例は、<xref:System.Windows.Controls.MenuItem>要素自体のコマンドを実行できませんを灰色表示します。  
+ 通常、コマンド ソースは <xref:System.Windows.Input.RoutedCommand.CanExecuteChanged> イベントをリッスンします。  このイベントは、現在のコマンド ターゲットでのコマンド実行機能が変化した可能性があることを、コマンド ソースに通知します。  コマンド ソースは、<xref:System.Windows.Input.RoutedCommand> の現在の状態を、<xref:System.Windows.Input.RoutedCommand.CanExecute%2A> メソッドを使って照会できます。  コマンドを実行できない場合、コマンド ソースはそれ自体を無効にできます。  たとえば、コマンドを実行できない場合、<xref:System.Windows.Controls.MenuItem> はそれ自体を灰色で表示します。  
   
- <xref:System.Windows.Input.InputGesture>コマンド ソースとして使用できます。  2 種類の入力ジェスチャの[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.MouseGesture>です。  考えることができます、 <xref:System.Windows.Input.KeyGesture> CTRL + C などのキーボード ショートカットとします。  A<xref:System.Windows.Input.KeyGesture>から成る、<xref:System.Windows.Input.Key>と一連の<xref:System.Windows.Input.ModifierKeys>します。  A<xref:System.Windows.Input.MouseGesture>から成る、<xref:System.Windows.Input.MouseAction>と省略可能な一連の<xref:System.Windows.Input.ModifierKeys>します。  
+ <xref:System.Windows.Input.InputGesture> はコマンド ソースとして使用できます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の 2 種類の入力ジェスチャは、<xref:System.Windows.Input.KeyGesture> と <xref:System.Windows.Input.MouseGesture> です。  <xref:System.Windows.Input.KeyGesture> は、Ctrl + C キーなどのキーボード ショートカットと考えることができます。  <xref:System.Windows.Input.KeyGesture> は、<xref:System.Windows.Input.Key> と、<xref:System.Windows.Input.ModifierKeys> のセットで構成されます。  <xref:System.Windows.Input.MouseGesture> は、<xref:System.Windows.Input.MouseAction> と、オプションの <xref:System.Windows.Input.ModifierKeys> のセットで構成されます。  
   
- 順序で、<xref:System.Windows.Input.InputGesture>コマンド ソースとして機能しをコマンドに関連付けられている場合があります。 これを実現するにはいくつかの方法があります。  1 つの方法は、使用する、<xref:System.Windows.Input.InputBinding>です。  
+ <xref:System.Windows.Input.InputGesture> がコマンド ソースとして機能するためには、コマンドと関連付けられる必要があります。 これを実現するにはいくつかの方法があります。  1 つ目は、<xref:System.Windows.Input.InputBinding> を使用する方法です。  
   
- 次の例を作成する方法を示しています、<xref:System.Windows.Input.KeyBinding>間、<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.RoutedCommand>です。  
+ <xref:System.Windows.Input.KeyGesture> と <xref:System.Windows.Input.RoutedCommand> の間に <xref:System.Windows.Input.KeyBinding> を作成する方法の例を以下に示します。  
   
  [!code-xaml[CommandingOverviewSnippets#CommandingOverviewXAMLKeyBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlkeybinding)]  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeybinding)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeybinding)]  
   
- 関連付けるには別の方法、<xref:System.Windows.Input.InputGesture>を<xref:System.Windows.Input.RoutedCommand>を追加するには、<xref:System.Windows.Input.InputGesture>を<xref:System.Windows.Input.InputGestureCollection>上、<xref:System.Windows.Input.RoutedCommand>です。  
+ <xref:System.Windows.Input.InputGesture> を <xref:System.Windows.Input.RoutedCommand> に関連付けるもう 1 つの方法は、<xref:System.Windows.Input.RoutedCommand> の <xref:System.Windows.Input.InputGestureCollection> に <xref:System.Windows.Input.InputGesture> を追加するというものです。  
   
- 次の例は、追加する方法を示します、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.InputGestureCollection>の<xref:System.Windows.Input.RoutedCommand>です。  
+ <xref:System.Windows.Input.RoutedCommand> の <xref:System.Windows.Input.InputGestureCollection> に <xref:System.Windows.Input.KeyGesture> を追加する方法を次の例に示します。  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeygestureoncmd)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeygestureoncmd)]  
   
 <a name="Command_Binding"></a>   
 ### <a name="commandbinding"></a>CommandBinding  
- A<xref:System.Windows.Input.CommandBinding>コマンドをコマンドを実装するイベント ハンドラーに関連付けます。  
+ <xref:System.Windows.Input.CommandBinding> は、コマンドと、そのコマンドを実装するイベント ハンドラーを関連付けます。  
   
- <xref:System.Windows.Input.CommandBinding>クラスに含まれる、<xref:System.Windows.Input.CommandBinding.Command%2A>プロパティ、および<xref:System.Windows.Input.CommandBinding.PreviewExecuted>、 <xref:System.Windows.Input.CommandBinding.Executed>、 <xref:System.Windows.Input.CommandBinding.PreviewCanExecute>、および<xref:System.Windows.Input.CommandBinding.CanExecute>イベント。  
+ <xref:System.Windows.Input.CommandBinding> クラスには、<xref:System.Windows.Input.CommandBinding.Command%2A> プロパティと、<xref:System.Windows.Input.CommandBinding.PreviewExecuted>、<xref:System.Windows.Input.CommandBinding.Executed>、<xref:System.Windows.Input.CommandBinding.PreviewCanExecute>、<xref:System.Windows.Input.CommandBinding.CanExecute> イベントが含まれます。  
   
- <xref:System.Windows.Input.CommandBinding.Command%2A> コマンドを<xref:System.Windows.Input.CommandBinding>を関連付けています。  イベント ハンドラーにアタッチされている、<xref:System.Windows.Input.CommandBinding.PreviewExecuted>と<xref:System.Windows.Input.CommandBinding.Executed>イベントは、コマンドのロジックを実装します。  イベント ハンドラーがアタッチされている、<xref:System.Windows.Input.CommandBinding.PreviewCanExecute>と<xref:System.Windows.Input.CommandBinding.CanExecute>イベントは、コマンドを現在のコマンド ターゲットで実行できるかどうかを判断します。  
+ <xref:System.Windows.Input.CommandBinding.Command%2A> は、<xref:System.Windows.Input.CommandBinding> が関連付けられているコマンドです。  <xref:System.Windows.Input.CommandBinding.PreviewExecuted> および <xref:System.Windows.Input.CommandBinding.Executed> イベントに関連付けられているイベント ハンドラーは、コマンド ロジックを実装します。  <xref:System.Windows.Input.CommandBinding.PreviewCanExecute> および <xref:System.Windows.Input.CommandBinding.CanExecute> イベントに関連付けられているイベント ハンドラーは、現在のコマンド ターゲットでコマンドを実行できるかどうかを判断します。  
   
- 次の例を作成する方法を示しています、<xref:System.Windows.Input.CommandBinding>ルートに対する<xref:System.Windows.Window>アプリケーションのです。  <xref:System.Windows.Input.CommandBinding>関連付けます、<xref:System.Windows.Input.ApplicationCommands.Open%2A>コマンドと<xref:System.Windows.Input.CommandManager.Executed>と<xref:System.Windows.Input.CommandBinding.CanExecute>ハンドラー。  
+ アプリケーションのルート <xref:System.Windows.Window> で <xref:System.Windows.Input.CommandBinding> を作成する方法の例を以下に示します。  <xref:System.Windows.Input.CommandBinding> は、<xref:System.Windows.Input.ApplicationCommands.Open%2A> コマンドと、<xref:System.Windows.Input.CommandManager.Executed> および <xref:System.Windows.Input.CommandBinding.CanExecute> ハンドラーを関連付けます。  
   
  [!code-xaml[commandwithhandler#CommandHandlerCommandBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandbinding)]  
   
  [!code-csharp[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerbindinginit)]
  [!code-vb[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbindinginit)]  
   
- 次に、<xref:System.Windows.Input.ExecutedRoutedEventHandler>と<xref:System.Windows.Input.CanExecuteRoutedEventHandler>が作成されます。  <xref:System.Windows.Input.ExecutedRoutedEventHandler>開きます、<xref:System.Windows.MessageBox>コマンドが実行されたというメッセージが文字列を表示します。  <xref:System.Windows.Input.CanExecuteRoutedEventHandler>設定、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>プロパティを`true`です。  
+ 次に、<xref:System.Windows.Input.ExecutedRoutedEventHandler> と <xref:System.Windows.Input.CanExecuteRoutedEventHandler> が作成されます。  <xref:System.Windows.Input.ExecutedRoutedEventHandler> は、コマンドが実行されたことを知らせる文字列を表示する <xref:System.Windows.MessageBox> を開きます。  <xref:System.Windows.Input.CanExecuteRoutedEventHandler> は、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A> プロパティを `true` に設定します。  
   
  [!code-csharp[commandwithhandler#CommandHandlerExecutedHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlerexecutedhandler)]
  [!code-vb[commandwithhandler#CommandHandlerExecutedHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlerexecutedhandler)]  
@@ -145,15 +146,15 @@ ms.lasthandoff: 05/04/2018
  [!code-csharp[commandwithhandler#CommandHandlerCanExecuteHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlercanexecutehandler)]
  [!code-vb[commandwithhandler#CommandHandlerCanExecuteHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlercanexecutehandler)]  
   
- A<xref:System.Windows.Input.CommandBinding>ルートなどの特定のオブジェクトにアタッチされて<xref:System.Windows.Window>アプリケーションまたはコントロールのです。  オブジェクトを<xref:System.Windows.Input.CommandBinding>バインディングのスコープを定義にアタッチされています。  たとえば、<xref:System.Windows.Input.CommandBinding>接続からアクセスできるターゲット コマンドの先祖に、<xref:System.Windows.Input.CommandBinding.Executed>イベントが、<xref:System.Windows.Input.CommandBinding>接続されているコマンドの子孫をターゲットに到達できません。  これは、方法の直接の結果、<xref:System.Windows.RoutedEvent>トンネルおよびイベントを発生させるオブジェクトからバブルします。  
+ <xref:System.Windows.Input.CommandBinding> は、アプリケーションやコントロールのルート <xref:System.Windows.Window> など、特定のオブジェクトに関連付けられます。  <xref:System.Windows.Input.CommandBinding> が関連付けられるオブジェクトにより、バインドのスコープが定義されます。  たとえば、<xref:System.Windows.Input.CommandBinding.Executed> イベントは、コマンド ターゲットの先祖に関連付けられた <xref:System.Windows.Input.CommandBinding> には到達できますが、コマンド ターゲットの子孫に関連付けられた <xref:System.Windows.Input.CommandBinding> には到達できません。  これは、イベントを発生させたオブジェクトからの <xref:System.Windows.RoutedEvent> のトンネリングとバブリングの方法の直接的な結果です。  
   
- 状況によっては、<xref:System.Windows.Input.CommandBinding>はターゲットに接続された、コマンド自体などで、<xref:System.Windows.Controls.TextBox>クラスおよび<xref:System.Windows.Input.ApplicationCommands.Cut%2A>、 <xref:System.Windows.Input.ApplicationCommands.Copy%2A>、および<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンド。 多くの場合は、アタッチする方が便利です、<xref:System.Windows.Input.CommandBinding>メインなど、コマンド ターゲットでの先祖に<xref:System.Windows.Window>またはアプリケーション オブジェクト場合に特に同じ<xref:System.Windows.Input.CommandBinding>複数のコマンド ターゲットを使用できます。  これらは、コマンド実行のインフラストラクチャを作成するときに考慮する設計上の決定です。  
+ 状況によっては、<xref:System.Windows.Input.CommandBinding> は、<xref:System.Windows.Controls.TextBox> クラスや <xref:System.Windows.Input.ApplicationCommands.Cut%2A>、<xref:System.Windows.Input.ApplicationCommands.Copy%2A>、<xref:System.Windows.Input.ApplicationCommands.Paste%2A> コマンドなど、コマンド ターゲット自体に関連付けられます。 ただし、ほとんどの場合は、メイン <xref:System.Windows.Window> や Application オブジェクトなど、コマンド ターゲットの先祖に <xref:System.Windows.Input.CommandBinding> を関連付ける方が便利です。同じ <xref:System.Windows.Input.CommandBinding> を複数のコマンド ターゲットに使うことができる場合は特にそうです。  これらは、コマンド実行のインフラストラクチャを作成するときに考慮する設計上の決定です。  
   
 <a name="Commane_Target"></a>   
 ### <a name="command-target"></a>コマンド ターゲット  
- コマンド ターゲットは、コマンドが実行される要素です。  Regards すると、 <xref:System.Windows.Input.RoutedCommand>、コマンドの対象は、ルーティングの位置にある要素、<xref:System.Windows.Input.CommandManager.Executed>と<xref:System.Windows.Input.CommandManager.CanExecute>を開始します。  以前に記載されている[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>プロパティ<xref:System.Windows.Input.ICommandSource>のみ該当する場合は、<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>です。  場合、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>に設定されている、 <xref:System.Windows.Input.ICommandSource> 、対応するコマンドが、<xref:System.Windows.Input.RoutedCommand>コマンドの対象は無視されます。  
+ コマンド ターゲットは、コマンドが実行される要素です。  <xref:System.Windows.Input.RoutedCommand> の場合、コマンド ターゲットは、<xref:System.Windows.Input.CommandManager.Executed> および <xref:System.Windows.Input.CommandManager.CanExecute> のルーティングが開始される要素です。  前述のとおり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、<xref:System.Windows.Input.ICommandSource> の <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> プロパティは、<xref:System.Windows.Input.ICommand> が <xref:System.Windows.Input.RoutedCommand> である場合にのみ適用されます。  <xref:System.Windows.Input.ICommandSource> で <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> が設定されていて、対応するコマンドが <xref:System.Windows.Input.RoutedCommand> ではない場合、コマンド ターゲットは無視されます。  
   
- コマンド ソースは、コマンド ターゲットを明示的に設定できます。  コマンド ターゲットが定義されていない場合は、キーボード フォーカスを持つ要素がコマンド ターゲットとして使われます。  キーボード フォーカスを持つ要素をコマンド ターゲットとして使うことの、アプリケーション開発者にとっての利点の 1 つは、コマンド ターゲットを追跡しなくても、同じコマンド ソースを使って、複数のターゲットでコマンドを呼び出すことができることです。  たとえば場合、<xref:System.Windows.Controls.MenuItem>呼び出します、**貼り付け**を持つアプリケーションでコマンド、<xref:System.Windows.Controls.TextBox>コントロールと<xref:System.Windows.Controls.PasswordBox>コントロールをターゲットにできますか、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.PasswordBox>に応じてコントロールには、キーボード フォーカスがあります。  
+ コマンド ソースは、コマンド ターゲットを明示的に設定できます。  コマンド ターゲットが定義されていない場合は、キーボード フォーカスを持つ要素がコマンド ターゲットとして使われます。  キーボード フォーカスを持つ要素をコマンド ターゲットとして使うことの、アプリケーション開発者にとっての利点の 1 つは、コマンド ターゲットを追跡しなくても、同じコマンド ソースを使って、複数のターゲットでコマンドを呼び出すことができることです。  たとえば、<xref:System.Windows.Controls.MenuItem> が <xref:System.Windows.Controls.TextBox> コントロールと <xref:System.Windows.Controls.PasswordBox> コントロールのあるアプリケーションの**貼り付け**コマンドを呼び出した場合、どちらのコントロールにキーボード フォーカスがあるかに応じて、ターゲットは <xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.PasswordBox> になります。  
   
  次の例では、マークアップおよび分離コードでコマンド ターゲットを明示的に設定する方法を示します。  
   
@@ -164,25 +165,25 @@ ms.lasthandoff: 05/04/2018
   
 <a name="Command_Manager"></a>   
 ### <a name="the-commandmanager"></a>CommandManager  
- <xref:System.Windows.Input.CommandManager>はコマンドの数、関連する関数。  追加および削除するための静的メソッドのセットが提供<xref:System.Windows.Input.CommandManager.PreviewExecuted>、 <xref:System.Windows.Input.CommandManager.Executed>、 <xref:System.Windows.Input.CommandManager.PreviewCanExecute>、および<xref:System.Windows.Input.CommandManager.CanExecute>の特定の要素との間のイベント ハンドラー。  登録するための手段を提供<xref:System.Windows.Input.CommandBinding>と<xref:System.Windows.Input.InputBinding>オブジェクトを特定のクラスにドラッグします。  <xref:System.Windows.Input.CommandManager>も提供する、経由、<xref:System.Windows.Input.CommandManager.RequerySuggested>それを発生させるときに、コマンドを通知する、イベント、<xref:System.Windows.Input.ICommand.CanExecuteChanged>イベント。  
+ <xref:System.Windows.Input.CommandManager> は、コマンドに関連する複数の関数を提供します。  特定の要素の <xref:System.Windows.Input.CommandManager.PreviewExecuted>、<xref:System.Windows.Input.CommandManager.Executed>、<xref:System.Windows.Input.CommandManager.PreviewCanExecute>、<xref:System.Windows.Input.CommandManager.CanExecute> イベント ハンドラーを追加および削除するための、静的メソッドのセットを提供します。  <xref:System.Windows.Input.CommandBinding> および <xref:System.Windows.Input.InputBinding> オブジェクトを特定のクラスに登録するための手段を提供します。  また、<xref:System.Windows.Input.CommandManager> は、<xref:System.Windows.Input.ICommand.CanExecuteChanged> イベントを発生させる必要があるタイミングをコマンドに通知する手段を、<xref:System.Windows.Input.CommandManager.RequerySuggested> イベントによって提供します。  
   
- <xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested%2A>メソッド フォース、<xref:System.Windows.Input.CommandManager>させる、<xref:System.Windows.Input.CommandManager.RequerySuggested>イベント。  これは、条件必要があるに便利ですコマンドだが無効化/有効化の条件を<xref:System.Windows.Input.CommandManager>を認識します。  
+ <xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested%2A> メソッドは、<xref:System.Windows.Input.CommandManager> に <xref:System.Windows.Input.CommandManager.RequerySuggested> イベントを強制的に発生させます。  これは、コマンドを無効または有効にする必要がある状況であっても、<xref:System.Windows.Input.CommandManager> がそれを認識しない場合に便利です。  
   
 <a name="Command_Library"></a>   
 ## <a name="command-library"></a>コマンド ライブラリ  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、定義済みのコマンドのセットが用意されています。  コマンドのライブラリは、次のクラス: <xref:System.Windows.Input.ApplicationCommands>、 <xref:System.Windows.Input.NavigationCommands>、 <xref:System.Windows.Input.MediaCommands>、 <xref:System.Windows.Documents.EditingCommands>、および<xref:System.Windows.Input.ComponentCommands>です。  これらのクラスなどのコマンドを入力<xref:System.Windows.Input.ApplicationCommands.Cut%2A>、<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A>と<xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>、 <xref:System.Windows.Input.MediaCommands.Play%2A>、 <xref:System.Windows.Input.MediaCommands.Stop%2A>、および<xref:System.Windows.Input.MediaCommands.Pause%2A>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、定義済みのコマンドのセットが用意されています。  コマンド ライブラリは、<xref:System.Windows.Input.ApplicationCommands>、<xref:System.Windows.Input.NavigationCommands>、<xref:System.Windows.Input.MediaCommands>、<xref:System.Windows.Documents.EditingCommands>、<xref:System.Windows.Input.ComponentCommands> というクラスで構成されています。  これらのクラスでは、<xref:System.Windows.Input.ApplicationCommands.Cut%2A>、<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A> と <xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>、<xref:System.Windows.Input.MediaCommands.Play%2A>、<xref:System.Windows.Input.MediaCommands.Stop%2A>、<xref:System.Windows.Input.MediaCommands.Pause%2A> などのコマンドが提供されます。  
   
  これらのコマンドの多くには、既定の入力バインディングのセットが含まれます。  たとえば、アプリケーションがコピー コマンドを処理することを指定すると、キーボード バインディング "Ctrl + C" が自動的に有効になります。また、[!INCLUDE[TLA2#tla_tpc](../../../../includes/tla2sharptla-tpc-md.md)] のペン ジェスチャや音声情報などの他の入力デバイスに対するバインディングも有効になります。  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使ってさまざまなコマンド ライブラリのコマンドを参照するときは、通常、静的なコマンド プロパティを公開するライブラリ クラスのクラス名を省略できます。 一般に、コマンド名に文字列としての曖昧さはなく、所有する型は、コマンドの論理グループを提供するために存在しますが、曖昧さの解消のためには必要ありません。 たとえば、詳細な `Command="ApplicationCommands.Cut"` ではなく`Command="Cut"` と指定できます。 これに組み込まれている便利なメカニズム、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コマンド プロセッサ (の型コンバーターの動作が正確には、 <xref:System.Windows.Input.ICommand>、どの、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]読み込み時にプロセッサ参照)。  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使ってさまざまなコマンド ライブラリのコマンドを参照するときは、通常、静的なコマンド プロパティを公開するライブラリ クラスのクラス名を省略できます。 一般に、コマンド名に文字列としての曖昧さはなく、所有する型は、コマンドの論理グループを提供するために存在しますが、曖昧さの解消のためには必要ありません。 たとえば、詳細な `Command="ApplicationCommands.Cut"` ではなく`Command="Cut"` と指定できます。 これは、コマンドに対する [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサに組み込まれた便利なメカニズムです (つまり、これは <xref:System.Windows.Input.ICommand> の型コンバーターの動作であり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは読み込み時にこれを参照します)。  
   
 <a name="creating_commands"></a>   
 ## <a name="creating-custom-commands"></a>カスタム コマンドの作成  
- コマンド ライブラリ クラスのコマンドがニーズを満たさない場合は、独自のコマンドを作成できます。  カスタム コマンドを作成するには 2 つの方法があります。  最初から起動され、実装する、<xref:System.Windows.Input.ICommand>インターフェイスです。  作成するその他の方法より一般的な方法は、<xref:System.Windows.Input.RoutedCommand>または<xref:System.Windows.Input.RoutedUICommand>です。  
+ コマンド ライブラリ クラスのコマンドがニーズを満たさない場合は、独自のコマンドを作成できます。  カスタム コマンドを作成するには 2 つの方法があります。  1 つは、一から始めて <xref:System.Windows.Input.ICommand> インターフェイスを実装する方法です。  もう 1 つのさらに一般的な方法は、<xref:System.Windows.Input.RoutedCommand> または <xref:System.Windows.Input.RoutedUICommand> を作成するものです。  
   
- カスタムの作成の例については<xref:System.Windows.Input.RoutedCommand>を参照してください[カスタム RoutedCommand サンプルを作成する](http://go.microsoft.com/fwlink/?LinkID=159980)です。  
+ カスタムの <xref:System.Windows.Input.RoutedCommand> を作成する例については、「[Create a Custom RoutedCommand Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)」 (カスタム RoutedCommand の作成のサンプル) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Windows.Input.RoutedCommand>  
  <xref:System.Windows.Input.CommandBinding>  
  <xref:System.Windows.Input.InputBinding>  
@@ -191,4 +192,4 @@ ms.lasthandoff: 05/04/2018
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [ICommandSource を実装する](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
  [方法: メニュー アイテムにコマンドを追加する](http://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)  
- [カスタム RoutedCommand の作成のサンプル](http://go.microsoft.com/fwlink/?LinkID=159980)
+ [カスタム RoutedCommand の作成のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)

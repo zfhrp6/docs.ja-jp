@@ -3,12 +3,13 @@ title: dotnet migrate コマンド - .NET Core CLI
 description: dotnet migrate コマンドは、プロジェクトとそのすべての依存関係を移行します。
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: bdc1da5c1b70fdceac0170b2f002059a66ca5880
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 67a845f7604dededd00746fa6b74a320b3e134fa
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34697106"
 ---
 # <a name="dotnet-migrate"></a>dotnet の移行
 
@@ -20,15 +21,18 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-`dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [-t|--template-file] [-v|--sdk-package-version] [-x|--xproj-file] [-s|--skip-project-references] [-r|--report-file] [--format-report-file-json] [--skip-backup] [-h|--help]`
+```
+dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [--format-report-file-json] [-r|--report-file] [-s|--skip-project-references] [--skip-backup] [-t|--template-file] [-v|--sdk-package-version] [-x|--xproj-file]
+dotnet migrate [-h|--help]
+```
 
 ## <a name="description"></a>説明
 
-`dotnet migrate` コマンドは、有効な Preview 2 *project.json* ベースのプロジェクトを有効な .NET Core SDK 1.0 *csproj* プロジェクトに移行します。 
+`dotnet migrate` コマンドは、有効な Preview 2 *project.json* ベースのプロジェクトを有効な .NET Core SDK 1.0 *csproj* プロジェクトに移行します。
 
-既定では、このコマンドは、ルート プロジェクトとルート プロジェクトに含まれるすべてのプロジェクト参照を移行します。 この動作は、実行時に `--skip-project-references` オプションを使って、無効にすることができます。 
+既定では、このコマンドは、ルート プロジェクトとルート プロジェクトに含まれるすべてのプロジェクト参照を移行します。 この動作は、実行時に `--skip-project-references` オプションを使って、無効にすることができます。
 
-移行は、次のように実行されます。
+移行は次のアセットで実行できます。
 
 * 1 つのプロジェクト。移行する *project.json* ファイルを指定します。
 * *global.json* ファイルで指定されているすべてのディレクトリ。*global.json* ファイルへのパスを渡します。
@@ -37,7 +41,7 @@ ms.lasthandoff: 05/04/2018
 
 `dotnet migrate` コマンドは、`backup` ディレクトリ内に移行された *project.json* ファイルを保持します。ディレクトリが存在しない場合は作成されます。 この動作は、`--skip-backup` オプションを使ってオーバーライドされます。
 
-既定では、移行操作は、標準出力 (STDOUT) に移行プロセスの状態を出力します。 `--report-file <REPORT_FILE>` オプションを使うと、指定したファイルに出力が保存を指定します。 
+既定では、移行操作は、標準出力 (STDOUT) に移行プロセスの状態を出力します。 `--report-file <REPORT_FILE>` オプションを使うと、指定したファイルに出力が保存を指定します。
 
 `dotnet migrate` コマンドは、有効な Preview 2 *project.json* ベースのプロジェクトのみをサポートします。 つまり、DNX または Preview 1 の *project.json* ベースのプロジェクトを MSBuild/csproj プロジェクトに直接移行するためには使えません。 最初にプロジェクトを Preview 2 *project.json* ベースのプロジェクトに手動で移行し、その後で `dotnet migrate` コマンドを使ってプロジェクトを移行する必要があります。
 
@@ -48,17 +52,33 @@ ms.lasthandoff: 05/04/2018
 次のいずれかへのパスです。
 
 * 移行する *project.json* ファイル。
-* *global.json* ファイル。*global.json* で指定されているフォルダーを移行します。
-* *solution.sln* ファイル。ソリューションで参照されているプロジェクトを移行します。
-* 移行するディレクトリ。移行する *project.json* ファイルを再帰的に検索します。
+* *global.json* ファイル: *global.json* で指定されているフォルダーを移行します。
+* *solution.sln* ファイル: ソリューションで参照されているプロジェクトを移行します。
+* 移行するディレクトリ: 移行する *project.json* ファイルを再帰的に検索して、指定したディレクトリ内に移行します。
 
 何も指定しない場合の既定値は現在のディレクトリです。
 
 ## <a name="options"></a>オプション
 
+`--format-report-file-json <REPORT_FILE>`
+
+ユーザー メッセージではなく、JSON として移行レポート ファイルを出力します。
+
 `-h|--help`
 
 コマンドの短いヘルプを印刷します。
+
+`-r|--report-file <REPORT_FILE>`
+
+移行レポートをコンソールだけでなく、ファイルに出力します。
+
+`-s|--skip-project-references [Debug|Release]`
+
+プロジェクト参照の移行をスキップします。 既定では、プロジェクト参照は再帰的に移行されます。
+
+`--skip-backup`
+
+移行が成功した後、*project.json*、*global.json*、および *\*.xproj* の `backup` ディレクトリへの移動をスキップします。
 
 `-t|--template-file <TEMPLATE_FILE>`
 
@@ -71,22 +91,6 @@ ms.lasthandoff: 05/04/2018
 `-x|--xproj-file <FILE>`
 
 使用する xproj ファイルへのパス。 プロジェクト ディレクトリに複数の xproj がある場合に必要です。
-
-`-s|--skip-project-references [Debug|Release]`
-
-プロジェクト参照の移行をスキップします。 既定では、プロジェクト参照は再帰的に移行されます。
-
-`-r|--report-file <REPORT_FILE>`
-
-移行レポートをコンソールだけでなく、ファイルに出力します。
-
-`--format-report-file-json <REPORT_FILE>`
-
-ユーザー メッセージではなく、JSON として移行レポート ファイルを出力します。
-
-`--skip-backup`
-
-移行が成功した後、*project.json*、*global.json*、および *\*.xproj* の `backup` ディレクトリへの移動をスキップします。
 
 ## <a name="examples"></a>使用例
 

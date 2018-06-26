@@ -3,12 +3,13 @@ title: dotnet list reference コマンド - .NET Core CLI
 description: dotnet list 参照コマンドは、プロジェクト間参照を列挙する便利なオプションを提供します。
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 24cb1124fc3f8707afe727e6a73d35d5dde39937
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 821e6d276af44bf984c8ac1b42b4e954dbe69556
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34697184"
 ---
 # <a name="dotnet-list-reference"></a>dotnet list reference
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 05/04/2018
 
 `PROJECT`
 
-参照の一覧取得に使うプロジェクト ファイルを指定します。 指定されていない場合、プロジェクト ファイルの現在のディレクトリで検索されます。
+参照の一覧取得に使うプロジェクト ファイルを指定します。 指定されていない場合、コマンドではプロジェクト ファイルを現在のディレクトリで検索します。
 
 ## <a name="options"></a>オプション
 

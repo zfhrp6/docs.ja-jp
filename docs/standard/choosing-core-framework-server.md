@@ -3,12 +3,13 @@ title: サーバー アプリ用 .NET Core と .NET Framework の選択
 description: .NET でのサーバー アプリのビルド時に考慮する必要がある .NET の実装に関するガイドです。
 author: cartermp
 ms.author: mairaw
-ms.date: 03/15/2018
-ms.openlocfilehash: 1bed9bd2ed709907323123ad6658bbf0503ff1fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 06/19/2018
+ms.openlocfilehash: a9eaeae515041ee1d99ede5b004ecc85e453de2d
+ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36298189"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>サーバー アプリ用 .NET Core と .NET Framework の選択
 
@@ -65,7 +66,7 @@ Docker コンテナーは、オンプレミスの Linux または Windows イン
 
 ## <a name="when-to-choose-net-framework"></a>どのような場合に .NET Framework を選択すべきか
 
-新しいアプリケーションやアプリケーション パターンの場合は特に .NET Core の利点があります。 一方、多くの既存のシナリオなどについては、今後も .NET Framework が選ばれても不思議ではありません。 どのサーバー アプリケーションでも、.NET Framework は .NET Core に置き換えられません。
+新しいアプリケーションやアプリケーション パターンの場合は特に .NET Core の利点があります。 ただし、既存の多くのシナリオでは .NET Framework が一般的に選択されているため、すべてのサーバー アプリケーションで .NET Framework を .NET Core で置き換えることはできません。
 
 ### <a name="current-net-framework-applications"></a>現在の .NET Framework アプリケーション
 
@@ -88,13 +89,9 @@ Docker コンテナーは、オンプレミスの Linux または Windows イン
 
 * ASP.NET Web ページ アプリケーション: ASP.NET Web ページは、ASP.NET Core に含まれていません。 ASP.NET Core [Razor ページ](/aspnet/core/mvc/razor-pages/)には、Web ページとの類似点が多数あります。
 
-* ASP.NET SignalR サーバー/クライアントの実装。 現在、[ASP.NET SignalR](https://github.com/aspnet/SignalR) は ASP.NET Core 2.1 のプレビュー モードで使用できます。
-
 * WCF サービスの実装。 現在のところ、.NET Core から WCF サービスを利用する [WCF クライアント ライブラリ](https://github.com/dotnet/wcf)がある場合でも、WCF サーバーの実装は .NET Framework でのみ可能です。 このシナリオは .NET Core の現在の計画に含まれていませんが、将来に向けて検討中です。
 
 * ワークフローに関連するサービス: .Windows Workflow Foundation (WF)、ワークフロー サービス (1 つのサービスに WCF と WF) および WCF Data Services (旧称: "ADO.NET Data Services") は、NET Framework でのみ使用できます。  WF/WCF+WF/WCF Data Services を .NET Core に導入する予定はありません。
-
-* Windows Presentation Foundation (WPF) と Windows フォーム: WPF アプリケーションと Windows フォーム アプリケーションは、.NET Framework でのみ使うことができます。 .NET Core に移植する計画はありません。
 
 * 言語のサポート: Visual Basic と F# は現在 .NET Core でサポートされていますが、サポートされないプロジェクトの種類もあります。 サポートされるプロジェクト テンプレートの一覧については、[dotnet new のテンプレート オプション](../core/tools/dotnet-new.md#arguments)に関するセクションを参照してください。
 

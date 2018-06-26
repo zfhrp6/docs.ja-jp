@@ -4,11 +4,12 @@ description: コンテナー化された .NET アプリケーション向けの 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 424408ca095eadeda33690277dcf38bac923e29f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6af18b1154759677c7749632eace30bad752591
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34697197"
 ---
 # <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
