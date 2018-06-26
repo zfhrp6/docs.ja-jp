@@ -4,12 +4,12 @@ description: このトピックでは、再利用可能なライブラリと単�
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: 7423e9aaa861b767c3f3d21c628e17936feacca4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8dfbb712957d22e5b4aa16920e7b003a79c4444
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33219093"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314699"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
@@ -26,7 +26,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 - OpenSSL (.NET Core 1.1 が実行されている場合): 「[Mac における .NET Core の前提条件](../macos-prerequisites.md)」のトピックをご覧ください。
 - [.NET Core SDK 1.1 以降](https://www.microsoft.com/net/core#macos)
-- [Visual Studio 2017 for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+- [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/)
 
 必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../../core/macos-prerequisites.md)」を参照してください。 Visual Studio 2017 for Mac の完全なシステム要件については、「[Visual Studio 2017 for Mac 製品ファミリのシステム要件](/visualstudio/productinfo/vs2017-system-requirements-mac)」をご覧ください。
 

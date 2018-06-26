@@ -3,12 +3,12 @@ title: C# 6 の新機能 - C# ガイド
 description: C# バージョン 6 の新機能について説明します
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: c23d4f45441451fbf8a2ad2f939bdb1ed6144154
-ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
+ms.openlocfilehash: 5ba5d8f4cc5c7cecdda030594273324d14d1582a
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34483490"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34565879"
 ---
 # <a name="whats-new-in-c-6"></a>C# 6 の新機能
 
@@ -38,6 +38,8 @@ C# の 6.0 リリースには、開発者の生産性を向上させる多くの
     - コレクション初期化子に、メンバー メソッドだけでなく、使いやすい拡張メソッドを使用できます。
 * [オーバーロード解決の改善](#improved-overload-resolution):
     - 以前はあいまいなメソッド呼び出しを生成していた一部のコンストラクトを、正しく解決できるようになりました。
+* [`deterministic`コンパイラ オプション](#deterministic-compiler-output):
+    - 決定論的コンパイラ オプションは、同じソースの後続のコンパイルが同じバイナリ出力を生成することを確認します。
 
 これらの機能がもたらす全体的な効果として、より読みやすく簡潔なコードを記述できるようになりました。 一般的なベスト プラクティスを多数反映することで、構文に使用される形式的な記述が減っています。 形式的な記述が減ったことで、設計の意図が理解しやすくなっています。 これらの機能を十分に学習すれば、生産性が高まり、より読みやすいコードを記述できるようになります。また、言語の構造がわかりやすくなる分、コア機能の作業に専念できるようになります。
 
@@ -388,3 +390,12 @@ C# 6 ではこれが可能になりましたが、`Add` を `Enroll` にマッ�
 [!code-csharp[Lambda](../../../samples/snippets/csharp/new-in-6/overloads.cs#Lambda)]
 
 C# 6 の コンパイラは、`Task.Run(Func<Task>())` のほうが適切であるということを正しく判断できます。
+
+### <a name="deterministic-compiler-output"></a>決定論的コンパイラの出力
+
+`-deterministic` オプションが、同じソース ファイルの連続するコンパイルで、バイト単位で同じ出力アセンブリを生成するようにコンパイラに指示します。
+
+既定では、すべてのコンパイルでは、コンパイルごとに一意な出力が生成されます。 コンパイラは、タイムスタンプを追加し、ランダムな数から生成された GUID を追加します。 ビルド間の一貫性を確保するために、バイト単位で出力を比較する場合は、このオプションを使用します。
+
+詳細については、[-deterministic コンパイラ オプション](../language-reference/compiler-options/deterministic-compiler-option.md)の記事を参照してください。
+

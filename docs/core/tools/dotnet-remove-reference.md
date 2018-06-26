@@ -3,12 +3,13 @@ title: dotnet remove reference コマンド - .NET Core CLI
 description: dotnet remove reference コマンドは、プロジェクト間参照を削除する便利なオプションを提供します。
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 209f1ad62221e8a80efa161354a2c074d74b7c5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: b281b255be7f49a99a6b4928c340cd4fb085f085
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696232"
 ---
 # <a name="dotnet-remove-reference"></a>dotnet remove reference
 

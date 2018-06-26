@@ -3,11 +3,12 @@ title: C# プログラムの構造 - C# 言語のツアー
 description: C# プログラムの基本的な構造について説明します
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: dee24077f9f6287780320d979c44aef5230be81e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9efd2542d449da5ddcd9d3170c2e598282a34c39
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34565752"
 ---
 # <a name="program-structure"></a>プログラムの構造
 

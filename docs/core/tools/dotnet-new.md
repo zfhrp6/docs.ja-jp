@@ -3,12 +3,13 @@ title: dotnet new コマンド - .NET Core CLI
 description: dotnet new コマンドは、指定されたテンプレートに基づいて新しい .NET Core プロジェクトを作成します。
 author: mairaw
 ms.author: mairaw
-ms.date: 03/26/2018
-ms.openlocfilehash: 5ebf77377360662242fbf345d9fe76eee7a1316f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: ae24c4145cc67ca863c07e4d22af8a1c2c2dd732
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34570464"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -20,7 +21,14 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+```
+dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [--nuget-source] [-o|--output]
+    [-u|--uninstall] [Template options]
+dotnet new <TEMPLATE> [-l|--list] [--type]
+dotnet new [-h|--help]
+```
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
@@ -47,9 +55,35 @@ dotnet new [-h|--help]
 
 コマンドが呼び出されたときにインスタンス化するテンプレート。 各テンプレートには、渡すことができるオプションが存在する場合があります。 詳細については、[テンプレートのオプション](#template-options)を参照してください。
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
-このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -l` を使います。 次の表は、.NET Core 2.0 SDK にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
+このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -l` を使います。 次の表は、.NET Core SDK 2.1.300 にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
+
+|テンプレートの説明                          | テンプレート名   | 言語     |
+|----------------------------------------------|-----------------|---------------|
+| コンソール アプリケーション                          | `console`       | [C#], F#, VB  |
+| クラス ライブラリ                                | `classlib`      | [C#], F#, VB  |
+| 単体テスト プロジェクト                            | `mstest`        | [C#], F#, VB  |
+| xUnit テスト プロジェクト                           | `xunit`         | [C#], F#, VB  |
+| Razor ページ                                   | `page`          | [C#]          |
+| MVC ViewImports                              | `viewimports`   | [C#]          |
+| MVC ViewStart                                | `viewstart`     | [C#]          |
+| ASP.NET Core 空                           | `web`           | [C#], F#      |
+| ASP.NET Core Web アプリ (モデル ビュー コントローラー) | `mvc`           | [C#], F#      |
+| ASP.NET Core Web アプリ                         | `razor`         | [C#]          |
+| Angular 付きの ASP.NET Core                    | `angular`       | [C#]          |
+| React.js 付きの ASP.NET Core                   | `react`         | [C#]          |
+| React.js および Redux 付きの ASP.NET Core         | `reactredux`    | [C#]          |
+| ASP.NET Core Web API                         | `webapi`        | [C#], F#      |
+| Razor クラス ライブラリ                          | `razorclasslib` | [C#]          |
+| global.json file                             | `globaljson`    |               |
+| NuGet 構成                                 | `nugetconfig`   |               |
+| Web 構成                                   | `webconfig`     |               |
+| ソリューション ファイル                                | `sln`           |               |
+
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+
+このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -l` を使います。 次の表は、.NET Core SDK 2.0 にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
 
 |テンプレートの説明                          | テンプレート名 | 言語     |
 |----------------------------------------------|---------------|---------------|
@@ -65,7 +99,7 @@ dotnet new [-h|--help]
 | React.js および Redux 付きの ASP.NET Core         | `reactredux`  | [C#]          |
 | ASP.NET Core Web API                         | `webapi`      | [C#], F#      |
 | global.json file                             | `globaljson`  |               |
-| Nuget 構成                                 | `nugetconfig` |               |
+| NuGet 構成                                 | `nugetconfig` |               |
 | Web 構成                                   | `webconfig`   |               |
 | ソリューション ファイル                                | `sln`         |               |
 | Razor ページ                                   | `page`        |               |
@@ -74,7 +108,7 @@ dotnet new [-h|--help]
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -all` を使います。 次の表は、.NET Core 1.x SDK にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
+このコマンドには、テンプレートの既定の一覧が含まれています。 使用可能なテンプレートの一覧を取得するには、`dotnet new -all` を使います。 次の表は、.NET Core SDK 1.x にプレインストールされているテンプレートの一覧です。 テンプレートの既定の言語は、角かっこで示されます。
 
 |テンプレートの説明  | テンプレート名 | 言語 |
 |----------------------|---------------|-----------|
@@ -85,7 +119,7 @@ dotnet new [-h|--help]
 | ASP.NET Core 空   | `web`         | [C#]      |
 | ASP.NET Core Web アプリ | `mvc`         | [C#], F#  |
 | ASP.NET Core Web API | `webapi`      | [C#]      |
-| Nuget 構成         | `nugetconfig` |           |
+| NuGet 構成         | `nugetconfig` |           |
 | Web 構成           | `webconfig`   |           |
 | ソリューション ファイル        | `sln`         |           |
 
@@ -93,7 +127,58 @@ dotnet new [-h|--help]
 
 ## <a name="options"></a>オプション
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+
+`--force`
+
+既存のファイルを変更する場合でも、コンテンツが強制的に生成されます。 これは、出力ディレクトリに既にプロジェクトが含まれている場合に必要です。
+
+`-h|--help`
+
+コマンドのヘルプを印刷します。 `dotnet new` コマンド自体、または `dotnet new mvc --help` などの任意のテンプレートに対して呼び出すことができます。
+
+`-i|--install <PATH|NUGET_ID>`
+
+指定された `PATH` または `NUGET_ID` からソース パックまたはテンプレート パックをインストールします。 テンプレート パッケージのプレリリース版をインストールする場合は、`<package-name>::<package-version>` の形式でバージョンを指定する必要があります。 既定では、`dotnet new` は、バージョンに対して \* を渡します。これは最後の安定したパッケージのバージョンを表します。 「[使用例](#examples)」のセクションで、例をご覧ください。
+
+カスタム テンプレートの作成方法については、[「dotnet new のカスタム テンプレート」](custom-templates.md) を参照してください。
+
+`-l|--list`
+
+指定した名前を含むテンプレートを列挙します。 `dotnet new` コマンドに対して呼び出すと、指定されたディレクトリで使用できるテンプレートが列挙されます。 たとえば、ディレクトリに既にプロジェクトが含まれている場合、すべてのプロジェクト テンプレートは列挙されません。
+
+`-lang|--language {C#|F#|VB}`
+
+作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
+
+    > [!NOTE]
+    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+
+`-n|--name <OUTPUT_NAME>`
+
+作成される出力の名前です。 名前が指定されていない場合、現在のディレクトリの名前が使用されます。
+
+`--nuget-source`
+
+インストール中に使用する NuGet ソースを 1 つ指定します。
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+生成された出力を配置する場所。 既定値は、現在のディレクトリです。
+
+`--type`
+
+使用可能な種類に基づいて、テンプレートをフィルター処理します。 定義済みの値は、"project"、"item"、または "other" です。
+
+`-u|--uninstall <PATH|NUGET_ID>`
+
+指定された `PATH` または `NUGET_ID` で、ソース パックまたはテンプレート パックをアンインストールします。
+
+> [!NOTE]
+> `PATH` を使用してテンプレートをアンインストールするには、完全修飾パスを使用する必要があります。 たとえば、*C:/Users/\<ユーザー>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* は有効ですが、*./GarciaSoftware.ConsoleTemplate.CSharp* が含まれるフォルダーから、そのパスを指定することはできません。
+> また、テンプレートのパスの最後にある終端ディレクトリのスラッシュは含めないでください。
+
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `--force`
 
@@ -175,7 +260,113 @@ dotnet new [-h|--help]
 
 プロジェクト テンプレートはそれぞれ、追加のオプションが与えられている場合があります。 コア テンプレートの場合、次のオプションが追加されています。
 
-# <a name="net-core-20tabnetcore2x"></a>[.NET Core 2.0](#tab/netcore2x)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+
+**console, angular, react, reactredux, razorclasslib**
+
+  `--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**classlib**
+
+`-f|--framework <FRAMEWORK>` - ターゲットにする[フレームワーク](../../standard/frameworks.md)を指定します。 値: .NET Core クラス ライブラリを作成するには `netcoreapp2.0`、.NET 標準クラス ライブラリを作成するには `netstandard2.0` です。 既定値は `netstandard2.0` です。
+
+`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**mstest, xunit**
+
+`-p|--enable-pack` - [dotnet pack](dotnet-pack.md) を使用してプロジェクトのパッケージ化を有効にします。
+
+`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**globaljson**
+
+`--sdk-version <VERSION_NUMBER>` - *global.json* ファイル内で使用する .NET Core SDK のバージョンを指定します。
+
+**web**
+
+`--use-launch-settings` - 生成されたテンプレート出力に *launchSettings.json* を含めます。
+
+`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**webapi**
+
+`-au|--auth <AUTHENTICATION_TYPE>` - 使う認証の種類。 次の値を指定できます。
+
+- `None` - 認証は行われません (既定)。
+- `IndividualB2C` - Azure AD B2C での個別認証。
+- `SingleOrg` - 単一のテナントに対する組織認証。
+- `Windows` - Windows 認証。
+
+`--aad-b2c-instance <INSTANCE>` - 接続先の Azure Active Directory B2C インスタンス。 `IndividualB2C` 認証で使用します。 既定値は `https://login.microsoftonline.com/tfp/` です。
+
+`-ssp|--susi-policy-id <ID>` - このプロジェクト用のサインインおよびサインアップ ポリシー ID です。 `IndividualB2C` 認証で使用します。
+
+`--aad-instance <INSTANCE>` - 接続先の Azure Active Directory インスタンスです。 `SingleOrg` 認証で使用します。 既定値は `https://login.microsoftonline.com/` です。
+
+`--client-id <ID>` - このプロジェクトのクライアント ID です。 `IndividualB2C` 認証または `SingleOrg` 認証で使用します。 既定値は `11111111-1111-1111-11111111111111111` です。
+
+`--domain <DOMAIN>` - ディレクトリ テナントのドメインです。 `SingleOrg` 認証または `IndividualB2C` 認証で使用します。 既定値は `qualified.domain.name` です。
+
+`--tenant-id <ID>` - 接続先のディレクトリの TenantId ID です。 `SingleOrg` 認証で使用します。 既定値は `22222222-2222-2222-2222-222222222222` です。
+
+`-r|--org-read-access` - このアプリケーションにディレクトリへの読み取りアクセスを許可します。 `SingleOrg` 認証または `MultiOrg` 認証にのみ適用されます。
+
+`--use-launch-settings` - 生成されたテンプレート出力に *launchSettings.json* を含めます。
+
+`-uld|--use-local-db` - SQLite ではなく LocalDB が使用されるように指定します。 `Individual` 認証または `IndividualB2C` 認証にのみ適用されます。
+
+`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**mvc, razor**
+
+`-au|--auth <AUTHENTICATION_TYPE>` - 使う認証の種類。 次の値を指定できます。
+
+- `None` - 認証は行われません (既定)。
+- `Individual` - 個別認証です。
+- `IndividualB2C` - Azure AD B2C での個別認証。
+- `SingleOrg` - 単一のテナントに対する組織認証。
+- `MultiOrg` - 複数のテナントに対する組織認証です。
+- `Windows` - Windows 認証。
+
+`--aad-b2c-instance <INSTANCE>` - 接続先の Azure Active Directory B2C インスタンス。 `IndividualB2C` 認証で使用します。 既定値は `https://login.microsoftonline.com/tfp/` です。
+
+`-ssp|--susi-policy-id <ID>` - このプロジェクト用のサインインおよびサインアップ ポリシー ID です。 `IndividualB2C` 認証で使用します。
+
+`-rp|--reset-password-policy-id <ID>` - このプロジェクトのリセット パスワード ポリシー ID です。 `IndividualB2C` 認証で使用します。
+
+`-ep|--edit-profile-policy-id <ID>` - このプロジェクトの編集プロファイル ポリシー ID です。 `IndividualB2C` 認証で使用します。
+
+`--aad-instance <INSTANCE>` - 接続先の Azure Active Directory インスタンスです。 `SingleOrg` 認証または `MultiOrg` 認証で使用します。 既定値は `https://login.microsoftonline.com/` です。
+
+`--client-id <ID>` - このプロジェクトのクライアント ID です。 `IndividualB2C` 認証、`SingleOrg` 認証、または `MultiOrg` 認証で使用します。 既定値は `11111111-1111-1111-11111111111111111` です。
+
+`--domain <DOMAIN>` - ディレクトリ テナントのドメインです。 `SingleOrg` 認証または `IndividualB2C` 認証で使用します。 既定値は `qualified.domain.name` です。
+
+`--tenant-id <ID>` - 接続先のディレクトリの TenantId ID です。 `SingleOrg` 認証で使用します。 既定値は `22222222-2222-2222-2222-222222222222` です。
+
+`--callback-path <PATH>` - リダイレクト URI のアプリケーションの基本パス内の要求パスです。 `SingleOrg` 認証または `IndividualB2C` 認証で使用します。 既定値は `/signin-oidc` です。
+
+`-r|--org-read-access` - このアプリケーションにディレクトリへの読み取りアクセスを許可します。 `SingleOrg` 認証または `MultiOrg` 認証にのみ適用されます。
+
+`--use-launch-settings` - 生成されたテンプレート出力に *launchSettings.json* を含めます。
+
+`--use-browserlink` - プロジェクトに BrowserLink を含めます。
+
+`-uld|--use-local-db` - SQLite ではなく LocalDB が使用されるように指定します。 `Individual` 認証または `IndividualB2C` 認証にのみ適用されます。
+
+`--no-restore` - プロジェクトの作成中には暗黙的な復元を実行しません。
+
+**page**
+
+`-na|--namespace <NAMESPACE_NAME>` - 生成するコードの名前空間です。 既定値は `MyApp.Namespace` です。
+
+`-np|--no-pagemodel` - PageModel なしでページを作成します。
+
+**viewimports**
+
+`-na|--namespace <NAMESPACE_NAME>` - 生成するコードの名前空間です。 既定値は `MyApp.Namespace` です。
+
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 **console, angular, react, reactredux**
 
@@ -307,7 +498,7 @@ dotnet new [-h|--help]
 
 `dotnet new console -lang F#`
 
-指定したディレクトリ内に .NET 標準クラス ライブラリ プロジェクトを作成します (.NET Core 2.0 SDK またはそれ以降のバージョンでのみ使用可能)。
+指定したディレクトリ内に .NET 標準クラス ライブラリ プロジェクトを作成します (.NET Core SDK 2.0 またはそれ以降のバージョンでのみ使用可能)。
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
@@ -326,6 +517,10 @@ MVC に利用できるすべてのテンプレートを一覧表示します。
 ASP.NET Core のシングル ページ アプリケーション テンプレートのバージョン 2.0 をインストールします (コマンド オプションは .NET Core SDK 1.1 以降のバージョンでのみ使用できます):
 
 `dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0`
+
+SDK バージョン 2.0.0 (.NET Core SDK 2.0 以降のバージョンでのみ使用できます) を設定している現在のディレクトリ内に *global.json* を作成します。
+
+`dotnet new globaljson --sdk-version 2.0.0`
 
 ## <a name="see-also"></a>関連項目
 

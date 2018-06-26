@@ -10,11 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: f917d662366dc8ff540cdee6222199fe8f5606c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6dfdf14b518582388e655ec5616904928dfd8b5
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696440"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (C# リファレンス)
 try-catch ステートメントは、`try` ブロックと、それに続く 1 つ以上の `catch` 句で構成されます。この句にはさまざまな例外のハンドラーを指定します。  
@@ -42,7 +43,7 @@ catch (InvalidCastException e)
   
  同一の try-catch ステートメントで、特定の `catch` 句を複数回使用することもできます。 この場合、`catch` 句は順序どおりにチェックされるため、`catch` 句の順序が重要になります。 例外は、特殊性の高い順にキャッチしてください。 後のブロックに到達しないような順序で catch ブロックを並べた場合、コンパイラでエラーが発生します。  
   
- 処理対象の例外をフィルター処理する方法の 1 つに、`catch` 引数の使用があります。  また、述語式を使用して例外を確認し、それを処理するかどうかを決定することもできます。  述語式が false を返す場合、ハンドラーの検索が続行されます。  
+ 処理対象の例外をフィルター処理する方法の 1 つに、`catch` 引数の使用があります。  また、例外フィルターを使用して例外を確認し、それを処理するかどうかを決定することもできます。  例外フィルターが false を返す場合、ハンドラーの検索が続行されます。  
   
 ```csharp  
 catch (ArgumentException e) when (e.ParamName == "…")  
@@ -50,7 +51,7 @@ catch (ArgumentException e) when (e.ParamName == "…")
 }  
 ```  
   
- スタックはフィルターの影響を受けないため、キャッチと再スロー (以下で説明します) には例外フィルターが適しています。  後のハンドラーでスタックをダンプすると、再スローされた最後の場所だけではなく、例外が最初に発生した場所がわかります。  例外のフィルター式の一般的な用途の 1 つにログの記録があります。  常に false を返しログも出力する述語関数を作成すれば、処理や再スローの必要なしにそのままの状態で例外をログに記録することができます。  
+ スタックはフィルターの影響を受けないため、キャッチと再スロー (以下で説明します) には例外フィルターが適しています。  後のハンドラーでスタックをダンプすると、再スローされた最後の場所だけではなく、例外が最初に発生した場所がわかります。  例外のフィルター式の一般的な用途の 1 つにログの記録があります。  常に false を返しログも出力するフィルターを作成すれば、処理や再スローの必要なしにそのままの状態で例外をログに記録することができます。  
   
  `catch` ステートメントでキャッチされた例外を再びスローするには、`catch` ブロックで [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントを使用できます。 次の例では、<xref:System.IO.IOException> 例外からソース情報を抽出した後、親メソッドに例外をスローします。  
   
@@ -92,9 +93,19 @@ catch (InvalidCastException e)
     {  
         // Take some action.  
     }  
- }  
+}  
 ```  
-  
+
+> [!NOTE]
+> また、例外フィルターを使用すると、多くの場合、よりクリーンな方法で同様の結果を得ることができます (このドキュメントで前述したような、スタックの変更もありません)。 次の例では、呼び出し元に対して前の例と同様の動作をします。 この関数は、`e.Data` が `null` の場合に、`InvalidCastException` を呼び出し元にスローして戻します。
+> 
+> ```csharp
+> catch (InvalidCastException e) when (e.Data != null)   
+> {  
+>     // Take some action.  
+> }
+> ```   
+
  `try` ブロック内では、そのブロックで宣言されている変数のみを初期化します。 そうしないと、ブロックの実行が完了する前に例外が発生する可能性があります。 たとえば、次のコードでは、変数 `n` が `try` ブロック内で初期化されています。 この変数を `try` ブロックの外側にある `Write(n)` ステートメントで使おうとすると、コンパイラ エラーが発生します。  
   
 ```csharp  

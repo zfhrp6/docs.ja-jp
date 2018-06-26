@@ -3,26 +3,19 @@ title: 値の型による参照セマンティクス
 description: 構造のコピーを安全に最小限に抑える言語機能を理解する
 ms.date: 11/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 3c53a426a6adb37f5091e4ad61835fef6c9f7729
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0646a7fbc01ed76883fb6b16ce04006049ef054a
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566281"
 ---
 # <a name="reference-semantics-with-value-types"></a>値の型による参照セマンティクス
 
 値の型を利用する利点は、多くの場合にヒープ割り当てが回避されることにあります。
 欠点は、値でコピーされるということです。 このトレードオフは、大量のデータを操作するアルゴリズムの最適化を難しくします。 C# 7.2 の新しい言語機能は、値の型による参照渡しセマンティクスを可能にするメカニズムを提供します。 これらの機能を賢く使って、割り当てとコピー操作の両方を最小限に抑えます。 この記事では、これらの新しい機能について説明します。
 
-この記事にあるサンプル コードの多くは、C# 7.2 で追加された機能を示すものです。 そのような機能を使用するには、C# 7.2 以降を使用するようにプロジェクトを構成する必要があります。 Visual Studio を使用してそれを選択できます。 プロジェクトごとに、メニューから **[プロジェクト]** を選択し、次に **[プロパティ]** を選択します。 **[ビルド]** タブを選択してから **[詳細設定]** をクリックします。 そこから、言語バージョンを構成します。 "7.2" または "latest" を選択します。  あるいは、*csproj* ファイルを編集し、次のノードを追加できます。
-
-```XML
-  <PropertyGroup>
-    <LangVersion>7.2</LangVersion>
-  </PropertyGroup>
-```
-
-値には "7.2" または "latest" を使用できます。
+この記事にあるサンプル コードの多くは、C# 7.2 で追加された機能を示すものです。 そのような機能を使用するには、C# 7.2 以降を使用するようにプロジェクトを構成する必要があります。 言語バージョンを設定する方法の詳細については、[言語バージョンの構成](language-reference/configure-language-version.md)に関する記事を参照してください。
 
 ## <a name="passing-arguments-by-readonly-reference"></a>引数の読み取り専用参照渡し
 

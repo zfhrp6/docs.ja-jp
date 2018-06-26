@@ -3,12 +3,13 @@ title: dotnet nuget locals コマンド - .NET Core CLI
 description: dotnet nuget locals コマンドは、HTTP 要求キャッシュ、一時的なキャッシュ、コンピューター全体のグローバル パッケージ フォルダーなどのローカルの NuGet リソースをクリアまたは一覧表示します。
 author: karann-msft
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: d0c900a06b00fd5e6b7ad66527c6582483222c45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 799acb92d6ab7439e15c23c9f0b7b572c966adda
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696872"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
@@ -20,7 +21,10 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-`dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output] [-h|--help]`
+```
+dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
+dotnet nuget locals [-h|--help]
+```
 
 ## <a name="description"></a>説明
 
@@ -30,7 +34,7 @@ ms.lasthandoff: 05/04/2018
 
 `CACHE_LOCATION`
 
-次のいずれかの値です。
+一覧表示またはクリアするキャッシュの場所。 次のいずれかの値を受け入れます。
 
 * `all` - 指定された操作をすべてのキャッシュの種類 (HTTP 要求キャッシュ、グローバル パッケージ キャッシュ、一時的なキャッシュ) に適用することを指定します。
 * `http-cache` - 指定した操作を HTTP 要求キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
@@ -38,6 +42,10 @@ ms.lasthandoff: 05/04/2018
 * `temp` - 指定した操作を一時キャッシュのみに適用することを指定します。 その他のキャッシュの場所には影響しません。
 
 ## <a name="options"></a>オプション
+
+`--force-english-output`
+
+インバリアントの英語ベースのカルチャを使用して、アプリケーションの実行を強制します。
 
 `-h|--help`
 
@@ -49,11 +57,7 @@ ms.lasthandoff: 05/04/2018
 
 `-l|--list`
 
-一覧表示オプションは、指定されたキャッシュの種類の場所を表示するために使用されます。 
-
-`--force-english-output`
-
-コマンドライン出力を強制的に英語にします。
+一覧表示オプションは、指定されたキャッシュの種類の場所を表示するために使用されます。
 
 ## <a name="examples"></a>使用例
 

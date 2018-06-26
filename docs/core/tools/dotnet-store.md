@@ -3,12 +3,13 @@ title: dotnet store コマンド
 description: "'dotnet store' コマンドは、指定したアセンブリをランタイム パッケージ ストアに格納します。"
 author: bleroy
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: f819444c92afde0e1a5349a58918f993868a0143
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 54654522207157f7d49bb86223b7986acccf51ee
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696326"
 ---
 # <a name="dotnet-store"></a>dotnet store
 
@@ -34,7 +35,7 @@ ms.lasthandoff: 05/04/2018
 
 `-m|--manifest <PATH_TO_MANIFEST_FILE>`
 
-"*パッケージ ストア マニフェスト ファイル*" は、格納するパッケージの一覧を含む XML ファイルです。 マニフェスト ファイルの形式は、*csproj* 形式と互換性があります。 そのため、必要なパッケージを参照する *csproj* プロジェクト ファイルを `-m|--manifest` オプションと使用することで、ランタイム パッケージ ストアにアセンブリを格納することができます。 複数のマニフェスト ファイルを指定するには、ファイルごとにオプションとパスを繰り返します: `--manifest packages1.csproj --manifest packages2.csproj`
+"*パッケージ ストア マニフェスト ファイル*" は、格納するパッケージの一覧を含む XML ファイルです。 マニフェスト ファイルの形式は、SDK スタイル プロジェクト形式と互換性があります。 そのため、必要なパッケージを参照するプロジェクト ファイルを `-m|--manifest` オプションと使用することで、ランタイム パッケージ ストアにアセンブリを格納することができます。 複数のマニフェスト ファイルを指定するには、ファイルごとにオプションとパスを繰り返します。 たとえば、`--manifest packages1.csproj --manifest packages2.csproj` のように指定します。
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -82,4 +83,4 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="see-also"></a>関連項目
 
-[ランタイム パッケージ ストア](../deploying/runtime-store.md)   
+[ランタイム パッケージ ストア](../deploying/runtime-store.md)
