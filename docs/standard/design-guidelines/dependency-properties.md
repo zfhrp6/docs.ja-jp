@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 039015f895a491d8709815d6aff52eb6139d779f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7398202cc265fbd55b9bf0b5a53367dedcab57b0
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576117"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948486"
 ---
 # <a name="dependency-properties"></a>依存関係プロパティ
 依存関係プロパティ (DP) は、たとえば (フィールド) の型の変数に保存することではなく、プロパティ ストア内の値を格納する標準プロパティです。  
@@ -43,7 +43,7 @@ ms.locfileid: "33576117"
   
  添付プロパティの典型的な例は、<xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType>プロパティです。 プロパティ ボタン (いないグリッドの) 列の位置を表すは"にアタッチされて"ボタン グリッドで、グリッドで、ボタンが含まれている場合にのみ関連します。  
   
-```  
+```xaml
 <Grid>  
     <Grid.ColumnDefinitions>  
         <ColumnDefinition />  
@@ -57,7 +57,7 @@ ms.locfileid: "33576117"
   
  添付プロパティの定義は、アクセサーが静的の Get および Set メソッドによって表される点を除いて、ほとんどの場合と同様に、通常の依存関係プロパティの検索します。  
   
-```  
+```csharp
 public class Grid {  
   
     public static int GetColumn(DependencyObject obj) {  
