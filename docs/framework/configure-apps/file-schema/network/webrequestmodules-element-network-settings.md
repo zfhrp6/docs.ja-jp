@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742693"
 ---
 # <a name="ltwebrequestmodulesgt-element-network-settings"></a>&lt;webRequestModules&gt;要素 (ネットワーク設定)
 使用してネットワークのホストから情報を要求するモジュールを指定します。  
@@ -54,7 +55,7 @@ ms.lasthandoff: 05/03/2018
 ## <a name="remarks"></a>コメント  
  `webRequestModules`要素の子孫を登録する、<xref:System.Net.WebRequest>ネットワーク ホストへの情報要求を処理するクラス。 Web 要求のモジュールを実装する必要があります、<xref:System.Net.IWebRequestCreate>インターフェイスです。  
   
- .NET Framework には、http://、https://、および file:// で始まる Uri の Web 要求のモジュールが含まれています。 既定のモジュールは、構成ファイルでカスタム モジュールを登録することによってのみ上書きできます。  
+ .NET Framework には、http://、 https://、 および file://  で始まる Uri の Web 要求のモジュールが含まれています。 既定のモジュールは、構成ファイルでカスタム モジュールを登録することによってのみ上書きできます。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
