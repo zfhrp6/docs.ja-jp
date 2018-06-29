@@ -2,11 +2,12 @@
 title: 共通のスキーマ コレクション
 ms.date: 03/30/2017
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-ms.openlocfilehash: fc8b581a127fbef0f32cdee53eaa62d241e4ae31
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 29ccd2af4268a86ae4c2047ad2523f68b0f6489e
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37072125"
 ---
 # <a name="common-schema-collections"></a>共通のスキーマ コレクション
 共通のスキーマ コレクションとは、それぞれの .NET Framework マネージ プロバイダーにより実装されるスキーマ コレクションのことです。 呼び出すことによってサポートされるスキーマ コレクションの一覧を特定の .NET Framework マネージ プロバイダーを照会することができます、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。 これらのコレクションは、必要なすべての列を表現します。 プロバイダーでは、任意で列を追加できます。 たとえば、`SqlClient` と `OracleClient` は、ParameterName を制限のコレクションに追加します。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 05/03/2018
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
-|CompositeIdentifierSeparatorPattern|string|複合識別子内の複合セパレーターと一致する正規表現。 たとえば、"\\"。 (SQL サーバー用) または"@&#124;\\." (Oracle の場合) のように指定します。<br /><br /> 複合識別子はたとえば、データベース オブジェクト名の使用目的は、通常: pubs.dbo.authors またはpubs@dbo.authorsです。<br /><br /> SQL Server の正規表現を使用して"\\。"です。 Oracleclient の場合、次のように使用します。"@&#124;\\。"です。<br /><br /> ODBC の場合、Catalog_name_seperator を使用します。<br /><br /> OLE DB の場合、DBLITERAL_CATALOG_SEPARATOR または DBLITERAL_SCHEMA_SEPARATOR を使用します。|  
+|CompositeIdentifierSeparatorPattern|string|複合識別子内の複合セパレーターと一致する正規表現。 たとえば、"\\"。 (SQL サーバー用) または"\@&#124;\\." (Oracle の場合) のように指定します。<br /><br /> 複合識別子はたとえば、データベース オブジェクト名の使用目的は、通常: pubs.dbo.authors またはpubs@dbo.authorsです。<br /><br /> SQL Server の正規表現を使用して"\\。"です。 Oracleclient の場合、使用して"\@&#124;\\."です。<br /><br /> ODBC の場合、Catalog_name_seperator を使用します。<br /><br /> OLE DB の場合、DBLITERAL_CATALOG_SEPARATOR または DBLITERAL_SCHEMA_SEPARATOR を使用します。|  
 |DataSourceProductName|string|"Oracle" や "SQLServer" など、プロバイダーによってアクセスされる製品の名前。|  
 |DataSourceProductVersion|string|プロバイダーによりアクセスされる製品のバージョンを、Microsoft の形式ではなく、データ ソースのネイティブ形式で表します。<br /><br /> 場合によっては、DataSourceProductVersion と DataSourceProductVersionNormalized は同じ値になります。 OLE DB と ODBC の場合、これらの値は、元になるネイティブ API 内の同じ関数呼び出しに割り当てられているので、常に同じ値になります。|  
 |DataSourceProductVersionNormalized|string|`String.Compare()` を使用して比較できるような、データ ソースの正規化されたバージョン。 この形式は、バージョン 10 がバージョン 1 とバージョン 2 の間に並べ替えられることがないように、プロバイダーのすべてのバージョンで一貫しています。<br /><br /> たとえば、Oracle プロバイダーは、これにより、「08.01.07.04.01」を返すには、Oracle 8i データ ソースの正規化されたバージョンは、"nn.nn.nn.nn.nn"の形式を使用します。 SQL Server では、一般的な Microsoft"nn.nn.nnnn"形式を使用します。<br /><br /> 場合によっては、DataSourceProductVersion と DataSourceProductVersionNormalized は同じ値になります。 OLE DB と ODBC の場合、これらの値は、元になるネイティブ API 内の同じ関数呼び出しに割り当てられているので、常に同じ値になります。|  
@@ -37,7 +38,7 @@ ms.lasthandoff: 05/03/2018
 |IdentifierPattern|string|識別子と一致し、その識別子の一致した値がある正規表現。 たとえば "[A-Za-z0-9_#$]" になります。|  
 |IdentifierCase|<xref:System.Data.Common.IdentifierCase>|引用符で囲まれていない識別子が、大文字と小文字を区別して扱われるかどうかを示します。|  
 |OrderByColumnsInSelect|bool|ORDER BY 句の列が SELECT リストになければならないかどうかを示します。 値が true である場合、SELECT リストになければならないことを示します。値が false である場合、SELECT リストにある必要がないことを示します。|  
-|ParameterMarkerFormat|string|パラメーターを書式設定する方法を表す書式文字列。<br /><br /> 名前付きパラメーターがデータ ソースでサポートされている場合、この文字列内の最初のプレースホルダーは、パラメーター名が書式設定される場所である必要があります。<br /><br /> たとえば、データ ソースを使用してという名前の付いたパラメーターが必要ですが、':' なります":{0}"です。 これを "p1" のパラメーター名で書式設定すると、結果の文字列は ":p1" になります。<br /><br /> データ ソース、必要なパラメーターを付けるかどうかは、' @'、名前が含まれているになりますが、'{0}'、およびという名前のパラメーターを書式設定の結果"@p1「単になります」@p1"です。<br /><br /> データ ソースの名前付きパラメーターを期待せずの使用を想定している、'?' 文字、単に、書式指定文字列を指定することができます '?'、パラメーター名を無視します。 OLE DB の場合、"?" を返します。|  
+|ParameterMarkerFormat|string|パラメーターを書式設定する方法を表す書式文字列。<br /><br /> 名前付きパラメーターがデータ ソースでサポートされている場合、この文字列内の最初のプレースホルダーは、パラメーター名が書式設定される場所である必要があります。<br /><br /> たとえば、データ ソースを使用してという名前の付いたパラメーターが必要ですが、':' なります":{0}"です。 これを "p1" のパラメーター名で書式設定すると、結果の文字列は ":p1" になります。<br /><br /> データ ソース、必要なパラメーターを付けるかどうかは、' @'、名前が含まれているになりますが、'{0}'、およびという名前のパラメーターを書式設定の結果"\@p1"単に"\@p1"です。<br /><br /> データ ソースの名前付きパラメーターを期待せずの使用を想定している、'?' 文字、単に、書式指定文字列を指定することができます '?'、パラメーター名を無視します。 OLE DB の場合、"?" を返します。|  
 |ParameterMarkerPattern|string|パラメーター マーカーと一致する正規表現。 パラメーター名の一致する値になります (一致する値がある場合)。<br /><br /> たとえば、パラメーター名に "@" という前置文字が含まれている、名前付きパラメーターがサポートされている場合、"(@[A-Za-z0-9_$#]*)" となります。<br /><br /> ただしで名前付きパラメーターがサポートされている場合、':' 前置文字は、パラメーター名の一部ではないとになります。": ([z0 _ $#]\*)"です。<br /><br /> もちろん、データ ソースが名前付きパラメーターをサポートしない場合は、単に "?" になります。|  
 |ParameterNameMaxLength|int|パラメーター名の文字の最大長。 Visual Studio では、パラメーター名がサポートされている場合、最大長の最小値が 30 文字であることを想定しています。<br /><br /> データ ソースが名前付きパラメーターをサポートしない場合、このプロパティは 0 を返します。|  
 |ParameterNamePattern|string|有効なパラメーター名と一致する正規表現。 異なるデータ ソースでは、パラメーター名として使用できる文字に関して、規則が異なります。<br /><br /> Visual Studio では、パラメーター名がサポートされている場合、文字 "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}" が、パラメーター名として有効な、サポートされる最小限の文字のセットです。|  

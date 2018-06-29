@@ -2,12 +2,12 @@
 title: メッセージング プロトコル
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: c900c8fde8b13b4766fb245de2bab46b5601f135
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d188c79d3879ef383d24f56c81d66973266636bc
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496638"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37072723"
 ---
 # <a name="messaging-protocols"></a>メッセージング プロトコル
 Windows Communication Foundation (WCF) チャネル スタックには、内部メッセージ表現をワイヤ形式に変換し、特定のトランスポートを使用して送信するエンコーディングとトランスポート チャネルが採用しています。 Web サービスの相互運用性を確保するために、最も一般的に使用されるトランスポートは HTTP です。また、Web サービスが使用する最も一般的なエンコーディングは、XML ベースの SOAP 1.1、SOAP 1.2、および MTOM (Message Transmission Optimization Mechanism) です。  
@@ -130,7 +130,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  B3121: WCF では、Ws-metadataexchange (MEX) 仕様のメタデータに含めるエンドポイント参照の値渡しまたは参照渡しのセクション 6 に示すメカニズムを採用しています。  
   
- WCF サービスであるトークン発行者によって発行された Security Assertions Markup Language (SAML) トークンを使用して認証が必要な場合を考えますhttp://sts.fabrikam123.comです。WCF エンドポイントを使用してこの認証要件を記述する`sp:IssuedToken`が入れ子になったアサーション`sp:Issuer`トークンの発行者を指し示すアサーションです。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、WCF は、トークン発行者のメタデータへの参照を提供します。  
+ WCF サービスであるトークン発行者によって発行された Security Assertions Markup Language (SAML) トークンを使用して認証が必要な場合を考えますhttp://sts.fabrikam123.comです。 WCF エンドポイントを使用してこの認証要件を記述する`sp:IssuedToken`が入れ子になったアサーション`sp:Issuer`トークンの発行者を指し示すアサーションです。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、WCF は、トークン発行者のメタデータへの参照を提供します。  
   
 ```xml  
 <sp:IssuedToken>  
@@ -452,7 +452,7 @@ Content-Length: 0
   
 -   R4132 : HTTP Content-Type ヘッダーには、二重引用符で囲まれた値 `application/xop+xml` が指定された型パラメーターが必要です。  
   
- 二重引用符を使用する要件は、RFC 2387 に明示ありませんが確認などの文字が予約されているすべての最も可能性の高いパラメーターに含まれるマルチパート/関連メディアの種類"@" or "/"したがって二重引用符を必要とします。  
+ テキストでは、すべて multipart/related メディアの型パラメーターのほとんど含まれているなどの予約済みの文字が二重引用符を使用する要件は、RFC 2387 に明示ありませんが、"\@"または「/」したがって二重引用符を必要とマークを付けます。  
   
 -   R4133 : HTTP Content-Type ヘッダーには、start パラメーターを含める必要があります。このパラメーターには、SOAP 1.x エンベロープを含む MIME パートの Content-ID ヘッダーの値を二重引用符で囲んで指定します。 start パラメーターを省略する場合は、最初の MIME パートに SOAP 1.x エンベロープを含める必要があります。  
   

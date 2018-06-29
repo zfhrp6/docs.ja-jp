@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 011f37cbbfa3eacab92705cd8e4363b36a746cf1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ca518e1d98e26755167ec6cf2f67ba9f7295679
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33509152"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071332"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)
 ServiceModel メタデータ ユーティリティ ツールを使用して、メタデータ ドキュメントからサービス モデル コードを生成したり、サービス モデル コードからメタデータ ドキュメントを生成します。  
@@ -66,7 +66,7 @@ ServiceModel メタデータ ユーティリティ ツールを使用して、�
  BasicHttpContextbinding エンドポイントを使用するサービスの場合は代わりに、Svcutil.exe が、`allowCookies` 属性を `true` に設定した BasicHttpBinding を生成します。 クッキーはサーバー側でのコンテキスト用に使用されます。 サービスでクッキーを使用するときにクライアント側でコンテキストを管理する場合は、コンテキスト バインディングを使用するように構成を手動で変更できます。  
   
 > [!CAUTION]
->  Svcutil.exe は、WSDL またはサービスから受け取るポリシー ファイルに基づいてクライアントを生成します。 ユーザー プリンシパル名 (UPN) は、ユーザー名、"@"、および完全修飾ドメイン名 (FQDN) を連結して生成されます。 ただし、Active Directory に登録されているユーザーの場合、この形式は無効であり、ツールが生成する UPN を使用すると、Kerberos 認証でエラーが発生し、エラー メッセージ "ログインに失敗しました" が表示されます。 この問題を解決するには、このツールが生成するクライアント ファイルを手動で修正する必要があります。  
+>  Svcutil.exe は、WSDL またはサービスから受け取るポリシー ファイルに基づいてクライアントを生成します。 ユーザー プリンシパル名 (UPN) が、ユーザー名を連結して生成された"\@"と完全修飾ドメイン名 (FQDN) です。 ただし、Active Directory に登録されているユーザーの場合、この形式は無効であり、ツールが生成する UPN を使用すると、Kerberos 認証でエラーが発生し、エラー メッセージ "ログインに失敗しました" が表示されます。 この問題を解決するには、このツールが生成するクライアント ファイルを手動で修正する必要があります。  
   
  `svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>`  
   
