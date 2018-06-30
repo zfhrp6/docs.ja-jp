@@ -43,8 +43,8 @@ ms.locfileid: "33217933"
 * [migrate](dotnet-migrate.md)
 * [clean](dotnet-clean.md)
 * [sln](dotnet-sln.md)
-* [ヘルプ](dotnet-help.md)
-* [ストア](dotnet-store.md)
+* [help](dotnet-help.md)
+* [store](dotnet-store.md)
 
 **プロジェクトの変更コマンド**
 
