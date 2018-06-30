@@ -4,12 +4,12 @@ description: コンテナー化 .NET アプリケーションの .NET マイク�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: f429bc0c6e76c2be2e4f491768a15ab36ecb0d34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 662e1af8595c074ee1aeba5ad4d83660b667c1cd
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591095"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105528"
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Linux または Windows Nano Server ホスト上で 1 つのコンテナー ベースの NET Core Web アプリケーションを展開する
 
@@ -142,4 +142,5 @@ Visual Studio で、**docker-compose** プロジェクトをスタートアッ�
 Docker のサポートを追加するウィザードは、実行中の Docker プロセスと通信します。 ウィザードを起動するときに、Docker が実行されていない場合、ウィザードは正しく実行されません。 さらに、ウィザードでは、正しい Docker のサポートを追加するためにコンテナーの現在の選択について説明します。 Windows コンテナーのサポートを追加する場合は、Windows コンテナーが構成された状態で Docker が実行されているときに、ウィザードを実行する必要があります。 Linux コンテナーのサポートを追加する場合は、Linux コンテナーが構成された状態で Docker が実行されているときに、ウィザードを実行する必要があります。
 
 >[!div class="step-by-step"]
-[Previous] (../docker-application-development-process/docker-app-development-workflow.md) [Next] (../containerize-net-framework-applications/index.md)
+[前へ](../docker-application-development-process/docker-app-development-workflow.md)
+[次へ](../containerize-net-framework-applications/index.md)

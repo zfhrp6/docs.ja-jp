@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 84ba63c1685fcc3a49c6333a5e88c363bdad8ed4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf5648b1aa21ffd783c76aaa11c8e81371f45d18
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568980"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104639"
 ---
 # <a name="key-takeaways"></a>重要な習得事項
 
@@ -26,4 +26,4 @@ ms.locfileid: "33568980"
 Visual Studio Team Services は、継続的配置のパイプラインから Docker 環境に指定された DevOps 環境を大幅に簡素化します。このパイプラインには、単純な Docker 環境、または Azure ベースのより高度なマイクロサービスとコンテナー オーケストレーターなどが含まれます。
 
 >[!div class="step-by-step"]
-[Previous] (../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+[前へ](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

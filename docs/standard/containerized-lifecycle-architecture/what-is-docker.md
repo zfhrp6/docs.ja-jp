@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: c566c4104f21ff6a55646d96e141cde4c7722735
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2dfff13f00d4ea0e57161c21d7773eead41c28ee
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569669"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105386"
 ---
 # <a name="what-is-docker"></a>Docker について
 
@@ -53,4 +53,5 @@ Docker コンテナーへの従来の仮想マシンの図 1-3: 比較
 
 
 >[!div class="step-by-step"]
-[Previous] (index.md) [Next] (docker-terminology.md)
+[前へ](index.md)
+[次へ](docker-terminology.md)

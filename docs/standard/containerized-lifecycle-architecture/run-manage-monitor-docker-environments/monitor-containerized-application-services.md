@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 3877767117d8292644782fc07df6667931688be2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 368d99e92f80cf37965139cb67fc5f22b44f40cd
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575545"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106133"
 ---
 # <a name="monitor-containerized-application-services"></a>コンテナー化アプリケーションのサービスを監視します。
 
@@ -97,4 +97,5 @@ Operations Management Suite での標準機能ではまたクエリを保存で�
 **詳細については** でコンテナー ソリューションをインストールして、Docker の構成に関する情報を検索する[Operations Management Suite](http://microsoft.com/oms)に進み、<https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>です。
 
 >[!div class="step-by-step"]
-[前] (管理、運用の docker-environments.md) [次へ] (../key-takeaways/index.md)
+[前へ](manage-production-docker-environments.md)
+[次へ](../key-takeaways/index.md)

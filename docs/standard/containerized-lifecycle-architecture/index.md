@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 8d1062aaea85cf810fa07b36252974eceb227c43
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e9f81c5fecc06b19ebd84cc4b2cc232686768a90
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32768282"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106633"
 ---
 # <a name="introduction-to-containers-and-docker"></a>コンテナーと Docker の概要
 
@@ -33,4 +33,4 @@ ms.locfileid: "32768282"
 
 
 >[!div class="step-by-step"]
-[Next] (what-is-docker.md)
+[次へ](what-is-docker.md)

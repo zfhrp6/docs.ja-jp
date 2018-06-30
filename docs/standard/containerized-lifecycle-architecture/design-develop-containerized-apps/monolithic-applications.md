@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: fe25fa8772c60625c5564d5e7194957366a6010a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d25ef131cf149eb869fa2acd40eddff5ee0b55d
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572750"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106620"
 ---
 # <a name="monolithic-applications"></a>モノリシック アプリケーション
 
@@ -71,4 +71,5 @@ Azure での単体のアプリケーションを展開するには、インス�
 
 
 >[!div class="step-by-step"]
-[前] (共通のコンテナーのデザインの principles.md) [次へ] (state-and-data-in-docker-applications.md)
+[前へ](common-container-design-principles.md)
+[次へ](state-and-data-in-docker-applications.md)

@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 0fa43263e789bba5b720792e7e8dc5321af795b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6c7de61f421cf2c45cd3c5ee9afc5a388e985b52
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576221"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105564"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>DevOps コラボレーションを基盤としてのコンテナー
 
@@ -68,4 +68,5 @@ DevOps がターゲットではない、旅を考慮してください。 元の
 -   多くのオープン ソースの投資を含む DevOps 投資既存と共にプラグ アンド プレイします。
 
 >[!div class="step-by-step"]
-[前] (index.md) [次へ] (../Microsoft-platform-tools-containerized-apps/index.md)
+[前へ](index.md)
+[次へ](../Microsoft-platform-tools-containerized-apps/index.md)

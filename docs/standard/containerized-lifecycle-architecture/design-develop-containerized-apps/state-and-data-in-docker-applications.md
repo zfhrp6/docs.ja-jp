@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: b27be902779c7e22a568c679362851f745ea494d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 438733b2cde1d4eff178a5fd4a4ed0bb93804f76
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569682"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105450"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Docker アプリケーションの状態とデータ
 
@@ -51,4 +51,5 @@ A[データ ボリューム コンテナー](https://docs.docker.com/v1.8/usergu
 
 
 >[!div class="step-by-step"]
-[前] (モノリシック-applications.md) [次へ] (soa applications.md)
+[前へ](monolithic-applications.md)
+[次へ](soa-applications.md)

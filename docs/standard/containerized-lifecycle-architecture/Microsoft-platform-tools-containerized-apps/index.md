@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 02bd144f5bfd64ab3a0b0d30aad642c5c3099c7b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b14d361fb93b98de68b828514c7ea72811075fb8
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576244"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106192"
 ---
 # <a name="introduction-to-the-microsoft-platform-and-tools-for-containerized-apps"></a>コンテナー化アプリ用の Microsoft プラットフォームとツールの概要
 
@@ -59,4 +59,5 @@ VSTS を使用すると、開発者が、高速な繰り返しのプロセス用
 このように、Microsoft は、エンド ツー エンドのコンテナー化 Docker アプリケーションのライフ サイクルの完全な基盤を提供します。 この*製品とテクノロジの集まりを使用すると、必要に応じて既存のツールやプロセスと統合することができます*。 広範囲なアプローチの柔軟性、および機能の綿密さによる強みにより、Microsoft は、コンテナー化 Docker アプリケーション開発において強力な位置を築いています。
 
 >[!div class="step-by-step"]
-[Previous] (../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md) [Next] (../design-develop-containerized-apps/index.md)
+[前へ](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
+[次へ](../design-develop-containerized-apps/index.md)

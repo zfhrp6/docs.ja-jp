@@ -4,12 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
-ms.openlocfilehash: 3a505e10b2a37032a7ccfefdf4a6f4bb64d65486
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5c7016fa8b731170a63f5d0f9d9bed3b72090be4
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579549"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106380"
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Microservices および multicontainer アプリケーション高いスケーラビリティと可用性を調整すること
 
@@ -181,4 +181,5 @@ Docker コンテナーはそれ自身ステートレスなことに注意して�
 
 
 >[!div class="step-by-step"]
-[前] (soa applications.md) [次へ] (docker-アプリの開発-environment.md)
+[前へ](soa-applications.md)
+[次へ](docker-apps-development-environment.md)
