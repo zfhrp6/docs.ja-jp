@@ -2,12 +2,12 @@
 title: 構成とメタデータのサポート
 ms.date: 03/30/2017
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
-ms.openlocfilehash: 4dfeeba6db220e03ad981b13e2bb093bedcd43c3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d316e373177d86b7ba2b715f29fe3dace9082e8b
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486725"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140152"
 ---
 # <a name="configuration-and-metadata-support"></a>構成とメタデータのサポート
 ここでは、バインディングおよびバインド要素用に構成とメタデータのサポートを有効にする方法を説明します。  
@@ -182,7 +182,7 @@ if (transportBindingElement is UdpTransportBindingElement)
  カスタム バインド要素では、WSDL バインディング内のポリシー アサーションをエクスポートして、サービス エンドポイントでそのバインド要素の機能を表現します。 次のコード例から取得、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。  
   
 #### <a name="policy-export"></a>ポリシーのエクスポート  
- `UdpTransportBindingElement`実装を型 '<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType>ポリシーをエクスポートするためのサポートを追加します。 その結果、<xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
+ `UdpTransportBindingElement`実装を型<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType>ポリシーをエクスポートするためのサポートを追加します。 その結果、<xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
   
  <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=nameWithType> では、UDP のアサーションを追加します。チャネルがマルチキャスト モードである場合は、別のアサーションを追加します。 これは、マルチキャスト モードは通信スタックの構築方法に影響を与えるため、両方の側において調整される必要があるためです。  
   

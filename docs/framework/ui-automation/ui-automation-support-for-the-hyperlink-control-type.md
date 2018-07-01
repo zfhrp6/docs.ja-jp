@@ -9,16 +9,16 @@ ms.assetid: 110cceea-5932-4955-a1a6-13afc51422b2
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: c8eb7bfc56b4dddaf352477e3817864700460db7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aaafe77a71713b24752ed7db7ec016bfc14eb406
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409982"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140243"
 ---
 # <a name="ui-automation-support-for-the-hyperlink-control-type"></a>UI オートメーションによる Hyperlink コントロール型のサポート
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
   
  このトピックでは、Hyperlink コントロール型に対する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のサポートについて説明します。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 これらの条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "33409982"
 |---------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IInvokeProvider>|[はい]|すべてのハイパーリンク コントロールは、Invoke パターンをサポートする必要があります。|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|状況に依存|ユーザーにとって有効で意味のある情報がリンクに含まれている場合、ハイパーリンク コントロールは Value コントロール パターンをサポートする必要があります。|  
-|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|たとえば、"http://www..."。|インターネット アドレスまたはイントラネット アドレスの URL は、ユーザーにとって意味のある情報が含まれるハイパーリンクの例です。 一方、プログラム リンクはアプリケーションにしか意味がないため、Value プロパティには使用しないことをお勧めします。|  
+|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|たとえば、`"http://www...."`|インターネット アドレスまたはイントラネット アドレスの URL は、ユーザーにとって意味のある情報が含まれるハイパーリンクの例です。 一方、プログラム リンクはアプリケーションにしか意味がないため、Value プロパティには使用しないことをお勧めします。|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>必須の UI オートメーション イベント  
