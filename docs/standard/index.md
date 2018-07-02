@@ -6,18 +6,20 @@ ms.author: ronpet
 ms.date: 05/02/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 01eb2e94b57da5e5dad0fa355246bcbcbc153dab
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: cbe08d87e90d319c074e85d0157e62fe023cce8c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457012"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105173"
 ---
 # <a name="net-guide"></a>.NET のガイド
 
 .NET ガイドでは、.NET に関する多くの情報を提供します。  .NET に関する知識に応じて、このガイドのさまざまなセクションを参照したり、他の .NET ドキュメントのセクションを参照したりすることができます。
 
 ## <a name="new-to-net"></a>.NET を初めて使う
+
+.NET の高度な概要については、「[.NET は何ですか?](https://www.microsoft.com/net/learn/what-is-dotnet)」をご覧ください。
 
 .NET を初めて使用する場合は、[「Get Started」](get-started.md) (はじめに) を参照してください。
 

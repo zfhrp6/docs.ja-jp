@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: c2c7d692517c6a46225542936e05656db915bf0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ccdf6ecc30979e953d42a403c2c988780394df96
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591977"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106698"
 ---
 # <a name="securing-net-microservices-and-web-applications"></a>NET マイクロサービスおよび Web アプリケーションをセキュリティで保護する
 
@@ -224,7 +224,7 @@ JWT ベアラー認証ミドルウェアは、証明機関が利用できない�
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **アプリケーション間で Cookie を共有する**
+-   **アプリケーション間での Cookie の共有**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\#sharing-authentication-cookies-between-applications*](https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
 
 -   **Identity の概要**
@@ -250,4 +250,5 @@ JWT ベアラー認証ミドルウェアは、証明機関が利用できない�
 
 
 >[!div class="step-by-step"]
-[前へ] (../implement-resilient-applications/monitor-app-health.md) [次へ] (承認-net-microservices-web-applications.md)
+[前へ](../implement-resilient-applications/monitor-app-health.md)
+[次へ](authorization-net-microservices-web-applications.md)
