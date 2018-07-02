@@ -11,7 +11,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltclientgt"></a>&lt;クライアント&gt;
+# <a name="ltclientgt"></a>&lt;client&gt;
 `client` 要素は、クライアントが接続可能なエンドポイントの一覧を定義します。  
   
  \<system.ServiceModel >  
@@ -41,7 +41,7 @@ ms.lasthandoff: 05/03/2018
 |要素|説明|  
 |-------------|-----------------|  
 |[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)|このクライアントが接続可能なエンドポイントを指定するエンドポイント要素のコレクションを含みます。|  
-|[\<メタデータ >](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|メタデータを処理するための設定を含みます。|  
+|[\&lt;metadata&gt;](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|メタデータを処理するための設定を含みます。|  
   
 ### <a name="parent-elements"></a>親要素  
   
