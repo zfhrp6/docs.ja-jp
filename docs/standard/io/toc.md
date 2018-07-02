@@ -1,4 +1,5 @@
 # [ファイルおよびストリーム入出力](index.md)
+## [Windows システムのファイル パスの形式](file-path-formats.md)
 ## [共通 I/O タスク](common-i-o-tasks.md)
 ### [方法: ディレクトリをコピーする](how-to-copy-directories.md)
 ### [方法: ディレクトリとファイルを列挙する](how-to-enumerate-directories-and-files.md)
