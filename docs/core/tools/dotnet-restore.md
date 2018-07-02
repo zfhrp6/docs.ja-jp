@@ -4,12 +4,12 @@ description: dotnet restore コマンドを使用して、依存関係とプロ�
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: fcfa3f2f7133c3add2b02823937dd26fce690453
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 0eaab1aa1bc52bd5b3c51a6ed2dd7a59c35a4aa5
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696586"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140256"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -55,7 +55,7 @@ dotnet restore [-h|--help]
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
-- [`dotnet build server`](dotnet-build-server.md)
+- [`dotnet build-server`](dotnet-build-server.md)
 - [`dotnet run`](dotnet-run.md)
 - [`dotnet test`](dotnet-test.md)
 - [`dotnet publish`](dotnet-publish.md)

@@ -4,12 +4,12 @@ description: ライブラリ プロジェクトを .NET Framework から .NET Co
 author: cartermp
 ms.author: mairaw
 ms.date: 07/14/2017
-ms.openlocfilehash: 88513eaee35a82d6424fc2218f8cbbe635a8e02c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f1d79623b4ece836732010e76a3c93fbbf8099f
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218359"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028046"
 ---
 # <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
 
@@ -63,7 +63,7 @@ AppDomain はアプリを互いに分離します。 AppDomain ではランタ�
 
 ### <a name="code-access-security-cas"></a>コード アクセス セキュリティ (CAS)
 
-サンド ボックスは、マネージ アプリケーションやライブラリが使用または実行するリソースの制限を、ランタイムまたはフレームワークに依存しています。これは [.NET Framework ではサポートされていない](~/docs/framework/misc/code-access-security.md)ため、.NET Core でもサポートされていません。 .NET Framework やランタイムでは、特権の昇格が発生するケースが多すぎるため、このまま CAS をセキュリティ境界と見なすことはできないと考えています。 さらに、CAS は実装が複雑化しており、その使用を予定していないアプリケーションでは、多くの場合で正確性のパフォーマンスに影響します。
+サンド ボックスは、マネージド アプリケーションやライブラリが使用または実行するリソースの制限を、ランタイムまたはフレームワークに依存しています。これは [.NET Framework ではサポートされていない](~/docs/framework/misc/code-access-security.md)ため、.NET Core でもサポートされていません。 .NET Framework やランタイムでは、特権の昇格が発生するケースが多すぎるため、このまま CAS をセキュリティ境界と見なすことはできないと考えています。 さらに、CAS は実装が複雑化しており、その使用を予定していないアプリケーションでは、多くの場合で正確性のパフォーマンスに影響します。
 
 仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
 
@@ -72,18 +72,6 @@ AppDomain はアプリを互いに分離します。 AppDomain ではランタ�
 CAS と同様に、セキュリティ透過性を利用すると、サンドボックス コードをセキュリティ クリティカルなコードから宣言的に分離できますが、[現在はセキュリティ境界としてはサポートされていません](~/docs/framework/misc/security-transparent-code.md)。 この機能は、Silverlight で頻繁に使用されます。 
 
 仮想化、コンテナー、ユーザー アカウントなど、オペレーティング システムが提供するセキュリティ境界を使用して、最低限の特権セットでプロセスを実行します。
-
-### <a name="globaljson"></a>global.json
-
-*global.json* ファイルは、プロジェクトの .NET Core ツールのバージョンを設定できるオプションのファイルです。 .NET Core のナイトリー ビルドを使用しながら、特定のバージョンの SDK を指定したい場合、*global.json* ファイルでバージョンを指定します。 通常、このファイルは、現在の作業ディレクトリまたはその親ディレクトリのいずれかに存在します。 
-
-```json
-{
-  "sdk": {
-    "version": "2.1.0-preview1-006491"
-  }
-}
-```
 
 ## <a name="converting-a-pcl-project"></a>PCL プロジェクトの変換
 

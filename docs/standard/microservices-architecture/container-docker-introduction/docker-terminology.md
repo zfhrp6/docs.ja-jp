@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 9bbeff8c467e762e682fdaf99c8a11851b291db8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 95f073a7db763abd295647d41d2e96e6d6d71067
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576647"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106789"
 ---
 # <a name="docker-terminology"></a>Docker に関する用語
 
@@ -47,4 +47,5 @@ ms.locfileid: "33576647"
 
 
 >[!div class="step-by-step"]
-[Previous] (docker-defined.md) [Next] (docker-containers-images-registries.md)
+[前へ](docker-defined.md)
+[次へ](docker-containers-images-registries.md)

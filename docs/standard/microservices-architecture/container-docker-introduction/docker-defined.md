@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: fadd2611283f0a7dadbf1734fe48f7d1a13096ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06dd5199b8dbc42ce3e9ae35bc5c3673d01cb4de
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576195"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106802"
 ---
 # <a name="what-is-docker"></a>Docker について
 
@@ -58,4 +58,5 @@ Windows または macOS 上で、[Docker Community Edition (CE)](https://www.doc
 Docker 開発者は、「私のコンピューターで機能するのだから、実稼働環境でも機能する」とは言いません。 彼らは、「Docker で実行される」と言います。 Docker にパッケージ化されたアプリは、サポートされている任意の Docker 環境で実行できます。 Docker にパッケージ化されたアプリは、すべて展開ターゲット (開発、QA、ステージング、実稼働) で一貫して実行されます。
 
 >[!div class="step-by-step"]
-[Previous] (index.md) [Next] (docker-terminology.md)
+[前へ](index.md)
+[次へ](docker-terminology.md)

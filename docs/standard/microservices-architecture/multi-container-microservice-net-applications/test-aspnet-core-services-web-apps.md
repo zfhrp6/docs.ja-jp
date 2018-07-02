@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: b3aa0d50ba3ab64440ef51201d611177fea78ce4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e06f582677e61209d0b226fc68bca81dfe593e5
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582676"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104401"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>ASP.NET Core サービスと Web アプリのテスト
 
@@ -124,4 +124,5 @@ public class PrimeWebDefaultRequestShould
 Compose アプリケーションが起動し実行されると、Visual Studio を実行している場合はブレークポイントと例外を活用できます。 または、Visual Studio Team Services の CI パイプラインや Docker コンテナーをサポートする他の CI/CD システムで、統合テストを自動的に実行することができます。
 
 >[!div class="step-by-step"]
-[前へ] (subscribe-events.md) [次へ] (../microservice-ddd-cqrs-patterns/index.md)
+[前へ](subscribe-events.md)
+[次へ](../microservice-ddd-cqrs-patterns/index.md)

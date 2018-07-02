@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 1cdd938fb53e194a80f0eb3e6bc82ebed271af49
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 19657c35e6640558526bf390b81eb08220821a4c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578212"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106318"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>マイクロサービスの回復性と高可用性
 
@@ -19,7 +19,8 @@ ms.locfileid: "33578212"
 
 アプリケーションのアップグレード中にエラーが発生したときなど、他のシナリオでは、回復性の問題が複雑化します。 展開システムと連携するマイクロサービスは、新しいバージョンへの進行を継続できるかどうか、または代わりに一貫性のある状態を維持するために以前のバージョンにロールバックするかどうかを決定する必要があります。 進行を続けるために十分なマシンを使用できるかどうか、マイクロサービスの以前のバージョンを回復する方法などの疑問を考慮する必要があります。 これには、アプリケーション全体とオーケストレーターがこれらの決定を行うことができるように、マイクロサービスが正常性に関する情報を出力する必要があります。
 
-さらに、回復力はクラウドベースのシステムがどのように動作する必要があるかに関連します。 前述のように、クラウドベースのシステムは障害を受け入れる必要があり、そこから自動的に回復を試みる必要があります。 たとえば、ネットワークまたはコンテナーの障害が発生した場合、多くの場合、クラウドの傷害は部分的なので、クライアント アプリまたはクライアント サービスが、メッセージの送信を再試行したり要求を再試行したりするための戦略を持っている必要があります。 このガイドの「[Implementing Resilient Applications](#implementing_resilient_apps)」(回復力のあるアプリケーションの実装) セクションでは、部分的な障害に対処する方法を説明します。 [Polly](https://github.com/App-vNext/Polly) などのライブラリを使用することによる、.NET Core で指数バックオフまたは遮断器パターンを使用した再試行などの手法について説明しています。このライブラリは、この問題を処理するためのさまざまなポリシーを提供します。
+さらに、回復力はクラウドベースのシステムがどのように動作する必要があるかに関連します。 前述のように、クラウドベースのシステムは障害を受け入れる必要があり、そこから自動的に回復を試みる必要があります。 たとえば、ネットワークまたはコンテナーの障害が発生した場合、多くの場合、クラウドの傷害は部分的なので、クライアント アプリまたはクライアント サービスが、メッセージの送信を再試行したり要求を再試行したりするための戦略を持っている必要があります。 このガイドの「[Implementing Resilient Applications](#implementing_resilient_apps)」(回復力のあるアプリケーションの実装) セクションでは、部分的な障害に対処する方法を説明します。 
+  [Polly](https://github.com/App-vNext/Polly) などのライブラリを使用することによる、.NET Core で指数バックオフまたは遮断器パターンを使用した再試行などの手法について説明しています。このライブラリは、この問題を処理するためのさまざまなポリシーを提供します。
 
 ## <a name="health-management-and-diagnostics-in-microservices"></a>正常性の管理とマイクロサービスでの診断
 
@@ -78,4 +79,5 @@ ms.locfileid: "33578212"
 
 
 >[!div class="step-by-step"]
-[Previous] (microservice-based-composite-ui-shape-layout.md) [Next] (scalable-available-multi-container-microservice-applications.md)
+[前へ](microservice-based-composite-ui-shape-layout.md)
+[次へ](scalable-available-multi-container-microservice-applications.md)

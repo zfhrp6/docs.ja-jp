@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: cbadb13109c51ba53530011a17006b585573f40a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e1e1671238d3cc5944bfe53b49f7d0ddd969aff
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576794"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105370"
 ---
 # <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する
 
@@ -58,4 +58,5 @@ ms.locfileid: "33576794"
 
 
 >[!div class="step-by-step"]
-[Previous] (microservices-addressability-service-registry.md) [Next] (resilient-high-availability-microservices.md)
+[前へ](microservices-addressability-service-registry.md)
+[次へ](resilient-high-availability-microservices.md)

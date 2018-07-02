@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: ce3cb0c79cbd492224ce1d4ecb25cd02062f11cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c071d269977ccecea9a7d4d79da78d7967bb1618
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578951"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105736"
 ---
 # <a name="designing-validations-in-the-domain-model-layer"></a>ドメイン モデル レイヤーでの検証の設計
 
@@ -132,4 +132,5 @@ UI 層内でモデルの検証を許可するために、入力を受け取る V
 
 
 >[!div class="step-by-step"]
-[前へ] (enumeration-classes-over-enum-types.md) [次へ] (client-side-validation.md)
+[前へ](enumeration-classes-over-enum-types.md)
+[次へ](client-side-validation.md)

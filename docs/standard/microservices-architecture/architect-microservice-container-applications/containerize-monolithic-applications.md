@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: f5d00c6ce4c965d66937dae3f8e5453883afb4b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e5b7a8202a0af26c8d61e315c3aa8f592ed45d9
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577252"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105924"
 ---
 # <a name="containerizing-monolithic-applications"></a>モノリシック アプリケーションのコンテナー化
 
@@ -73,4 +73,5 @@ Visual Studio 2017 ではコンテナーがサポートされているので、�
 
 
 >[!div class="step-by-step"]
-[Previous] (index.md) [Next] (docker-application-state-data.md)
+[前へ](index.md)
+[次へ](docker-application-state-data.md)

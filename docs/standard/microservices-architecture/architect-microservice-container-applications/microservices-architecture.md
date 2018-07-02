@@ -4,11 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 9bcaacce323ed9afa482660f409312f9a1b82cfa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e41544a7c5f352321c3fa3e61a71568a6cf0f219
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106685"
 ---
 # <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
@@ -62,4 +63,5 @@ ms.lasthandoff: 05/04/2018
 
 
 >[!div class="step-by-step"]
-[Previous] (service-oriented-architecture.md) [Next] (data-sovereignty-per-microservice.md)
+[前へ](service-oriented-architecture.md)
+[次へ](data-sovereignty-per-microservice.md)

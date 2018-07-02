@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 54d0df517514c359c155de35d34e1e0f56eed4eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79f115a2d897463c213eda6f4d6951ff0cbeb3ca
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579224"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105476"
 ---
 # <a name="implementing-resilient-entity-framework-core-sql-connections"></a>回復力の高い Entity Framework Core SQL 接続の実装
 
@@ -93,4 +93,5 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
 
 
 >[!div class="step-by-step"]
-[Previous] (implement-retries-exponential-backoff.md) [Next] (implement-custom-http-call-retries-exponential-backoff.md)
+[前へ](implement-retries-exponential-backoff.md)
+[次へ](implement-custom-http-call-retries-exponential-backoff.md)

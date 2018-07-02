@@ -7,17 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - sbyte keyword [C#]
 ms.assetid: 1a9c7b48-73d1-4d33-b485-c4faf0a816bc
-ms.openlocfilehash: 4a2d13463348c2f0c32aec076623f59040d1d81f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94968ed61fced9716112740613a4e3a86622e2e3
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028059"
 ---
 # <a name="sbyte-c-reference"></a>sbyte (C# リファレンス)
 
 `sbyte` は、次の表に示されたサイズと範囲に従って値を格納する整数型を示します。  
   
-|型|範囲|サイズ|.NET Framework 型|  
+|型|範囲|サイズ|.NET 型|  
 |----------|-----------|----------|-------------------------|  
 |`sbyte`|-128 ～ 127|符号付き 8 ビット整数|<xref:System.SByte?displayProperty=nameWithType>|  
   

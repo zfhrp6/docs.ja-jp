@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
-ms.openlocfilehash: aea8a54bdee7eebd977f8b67d9888c2288dcd26d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 756f74cacec0a9f5be502ee02659510869d79746
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590336"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105710"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>ASP.NET Core Web アプリ用の Azure ホスティングの推奨事項
 
@@ -36,7 +36,7 @@ Web アプリケーションは次を使用してホスティングできます�
 
 ### <a name="app-service-web-apps"></a>App Service Web Apps
 
-App Service Web Apps は、Web アプリケーションのホスティングに最適化された完全管理のプラットフォームを提供します。 これは、サービスとしてのプラットフォーム (PaaS) 製品です。Azure がアプリの実行とスケーリングに必要なインフラストラクチャに対処するため、ビジネス ロジックに集中することができます。 App Service Web Apps の主な機能: 
+App Service Web Apps は、Web アプリケーションのホスティングに最適化されたフル マネージド プラットフォームを提供します。 これは、サービスとしてのプラットフォーム (PaaS) 製品です。Azure がアプリの実行とスケーリングに必要なインフラストラクチャに対処するため、ビジネス ロジックに集中することができます。 App Service Web Apps の主な機能: 
 
 -   DevOps の最適化 (継続的インテグレーションと継続的配信、複数の環境、A/B テスト、スクリプトのサポート)
 
@@ -126,4 +126,4 @@ Azure はさまざまなデータ記憶域のオプションを提供してい�
     <https://docs.microsoft.com/azure/app-service-web/choose-web-site-cloud-service-vm>
 
 >[!div class="step-by-step"]
-[前] (development-process-for-azure.md)
+[前へ](development-process-for-azure.md)

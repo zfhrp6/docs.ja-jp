@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-ms.openlocfilehash: 657d5bb3866a3ad88226740ebf7ef12c3654e56b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7991259aadd391288caa37b35addd6e16e234878
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33288165"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027864"
 ---
 # <a name="short-c-reference"></a>short (C# リファレンス)
 
 `short` は、次の表に示すサイズと範囲で値を格納する整数データ型を示します。  
   
-|型|範囲|サイズ|.NET Framework 型|  
+|型|範囲|サイズ|.NET 型|  
 |----------|-----------|----------|-------------------------|  
 |`short`|-32,768 ～ 32,767|符号付き 16 ビット整数|<xref:System.Int16?displayProperty=nameWithType>|  
   

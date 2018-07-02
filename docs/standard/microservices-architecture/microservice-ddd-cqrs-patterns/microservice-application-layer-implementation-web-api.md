@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 9572540f17e5628d7f71c94ee68f7cba17d64d07
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 1af8d0290eea26d57f4744bbd6d9819d886d4db4
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207639"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106555"
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Web API を使用したマイクロサービス アプリケーション レイヤーの実装
 
@@ -867,4 +867,5 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
     [*https://github.com/JeremySkinner/FluentValidation*](https://github.com/JeremySkinner/FluentValidation)
 
 >[!div class="step-by-step"]
-[前] (microservice-application-layer-web-api-design.md) [次へ] (../implement-resilient-applications/index.md)
+[前へ](microservice-application-layer-web-api-design.md)
+[次へ](../implement-resilient-applications/index.md)

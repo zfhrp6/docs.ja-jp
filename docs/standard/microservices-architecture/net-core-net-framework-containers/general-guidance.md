@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: ccaae99f4c46fe739041f9b9e907a702303e62f6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd654c23cf8a8d0986575642ef25d6864251a4e4
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592575"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104080"
 ---
 # <a name="general-guidance"></a>一般的なガイダンス
 
@@ -47,4 +47,5 @@ Docker で .NET Framework を使用すると、展開に関する問題を最小
 
 
 >[!div class="step-by-step"]
-[前へ] (index.md) [次へ] (net-core-container-scenarios.md)
+[前へ](index.md)
+[次へ](net-core-container-scenarios.md)

@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーション向けの 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 5d7037f91cb338721f91d35567246ebbca018a3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d8ba76caab39db222c2ceba36a4d67cab3e8a3f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579177"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105795"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>マイクロサービス間でイベント ベースの通信を実装する (統合イベント)
 
@@ -129,4 +129,5 @@ public interface IEventBus
 
 
 >[!div class="step-by-step"]
-[前へ] (database-server-container.md) [次へ] (rabbitmq-event-bus-development-test-environment.md)
+[前へ](database-server-container.md)
+[次へ](rabbitmq-event-bus-development-test-environment.md)

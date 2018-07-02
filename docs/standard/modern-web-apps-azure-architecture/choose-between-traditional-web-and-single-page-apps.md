@@ -4,12 +4,12 @@ description: ASP.NET Core および Microsoft Azure での最新の Web アプ�
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
-ms.openlocfilehash: a8c6a3b6c9c934cd44eb4fa402c8d792006ac560
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: bbb217b2f11901658fa70a5e5cff6521d157952c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208193"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104767"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>従来の Web アプリケーションかシングル ページ アプリケーション (SPA) を選択する
 
@@ -92,4 +92,5 @@ SPA を作成するには、JavaScript や TypeScript と、クライアント�
   | 高度で複雑なユーザー インターフェイス要件 | **制限がある** | **適している** |
 
 >[!div class="step-by-step"]
-[前へ] (modern-web-applications-characteristics.md) [次へ](architectural-principles.md)
+[前へ](modern-web-applications-characteristics.md)
+[次へ](architectural-principles.md)

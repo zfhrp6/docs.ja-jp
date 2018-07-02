@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-ms.openlocfilehash: f2bdc34400215ad24d5dcec2e1e9f314a01430d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 106b832801a373ca387be455ef1c0df4233621d0
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33288455"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027825"
 ---
 # <a name="long-c-reference"></a>long (C# リファレンス)
 
 `long` は、次の表に示されたサイズと範囲に従って値を格納する整数型を示します。  
   
-|型|範囲|サイズ|.NET Framework 型|  
+|型|範囲|サイズ|.NET 型|  
 |----------|-----------|----------|-------------------------|  
 |`long`|-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=nameWithType>|  
   

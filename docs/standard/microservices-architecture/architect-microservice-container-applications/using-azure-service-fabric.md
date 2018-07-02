@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: d65968e3d37f53cceee55120110ad4bb3c13d304
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5058023aa7cbb42bcf39d061a3273b30e0e9b74c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577679"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105821"
 ---
 # <a name="using-azure-service-fabric"></a>Azure Service Fabric の使用
 
@@ -89,4 +89,5 @@ Service Fabric でサービス自体もステートフルにして、データ�
 Docker コンテナーはそれ自身ステートレスなことに注意してください。 ステートフル サービスを実装する場合は、前に説明した追加の規範的で高度なフレームワークの 1 つが必要です。 
 
 >[!div class="step-by-step"]
-[Previous] (scalable-available-multi-container-microservice-applications.md) [Next] (../docker-application-development-process/index.md)
+[前へ](scalable-available-multi-container-microservice-applications.md)
+[次へ](../docker-application-development-process/index.md)

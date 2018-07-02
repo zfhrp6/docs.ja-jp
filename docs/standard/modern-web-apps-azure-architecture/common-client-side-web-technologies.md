@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
-ms.openlocfilehash: 96bafce9c81a3a0486b7b8930367cf47ec5cbcb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79dac220e40274889783d29c0e04679dd878fda5
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592068"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106763"
 ---
 # <a name="common-client-side-web-technologies"></a>一般的なクライアント側の Web テクノロジ
 
@@ -167,4 +167,5 @@ JavaScript フレームワークは今後も猛烈な速さで進化を続けま
 > <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
-[前] (common-web-application-architectures.md) [次] (develop-asp-net-core-mvc-apps.md)
+[前へ](common-web-application-architectures.md)
+[次へ](develop-asp-net-core-mvc-apps.md)

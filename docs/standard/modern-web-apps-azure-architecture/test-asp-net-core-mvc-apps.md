@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
-ms.openlocfilehash: e27cdb4b785253edd27e9854d6f977e3ede02266
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: b22e0e109144b4abd04cd4199cfdec244d8fa7af
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208201"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106503"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC アプリのテスト
 
@@ -273,4 +273,5 @@ public class CatalogControllerGetImage : BaseWebTest
 この機能テストは、配置されているあらゆるミドルウェア、フィルター、バインダーなど、完全な ASP.NET Core MVC アプリケーション スタックを行使します。 既知の場所にあるファイルに対して予想されるバイト配列を所与のルート ("/catalog/pic/1") が返すことを検証します。 これは実際の Web サーバーを設定せずに行い、実際の Web サーバーを利用して不安定になることを回避します (ファイアウォール設定の問題など)。 TestServer に対して実行される機能テストは通常、統合テストや単体テストより遅くなりますが、テスト Web サーバーのネットワークで実行されるテストよりはるかに速くなります。
 
 >[!div class="step-by-step"]
-[前] (work-with-data-in-asp-net-core-apps.md) [次] (development-process-for-azure.md)
+[前へ](work-with-data-in-asp-net-core-apps.md)
+[次へ](development-process-for-azure.md)

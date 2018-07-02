@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 0e384fabca88d8ad6f93ae626140fb3d5dcaf971
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c45fbb9f26e6cd315e1b623ba2c79d5d038a6919
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589324"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105301"
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>意思決定テーブル: Docker に使用する .NET Frameworks
 
@@ -58,4 +58,5 @@ ms.locfileid: "33589324"
     - *.NET Core* 用のクライアント API を使用している場合、*Linux コンテナーと Windows コンテナー*のいずれかを選択することも可能です。
 
 >[!div class="step-by-step"]
-[前へ] (net-framework-container-scenarios.md) [戻る] (net-container-os-targets.md)
+[前へ](net-framework-container-scenarios.md)
+[次へ](net-container-os-targets.md)

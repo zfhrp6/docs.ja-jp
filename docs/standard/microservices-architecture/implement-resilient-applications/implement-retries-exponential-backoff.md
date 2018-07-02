@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 7f909c6f81abce80bfdf118112271f1f87254793
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee5dd711484ba7861eedbd9613fda1209736d5b6
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571424"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106919"
 ---
 # <a name="implementing-retries-with-exponential-backoff"></a>指数バックオフを含む再試行を実装する
 
@@ -19,4 +19,5 @@ ms.locfileid: "33571424"
 
 
 >[!div class="step-by-step"]
-[Previous] (partial-failure-strategies.md) [Next] (implement-resilient-entity-framework-core-sql-connections.md)
+[前へ](partial-failure-strategies.md)
+[次へ](implement-resilient-entity-framework-core-sql-connections.md)

@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 81c4fc7662212bb3c6586a590d87e731220b7b7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62d4e9a26710a5c4b191287bf76192972f7e991b
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578873"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106542"
 ---
 # <a name="health-monitoring"></a>正常性の監視
 
@@ -196,4 +196,5 @@ Azure Service Fabric を使用している場合は、単純な正常性チェ�
     [*https://www.microsoft.com/en-us/cloud-platform/operations-management-suite*](https://www.microsoft.com/en-us/cloud-platform/operations-management-suite)
 
 >[!div class="step-by-step"]
-[前へ] (implement-circuit-breaker-pattern.md) [次へ] (../secure-net-microservices-web-applications/index.md)
+[前へ](implement-circuit-breaker-pattern.md)
+[次へ](../secure-net-microservices-web-applications/index.md)
