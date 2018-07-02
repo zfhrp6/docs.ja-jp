@@ -3,13 +3,13 @@ title: dotnet new コマンド - .NET Core CLI
 description: dotnet new コマンドは、指定されたテンプレートに基づいて新しい .NET Core プロジェクトを作成します。
 author: mairaw
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: ae24c4145cc67ca863c07e4d22af8a1c2c2dd732
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.date: 06/12/2018
+ms.openlocfilehash: f0ef91361dfbc2c2ba5532fbd607786289e98c69
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34570464"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207783"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -151,8 +151,8 @@ dotnet new [-h|--help]
 
 作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> 一部のシェルは `#` を特殊文字として解釈します。 そのような場合は、`dotnet new console -lang "F#"` などの言語パラメーター値を囲む必要があります。
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -202,8 +202,8 @@ dotnet new [-h|--help]
 
 作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> 一部のシェルは `#` を特殊文字として解釈します。 そのような場合は、`dotnet new console -lang "F#"` などの言語パラメーター値を囲む必要があります。
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -243,8 +243,8 @@ dotnet new [-h|--help]
 
 作成するテンプレートの言語。 使用できる言語は、テンプレートによって異なります ([引数](#arguments)の既定値を参照してください)。 一部のテンプレートでは無効です。
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> 一部のシェルは `#` を特殊文字として解釈します。 そのような場合は、`dotnet new console -lang "F#"` などの言語パラメーター値を囲む必要があります。
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -502,13 +502,13 @@ dotnet new [-h|--help]
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
-現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。 .NET Core 2.0 を対象にする認証はありません。
+認証なしで、現在のディレクトリに新しい ASP.NET Core C# MVC アプリケーション プロジェクトを作成します。
 
-`dotnet new mvc -au None -f netcoreapp2.0`
+`dotnet new mvc -au None`
 
-.NET Core 2.0 を対象にする新しい xUnit アプリケーションを作成します。
+新しい xUnit アプリケーションを作成します。
 
-`dotnet new xunit --framework netcoreapp2.0`
+`dotnet new xunit`
 
 MVC に利用できるすべてのテンプレートを一覧表示します。
 
