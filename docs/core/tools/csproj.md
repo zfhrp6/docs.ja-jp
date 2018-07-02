@@ -194,7 +194,7 @@ MSbuild への移行に伴い、*project.json* ファイルから *csproj* フ�
 ### <a name="authors"></a>Authors
 nuget.org のプロファイル名と一致するパッケージ作成者をセミコロンで区切った一覧。これらは nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。
 
-### <a name="description"></a>説明
+### <a name="description"></a>Description
 UI 画面用のパッケージの長い説明。
 
 ### <a name="copyright"></a>Copyright
