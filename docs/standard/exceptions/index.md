@@ -1,24 +1,24 @@
 ---
-title: 例外の処理とスロー
-ms.date: 03/30/2017
+title: .NET での例外の処理とスロー
+ms.date: 06/19/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- exceptions [.NET Framework], handling
+- exceptions [.NET], handling
 - runtime, exceptions
 - filtering exceptions
-- errors [.NET Framework], exceptions
-- exceptions [.NET Framework], throwing
-- exceptions [.NET Framework]
+- errors [.NET], exceptions
+- exceptions [.NET], throwing
+- exceptions [.NET]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b71ffd9bfcfcb048f148ac1a3a418c03b9834ea2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a278940528966e32646a3551b4c133223de9746e
+ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575454"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36298345"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>.NET での例外の処理とスロー
 
@@ -42,32 +42,31 @@ ms.locfileid: "33575454"
 
 - プログラムの信頼性を高めるための例外処理コードをアプリケーションに追加できます。
 
-例外には、リターン コードなどの他のエラー通知メソッドに優る利点があります。 例外がスローされ、それを処理しないと、ランタイムによってアプリケーションが終了されるため、エラーが見過ごされることはありません。 無効な値は、エラーのリターン コードの確認に失敗したコードの結果として、システムを経由した伝達を続行しません。 
+例外には、リターン コードなどの他のエラー通知メソッドに優る利点があります。 例外がスローされ、それを処理しないと、ランタイムによってアプリケーションが終了されるため、エラーが見過ごされることはありません。 無効な値は、エラーのリターン コードの確認に失敗したコードの結果として、システムを経由した伝達を続行しません。
 
 ## <a name="common-exceptions"></a>一般的な例外
 
 次の表は、一般的な例外とそれらの原因の例をいくつか示しています。
 
-| 例外の種類 | 基本型 | 説明 | 例 |
-| -------------- | --------- | ----------- | ------- |
-| <xref:System.Exception> | <xref:System.Object> | すべての例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
-| <xref:System.IndexOutOfRangeException> | <xref:System.Exception> | 配列のインデックスが誤っている場合にのみ、ランタイムによってスローされます。 | 次のように、配列に対して配列の有効範囲外のインデックスを付けた場合。`arr[arr.Length+1]` |
-| <xref:System.NullReferenceException> | <xref:System.Exception> | null オブジェクトが参照された場合にのみ、ランタイムによってスローされます。 | `object o = null; o.ToString();` |
-| <xref:System.InvalidOperationException> | <xref:System.Exception> | 無効な状態の場合にメソッドによってスローされます。 | 基になるコレクションからアイテムを削除した後での、`Enumerator.GetNext()` の呼び出しです。 |
-| <xref:System.ArgumentException> | <xref:System.Exception> | すべての引数の例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
-| <xref:System.ArgumentNullException> | <xref:System.Exception> | null の引数を許可しないメソッドによってスローされます。 | `String s = null; "Calculate".IndexOf (s);` |
-| <xref:System.ArgumentOutOfRangeException> | <xref:System.Exception> | 引数が特定の範囲内にあることを検査するメソッドによってスローされます。 | `String s = "string"; s.Substring(s.Length+1);` |
+| 例外の種類 | 説明 | 例 |
+| -------------- | ----------- | ------- |
+| <xref:System.Exception> | すべての例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
+| <xref:System.IndexOutOfRangeException> | 配列のインデックスが誤っている場合にのみ、ランタイムによってスローされます。 | 次のように、配列に対して配列の有効範囲外のインデックスを付けた場合。 <br /> `arr[arr.Length+1]` |
+| <xref:System.NullReferenceException> | null オブジェクトが参照された場合にのみ、ランタイムによってスローされます。 | `object o = null;` <br /> `o.ToString();` |
+| <xref:System.InvalidOperationException> | 無効な状態の場合にメソッドによってスローされます。 | 基になるコレクションから項目を削除した後での、`Enumerator.MoveNext()` の呼び出しです。 |
+| <xref:System.ArgumentException> | すべての引数の例外の基底クラスです。 | なし (この例外の派生クラスを使用)。 |
+| <xref:System.ArgumentNullException> | null の引数を許可しないメソッドによってスローされます。 | `String s = null;` <br /> `"Calculate".IndexOf(s);`|
+| <xref:System.ArgumentOutOfRangeException> | 引数が特定の範囲内にあることを検査するメソッドによってスローされます。 | `String s = "string";` <br /> `s.Substring(s.Length+1);` |
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-* [Exception クラスとプロパティ](exception-class-and-properties.md)
-* [方法: Try ブロックと Catch ブロックを使用して例外をキャッチする](how-to-use-the-try-catch-block-to-catch-exceptions.md)
-* [方法: catch ブロックで特定の例外を使用する](how-to-use-specific-exceptions-in-a-catch-block.md)
-* [方法: 例外を明示的にスローする](how-to-explicitly-throw-exceptions.md)
-* [方法: ユーザー定義の例外を作成する](how-to-create-user-defined-exceptions.md)
-* [ユーザー フィルター例外ハンドラーの使用](using-user-filtered-exception-handlers.md)
-* [方法: finally ブロックを使用する](how-to-use-finally-blocks.md)
-* [COM 相互運用の例外の処理](handling-com-interop-exceptions.md)
-* [例外の推奨事項](best-practices-for-exceptions.md)
-
-.NET での例外の動作の詳細については、「[What Every Dev needs to Know About Exceptions in the Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md)」(ランタイム時の例外についてすべての開発者が知っておくべきこと) を参照してください。
+[Exception クラスとプロパティ](exception-class-and-properties.md)  
+[方法: Try ブロックと Catch ブロックを使用して例外をキャッチする](how-to-use-the-try-catch-block-to-catch-exceptions.md)  
+[方法: catch ブロックで特定の例外を使用する](how-to-use-specific-exceptions-in-a-catch-block.md)  
+[方法: 例外を明示的にスローする](how-to-explicitly-throw-exceptions.md)  
+[方法: ユーザー定義の例外を作成する](how-to-create-user-defined-exceptions.md)  
+[ユーザー フィルター例外ハンドラーの使用](using-user-filtered-exception-handlers.md)  
+[方法: finally ブロックを使用する](how-to-use-finally-blocks.md)  
+[COM 相互運用の例外の処理](handling-com-interop-exceptions.md)  
+[例外の推奨事項](best-practices-for-exceptions.md)  
+[ランタイム時の例外についてすべての開発者が知っておくべきこと](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md)

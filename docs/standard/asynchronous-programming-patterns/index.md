@@ -8,22 +8,22 @@ helpviewer_keywords:
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 86ed48361e0868d9e2fa2b79b1c5fa8955018bef
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 809385bda48c6fb8dae125fe348228aaee375a6c
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32768776"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071306"
 ---
 # <a name="asynchronous-programming-patterns"></a>非同期プログラミングのパターン
 
 .NET Framework は、非同期操作を実行するための 3 つのパターンを提供します。  
   
-- 非同期プログラミング モデル (APM) パターン (<xref:System.IAsyncResult> パターンとも呼ばれます)。非同期操作には `Begin` メソッドと `End` メソッドが必要です (たとえば、非同期書き込み操作の場合は `BeginWrite` と `EndWrite`)。 このパターンは、新規の開発では推奨されなくなりました。 詳細については、「[非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)」を参照してください。  
+- **非同期プログラミング モデル (APM)** パターン (<xref:System.IAsyncResult> パターンとも呼ばれる)。非同期操作には `Begin` メソッドと `End` メソッドが必要です (たとえば、非同期書き込み操作の場合は `BeginWrite` と `EndWrite`)。 このパターンは、新規の開発では推奨されなくなりました。 詳細については、「[非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)」を参照してください。  
   
-- イベント ベースの非同期パターン (EAP)。`Async` サフィックスを持つメソッドと、1 つ以上のイベント、イベント ハンドラー デリゲート型、および `EventArg` 派生型を必要とします。 EAP は、.NET Framework 2.0 で導入されました。 新規の開発では推奨されなくなりました。 詳細については、「[イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)」を参照してください。  
+- **イベント ベースの非同期パターン (EAP)**。`Async` サフィックスを持つメソッドと、1 つ以上のイベント、イベント ハンドラー デリゲート型、および `EventArg` 派生型を必要とします。 EAP は、.NET Framework 2.0 で導入されました。 新規の開発では推奨されなくなりました。 詳細については、「[イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)」を参照してください。  
   
-- タスク ベースの非同期パターン (TAP)。1 つのメソッドを使用して非同期操作の開始と完了を表します。 TAP は .NET Framework 4 で導入され、.NET Framework での非同期プログラミングに推奨されるアプローチです。 C# の [async](~/docs/csharp/language-reference/keywords/async.md) キーワードと [await](~/docs/csharp/language-reference/keywords/await.md) キーワード、および Visual Basic 言語の [Async](~/docs/visual-basic/language-reference/modifiers/async.md) 演算子と [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) 演算子により、TAP の言語サポートが追加されます。 詳細については、「[タスク ベースの非同期パターン (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)」を参照してください。  
+- **タスク ベースの非同期パターン (TAP)**。1 つのメソッドを使用して非同期操作の開始と完了を表します。 TAP は .NET Framework 4 で導入され、.NET Framework での非同期プログラミングに推奨されるアプローチです。 C# の [async](~/docs/csharp/language-reference/keywords/async.md) キーワードと [await](~/docs/csharp/language-reference/keywords/await.md) キーワード、および Visual Basic 言語の [Async](~/docs/visual-basic/language-reference/modifiers/async.md) 演算子と [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) 演算子により、TAP の言語サポートが追加されます。 詳細については、「[タスク ベースの非同期パターン (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)」を参照してください。  
   
 ## <a name="comparing-patterns"></a>パターンの比較  
 

@@ -3,11 +3,12 @@ title: 更新された .NET Core イベント パターン
 description: .NET Core イベント パターンによって旧バージョンとの互換性を提供する柔軟性を実現する方法と、非同期サブスクライバーによる安全なイベント処理を実装する方法について説明します。
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: d0ad85479265041d895039d6c72f1f9909ea5fa8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f28c3ea9d8cf3e8fc68953c79def5744eb5abe4
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827181"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>更新された .NET Core イベント パターン
 
@@ -22,22 +23,7 @@ ms.lasthandoff: 05/04/2018
 
 さらに 1 つ変更するのであれば、`SearchDirectoryArgs` を構造体に変更することもできます。
 
-```csharp  
-internal struct SearchDirectoryArgs  
-{  
-    internal string CurrentSearchDirectory { get; }  
-    internal int TotalDirs { get; }  
-    internal int CompletedDirs { get; }  
-    
-    internal SearchDirectoryArgs(string dir, int totalDirs, 
-        int completedDirs) : this()  
-    {  
-        CurrentSearchDirectory = dir;  
-        TotalDirs = totalDirs;  
-        CompletedDirs = completedDirs;  
-    }  
-}  
-```   
+[!code-csharp[SearchDir](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Define search directory event")]
 
 追加の変更は、すべてのフィールドを初期化するコンストラクターに入る前に既定のコンストラクターを呼び出すことです。 その追加がなければ、C# のルールは、割り当てられる前にプロパティがアクセスされていると報告するでしょう。
 

@@ -31,3 +31,4 @@
 ### [セキュリティとユーザー入力](security-and-user-input.md)
 ### [セキュリティと競合状態](security-and-race-conditions.md)
 ### [セキュリティと実行時のコード生成](security-and-on-the-fly-code-generation.md)
+### [パディングを使用した CBC モードの対称復号化に関するタイミングの脆弱性](vulnerabilities-cbc-mode.md)

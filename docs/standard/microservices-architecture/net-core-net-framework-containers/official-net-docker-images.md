@@ -3,24 +3,22 @@ title: 公式の .NET Docker イメージ
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 公式の .NET Docker イメージ
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: d2105603fe1fcbacd995710c9b365ec406bad255
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 06/06/2018
+ms.openlocfilehash: bb2190a4fae6f8a26b220fd12ecb9f65ea6f4b96
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251117"
 ---
 # <a name="official-net-docker-images"></a>公式の .NET Docker イメージ
 
 公式の .NET Docker イメージは Microsoft により作成および最適化された Docker イメージです。 [Docker Hub](https://hub.docker.com/u/microsoft/) の Microsoft リポジトリで一般公開されています。 各リポジトリには、.NET のバージョンに応じて、また OS (Linux Debian、Alpine Linux、Windows Nano Server、Windows Server Core など) とそのバージョンに応じて、複数のイメージを含めることができます。
 
-Microsoft による .NET リポジトリのバージョン設定は、きめ細かく焦点を合わせたものにすることを目的としています。ここで、リポジトリとは特定のシナリオやワークロードのことを示しています。 たとえば、[microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) イメージは、Docker 上で ASP.NET Core を使用する際に必要となります。これらの ASP.NET Core イメージは、コンテナーの開始時間を短縮できるようにさらなる最適化を行います。
-
-その一方で、.NET Core イメージ (microsoft/dotnet) は .NET Core をベースとしたコンソール アプリ向けです。 たとえば、バッチ プロセスや Azure WebJobs、その他のコンソールのシナリオなどでは .NET Core を使用する必要があります。 それらのイメージには ASP.NET Core スタックは含まれません。結果として、コンテナー イメージのサイズが小さくなります。
+.NET Core 2.1 以降は、ASP.NET Core 用を含むすべての .NET Core イメージが Docker Hub の [.NET Core イメージ リポジトリ](https://hub.docker.com/r/microsoft/dotnet/)で提供されています。
 
 イメージ リポジトリの多くではさまざまなタグを利用できるため、特定のフレームワーク バージョンだけでなく、OS (Linux ディストリビューションまたは Windows のバージョン) も選択できます。
 
-Microsoft が提供する公式の .NET Docker イメージの詳細については、「[.NET Docker Images summary](https://aka.ms/dotnetdockerimages)」 (NET Docker Images 概要) を参照してください。
 
 ## <a name="net-core-and-docker-image-optimizations-for-development-versus-production"></a>開発と運用における .NET Core および Docker イメージの最適化
 
@@ -34,13 +32,13 @@ Microsoft では開発者向けの Docker イメージをビルドするにあ�
 
 ### <a name="during-development-and-build"></a>開発中およびビルド中
 
-開発中に重要な点は、変更を繰り返し処理する速さと、変更をデバッグする機能です。 コードを変更し、それをすばやく確認する機能に比べて、イメージのサイズはそれほど重要ではありません。 ツールおよび "ビルドエージェント コンテナー" の中には、開発プロセスおよびビルド プロセス時に ASP.NET Core の開発イメージ (microsoft/aspnetcore-build) を使用するものがあります。 Docker コンテナー内でビルドを行う場合は、アプリをコンパイルするために必要な要素が重要となります。 これには、コンパイラおよびその他の .NET 依存関係に加えて、npm、Gulp、Bower などの Web 開発の依存関係が含まれます。
+開発中に重要な点は、変更を繰り返し処理する速さと、変更をデバッグする機能です。 コードを変更し、それをすばやく確認する機能に比べて、イメージのサイズはそれほど重要ではありません。 ツールおよび "ビルドエージェント コンテナー" の中には、開発プロセスおよびビルド プロセス時に ASP.NET Core の開発イメージ (**microsoft/dotnet:2.1-sdk**) を使用するものがあります。 Docker コンテナー内でビルドを行う場合は、アプリをコンパイルするために必要な要素が重要となります。 これには、コンパイラおよびその他の .NET 依存関係に加えて、Web 開発の依存関係が含まれます。
 
-この種のビルド イメージが重要な理由は何でしょうか。 このイメージは、実稼働環境には展開しません。 実稼働イメージに配置するコンテンツをビルドする場合に使用します。 このイメージは継続的インテグレーション (CI) 環境またはビルド環境で使用されます。 たとえば、ビルド エージェント ホスト (VM など) に直接すべてのアプリケーション依存関係を手動でインストールするのではなく、ビルド エージェントが、アプリケーションのビルドに必要なすべての依存関係と共に .NET Core イメージをインスタンス化します。 この Docker イメージの実行方法を理解する必要があるのはビルド エージェントのみです。 これにより、CI 環境が簡略化され、予測可能性が高まります。
+この種のビルド イメージが重要な理由は何でしょうか。 このイメージは、実稼働環境には展開しません。 実稼働イメージに配置するコンテンツをビルドする場合に使用します。 このイメージは、継続的インテグレーション (CI) 環境、または Docker マルチステージ ビルド使用時のビルド環境で使用されます。
 
 ### <a name="in-production"></a>実稼働環境
 
-実稼働環境で重要な点は、実稼働 .NET Core イメージに基づいてコンテナーの展開および運用開始をいかに速く行えるかということです。 したがって、[microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) に基づくランタイムのみのイメージは規模が小さく、したがって、Docker レジストリから Docker ホストまでのネットワークで迅速に移動することができます。 コンテンツは実行できる状態であるため、コンテナーの開始から結果の処理までを最速で行うことができます。 Docker モデルでは、ビルド コンテナーを使用するときに dotnet build または dotnet publish を実行する場合のように C\# コードからコンパイルを行う必要はありません。
+実稼働環境で重要な点は、実稼働 .NET Core イメージに基づいてコンテナーの展開および運用開始をいかに速く行えるかということです。 したがって、**microsoft/dotnet:2.1-aspnetcore-runtime** に基づくランタイムのみのイメージは、ネットワーク経由で Docker レジストリから Docker ホストまで迅速に送信できるように小さくなっています。 コンテンツは実行できる状態であるため、コンテナーの開始から結果の処理までを最速で行うことができます。 Docker モデルでは、ビルド コンテナーを使用するときに dotnet build または dotnet publish を実行する場合のように C\# コードからコンパイルを行う必要はありません。
 
 この最適化されたイメージでは、アプリケーションを実行するために必要なバイナリとその他のコンテンツのみを配置します。 たとえば、dotnet publish で作成されたコンテンツには、コンパイルされた .NET バイナリ、イメージ、.js、および .css ファイルのみが含まれています。 時間の経過と共に、事前に Just-In-Time (JIT) にコンパイルされたパッケージを含むイメージが表示されます。
 
@@ -48,13 +46,13 @@ Microsoft では開発者向けの Docker イメージをビルドするにあ�
 
 Docker Hub の .NET イメージ リポジトリを探索すると、タグで分類またはマークされた複数のイメージ バージョンを見つかります。 これらのタグは、次の示すように、必要とするバージョンに応じて使用するものを特定するのに役立ちます。
 
--   microsoft/**aspnetcore:2.0**
+-   microsoft/dotnet:**2.1-aspnetcore-runtime**
 
         ASP.NET Core, with runtime only and ASP.NET Core optimizations, on Linux and Windows (multi-arch)
 
--   microsoft/**aspnetcore-build:2.0**
+-   microsoft/**dotnet:2.1-sdk**
 
-        ASP.NET Core, with SDKs included, on Linux and Windows (multi-arch)
+        .NET Core, with SDKs included, on Linux and Windows (multi-arch)
 
 
 >[!div class="step-by-step"]

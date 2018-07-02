@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: 7d2f81ef08892c994163d609a56008c1accadaa8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8026ac821dfeed03127c894a5768a4c91b13beb3
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570612"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207174"
 ---
 # <a name="net-class-libraries"></a>.NET クラス ライブラリ
 
@@ -39,7 +39,7 @@ ms.locfileid: "33570612"
 
 多くのライブラリ開発者は、1 つのソースから複数のプラットフォーム固有のライブラリを生成する方法 (条件付きコンパイル ディレクティブを使用) からポータブル ライブラリに切り替えています。 ポータブル ライブラリ内のプラットフォーム固有の機能にアクセスする[方法はいくつか](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html)あります。現時点で最も広く採用されている手法は、[bait-and-switch](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) です。
 
-### <a name="net-standard-class-libraries"></a>.NET Standard クラス ライブラリ
+## <a name="net-standard-class-libraries"></a>.NET Standard クラス ライブラリ
 
 .NET Standard ライブラリは、プラットフォームに固有のライブラリおよびポータブル ライブラリの概念に代わるものです。 これらは、基になるプラットフォームのすべての機能を公開するという意味でプラットフォーム固有です (統合プラットフォームまたはプラットフォームの交差はありません)。 これらは、すべてのサポートされるプラットフォーム上で機能するという意味でポータブルです。
 
@@ -60,6 +60,6 @@ ms.locfileid: "33570612"
 
 詳細については、「[.NET Standard](net-standard.md)」トピックを参照してください。
 
-### <a name="mono-class-libraries"></a>Mono クラス ライブラリ
+## <a name="mono-class-libraries"></a>Mono クラス ライブラリ
 
 クラス ライブラリは、上記の 3 種類のライブラリを含む Mono 上でサポートされます。 多くの場合、Mono は、Microsoft .NET Framework のクロスプラット フォームの実装として (正しく) 確認されています。 これは、部分的には、プラットフォーム固有の .NET Framework ライブラリを変更や再コンパイルせずに Mono ランタイム上で実行できたためです。 このような特徴は、ポータブル クラス ライブラリの作成前に見られたので、NET Framework と Mono の間でバイナリを移植できるようにすることが当然の選択肢でした。

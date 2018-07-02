@@ -1,6 +1,6 @@
 ---
 title: 標準の数値書式指定文字列
-ms.date: 09/10/2017
+ms.date: 06/10/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -18,13 +18,15 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b1cad76c234ce73772d3b65b11596ab0e4e0ae3f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f471d62ca31096b955dd6f703c70faabe91cb55b
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208210"
 ---
 # <a name="standard-numeric-format-strings"></a>標準の数値書式指定文字列
+
 一般的な数値型を書式設定するには、標準の数値書式指定文字列を使用します。 標準の数値書式指定文字列の形式は `Axx` です。  
   
 -   `A` は *書式指定子* です。これは 1 文字の英文字です。 空白を含む複数の英文字で構成される数値書式指定文字列は、カスタム数値書式指定文字列として解釈されます。 詳細については、「[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)」をご覧ください。  
@@ -64,24 +66,27 @@ ms.lasthandoff: 05/04/2018
   
 <a name="Using"></a>   
 ## <a name="using-standard-numeric-format-strings"></a>標準の数値書式指定文字列の使用  
- 標準の数値書式指定文字列を使用すると、次のいずれかの方法で数値の書式を定義できます。  
+
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-with-culture-note.md)]
+
+標準の数値書式指定文字列を使用すると、次のいずれかの方法で数値の書式を定義できます。  
   
 -   `ToString` パラメーターを持つ `format` メソッドのオーバーロードに渡す。 次の例では、数値の書式を現在のカルチャ (ここでは en-US カルチャ) の通貨文字列に設定しています。  
   
      [!code-cpp[Formatting.Numeric.Standard#10](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#10)]
-     [!code-csharp[Formatting.Numeric.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#10)]
+     [!code-csharp-interactive[Formatting.Numeric.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#10)]
      [!code-vb[Formatting.Numeric.Standard#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#10)]  
   
 -   <xref:System.String.Format%2A?displayProperty=nameWithType>、<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>、<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> などのメソッドで使用される書式指定項目の `formatString` 引数として渡す。 詳細については、「[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)」をご覧ください。 次の例では、書式指定項目を使用して文字列に通貨値を挿入しています。  
   
      [!code-cpp[Formatting.Numeric.Standard#11](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#11)]
-     [!code-csharp[Formatting.Numeric.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#11)]
+     [!code-csharp-interactive[Formatting.Numeric.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#11)]
      [!code-vb[Formatting.Numeric.Standard#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#11)]  
   
      オプションで、`alignment` 引数を渡して数値フィールドの幅と、その値を右揃えまたは左揃えにするかどうかを指定します。 次の例では、通貨の値が 28 文字フィールドでは左揃えになっており、14 文字フィールドでは右揃えになっています。  
   
      [!code-cpp[Formatting.Numeric.Standard#12](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#12)]
-     [!code-csharp[Formatting.Numeric.Standard#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#12)]
+     [!code-csharp-interactive[Formatting.Numeric.Standard#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#12)]
      [!code-vb[Formatting.Numeric.Standard#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#12)]  
   
 -   これは補間文字列の挿入式項目内で `formatString` 引数として指定できます。 詳細については、C# リファレンスの[文字列補間](../../csharp/language-reference/tokens/interpolated.md)または Visual Basic リファレンスの[補間文字列](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)に関するトピックを参照してください。  
@@ -110,7 +115,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、通貨書式指定子を使って <xref:System.Double> 値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#1)]
- [!code-csharp[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
  [!code-vb[Formatting.Numeric.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#1)]  
   
  [表のトップへ](#table)  
@@ -130,7 +135,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、10 進数の書式指定子を使って <xref:System.Int32> 値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#2](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#2)]
- [!code-csharp[Formatting.Numeric.Standard#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#2)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#2)]
  [!code-vb[Formatting.Numeric.Standard#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#2)]  
   
  [表のトップへ](#table)  
@@ -154,7 +159,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、指数書式指定子を使って <xref:System.Double> 値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#3](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#3)]
- [!code-csharp[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
  [!code-vb[Formatting.Numeric.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#3)]  
   
  [表のトップへ](#table)  
@@ -176,7 +181,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、固定小数点の書式指定子を使って <xref:System.Double> および <xref:System.Int32> 値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#4)]
- [!code-csharp[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
  [!code-vb[Formatting.Numeric.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#4)]  
   
  [表のトップへ](#table)  
@@ -205,10 +210,10 @@ ms.lasthandoff: 05/04/2018
  
 "G17" 書式指定子と <xref:System.Double> 値を共に使用すると、元の <xref:System.Double> 値のラウンド トリップが正常に実行されます。 これは、<xref:System.Double> が IEEE 754-2008 準拠の倍精度 (`binary64`) 浮動小数点数 (最大 17 桁の精度) であるためです。 場合によっては、"R" が倍精度浮動小数点値のラウンドトリップに失敗するため、["R" 書式指定子](#RFormatString)の代わりに使用することをお勧めします。 このような場合の例を次に示します。
 
-[!code-csharp[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/csharp/g17.cs)]   
+[!code-csharp-interactive[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/csharp/g17.cs)]   
 [!code-vb[Round-tripping a Double](../../../samples/snippets/standard/base-types/format-strings/vb/g17.vb)]   
 
-"G9" 書式指定子と <xref:System.Single> 値を共に使用すると、元の <xref:System.Single> 値のラウンド トリップが正常に実行されます。 これは、<xref:System.Single> が IEEE 754-2008 準拠の単精度 (`binary32`) 浮動小数点数 (最大 9 桁の精度) であるためです。 場合によっては、"R" が単精度浮動小数点値のラウンドトリップに失敗するため、["R" 書式指定子](#RFormatString)の代わりに使用することをお勧めします。
+"G9" 書式指定子と <xref:System.Single> 値を共に使用すると、元の <xref:System.Single> 値のラウンド トリップが正常に実行されます。 これは、<xref:System.Single> が IEEE 754-2008 準拠の単精度 (`binary32`) 浮動小数点数 (最大 9 桁の精度) であるためです。 パフォーマンス上の理由から、["R" 書式指定子](#RFormatString)の代わりにこちらを使用することをお勧めします。
 
  結果文字列は、現在の <xref:System.Globalization.NumberFormatInfo> オブジェクトの書式情報に影響されます。 結果文字列の書式を制御する <xref:System.Globalization.NumberFormatInfo> のプロパティの一覧を次の表に示します。  
   
@@ -221,7 +226,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、一般書式指定子を使って、さまざまな浮動小数点値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#5)]
- [!code-csharp[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
  [!code-vb[Formatting.Numeric.Standard#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#5)]  
   
  [表のトップへ](#table)  
@@ -244,7 +249,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、数値書式指定子を使って、さまざまな浮動小数点値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#6](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#6)]
- [!code-csharp[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
  [!code-vb[Formatting.Numeric.Standard#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#6)]  
   
  [表のトップへ](#table)  
@@ -269,7 +274,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、パーセント書式指定子を使って、浮動小数点値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#7](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#7)]
- [!code-csharp[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
  [!code-vb[Formatting.Numeric.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#7)]  
   
  [表のトップへ](#table)  
@@ -278,7 +283,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="the-round-trip-r-format-specifier"></a>ラウンドトリップ ("R") 書式指定子  
  ラウンド トリップ ("R") 書式指定子は、文字列に変換された数値が解析され、同じ数値に戻るように試行します。 この書式指定は、<xref:System.Single> 型、<xref:System.Double> 型、および <xref:System.Numerics.BigInteger> 型でだけサポートされています。  
 
-<xref:System.Double> 値と <xref:System.Single> 値の場合、"R" 書式指定子で元の値を適切にラウンド トリップできないことがあります、また、パフォーマンスが比較的低いこともあります。 値を適切にラウンドトリップするには、<xref:System.Double> 値に ["G17"](#GFormatString) 書式指定子を使用し、<xref:System.Single> 値に ["G9"](#GFormatString) 書式指定子を使用することをお勧めします。
+<xref:System.Double> 値の場合、"R" 書式指定子で元の値を適切にラウンド トリップできないことがあります。 <xref:System.Double> 値と <xref:System.Single> 値の場合、パフォーマンスが比較的低いこともあります。 値を適切にラウンドトリップするには、<xref:System.Double> 値に ["G17"](#GFormatString) 書式指定子を使用し、<xref:System.Single> 値に ["G9"](#GFormatString) 書式指定子を使用することをお勧めします。
 
  この指定子を使用して <xref:System.Numerics.BigInteger> 値の書式を設定すると、その文字列形式に <xref:System.Numerics.BigInteger> 値の有効桁数がすべて含まれます。  
   
@@ -294,7 +299,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、ラウンドトリップ書式指定子を使って <xref:System.Numerics.BigInteger> 値の書式を設定します。  
   
  [!code-cpp[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cpp)]
- [!code-csharp[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cs)]
+ [!code-csharp-interactive[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.cs)]
  [!code-vb[R format specifier with a BigInteger](../../../samples/snippets/standard/base-types/format-strings/biginteger-r.vb)]  
   
 > [!IMPORTANT]
@@ -302,7 +307,7 @@ ms.lasthandoff: 05/04/2018
   
  `/platform:x64` スイッチまたは `/platform:anycpu` スイッチを使用してコンパイルして 64 ビット システムで実行すると、「R」標準の数値書式指定文字列を使用して書式設定される <xref:System.Double> 値のラウンドトリップが失敗するという問題を回避するために、<xref:System.Double> 値を「G17」標準の数値書式指定文字列を使用して書式設定することができます。 次の例では、ラウンドトリップに失敗する <xref:System.Double> 値を持つ "R" 書式指定文字列を使用しています。元の値のラウンドトリップに成功する "G17" 書式指定文字列も使用しています。  
   
- [!code-csharp[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#5)]
+ [!code-csharp-interactive[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#5)]
  [!code-vb[System.Double.ToString#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]  
   
  [表のトップへ](#table)  
@@ -318,7 +323,7 @@ ms.lasthandoff: 05/04/2018
  次の例では、16 進数の書式指定子を使って <xref:System.Int32> 値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Standard#9](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#9)]
- [!code-csharp[Formatting.Numeric.Standard#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#9)]
+ [!code-csharp-interactive[Formatting.Numeric.Standard#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#9)]
  [!code-vb[Formatting.Numeric.Standard#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#9)]  
   
  [表のトップへ](#table)  
@@ -343,11 +348,13 @@ ms.lasthandoff: 05/04/2018
 ### <a name="floating-point-infinities-and-nan"></a>浮動小数点の無限大値と NaN (非数) 値  
  <xref:System.Single> の浮動小数点型または <xref:System.Double> の浮動小数点型が正の無限大、負の無限大、または NaN (非数) である場合は、書式指定文字列とは関係なく、現在適用可能な <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A> オブジェクトによって指定される <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、または <xref:System.Globalization.NumberFormatInfo> の各プロパティの値は、書式設定された文字列となります。  
   
-<a name="example"></a>   
 ## <a name="example"></a>例  
+ 
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-with-culture-note.md)]
+ 
  次の例では、en-US カルチャおよびすべての標準数値書式指定子を使用して、整数値と浮動小数点数値を書式設定します。 この例では 2 つの特定の数値型 (<xref:System.Double> および <xref:System.Int32>) を使用していますが、他の数値基本型 (<xref:System.Byte>、<xref:System.SByte>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64><xref:System.Numerics.BigInteger>、<xref:System.Decimal>、および <xref:System.Single>) でも類似した結果が得られます。  
   
- [!code-csharp[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#1)]
+ [!code-csharp-interactive[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#1)]
  [!code-vb[system.x.tostring-and-culture#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.X.ToString-and-Culture/vb/xts.vb#1)]  
   
 ## <a name="see-also"></a>参照  

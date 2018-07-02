@@ -4,12 +4,12 @@ description: ASP.NET Core および Microsoft Azure での最新の Web アプ�
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
-ms.openlocfilehash: 834c71b92cb1bfd19bdc7fec8a19d3b2a87b74bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8c6a3b6c9c934cd44eb4fa402c8d792006ac560
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582900"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208193"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>従来の Web アプリケーションかシングル ページ アプリケーション (SPA) を選択する
 
@@ -71,10 +71,10 @@ SPA は、ユーザーが操作を行ったり、アプリケーションの各�
 SPA を作成するには、JavaScript や TypeScript と、クライアント側のプログラミング手法とライブラリに精通している必要があります。 チームには、Angular のような SPA フレームワークを使用して最新の JavaScript を記述できる能力が必要です。
 
 > ### <a name="references--spa-frameworks"></a>参考資料 - SPA フレームワーク
-> - **AngularJS**  
-> <https://angularjs.org/>
-> - **4 つの人気のある JavaScript フレームワークの比較**  
-> <https://www.developereconomics.com/feature-comparison-of-4-popular-js-mv-frameworks>
+> - **Angular**  
+> <https://angular.io>
+> - **JavaScript フレームワークの比較**  
+> <https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/>
 
 **他の (内部またはパブリック) クライアントに API を公開するという要件がアプリケーションに既にある**
 

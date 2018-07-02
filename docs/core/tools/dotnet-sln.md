@@ -3,13 +3,13 @@ title: dotnet sln コマンド - .NET Core CLI
 description: dotnet-sln コマンドは、ソリューション ファイルでプロジェクトを追加、削除、一覧表示するための便利なオプションを提供します。
 author: mairaw
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: dd77281b55b3e7fc7c293e402d11de016ef73cf8
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 06/13/2018
+ms.openlocfilehash: 65ae402ef5519863886c8cf833598f5314b4bdad
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696713"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207794"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -33,6 +33,12 @@ dotnet sln [-h|--help]
 ## <a name="description"></a>説明
 
 `dotnet sln` コマンドは、ソリューション ファイルでプロジェクトを追加、削除、一覧表示するための便利な方法を提供します。
+
+`dotnet sln` コマンドを使用するには、ソリューション ファイルが既に存在している必要があります。 作成する必要がある場合、下の例のように [dotnet new](dotnet-new.md) コマンドを使用します。
+
+```
+dotnet new sln
+```
 
 ## <a name="commands"></a>コマンド
 

@@ -1,19 +1,20 @@
 ---
 title: Docker でホストされているマイクロサービス - C
 description: Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ
-ms.date: 02/03/2017
+ms.date: 06/08/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: 7428051c1d9a29ba98ca1f28288b3c50ea36ae1a
-ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
+ms.openlocfilehash: b043b0109bcf8a67867d2c73a5ab22e43a4963cf
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208003"
 ---
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
 このチュートリアルでは、Docker コンテナーにおける ASP.NET Core マイクロサービスの構築および展開に必要な作業について説明します。 このチュートリアルを通して、以下のことを学びます。
 
-* Yeoman を使用して ASP.NET Core アプリケーションを生成する方法
+* ASP.NET Core アプリケーションを生成する方法
 * Docker の開発環境を作成する方法
 * 既存のイメージに基づいて Docker イメージを構築する方法
 * Docker コンテナーにお使いのサービスを展開する方法
@@ -21,13 +22,13 @@ ms.lasthandoff: 05/25/2018
 この過程で、C# 言語の機能もいくつか説明します。
 
 * C# オブジェクトを JSON ペイロードに変換する方法
-* 変更できないデータ転送オブジェクトを構築する方法
+* 変更できないデータ転送オブジェクトをビルドする方法
 * 受信 HTTP 要求を処理し、HTTP 応答を生成する方法
 * Null 許容の値型を操作する方法
 
 このトピックの[サンプル アプリを表示またはダウンロード](https://github.com/dotnet/samples/tree/master/csharp/getting-started/WeatherMicroservice)できます。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-### <a name="why-docker"></a>Docker を使用する理由
+## <a name="why-docker"></a>Docker を使用する理由
 
 Docker を使うと、簡単に標準的なコンピューター イメージを作成し、データ センターやパブリック クラウドでサービスをホストすることができます。 Docker ではイメージを構成することができ、必要に応じてイメージを複製してアプリケーションのインストール サイズを拡大縮小することができます。
 
@@ -35,72 +36,57 @@ Docker を使うと、簡単に標準的なコンピューター イメージを
 Docker インストールの追加タスクは、ASP.NET Core アプリケーションで機能します。 
 
 ## <a name="prerequisites"></a>必須コンポーネント
+
 お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
-このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
+このアプリケーションは、Windows、Linux、macOS または Docker コンテナーで実行できます。
+お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
 
 Docker エンジンをインストールする必要もあります。 お使いのプラットフォームに関する手順については、[Docker インストールのページ](http://www.docker.com/products/docker)を参照してください。
 Docker は、多くの Linux ディストリビューション、macOS、または Windows にインストールすることができます。 上記のページには、インストールが可能なものについてそれぞれ説明が含まれています。
 
-ほとんどのコンポーネントは、パッケージ マネージャーによってインストールされます。 Node.js のパッケージ マネージャー `npm` がインストールしてある場合は、この手順を省略できます。 そうでない場合は、[nodejs.org](https://nodejs.org) から最新の Node.Js をインストールしてください。npm パッケージ マネージャーがインストールされます。 
-
-この時点で、ASP.NET Core 開発をサポートする多数のコマンド ライン ツールをインストールする必要があります。 コマンドライン テンプレートでは、Yeoman、Bower、Grunt、および Gulp が使用されています。 それらがインストール済みであれば問題ありませんが、そうでない場合はお使いのシェルに下記のとおり入力します。
-
-`npm install -g yo bower grunt-cli gulp`
-
-`-g` オプションはグローバルのインストールであることを表し、これらのツールはシステム全体で利用可能です。 (ローカルのインストールの場合、パッケージは単一のプロジェクトでのみ利用可能になります) これらのコア ツールをインストールしたら、Yeoman ASP.NET テンプレート ジェネレーターをインストールします。
-
-`npm install -g generator-aspnet`
-
 ## <a name="create-the-application"></a>アプリケーションを作成する
 
-すべてのツールをインストールしたら、新しい ASP.NET Core アプリケーションを作成します。 コマンド ライン ジェネレーターを使用するには、お使いのシェルで、次の Yeoman コマンドを実行します。
+すべてのツールをインストールしたら、新しい ASP.NET Core アプリケーションを作成します。 これを行うには、"WeatherMicroservice" という新しいディレクトリを作成し、お好みのシェルで、そのディレクトリ内で次のコマンドを実行します。
 
-`yo aspnet`
+```console
+dotnet new web
+```
 
-このコマンドでは、作成するアプリケーションの種類を選択するように求められます。 このマイクロサービスでは、できる限り単純で軽量な Web アプリケーションを作成したいので、'空の Web アプリケーション' を選択します。 テンプレートで、名前が要求されます。 'WeatherMicroservice' を選択します。 
+`dotnet` コマンドは、.NET 開発に必要なツールを実行します。 動詞はそれぞれ、別々のコマンドを実行します。
 
-テンプレートによって 8 つのファイルが作成されます。
+.NET Core プロジェクトを作成するには、`dotnet new` コマンドを使用します。
 
-* .gitignore。ASP.NET Core アプリケーション用にカスタマイズされたもの。
+このマイクロサービスでは、できる限り単純で軽量な Web アプリケーションが必要なため、"ASP.NET Core Empty" テンプレートを、テンプレートの短い名前 `web` を指定して使用しました。
+
+テンプレートによって 4 つのファイルが作成されます。
+
 * Startup.cs ファイル。 このファイルには、アプリケーションの基礎が含まれています。
 * Program.cs ファイル。 このファイルには、アプリケーションのエントリ ポイントが含まれています。
 * WeatherMicroservice.csproj ファイル。 これがアプリケーションのビルド ファイルです。
-* Dockerfile。 このスクリプトによって、アプリケーションの Docker イメージが作成されます。
-* README.md。 このファイルには、他の ASP.NET Core リソースへのリンクが含まれています。
-* Web.config ファイル。 このファイルには、基本的な構成情報が含まれています。
-* Runtimeconfig.template.json ファイル。 このファイルには、IDE で使用されるデバッグの設定が含まれています。
+* Properties/launchSettings.json ファイル。 このファイルには、IDE で使用されるデバッグの設定が含まれています。
 
-これで、テンプレートで生成されたアプリケーションを実行できるようになりました。 これはコマンド ラインから一連のツールを使用して行います。 `dotnet` コマンドは、.NET 開発に必要なツールを実行します。 動詞はそれぞれ、別々のコマンドを実行します。
-
-はじめに、すべての依存関係を復元します。
-
-```console
-dotnet restore
-```
-
-Dotnet restore では NuGet パッケージ マネージャーを使用して、必要なすべてのパッケージをアプリケーション ディレクトリにインストールします。 Project.json.lock ファイルも生成します。 このファイルには、参照される各パッケージの情報が含まれています。 すべての依存関係を復元したら、アプリケーションをビルドします。
-
-```console
-dotnet build
-```
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
-
-アプリケーションをビルドしたら、それをコマンドラインから実行します。
+これで、テンプレートで生成されたアプリケーションを実行できるようになりました。
 
 ```console
 dotnet run
 ```
 
+このコマンドは、最初にアプリケーションのビルドに必要な依存関係を復元してから、アプリケーションをビルドします。
+
 既定の構成では `http://localhost:5000` がリッスンされます。 ブラウザーを開いてそのページに移動すると、"Hello World!" という メッセージが表示されます。
+
+完了したら、<kbd>Ctrl</kbd>+<kbd>C</kbd> キーを押してアプリケーションをシャットダウンできます。
 
 ### <a name="anatomy-of-an-aspnet-core-application"></a>ASP.NET Core アプリケーションの構造
 
-アプリケーションがビルドされたので、この機能が実装される仕組みを見てみましょう。 生成されたファイルのうち、この時点で特に重要なのは、project.json と Startup.cs の 2 つです。 
+アプリケーションがビルドされたので、この機能が実装される仕組みを見てみましょう。 生成されたファイルのうち、この時点で特に重要なのは、WeatherMicroservice.json と Startup.cs の 2 つです。 
 
-Project.json には、プロジェクトに関する情報が格納されています。 'dependencies' および 'frameworks' の 2 つのノードがよく使われることになります。 'dependencies' ノードでは、このアプリケーションに必要なパッケージがすべて一覧表示されます。
-現時点ではこれは、Web サーバーを実行するパッケージのみを必要とする小規模のノードです。
+csproj.json には、プロジェクトに関する情報が格納されています。
+最も興味深い 2 つのノードは、`<TargetFramework>` と `<PackageReference>` です。
 
-'frameworks' ノードでは、このアプリケーションを実行する .NET framework のバージョンと構成が指定されます。
+`<TargetFramework>` ノードは、このアプリケーションで実行する .NET のバージョンを指定します。
+
+各 `<PackageReference>` ノードは、このアプリケーションに必要なパッケージを指定するのに使用されます。
 
 アプリケーションは Startup.cs に実装されます。 このファイルにはスタートアップ クラスが含まれています。
 
@@ -124,7 +110,9 @@ Project.json には、プロジェクトに関する情報が格納されてい�
 
 クエリ文字列の解析から始めます。 サービスは、次の形式で、クエリ文字列の 'lat' 引数および 'long' 引数を受け取ります。
 
-`http://localhost:5000/?lat=-35.55&long=-12.35`  
+```
+http://localhost:5000/?lat=-35.55&long=-12.35
+```
 
 変更が必要なものは、スタートアップ クラス内の `app.Run` への引数として定義されているラムダ式にすべてあります。
 
@@ -132,7 +120,7 @@ Project.json には、プロジェクトに関する情報が格納されてい�
 
 [!code-csharp[ReadQueryString](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ReadQueryString "read variables from the query string")]
 
-クエリのディクショナリ値は `StringValue` 型です。 その型には、文字列のコレクションを含めることができます。 この天気予報サービスでは、各値は 1 つの文字列です。 そのために、上記のコードには `FirstOrDefault()` への呼び出しが含まれています。 
+`Query` のディクショナリ値は `StringValue` 型です。 その型には、文字列のコレクションを含めることができます。 この天気予報サービスでは、各値は 1 つの文字列です。 そのために、上記のコードには `FirstOrDefault()` への呼び出しが含まれています。 
 
 次に、文字列を double 型に変換する必要があります。 文字列を double 型に変換するには `double.TryParse()` メソッドを使用します。
 
@@ -148,9 +136,13 @@ bool TryParse(string s, out double result);
 
 [!code-csharp[TryParseExtension](../../../samples/csharp/getting-started/WeatherMicroservice/Extensions.cs#TryParseExtension "try parse to a nullable")]
 
-`default(double?)` 式は、`double?` 型の既定値を返します。 既定値は null 値 (値なし) です。
+拡張メソッドを呼び出す前に、現在のカルチャをインバリアントに変更します。
 
-この拡張メソッドを使用して、クエリ文字列の引数を double 型に変換することができます。
+[!code-csharp[SetCulture](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#SetCulture "set current culture to invariant")]
+
+これにより、既定のカルチャに関係なく、アプリケーションが任意のサーバー上で同じように数を分析できるようになります。
+
+これで、拡張メソッドを使用して、クエリ文字列の引数を double 型に変換することができます。
 
 [!code-csharp[UseTryParse](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#UseTryParse "Use the try parse extension method")]
 
@@ -167,7 +159,7 @@ bool TryParse(string s, out double result);
 ```csharp
 public class WeatherReport
 {
-    private static readonly string[] PossibleConditions = new string[]
+    private static readonly string[] PossibleConditions =
     {
         "Sunny",
         "Mostly Sunny",
@@ -177,26 +169,35 @@ public class WeatherReport
         "Rain"
     };
 
-    public int HiTemperature { get; }
-    public int LoTemperature { get; }
-    public int AverageWindSpeed { get; }
-    public string Conditions { get; }
+    public int HighTemperatureFahrenheit { get; }
+    public int LowTemperatureFahrenheit { get; }
+    public int AverageWindSpeedMph { get; }
+    public string Condition { get; }
 }
 ```
 
-次に、これらの値をランダムに設定するコンストラクターを構築します。 このコンストラクターは、緯度と経度の値を使用して乱数ジェネレーターに値を設定します。 つまり同じ場所の予報は同じということになります。 緯度と経度の引数を変更すると、異なる予報が得られます (異なる値を与えたため)。
+次に、これらの値をランダムに設定するコンストラクターを構築します。 このコンストラクターは、緯度と経度の値を使用して `Random` 値ジェネレーターに値を設定します。 つまり同じ場所の予報は同じということになります。 緯度と経度の引数を変更すると、異なる予報が得られます (異なる値を与えたため)。
 
 [!code-csharp[WeatherReportConstructor](../../../samples/csharp/getting-started/WeatherMicroservice/WeatherReport.cs#WeatherReportConstructor "Weather Report Constructor")]
 
 これで、応答メソッドで 5 日間の予報を生成できるようになりました。
 
-[!code-csharp[GenerateRandomReport](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#GenerateRandomReport "Generate a random weather report")]
-
-### <a name="build-the-json-response"></a>JSON 応答の構築
-
-サーバー上の最後のコード作業は、WeatherReport 配列を JSON パケットに変換し、それをクライアントに送信して返すことです。 まず JSON パケットを作成しましょう。 NewtonSoft JSON シリアライザーを、依存関係の一覧に追加します。 これは `dotnet` CLI を使用して実行できます。
-
+```csharp
+if (latitude.HasValue && longitude.HasValue)
+{
+    var forecast = new List<WeatherReport>();
+    for (var days = 1; days <= 5; days++)
+    {
+        forecast.Add(new WeatherReport(latitude.Value, longitude.Value, days));
+    }
+}
 ```
+
+### <a name="build-the-json-response"></a>JSON 応答のビルド
+
+サーバー上の最後のコード作業は、`WeatherReport` リストを JSON ドキュメントに変換し、それをクライアントに送信して返すことです。 まず JSON ドキュメントを作成しましょう。 Newtonsoft JSON シリアライザーを、依存関係の一覧に追加します。 これは次の `dotnet` コマンドを使用して行うことができます。
+
+```console
 dotnet add package Newtonsoft.Json
 ```
 
@@ -204,7 +205,7 @@ dotnet add package Newtonsoft.Json
 
 [!code-csharp[ConvertToJson](../../../samples/csharp/getting-started/WeatherMicroservice/Startup.cs#ConvertToJSON "Convert objects to JSON")]
 
-上記のコードは、予報オブジェクト (一連の `WeatherForecast` オブジェクト) を JSON パケットに変換します。 応答パケットを作成したら、コンテンツの種類を `application/json` に設定し、文字列を書き込みます。
+上記のコードは、予報オブジェクト (一連の `WeatherForecast` オブジェクト) を JSON ドキュメントに変換します。 応答ドキュメントを作成したら、コンテンツの種類を `application/json` に設定し、文字列を書き込みます。
 
 これで、アプリケーションが実行され、ランダムな予報が返されます。
 
@@ -218,49 +219,74 @@ dotnet add package Newtonsoft.Json
 
 たとえて言うと、*Docker イメージ*は*クラス*として、*Docker コンテナー*はオブジェクトまたはそのクラスのインスタンスとして、考えることができます。  
 
-ASP.NET テンプレートで作成された Dockerfile は、ここで機能します。 その内容を見てみましょう。
-
-最初の行はソース イメージを指定しています。
+これには、次の Dockerfile が役立ちます。
 
 ```
-FROM microsoft/dotnet:1.1-sdk-msbuild
+FROM microsoft/dotnet:2.1-sdk AS build
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+WORKDIR /app
+COPY --from=build /app/out .
+ENTRYPOINT ["dotnet", "WeatherMicroservice.dll"]
+```
+
+その内容を見てみましょう。
+
+最初の行は、アプリケーションのビルドに使用するソース イメージを指定します。
+
+```
+FROM microsoft/dotnet:2.1-sdk AS build
 ```
 
 Docker では、ソース テンプレートに基づいてマシン イメージを構成することができます。 つまり、開始時にすべてのマシン パラメーターを指定する必要はなく、変更箇所のみを指定すればよいことになります。 ここでの変更は、このアプリケーションの組み込みです。
 
-この最初のサンプルでは、.Net イメージの `1.1-sdk-msbuild` バージョンを使用します。 Docker の稼働環境を作成するにはこれが最も簡単な方法です。 このイメージには、.NET Core ランタイムと .Net SDK が含まれています。 これによって簡単にビルドを開始できますが、作成されるイメージは大きくなります。
+このサンプルでは、`dotnet` イメージの `2.1-sdk` バージョンを使用します。 Docker の稼働環境を作成するにはこれが最も簡単な方法です。 このイメージには、.NET Core ランタイムと .NET Core SDK が含まれています。
+これにより、開始してビルドするのが容易になりますが、より大きなイメージが作成されるため、このイメージをアプリケーションのビルドに使用して、実行には別のイメージを使用します。
 
-次の 5 行のコードでは、アプリケーションが設定およびビルドされます。
+次の行は、アプリケーションを設定してビルドします。
 
 ```
 WORKDIR /app
 
-# copy csproj and restore as distinct layers
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
 
-COPY WeatherMicroService.csproj .
-RUN dotnet restore 
-
-# copy and build everything else
-
-COPY . .
-
-# RUN dotnet restore
+# Copy everything else and build
+COPY . ./
 RUN dotnet publish -c Release -o out
 ```
 
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+これでプロジェクト ファイルが現在のディレクトリから Docker VM にコピーされ、すべてのパッケージが復元されます。 .Net CLI を使用するということは、Docker イメージに .NET Core SDK を含める必要があるということになります。 その後、アプリケーションの残りの部分がコピーされ、`dotnet
+publish` コマンドによってアプリケーションがビルドされパッケージ化されます。
 
-これでプロジェクト ファイルが現在のディレクトリから Docker VM にコピーされ、すべてのパッケージが復元されます。 .Net CLI を使用するということは、Docker イメージに .NET Core SDK を含める必要があるということになります。 その後、アプリケーションの残りの部分がコピーされ、dotnet publish コマンドによってアプリケーションがビルドされパッケージ化されます。
-
-ファイルの最後の行で、アプリケーションが実行されます。
+最後に、アプリケーションを実行する 2 番目の Docker イメージを作成します。
 
 ```
-ENTRYPOINT ["dotnet", "out/WeatherMicroService.dll", "--server.urls", "http://0.0.0.0:5000"]
+# Build runtime image
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+WORKDIR /app
+COPY --from=build /app/out .
+ENTRYPOINT ["dotnet", "WeatherMicroservice.dll"]
 ```
 
-この構成されたポートは、Dockerfile の最終行の `dotnet` への `--server.urls` 引数で参照されます。 `ENTRYPOINT` コマンドは、どのコマンドとコマンド ラインのオプションによってサービスが開始されるかを、Docker に通知します。 
+このイメージでは、`dotnet` イメージの `2.1-aspnetcore-runtime` バージョンを使用します。このバージョンには、ASP.NET Core アプリケーションを実行するために必要なすべてのものが含まれていますが、.NET Core SDK は含まれていません。 つまり、このイメージを使用して .NET Core アプリケーションをビルドすることはできませんが、最終イメージを小さくすることができます。
 
-## <a name="building-and-running-the-image-in-a-container"></a>コンテナー内でのイメージの構築および実行
+これを行うには、最初のイメージからビルドされたアプリケーションを 2 番目のイメージにコピーします。
+
+`ENTRYPOINT` コマンドは、サービスを開始するコマンドを Docker に通知します。
+
+## <a name="building-and-running-the-image-in-a-container"></a>コンテナー内でのイメージのビルドと実行
 
 イメージを構築して Docker コンテナー内でサービスを実行しましょう。 ローカル ディレクトリにあるすべてのファイルをイメージにコピーする必要はありません。 代わりに、コンテナーでアプリケーションをビルドします。 `.dockerignore` ファイルを作成して、イメージにコピーしないディレクトリを指定します。 ビルド資産はいっさいコピーしません。 `.dockerignore` ファイルに、ビルド ディレクトリおよび発行のディレクトリを指定します。
 
@@ -281,10 +307,10 @@ docker build -t weather-microservice .
 次のコマンドを実行して、コンテナーを起動しサービスを開始します。
 
 ```console
-docker run -d -p 80:5000 --name hello-docker weather-microservice
+docker run -d -p 80:80 --name hello-docker weather-microservice
 ```
 
-`-d` オプションは、コンテナ―を現在のターミナルからデタッチして実行することを意味します。 つまり、お使いの端末にはコマンドの出力は表示されないということです。 `-p` オプションは、サービスとホストの間のポート マッピングを示しています。 ここでは、コンテナー上でポート 80 上のすべての受信要求をポート 5000 に転送するように命令しています。 5000 を使用すると、上記の Dockerfile で指定されたコマンド ライン引数からサービスがリッスンしているポートと一致します。 `--name` 引数は実行中のコンテナーに名前を付けます。 この名前は、そのコンテナーの操作に使用するのに便利です。 
+`-d` オプションは、コンテナ―を現在のターミナルからデタッチして実行することを意味します。 つまり、お使いの端末にはコマンドの出力は表示されないということです。 `-p` オプションは、サービスとホストの間のポート マッピングを示しています。 ここでは、コンテナー上でポート 80 上のすべての受信要求をポート 80 に転送するように命令しています。 80 の使用は、サービスがリッスンしているポート (実稼働アプリケーションの既定のポート) と一致します。 `--name` 引数は実行中のコンテナーに名前を付けます。 この名前は、そのコンテナーの操作に使用するのに便利です。
 
 次のコマンドにより、イメージが実行されているかどうかを確認できます。
 
@@ -308,14 +334,14 @@ http://localhost/?lat=35.5&long=40.75
 docker attach --sig-proxy=false hello-docker
 ```
 
-`--sig-proxy=false` 引数は、`Ctrl-C` コマンドがコンテナ― プロセスには送信されるのではなく、`docker attach` コマンドを停止するものであることを意味します。 最後の引数は、`docker run` コマンドでコンテナーに与えられた名前です。 
+`--sig-proxy=false` 引数は、<kbd>Ctrl</kbd>+<kbd>C</kbd> コマンドがコンテナー プロセスには送信されるのではなく、`docker attach` コマンドを停止するものであることを意味します。 最後の引数は、`docker run` コマンドでコンテナーに与えられた名前です。 
 
 > [!NOTE]
-> Docker が割り当てられたコンテナー ID を使用して、任意のコンテナーを参照することもできます。 `docker run` でコンテナ―に名前を指定していない場合は、コンテナ― ID を使用する必要があります。
+> Docker が割り当てられたコンテナー ID を使用して、任意のコンテナーを参照することもできます。 `docker run` でコンテナーに名前を指定していない場合は、コンテナー ID を使用する必要があります。
 
 ブラウザーを開き、サービスに移動します。 アタッチされている実行中のコンテナーのコマンド ウィンドウ内で診断メッセージが表示されます。
 
-`Ctrl-C` キーを押して、アタッチ プロセスを停止します。
+<kbd>Ctrl</kbd>+<kbd>C</kbd> キーを押して、アタッチ プロセスを停止します。
 
 コンテナー操作を終了したら、停止することができます。
 

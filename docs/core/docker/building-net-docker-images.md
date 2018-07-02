@@ -6,11 +6,12 @@ ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f539efe15ce68a77890538430a170da64ff325e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e48a263334ebb93a5d281032336aeb4073d8467c
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827340"
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>.NET Core アプリケーションの Docker イメージのビルド
 
@@ -57,7 +58,7 @@ ms.lasthandoff: 05/04/2018
 
 上記の目標を達成するために、[`microsoft/dotnet`](https://hub.docker.com/r/microsoft/dotnet/) にはイメージ バリアントが用意されています。
 
-* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.0.0-sdk`) このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは **開発シナリオ** にマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 このイメージは、**ビルド** シナリオでも使用できます。 `microsoft/dotnet:sdk` を使用すると、常に最新版が取得されます。
+* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.1-sdk`) このイメージには、.NET Core とコマンド ライン ツール (CLI) を含む .NET Core SDK が含まれています。 このイメージは **開発シナリオ** にマップされます。 このイメージは、ローカル開発、デバッグおよび単体テストに使用します。 このイメージは、**ビルド** シナリオでも使用できます。 `microsoft/dotnet:sdk` を使用すると、常に最新版が取得されます。
 
 > [!TIP]
 > 要件が確定していない場合、`microsoft/dotnet:<version>-sdk` イメージの使用をお勧めします。 これは "事実上標準の" イメージであり、使い捨てのコンテナーとして使用されます (ソース コードをマウントし、コンテナーを起動してアプリを開始します)。また、基礎イメージとして使用し、これに基づいて他のイメージをビルドします。
@@ -79,9 +80,9 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="samples-to-explore"></a>お試しいただきたいサンプル
 
-* [この ASP.NET Core の Docker サンプル](https://github.com/dotnet/dotnet-docker-samples/tree/master/aspnetapp)は、運用向けの ASP.NET Core アプリの Docker イメージを構築するためのベスト プラクティス パターンを示します。 このサンプルは Linux コンテナーと Windows コンテナーのどちらでも動作します。
+* [この ASP.NET Core の Docker サンプル](https://github.com/dotnet/dotnet-docker/tree/master/samples/aspnetapp)は、運用向けの ASP.NET Core アプリの Docker イメージを構築するためのベスト プラクティス パターンを示します。 このサンプルは Linux コンテナーと Windows コンテナーのどちらでも動作します。
 
-* この .NET Core の Docker サンプルでは、[運用環境用の .NET Core アプリの Docker イメージをビルドする](https://github.com/dotnet/dotnet-docker-samples/tree/master/dotnetapp-prod)方法に関するベスト プラクティス パターンを示します。
+* この .NET Core の Docker サンプルでは、[運用環境用の .NET Core アプリの Docker イメージをビルドする](https://github.com/dotnet/dotnet-docker/tree/master/samples/dotnetapp)方法に関するベスト プラクティス パターンを示します。
 
 ## <a name="your-first-aspnet-core-docker-app"></a>初めての ASP.NET Core Docker アプリ
 
@@ -101,9 +102,9 @@ ms.lasthandoff: 05/04/2018
 
 ビルドし、実行するには、次のアイテムをインストールします。
 
-#### <a name="net-core-20-sdk"></a>.NET Core 2.0 SDK
+#### <a name="net-core-21-sdk"></a>.NET Core 2.1 SDK
 
-* [.NET Core SDK 2.0](https://www.microsoft.com/net/core) をインストールします。
+* [.NET Core SDK 2.1](https://www.microsoft.com/net/core) をインストールします。
 
 * コード エディターをまだインストールしていなければ、お気に入りのエディターをインストールしてください。
 
@@ -112,7 +113,7 @@ ms.lasthandoff: 05/04/2018
 
 #### <a name="installing-docker-client"></a>Docker クライアントをインストールする
 
-[Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) 以降の Docker クライアントをインストールします。
+[Docker 18.03](https://docs.docker.com/release-notes/docker-ce/) 以降の Docker クライアントをインストールします。
 
 Docker クライアントがインストール可能な OS:
 
@@ -136,22 +137,26 @@ Docker クライアントがインストール可能な OS:
 
 ### <a name="getting-the-sample-application"></a>サンプル アプリケーションを入手する
 
-サンプルを用意する最も簡単な方法は、git で[サンプル レジストリ](https://github.com/dotnet/dotnet-docker-samples)を複製することです。次の指示に従ってください。 
+サンプルを用意する最も簡単な方法は、git で[.NET Core Docker リポジトリ](https://github.com/dotnet/dotnet-docker)を複製することです。次の指示に従ってください。 
 
 ```console
-git clone https://github.com/dotnet/dotnet-docker-samples/
+git clone https://github.com/dotnet/dotnet-docker
 ```
 
-.NET Core Docker サンプル リポジトリから zip ファイルとしてリポジトリ (小さい) をダウンロードすることもできます。
+.NET Core Docker リポジトリから zip ファイルとしてリポジトリ (小さい) をダウンロードすることもできます。
 
 ### <a name="run-the-aspnet-app-locally"></a>ASP.NET アプリをローカルで実行する
 
 参照ポイントとして、アプリケーションをコンテナー化する前に、まず、アプリケーションをローカルで実行します。
 
-.NET Core 2.0 SDK を利用し、アプリケーションをビルドし、ローカルで実行できます。次のコマンドを利用します (この指示では、リポジトリのルートを想定しています)。
+.NET Core 2.1 SDK を利用してアプリケーションをビルドし、ローカルで実行できます。次のコマンドを利用します (この指示では、リポジトリのルートを想定しています)。
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+cd aspnetapp // project scope
+
 dotnet run
 ```
 
@@ -162,7 +167,10 @@ dotnet run
 Linux コンテナーを利用し、Docker でサンプルをビルドし、実行できます。次のコマンドを利用します (この指示では、リポジトリのルートを想定しています)。
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+
 docker build -t aspnetapp .
 docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 ```
@@ -177,7 +185,10 @@ docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 Window コンテナーを利用し、Docker でサンプルをビルドし、実行できます。次のコマンドを利用します (この指示では、リポジトリのルートを想定しています)。
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+
 docker build -t aspnetapp .
 docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
@@ -215,7 +226,7 @@ Ethernet adapter Ethernet:
 [dotnet publish](../tools/dotnet-publish.md) コマンドを利用し、運用環境にローカル展開できるアプリケーションを生成できます。
 
 ```console
-dotnet publish -c release -o published
+dotnet publish -c Release -o published
 ```
 
 > [!NOTE]
@@ -235,10 +246,10 @@ dotnet published/aspnetapp.dll
 
 ### <a name="docker-images-used-in-this-sample"></a>このサンプルで使用されている Docker イメージ
 
-次の Docker イメージはこのサンプルで使用されています
+次の Docker イメージはこのサンプルの dockerfile で使用されています。
 
-* `microsoft/aspnetcore-build:2.0`
-* `microsoft/aspnetcore:2.0`
+* `microsoft/dotnet:2.1-sdk`
+* `microsoft/dotnet:2.1-aspnetcore-runtime`
 
 おめでとうございます!  今回の成果:
 > [!div class="checklist"]

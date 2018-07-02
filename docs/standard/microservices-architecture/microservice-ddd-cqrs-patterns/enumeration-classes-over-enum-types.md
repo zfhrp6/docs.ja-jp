@@ -4,15 +4,16 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 1cb8c6115602d80b61f1116cbb1a8df4fbcee028
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1b2569caa7e7a6a899a6765d2e39d0fff8e37e2f
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251195"
 ---
 # <a name="using-enumeration-classes-instead-of-enum-types"></a>列挙型ではなく列挙型クラスを使用する
 
-[列挙型](../../../../docs/csharp/language-reference/keywords/enum.md) (省略形も同じ *列挙型*) は、整数型を包む薄い言語ラッパーです。 閉じた値のセットから 1 つの値を格納するときに、列挙型の使用を制限することができます。 性別 (男性、女性、不明など) やサイズ (小、中、大) に基づく分類は良い例です。 制御フローまたはより堅牢な抽象化のために列挙型を使用すると、[コードの臭い](http://deviq.com/code-smells/)になることがあります。 このような用法は、列挙型の値を検査する多くの制御フロー ステートメントでは脆弱なコードにつながります。
+[列挙型](../../../../docs/csharp/language-reference/keywords/enum.md) (省略形も同じ *列挙型*) は、整数型を包む薄い言語ラッパーです。 閉じた値のセットから 1 つの値を格納するときに、列挙型の使用を制限することができます。 サイズ (小、中、大) に基づく分類は良い一例です。 制御フローまたはより堅牢な抽象化のために列挙型を使用すると、[コードの臭い](http://deviq.com/code-smells/)になることがあります。 このような用法は、列挙型の値を検査する多くの制御フロー ステートメントでは脆弱なコードにつながります。
 
 代わりに、オブジェクト指向言語の豊富な機能をすべて使用できる列挙型クラスを作成する方法があります。
 

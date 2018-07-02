@@ -4,12 +4,12 @@ description: Linux マシンで .NET Core アプリケーションを開発、�
 author: jralexander
 ms.author: johalex
 ms.date: 06/01/2018
-ms.openlocfilehash: 30448d84a8377e27b0606b3bdabdcbac96c048aa
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 62493d45bd5839119fd98adb6db52d8d53ce4de5
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728548"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314823"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Linux における .NET Core の前提条件
 
@@ -197,7 +197,7 @@ Red Hat .NET チャネル アクセスの登録に関するヘルプについて
 **.NET Core 2.1**
 
 >[!IMPORTANT]
-> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 以降をインストールする](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)必要があります。
 
 |ランタイム/SDK                  |Ubuntu 18.04    |Ubuntu 17.10    |Ubuntu 16.04 / Linux Mint 18|Ubuntu 14.04 / Linux Mint 17|
 |---------------------------------|----------------|----------------|----------------------------|----------------------------|
@@ -253,7 +253,7 @@ Red Hat .NET チャネル アクセスの登録に関するヘルプについて
 **.NET Core 2.1**
 
 >[!IMPORTANT]
-> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 以降をインストールする](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)必要があります。
 
 |ランタイム/SDK                  |Debian 9       |Debian 8       |
 |---------------------------------|---------------|---------------|
@@ -306,7 +306,7 @@ Red Hat .NET チャネル アクセスの登録に関するヘルプについて
 **.NET Core 2.1**
 
 >[!IMPORTANT]
-> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 以降をインストールする](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)必要があります。
 
 |ランタイム/SDK                  |Fedora 27          |Fedora 26             |
 |---------------------------------|-------------------|----------------------|
@@ -363,7 +363,7 @@ Red Hat .NET チャネル アクセスの登録に関するヘルプについて
 **.NET Core 2.1**
 
 >[!IMPORTANT]
-> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview/)必要があります。
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 以降をインストールする](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)必要があります。
 
 * .NET Core ランタイム 2.1.0 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.1.0)
 * .NET Core SDK 2.1.300 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.300)
@@ -423,7 +423,7 @@ Red Hat .NET チャネル アクセスの登録に関するヘルプについて
 **.NET Core 2.1**
 
 >[!IMPORTANT]
-> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 以降をインストールする](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)必要があります。
 
 **SUSE Linux Enterprise Server**
 

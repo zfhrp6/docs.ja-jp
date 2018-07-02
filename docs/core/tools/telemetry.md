@@ -1,21 +1,21 @@
 ---
-title: .NET Core CLI ツールの製品利用統計情報
-description: 利用情報を収集して分析する .NET Core ツールの製品利用統計情報機能と収集されるデータについて、およびこの機能を無効にする方法を説明します。
+title: .NET Core SDK 製品利用統計情報
+description: 利用情報を収集して分析する .NET Core SDK の製品利用統計情報機能と収集されるデータについて、およびこの機能を無効にする方法を説明します。
 author: richlander
 ms.author: mairaw
-ms.date: 08/04/2017
-ms.openlocfilehash: 4c04867f5db512ef53c23ec41ea66db570a82021
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 06/20/2018
+ms.openlocfilehash: f60a1eaa7b869676dfbb67529e7878ca9b9ca34a
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216084"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314878"
 ---
-# <a name="net-core-cli-tools-telemetry"></a>.NET Core CLI ツールの製品利用統計情報
+# <a name="net-core-sdk-telemetry"></a>.NET Core SDK 製品利用統計情報
 
-[.NET Core SDK](index.md) には、利用情報を収集する[製品利用統計情報機能](https://github.com/dotnet/cli/pull/2145)があります。 .NET Team がこのツールがどのように利用されているかを理解することが重要です。それにより、ツールが改善されます。 詳細については、「[What we've learned from .NET Core SDK Telemetry](https://blogs.msdn.microsoft.com/dotnet/2017/07/21/what-weve-learned-from-net-core-sdk-telemetry/)」 (.NET Core SDK 製品利用統計情報からわかったこと) を参照してください。
+[.NET Core SDK](index.md) には、利用情報を収集する[製品利用統計情報機能](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)があります。 このツールがどのように利用されているかを .NET Team が理解することが重要です。それにより、ツールを改善できます。 詳細については、「[What we've learned from .NET Core SDK Telemetry](https://blogs.msdn.microsoft.com/dotnet/2017/07/21/what-weve-learned-from-net-core-sdk-telemetry/)」 (.NET Core SDK 製品利用統計情報からわかったこと) を参照してください。
 
-収集されたデータは匿名で、[Creative Commons Attribution License](https://creativecommons.org/licenses/by/4.0/) の下で、Microsoft とコミュニティの両者が利用するために集計された形で公開されます。 
+収集されたデータは匿名で、[Creative Commons Attribution License](https://creativecommons.org/licenses/by/4.0/) の下で、Microsoft とコミュニティの両者が利用するために集計された形で公開されます。
 
 ## <a name="scope"></a>スコープ
 
@@ -33,10 +33,9 @@ ms.locfileid: "33216084"
 - `dotnet restore`
 - `dotnet run`
 
+## <a name="how-to-opt-out"></a>オプトアウトする方法
 
-## <a name="behavior"></a>動作
-
-.NET Core CLI ツールの製品利用統計情報機能は既定では有効になっています。 `DOTNET_CLI_TELEMETRY_OPTOUT` 環境変数を `1` または `true` に設定して、製品利用統計情報の機能をオプトアウトします。
+.NET Core SDK の製品利用統計情報機能は既定では有効になっています。 `DOTNET_CLI_TELEMETRY_OPTOUT` 環境変数を `1` または `true` に設定して、製品利用統計情報の機能をオプトアウトします。
 
 ## <a name="data-points"></a>データ ポイント
 
@@ -63,11 +62,12 @@ ms.locfileid: "33216084"
 
 この機能では、ユーザー名やメール アドレスなどの個人データは収集されません。 コードはスキャンされず、名前、リポジトリ、作成者などのプロジェクト レベルの機密データは抽出されません。 データは [Microsoft Azure Application Insights](https://azure.microsoft.com/services/application-insights/) テクノロジを使用して Microsoft サーバーに安全に送信され、制限されたアクセスの下で保持され、厳格なセキュリティ コントロールの下で安全な [Azure Storage](https://azure.microsoft.com/services/storage/) システムから公開されます。
 
-ツールで構築しているものではなく、ツールがどのように使われ、問題なく機能しているかどうかを知るためのものです。 利用統計情報で機密情報が収集されているのではないか、またはデータがセキュリティ上問題がある方法でまたは不適切に処理されているのではないかという疑いがある場合は、調査のために [dotnet/cli リポジトリの問題で問題を提起](https://github.com/dotnet/cli/issues)してください。
+.NET チームは、ツールで構築しているものではなく、ツールがどのように使われ、問題なく機能しているかどうかを知る必要があります。 利用統計情報で機密情報が収集されているのではないか、データがセキュリティ上問題がある、不適切な方法で処理されているのではないかという疑いがある場合は、調査のために [dotnet/cli](https://github.com/dotnet/cli/issues) リポジトリで問題を提起してください。
 
 ## <a name="published-data"></a>公開データ
 
 公開データは四半期ごとに利用可能で、「[.NET Core SDK Usage Data](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md)」 (.NET core SDK の使用状況データ) に一覧表示されます。 データ ファイルの列は次のとおりです。
+
 - タイムスタンプ
 - Occurrences&#8224;
 - コマンド
@@ -77,7 +77,7 @@ ms.locfileid: "33216084"
 - OSVersion
 - SDKVersion
 
-&#8224; *Occurrences* 列には、その行のメトリックに対するコマンドの使用回数の、その日の合計数が表示されます。 
+&#8224; *Occurrences* 列には、その行のメトリックに対するコマンドの使用回数の、その日の合計数が表示されます。
 
 &#8225; 通常、*Geography* 列には、国の名前が表示されます。 場合によっては、調査担当者が南極や不正な場所データを使用して .NET Core を使用していることが原因で、この列に南極大陸が表示されることがあります。
 
@@ -92,13 +92,13 @@ ms.locfileid: "33216084"
 [2016 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)  
 [2016 - Q4](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)  
 [2017 - Q1](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)  
-[2017 - Q2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)
+[2017 - Q2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)  
+[2017 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q3.tsv)  
+[2017 - Q4](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q4.tsv)  
 
-追加のデータセットは、標準の URL 形式を使用してポストされます。 `<YEAR>` を年で置き換え、`<QUARTER>` を四半期に置き換えます (`1`、`2`、`3`、 または `4` を使用)。 ファイルはタブ区切り値 (*TSV*) 形式です。 
+追加のデータセットは、標準の URL 形式を使用してポストされます。 `<YEAR>` を年で置き換え、`<QUARTER>` を四半期に置き換えます (`1`、`2`、`3`、 または `4` を使用)。 ファイルはタブ区切り値 (*TSV*) 形式です。
 
-```
-https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-<YEAR>-q<QUARTER>.tsv
-```
+`https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-<YEAR>-q<QUARTER>.tsv`
 
 ## <a name="license"></a>ライセンス
 
@@ -110,22 +110,26 @@ Microsoft による .NET Core の配信は、[MICROSOFT .NET LIBRARY EULA](https
 
 ## <a name="disclosure"></a>開示
 
-いずれかのコマンド (`dotnet restore` など) をはじめて実行するときに、.NET Core CLI ツールでは次のテキストが表示されます。 テキストは、実行している SDK のバージョンによって多少異なります。 この "最初の実行" の際に、Microsoft がデータ回収に関して通知する方法が示されます。
+いずれかの [.NET Core CLI コマンド](index.md) (`dotnet restore` など) をはじめて実行するときに、.NET Core SDK では次のテキストが表示されます。 テキストは、実行している SDK のバージョンによって多少異なります。 この "最初の実行" の際に、Microsoft がデータ回収に関して通知する方法が示されます。
 
 ```console
 Welcome to .NET Core!
 ---------------------
-Learn more about .NET Core @ https://aka.ms/dotnet-docs. Use dotnet --help to see available commands or go to https://aka.ms/dotnet-cli-docs.
- 
+Learn more about .NET Core: https://aka.ms/dotnet-docs
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli-docs
+
 Telemetry
---------------
-The .NET Core tools collect usage data in order to improve your experience. The data is anonymous and does not include command-line arguments. The data is collected by Microsoft and shared with the community.
-You can opt out of telemetry by setting a DOTNET_CLI_TELEMETRY_OPTOUT environment variable to 1 using your favorite shell.
-You can read more about .NET Core tools telemetry @ https://aka.ms/dotnet-cli-telemetry.
+---------
+The .NET Core tools collect usage data in order to help us improve your experience. 
+The data is anonymous and doesn't include command-line arguments. 
+The data is collected by Microsoft and shared with the community. 
+You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
 
 ## <a name="see-also"></a>関連項目
 
 [.NET Core SDK 製品利用統計情報からわかったこと](https://blogs.msdn.microsoft.com/dotnet/2017/07/21/what-weve-learned-from-net-core-sdk-telemetry/)  
-[製品利用統計情報の参照のソース (dotnet/cli リポジトリ、リリース/2.0.0 ブランチ)](https://github.com/dotnet/cli/tree/release/2.0.0/src/dotnet/Telemetry)   
-[.NET core SDK の使用状況データ](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md)
+[製品利用統計情報の参照のソース (dotnet/cli リポジトリ)](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)  
+[.NET core SDK の使用状況データ](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md)  

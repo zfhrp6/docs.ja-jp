@@ -3,11 +3,12 @@ title: 標準的な .NET イベント パターン
 description: .NET イベント パターンに関する情報を提供するほか、標準的なイベント ソースを作成し、標準的なイベントをコードでサブスクライブおよび処理する方法について説明します。
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: 633a90062f2d068cfa050c0aa151885608cc4172
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bd9f71726647966dd1e4426b260484decb048c6
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827249"
 ---
 # <a name="standard-net-event-patterns"></a>標準的な .NET イベント パターン
 
@@ -38,17 +39,7 @@ void OnEventRaised(object sender, EventArgs args);
 
 次に示すのは、要求されたファイルを検索するイベント引数を最初に宣言する部分です。 
 
-```csharp
-public class FileFoundArgs : EventArgs
-{
-    public string FoundFile { get; }
-
-    public FileFoundArgs(string fileName)
-    {
-        FoundFile = fileName;
-    }
-}
-```
+[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
 
 この型はデータのみの小さな型のように見えますが、規則に従って、参照 (`class`) 型にする必要があります。 つまり、引数オブジェクトは参照によって渡され、データが更新されると、すべてのサブスクライバーから参照されます。 最初のバージョンは、変更不可のオブジェクトです。 イベント引数の型のプロパティを変更不可に設定しておいた方がよいでしょう。 このようにすれば、別のサブスクライバーが値を確認する前に、いずれかのサブスクライバーが値を変更することがありません。 (下記に説明するとおり、これには例外があります。)  
 
@@ -56,42 +47,21 @@ public class FileFoundArgs : EventArgs
 
 パターンに一致するファイルを検索し、一致が検出されると、適切なイベントを発生する FileSearcher クラスを記述します。
 
-```csharp
-public class FileSearcher
-{
-    public event EventHandler<FileFoundArgs> FileFound;
-
-    public void Search(string directory, string searchPattern)
-    {
-        foreach (var file in Directory.EnumerateFiles(directory, searchPattern))
-        {
-            FileFound?.Invoke(this, new FileFoundArgs(file));
-        }
-    }
-}
-```
+[!code-csharp[FileSearxcher](../../samples/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
 
 ## <a name="definining-and-raising-field-like-events"></a>フィールドのように使用するイベントの定義と発生
 
 クラスにイベントを追加する最も簡単な方法は、上記の例のように、そのイベントをパブリック フィールドとして宣言することです。
 
-```csharp
-public event EventHandler<FileFoundArgs> FileFound;
-```
+[!code-csharp[DeclareEvent](../../samples/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
 
 これはパブリック フィールドを宣言しているように見えるため、不適切なオブジェクト指向プラクティスと考えられるかもしれません。 プロパティ、またはメソッドでデータ アクセスを保護したくなるところです。 これは一見すると不適切なプラクティスのように見えますが、コンパイラによって生成されたコードがラッパーを作成するため、イベント オブジェクトは安全な方法によってのみアクセスされます。 フィールドのように使用するイベントで使用できる唯一の操作は、ハンドラーの追加です。
 
-```csharp
-EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
-    Console.WriteLine(eventArgs.FoundFile);
-lister.FileFound += onFileFound;
-```
+[!code-csharp[DeclareEventHandler](../../samples/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
 
 それと、ハンドラーの削除です。
 
-```csharp
-lister.FileFound -= onFileFound;
-```
+[!code-csharp[RemoveEventHandler](../../samples/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
 
 このハンドラーにはローカル変数があります。 ラムダの本体を使用する場合、削除は正しく動作しません。 ラムダ本体はデリゲートの別のインスタンスであるため、自動的に何か実行することはありません。
 
@@ -113,22 +83,11 @@ lister.FileFound -= onFileFound;
 2 つ目のパターンでは、すべてのサブスクライバーが操作のキャンセルを認める場合に限り、操作がキャンセルされます。 このパターンでは、新しいフィールドは操作のキャンセルを示すように初期化され、任意のサブスクライバーが操作を続行するように変更できます。
 すべてのサブスクライバーがイベントの発生を確認すると、FileSearcher コンポーネントがブール値を検証し、アクションを実行します。 このパターンには、手順がもう 1 つあり、コンポーネントは、いずれかのサブスクライバーがイベントを確認したか把握する必要があります。 サブスクライバーが存在しない場合、フィールドが示すキャンセルは誤りとなります。
 
-次に、このサンプルの最初のバージョンを実装します。 FileFoundEventArgs 型にブール型フィールドを追加する必要があります。
+次に、このサンプルの最初のバージョンを実装します。 `FileFoundArgs` 型に `CancelRequested` という名前のブール型フィールドを追加する必要があります。
 
-```csharp
-public class FileFoundArgs : EventArgs
-{
-    public string FoundFile { get; }
-    public bool CancelRequested { get; set; }
+[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgs "Update event arguments")]
 
-    public FileFoundArgs(string fileName)
-    {
-        FoundFile = fileName;
-    }
-}
-```
-
-理由なくキャンセルすることがないように、この新しいフィールドは false に初期化する必要があります。 false はブール型のフィールドの既定値であるため、自動的に設定されます。 コンポーネントのもう 1 つの変更点は、イベントが発生したあと、フラグをチェックして、いずれかのサブスクライバーがキャンセルを要求しているか確認することです。
+誤ってキャンセルすることがないように、この新しいフィールドは `false` (ブール型フィールドの既定値) に自動的に初期化されます。 コンポーネントのもう 1 つの変更点は、イベントが発生したあと、フラグをチェックして、いずれかのサブスクライバーがキャンセルを要求しているか確認することです。
 
 ```csharp
 public void List(string directory, string searchPattern)
@@ -164,88 +123,25 @@ EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
 
 最初に、新しいディレクトリと進行状況をレポートする新しい EventArgs 派生クラスを作成します。 
 
-```csharp
-internal class SearchDirectoryArgs : EventArgs
-{
-    internal string CurrentSearchDirectory { get; }
-    internal int TotalDirs { get; }
-    internal int CompletedDirs { get; }
-
-    internal SearchDirectoryArgs(string dir, int totalDirs, int completedDirs)
-    {
-        CurrentSearchDirectory = dir;
-        TotalDirs = totalDirs;
-        CompletedDirs = completedDirs;
-    }
-}
-``` 
+[!code-csharp[DirEventArgs](../../samples/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
 
 ここでも、イベント引数に変更不可の参照型を使用することをお勧めします。
 
-次に、イベントを定義します。 今回は、別の構文を使用します。 フィールドの構文を使用する以外に、明示的にプロパティを作成し、ハンドラーを追加、削除することができます。 このサンプルでは、プロジェクトのハンドラーにコードを追加する必要はありませんが、次に示したのはそれを作成する方法です。
+次に、イベントを定義します。 今回は、別の構文を使用します。 フィールドの構文を使用する以外に、明示的にプロパティを作成し、ハンドラーを追加、削除することができます。 このサンプルでは、ハンドラーにコードを追加する必要はありませんが、次に示したのはそれを作成する方法です。
 
-```csharp
-internal event EventHandler<SearchDirectoryArgs> DirectoryChanged
-{
-    add { directoryChanged += value; }
-    remove { directoryChanged -= value; }
-}
-private EventHandler<SearchDirectoryArgs> directoryChanged;
-```
+[!code-csharp[Declare event with add and remove handlers](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
 
 ここで作成するコードは、多くの点で、コンパイラがフィールドのイベントを定義するために作成した先ほどのコードとよく似ています。 イベントを作成するときに、[プロパティ](properties.md)で使用する構文と非常によく似た構文を使用します。 このハンドラーには、`add` および `remove` という別の名前があることに注意してください。 これらはイベントをサブスクライブするか、またはイベントのサブスクリプションを解除するために呼び出されます。 また、イベント変数を格納するために、プライベートなバッキング フィールドを宣言する必要があることにも注意してください。 このフィールドは null に初期化されます。
 
 次に、サブディレクトリを走査し、両方のイベントを発生させる Search() メソッドのオーバー ロードを追加します。 これを実現する最も簡単な方法は、既定の引数を使用して、すべてのディレクトリの検索を指定することです。
 
-```csharp
-public void Search(string directory, string searchPattern, bool searchSubDirs = false)
-{
-    if (searchSubDirs)
-    {
-        var allDirectories = Directory.GetDirectories(directory, "*.*", SearchOption.AllDirectories);
-        var completedDirs = 0;
-        var totalDirs = allDirectories.Length + 1;
-        foreach (var dir in allDirectories)
-        {
-            directoryChanged?.Invoke(this,
-                new SearchDirectoryArgs(dir, totalDirs, completedDirs++));
-            // Recursively search this child directory:
-            SearchDirectory(dir, searchPattern);
-        }
-        // Include the Current Directory:
-        directoryChanged?.Invoke(this,
-            new SearchDirectoryArgs(directory, totalDirs, completedDirs++));
-        SearchDirectory(directory, searchPattern);
-    }
-    else
-    {
-        SearchDirectory(directory, searchPattern);
-    }
-}
-
-private void SearchDirectory(string directory, string searchPattern)
-{
-    foreach (var file in Directory.EnumerateFiles(directory, searchPattern))
-    {
-        var args = new FileFoundArgs(file);
-        FileFound?.Invoke(this, args);
-        if (args.CancelRequested)
-            break;
-    }
-}
-```
+[!code-csharp[SearchImplementation](../../samples/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
 
 この時点で、アプリケーションを実行し、すべてのサブディレクトリを検索するオーバーロードを呼び出すことができます。 新しい `ChangeDirectory` イベントでは、サブスクライバーが存在しませんが、`?.Invoke()` 慣用句を使用すれば、正常に動作させることができます。
 
  ここで、コンソール ウィンドウに進行状況を表示する行を記述するハンドラーを追加します。 
 
-```csharp
-lister.DirectoryChanged += (sender, eventArgs) =>
-{
-    Console.Write($"Entering '{eventArgs.CurrentSearchDirectory}'.");
-    Console.WriteLine($" {eventArgs.CompletedDirs} of {eventArgs.TotalDirs} completed...");
-};
-```
+[!code-csharp[Search](../../samples/csharp/events/Program.cs#Search "Declare event handler")]
 
 このトピックでは、.NET エコシステム全体で使用されるパターンを確認しました。
 これらのパターンと規則を学習することにより、慣用句を使用した C# および .NET をすばやく記述できるようになります。

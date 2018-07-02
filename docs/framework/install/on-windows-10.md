@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: f069686866c4fd0e8e380af3ef448d282df34801
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf374f9d1fd7e343e5eba868d3f686784428a2d0
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389514"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270449"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Windows 10 と Windows Server 2016 に .NET Framework をインストールする
 
@@ -66,7 +66,7 @@ Windows 10 1507 または 1511 を使用しているとき、.NET Framework 4.7.
 
 - 以降のバージョンが既にインストールされている場合、前のバージョンの .NET Framework をコンピューターにインストールすることはできません。
 
-- .NET Framework 4.x バージョンは、4.0 からそのバージョンまでの .NET Framework 用に構築されたアプリケーションを実行するために使用できます。 たとえば、.NET Framework 4.7 は、.NET Framework 4.0 から 4.7 用に構築されたアプリケーションを実行するために使用できます。 最新版 (.NET Framework 4.7.1) は、4.0 以降のすべての .NET Framework バージョンで構築されたアプリケーションの実行に使用できます。
+- .NET Framework 4.x バージョンは、4.0 からそのバージョンまでの .NET Framework 用に構築されたアプリケーションを実行するために使用できます。 たとえば、.NET Framework 4.7 は、.NET Framework 4.0 から 4.7 用に構築されたアプリケーションを実行するために使用できます。 最新版 (.NET Framework 4.7.2) は、4.0 以降のすべての .NET Framework バージョンで構築されたアプリケーションの実行に使用できます。
 
 ダウンロード可能な .NET Framework バージョンの一覧は、[.NET ダウンロード](https://www.microsoft.com/net/download?utm_source=ms-docs&utm_medium=referral) ページでご覧ください。
 

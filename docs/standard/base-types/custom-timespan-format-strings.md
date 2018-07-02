@@ -15,11 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 354b9fe1171e8e41702db001ab3c0e5daa65431e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f65e8bb1a61bad458cb33a3bf9d2553479c750e
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208211"
 ---
 # <a name="custom-timespan-format-strings"></a>カスタム TimeSpan 書式指定文字列
 <xref:System.TimeSpan> 書式指定文字列は、書式設定操作によって生成される <xref:System.TimeSpan> 値の文字列形式を定義します。 カスタム書式指定文字列は、1 つ以上のカスタム <xref:System.TimeSpan> 書式指定子と任意の数のリテラル文字で構成されます。 [標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)以外の文字列は、すべてカスタム <xref:System.TimeSpan> 書式指定文字列として解釈されます。  
@@ -66,7 +67,7 @@ ms.lasthandoff: 05/04/2018
 |"FFFFFF"|時間間隔の秒部分の 1/1000000。 小数の後続のゼロは表示されません。<br /><br /> 詳細については、「["FFFFFF" カスタム書式指定子](#F6_Specifier)」を参照してください。|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|  
 |"FFFFFFF"|時間間隔の秒部分の 1/10000000。 小数の後続のゼロは表示されません。また、7 桁のゼロも表示されません。<br /><br /> 詳細については、「["FFFFFFF" カスタム書式指定子](#F7_Specifier)」を参照してください。|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|  
 |*'string*'|リテラル文字列の区切り記号。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --&gt; "14:32:17"|  
-|\|エスケープ文字。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
+|\\|エスケープ文字。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
 |その他の文字|エスケープされないその他の文字はすべて、カスタム書式指定子として解釈されます。<br /><br /> 詳細については、「[その他の文字](#Other)」を参照してください。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --&gt; "14:32:17"|  
   
 <a name="dSpecifier"></a>   

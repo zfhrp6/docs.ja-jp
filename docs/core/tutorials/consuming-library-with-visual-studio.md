@@ -1,21 +1,22 @@
 ---
-title: Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
+title: Visual Studio 2017 での .NET Standard ライブラリの使用
 description: Visual Studio 2017 でクラス ライブラリのメンバーを呼び出す方法について説明します。
 author: BillWagner
 ms.author: wiwagn
-ms.date: 08/07/2017
+ms.date: 06/05/2018
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 0a7002f2a5dba5a5aad32a83a43a933cd2cc5722
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1e71001ee8595741119293304190fd9ef4251148
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827314"
 ---
-# <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
+# <a name="consuming-a-net-standard-library-in-visual-studio-2017"></a>Visual Studio 2017 での .NET Standard ライブラリの使用
 
-「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](./library-with-visual-studio.md)」または「[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](vb-library-with-visual-studio.md)」の手順でクラス ライブラリを作成し、「[Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト](testing-library-with-visual-studio.md)」でそれをテストし、ライブラリのリリース バージョンをビルドしたら、次の手順は、呼び出し元がそれを利用できるようにすることです。 これは次の 2 つの方法で実行できます。
+「[Visual Studio 2017 での C# と .NET Core を使用したクラス ライブラリの構築](./library-with-visual-studio.md)」または「[Visual Studio 2017 で Visual Basic と .NET Core を使用したクラス ライブラリの構築](vb-library-with-visual-studio.md)」の手順で .NET Standard クラス ライブラリを作成し、「[Visual Studio 2017 の .NET Core を使用したクラス ライブラリのテスト](testing-library-with-visual-studio.md)」でそれをテストし、ライブラリのリリース バージョンをビルドしたら、次の手順は、呼び出し元がそれを利用できるようにすることです。 これは次の 2 つの方法で実行できます。
 
 * ライブラリが 1 つのソリューションで使われる場合 (たとえば、1 つの大規模なアプリケーションのコンポーネントである場合)、1 つのプロジェクトとしてソリューションに含めることができます。
 
@@ -48,7 +49,7 @@ ms.lasthandoff: 05/04/2018
 
    [!CODE-csharp[UsingClassLib#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/showcase.cs)]
 
-   このコードでは、[Console.WindowHeight](xref:System.Console.WindowHeight) プロパティを使ってコンソール ウィンドウの行数を決定します。 [Console.CursorTop](xref:System.Console.CursorTop) プロパティがコンソール ウィンドウの行数以上であるときは、コードは常にコンソール ウィンドウをクリアして、ユーザーにメッセージを表示します。
+   このコードでは、`row` 変数を使って、コンソール ウィンドウに書き込まれるデータの行数のカウントを維持します。 この変数が 25 以上であるときは、コードは常にコンソール ウィンドウをクリアして、ユーザーにメッセージを表示します。
 
    プログラムは、ユーザーに文字列の入力を要求し、 文字列が大文字で始まるかどうかを示します。 ユーザーが文字列を入力せずに Enter キーを押すと、アプリケーションは終了し、コンソール ウィンドウが閉じます。
 
@@ -78,7 +79,7 @@ ms.lasthandoff: 05/04/2018
 
     [!CODE-vb[UsingClassLib#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/showcase.vb)]
 
-   このコードでは、[Console.WindowHeight](xref:System.Console.WindowHeight) プロパティを使ってコンソール ウィンドウの行数を決定します。 [Console.CursorTop](xref:System.Console.CursorTop) プロパティがコンソール ウィンドウの行数以上であるときは、コードは常にコンソール ウィンドウをクリアして、ユーザーにメッセージを表示します。
+   このコードでは、`row` 変数を使って、コンソール ウィンドウに書き込まれるデータの行数のカウントを維持します。 この変数が 25 以上であるときは、コードは常にコンソール ウィンドウをクリアして、ユーザーにメッセージを表示します。
 
    プログラムは、ユーザーに文字列の入力を要求し、 文字列が大文字で始まるかどうかを示します。 ユーザーが文字列を入力せずに Enter キーを押すと、アプリケーションは終了し、コンソール ウィンドウが閉じます。
 

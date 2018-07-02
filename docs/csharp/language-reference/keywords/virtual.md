@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 5a188e9a7cbb7a1c497d577039c2b2578eaa7526
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: af5b7e3efdc98910ebbe7e061eba250cbe2d0c50
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172647"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207350"
 ---
 # <a name="virtual-c-reference"></a>virtual (C# リファレンス)
 `virtual` キーワードは、メソッド、プロパティ、インデクサー、またはイベント宣言を変更し、それを派生クラスでオーバーライドできるようにするために使用されます。 たとえば、次のメソッドはそれを継承する任意のクラスでオーバーライドできます。  
@@ -64,5 +64,6 @@ public Cylinder(double r, double h): base(r, h) {}
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
  [ポリモーフィズム](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
  [abstract](../../../csharp/language-reference/keywords/abstract.md)  
- [override](../../../csharp/language-reference/keywords/override.md)  
+ 
+  [override](../../../csharp/language-reference/keywords/override.md)  
  [new](../../../csharp/language-reference/keywords/new.md)

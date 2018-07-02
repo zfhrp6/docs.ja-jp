@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: c01152d016a852c15ffa1d1c82c16d6795965f31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 16d318c1c1a5d8e560b97d9e996f1165a4566c6a
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33289218"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207998"
 ---
 # <a name="is-c-reference"></a>is (C# リファレンス) #
 
@@ -75,7 +75,7 @@ C# 7.0 以降では、`is` および [switch](../../../csharp/language-reference
 
 ここで *expr* は何らかの型のインスタンスに評価される式、*type* は *expr* の結果が変換される型の名前、*varname* は `is` のテスト結果が `true` である場合に *expr* の結果が変換されるオブジェクトをそれぞれ表しています。 
 
-以下のいずれかの条件が true である場合に `is` 式は `true` となります。
+*expr* が `null` ではなく、以下のいずれかの条件が true である場合に `is` 式は `true` となります。
 
 - *expr* が *type* と同じ型のインスタンスである。
 
@@ -85,7 +85,7 @@ C# 7.0 以降では、`is` および [switch](../../../csharp/language-reference
 
 - *expr* が、*type* インターフェイスを実装する型のインスタンスである。
 
-*exp* が `true` で `is` が `if` ステートメントと共に使用されている場合は *varname* への代入が行われ、そのローカル スコープは `if` ステートメント内に限定されます。
+*expr* が `true` で `is` が `if` ステートメントと共に使用されている場合は *varname* への代入が行われ、そのローカル スコープは `if` ステートメント内に限定されます。
 
 次の例では、`is` 型のパターンを使用して、型 <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> のメソッドの実装を提供します。
 

@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 7c785814c4726dd805ad7b0dccb6a3584118cc65
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9572540f17e5628d7f71c94ee68f7cba17d64d07
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579757"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207639"
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Web API を使用したマイクロサービス アプリケーション レイヤーの実装
 
@@ -667,7 +667,7 @@ public class CreateOrderCommandHandler
 
 これが、コマンドをコマンド ハンドラーに関連付けるコードです。 ハンドラーは非常にシンプルなクラスですが、RequestHandler&lt;T&gt; を継承しており、 MediatR により、正しいペイロードで呼び出されます。
 
-## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-meadiatr"></a>MeadiatR のビヘイビアーを使用して、コマンドの処理時に横断的関心事を適用する
+## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-mediatr"></a>MediatR のビヘイビアーを使用して、コマンドの処理時に横断的関心事を適用する
 
 もう 1 つ重要なことがあります。それは、横断的関心事をメディエーター パイプラインに適用することです。 Autofac 登録モジュール コードの末尾を見ると、ビヘイビアー型 (カスタム LoggingBehavior クラスと ValidatorBehavior クラス) がどのように登録されるかがわかります。 ただし、その他のカスタム ビヘイビアーを追加することもできます。
 

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b816087f54e652f07dc791b7d66eb1af8f52f55e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: deea4e6128eace0ffa539d77bb63f7629eb72354
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406508"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207405"
 ---
 # <a name="corsegment-structure"></a>COR_SEGMENT 構造体
 マネージ ヒープのメモリ領域に関する情報が含まれます。  
@@ -43,23 +43,23 @@ typedef struct _COR_SEGMENT {
 |------------|-----------------|  
 |`start`|メモリ領域の開始アドレス。|  
 |`end`|メモリ領域の終了アドレス。|  
-|`gen`|A [CorDebugGenerationTypes](../../../../docs/framework/unmanaged-api/debugging/cordebuggenerationtypes-enumeration.md)メモリ領域の生成を示す列挙メンバー。|  
-|`heap`|メモリ領域が存在するヒープ数です。 詳細については、次の「解説」を参照してください。|  
+|`gen`|メモリ領域の生成を示す [CorDebugGenerationTypes](../../../../docs/framework/unmanaged-api/debugging/cordebuggenerationtypes-enumeration.md) 列挙メンバー。|  
+|`heap`|メモリ領域が存在するヒープ番号。 詳細については、次の「解説」を参照してください。|  
   
 ## <a name="remarks"></a>コメント  
- `COR_SEGMENTS`構造体がマネージ ヒープのメモリ領域を表します。  `COR_SEGMENTS` オブジェクトのメンバーである、 [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)が呼び出すことによって設定されているコレクション オブジェクト、[icordebugprocess 5::enumerateheapregions](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md)メソッドです。  
+ `COR_SEGMENTS` 構造体は、マネージド ヒープのメモリ領域を表します。  `COR_SEGMENTS` オブジェクトは、[ICorDebugProcess5::EnumerateHeapRegions](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) メソッドを呼び出すことによって入力される [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) コレクション オブジェクトのメンバーです。  
   
- `heap`フィールドは、プロセッサ番号、報告されているヒープに対応しています。 ワークステーション ガベージ コレクターでは、その値は常に 0、ワークステーション ガベージ コレクション ヒープの 1 つだけがあるためです。 サーバー ガベージ コレクターでは、その値は、ヒープに接続されているプロセッサに対応します。 ありますまたはより少ないガベージ コレクション ヒープがよりも多いため、ガベージ コレクターの実装の詳細の実際のプロセッサに注意してください。  
+ `heap` フィールドは、報告されたヒープに対応するプロセッサ番号です。 ワークステーション ガベージ コレクターでは、ワークステーションにガベージ コレクション ヒープが 1 つしかないため、その値は常に 0 です。 サーバー ガベージ コレクターでは、その値はヒープがアタッチされているプロセッサに対応します。 ガベージ コレクターの実装の詳細が原因で、実際のプロセッサ数よりも、ガベージ コレクション ヒープが多かったり少なかったりする場合があります。  
   
-## <a name="requirements"></a>要件  
- **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

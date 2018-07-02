@@ -9,17 +9,17 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: 62aacdafb5c257a8824bc8c8241ead7a274c2e2f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f6500fa5f8f5022c4e910da894f182dcc5525be5
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33333272"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207381"
 ---
 # <a name="c-programming-guide"></a>C# プログラミング ガイド
 このセクションでは、C# 言語の重要な機能に関する詳細と、.NET Framework 経由でアクセスできる C# の機能について説明します。  
   
- このセクションの大部分は、C# と一般的なプログラミングの概念について、ある程度の知識を持っていることを前提として説明されています。 プログラミングや C# のまったくの初心者の方は、「[Getting Started with C#](https://www.microsoft.com/net/tutorials/csharp/getting-started)」 (C# の概要) の対話型チュートリアルを参照してください。プログラミングの予備知識は必要ありません。  
+ このセクションの大部分は、C# と一般的なプログラミングの概念について、ある程度の知識を持っていることを前提として説明されています。 プログラミングや C# のまったくの初心者の方は、「[C# Quickstarts](../quick-starts/index.md)」(C# クイック スタート) や「[Getting Started with C#](https://www.microsoft.com/net/tutorials/csharp/getting-started)」(C# の概要) の対話型チュートリアルを参照してください。プログラミングの予備知識は必要ありません。  
   
  特定のキーワード、演算子、およびプリプロセッサ ディレクティブについては、「[C# リファレンス](../../csharp/language-reference/index.md)」を参照してください。 C# 言語の仕様については、「[C# 言語仕様](../../csharp/language-reference/language-specification/index.md)」を参照してください。  
   

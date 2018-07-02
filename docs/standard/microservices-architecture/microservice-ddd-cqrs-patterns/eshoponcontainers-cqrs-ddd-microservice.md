@@ -4,17 +4,18 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 6be8b52f42e3e37ff03e561af45c46f4dd283d9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa26aa86e09f7a5d390336e460fa0272f76e17a4
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805475"
 ---
 # <a name="applying-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>eShopOnContainers で DDD マイクロサービスの CQRS と CQS のアプローチを適用する
 
 eShopOnContainers 参照アプリケーションの注文マイクロサービスの設計は、CQRS 原則に基づいています。 ただし、使用されているのは最もシンプルなアプローチ、つまり、コマンドからクエリを分離し、両方のアクションで同じデータベースを使用するというアプローチです。
 
-これらのパターンの本質である重要なポイントは、クエリはべき等であるということです。つまり、システムにクエリを実行する回数にかかわらず、システムの状態が変わることはありません。トランザクション ロジック「書き込み」ドメイン モデルとは異なる「読み取り」データ モデルを使用することさえできますが、注文マイクロサービスは同一のデータベースを使用します。 したがって、これは簡略化された CQRS アプローチです。
+これらのパターンの本質である重要なポイントは、クエリはべき等であるということです。つまり、システムにクエリを実行する回数にかかわらず、システムの状態が変わることはありません。 トランザクション ロジック「書き込み」ドメイン モデルとは異なる「読み取り」データ モデルを使用することさえできますが、注文マイクロサービスは同一のデータベースを使用します。 したがって、これは簡略化された CQRS アプローチです。
 
 一方、コマンド (トランザクションとデータ更新をトリガーする) はシステムの状態を変更します。 コマンドを使用する場合は、複雑さと、常に変化するビジネス ルールの扱いに注意する必要があります。 ここで DDD の技法を適用すると、システムのモデル化を改善できます。
 

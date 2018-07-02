@@ -3,26 +3,28 @@ title: 式ツリーの実行
 description: 式ツリーの実行について説明します。式ツリーを実行可能な中間言語 (IL) 命令に変換します。
 ms.date: 06/20/2016
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 54706cd5d8ebe60bb893bc82f05aecddae370602
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb9ec5f023587b4e5c74ab71acbd6a886e085e4a
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218164"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207392"
 ---
 # <a name="executing-expression-trees"></a>式ツリーの実行
 
 [前へ -- 式ツリーをサポートするフレームワークの型](expression-classes.md)
 
 *式ツリー*はコードを表すデータ構造です。
-式ツリーはコンパイル済みの実行可能なコードではありません。 式ツリーで表される .NET コードを実行する場合は、実行可能な IL 命令に変換する必要があります。 
+式ツリーはコンパイル済みの実行可能なコードではありません。 式ツリーで表される .NET コードを実行する場合は、実行可能な IL 命令に変換する必要があります。
+
 ## <a name="lambda-expressions-to-functions"></a>ラムダ式から関数への変換
-すべての LambdaExpression、または LambdaExpression の派生型は、実行可能な IL に変換できます。 その他の式の型は直接コードに変換できません。 実際には、この制限はほとんど影響がありません。 ラムダ式は、実行可能な中間言語 (IL) に変換して実行する唯一の式の型です。 (直接 `ConstantExpression` を実行することにどのような意味があるでしょうか。 何かに役立つでしょうか。)`LamdbaExpression` である式ツリー、または `LambdaExpression` の派生型はすべて IL に変換できます。
+
+すべての LambdaExpression、または LambdaExpression の派生型は、実行可能な IL に変換できます。 その他の式の型は直接コードに変換できません。 実際には、この制限はほとんど影響がありません。 ラムダ式は、実行可能な中間言語 (IL) に変換して実行する唯一の式の型です。 (直接 `ConstantExpression` を実行することにどのような意味があるでしょうか。 何かに役立つでしょうか。)`LambdaExpression` である式ツリー、または `LambdaExpression` の派生型はすべて IL に変換できます。
 式の型 `Expression<TDelegate>` は .NET Core ライブラリで唯一の具体的な例です。 この型は任意のデリゲート型にマップされる式を表すのに使用されます。 この型はデリゲート型にマップされるため、.NET で式を検証し、ラムダ式のシグネチャと一致する適切なデリゲートの IL を生成することができます。 
 
 通常、これによって式とそれに対応するデリゲートの間で単純なマッピングが作成されます。 たとえば、`Expression<Func<int>>` によって表される式ツリーは、`Func<int>` 型のデリゲートに変換されます。 任意の戻り値の型と引数リストをもつラムダ式の場合、そのラムダ式によって表される実行可能コードのターゲット型となるデリゲート型が存在します。
 
-`LamdbaExpression` 型には、式ツリーを実行可能コードに変換するために使用する `Compile` と `CompileToMethod` メンバーが含まれます。 `Compile` メソッドはデリゲートを作成します。 `CompileToMethod` メソッドは、式ツリーのコンパイル済み出力を表す IL によって `MethodBuilder` オブジェクトを更新します。 なお、`CompileToMethod` は完全なデスクトップ フレームワークでのみ利用可能で、.NET Core framework では利用できません。
+`LambdaExpression` 型には、式ツリーを実行可能コードに変換するために使用する `Compile` と `CompileToMethod` メンバーが含まれます。 `Compile` メソッドはデリゲートを作成します。 `CompileToMethod` メソッドは、式ツリーのコンパイル済み出力を表す IL によって `MethodBuilder` オブジェクトを更新します。 なお、`CompileToMethod` は完全なデスクトップ フレームワークでのみ利用可能で、.NET Core では利用できません。
 
 必要に応じて、生成されたデリゲート オブジェクトのシンボル デバッグ情報を受け取る `DebugInfoGenerator` を用意することもできます。 これにより、式ツリーをデリゲート オブジェクトに変換し、生成されたデリゲートの完全なデバッグ情報を入手できます。
 
@@ -35,11 +37,11 @@ var answer = func(); // Invoke Delegate
 Console.WriteLine(answer);
 ```
 
-デリゲート型は式の型が基になっています。 厳密に型指定された方法でデリゲート オブジェクトを使用する場合は、戻り値の型および引数リストを把握する必要があります。 `LambdaExpression.Compile()` メソッドは `Delegate` 型を返します。 コンパイル時ツールを使用して、戻り値の型の引数リストを確認するには、適切なデリゲート型にキャストする必要があります。
+デリゲート型は式の型が基になっています。 厳密に型指定された方法でデリゲート オブジェクトを使用する場合は、戻り値の型および引数リストを把握する必要があります。 `LambdaExpression.Compile()` メソッドは `Delegate` 型を返します。 コンパイル時ツールを使用して、引数リストまたは戻り値の型を確認するには、適切なデリゲート型にキャストする必要があります。
 
 ## <a name="execution-and-lifetimes"></a>実行と有効期間
 
-`LamdbaExpression.Compile()` を呼び出したときに作成されたデリゲートを呼び出して、コードを実行します。 上の例の `add.Compile()` がデリゲートを返す部分に、これが表示されています。 `func()` を呼び出して、デリゲートを呼び出すことにより、コードを実行します。
+`LambdaExpression.Compile()` を呼び出したときに作成されたデリゲートを呼び出して、コードを実行します。 上の例の `add.Compile()` がデリゲートを返す部分に、これが表示されています。 `func()` を呼び出して、デリゲートを呼び出すことにより、コードを実行します。
 
 そのデリゲートは式ツリーのコードを表します。 そのデリゲートのハンドルを保持して、後で呼び出すことができます。 デリゲートが表すコードを実行するたびに、式ツリーをコンパイルする必要はありません。 (式ツリーは不変であるため、あとで同じ式ツリーをコンパイルしても、同じコードを実行するデリゲートが作成されます。)
 

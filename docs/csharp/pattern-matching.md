@@ -3,11 +3,12 @@ title: パターン マッチング - C# ガイド
 description: C# のパターン マッチング式について説明します
 ms.date: 01/24/2017
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0f95ac8b16939173e6cfd7304b9cbe52526b5169
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 635ab45c89a38f3dedac2d60ea1e31ebf394c9b2
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231477"
 ---
 # <a name="pattern-matching"></a>パターン マッチ #
 
