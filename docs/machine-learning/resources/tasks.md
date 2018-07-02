@@ -4,12 +4,12 @@ description: ML.NET でサポートされる機械学習のさまざまなタス
 ms.date: 06/04/2018
 author: aditidugar
 ms.author: johalex
-ms.openlocfilehash: 22249ac2d275a4168dbd8b03b90d9698fe90f2d1
-ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
+ms.openlocfilehash: 875006a9cddb87b5f9436b78773420858fd842dd
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34860698"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207727"
 ---
 # <a name="machine-learning-tasks"></a>機械学習のタスク
 
@@ -29,13 +29,17 @@ ms.locfileid: "34860698"
 * 患者が特定の病気であるかどうかを診断する。
 * 電子メールを "スパム" としてマークするかどうかを決定する。
 
-## <a name="multi-class-classification"></a>多クラス分類
+詳しくは、Wikipedia の[二項分類](https://en.wikipedia.org/wiki/Binary_classification)の記事を参照してください。
+
+## <a name="multiclass-classification"></a>多クラス分類
 
 データのインスタンスのクラス (カテゴリ) を予測するために使用する[教師あり機械学習](glossary.md#supervised-machine-learning)タスクです。 分類アルゴリズムの入力は、ラベル付けされた一連のサンプルです。 各ラベルは 0 ～ k-1 の整数であり、k はクラスの数です。 分類アルゴリズムの出力は分類子であり、ラベルのない新しいインスタンスのクラスを予測するために使用できます。 多クラス分類のシナリオの例を次に示します。
 
 * "シベリアン ハスキー"、"ゴールデン レトリバー"、"プードル" などの犬種を特定する。
 * 映画のレビューが "肯定的"、"中立"、"否定的" のどれかを理解する。
 * ホテルのレビューを "立地"、"価格"、"清潔さ" などに分類する。
+
+詳しくは、Wikipedia の[多クラス分類](https://en.wikipedia.org/wiki/Multiclass_classification)の記事を参照してください。
 
 ## <a name="regression"></a>回帰
 

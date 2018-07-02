@@ -4,12 +4,12 @@ description: バイナリ分類のシナリオで ML.NET を使用する方法�
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e6c9ae0eb91fcb570209ce25d4a18a4dcd104724
-ms.sourcegitcommit: 5b0802832fb9ad684d34e69b8644a16a5b7c4810
+ms.openlocfilehash: 898b4664120b6eeb0ef18aac3acdc94b0ca0bacd
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34860711"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314839"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>チュートリアル: センチメント分析のバイナリ分類のシナリオで ML.NET を使用する
 
@@ -35,7 +35,7 @@ ms.locfileid: "34860711"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-* ".NET Core クロスプラットフォームの開発" ワークロードがインストールされた [Visual Studio 2017 15.6 以降](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
+* [Visual Studio 2017 15.6 以降](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)が ".NET Core クロスプラット フォーム開発" とともにインストールされていること。
 
 * [Wikipedia detox line data タブ区切りファイル (wikiPedia-detox-250-line-data.tsv)](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv)。
 * [Wikipedia detox line test タブ区切りファイル (wikipedia-detox-250-line-test.tsv)](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-test.tsv)。
@@ -167,7 +167,7 @@ static async Task Main(string[] args)
 `Main` メソッドの直後に、次のコードを使用して `Train` メソッドを作成します。
 
 ```csharp
-public static PredictionModel<SentimentData, SentimentPrediction> Train()
+public static async Task<PredictionModel<SentimentData, SentimentPrediction>> Train()
 {
 
 }
@@ -179,7 +179,7 @@ public static PredictionModel<SentimentData, SentimentPrediction> Train()
 
 [!code-csharp[LearningPipeline](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#5 "Create a learning pipeline")]
 
-<xref:Microsoft.ML.TextLoader%601> オブジェクトはパイプラインの最初の部分であり、トレーニング ファイルのデータを読み込みます。
+<xref:Microsoft.ML.Data.TextLoader> オブジェクトはパイプラインの最初の部分であり、トレーニング ファイルのデータを読み込みます。
 
 [!code-csharp[TextLoader](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#6 "Add a text loader to the pipeline")]
 
@@ -239,7 +239,7 @@ public static void Evaluate(PredictionModel<SentimentData, SentimentPrediction> 
 
 [!code-csharp[CallEvaluate](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#12 "Call the Evaluate method")]
 
-<xref:Microsoft.ML.TextLoader%601> クラスは、同じスキーマを持つ新しいテスト データ セットを読み込みます。 このデータ セットを品質チェックとして使用して、モデルを評価できます。 `Evaluate` メソッドに次のコードを追加します。
+<xref:Microsoft.ML.Data.TextLoader> クラスは、同じスキーマを持つ新しいテスト データ セットを読み込みます。 このデータ セットを品質チェックとして使用して、モデルを評価できます。 `Evaluate` メソッドに次のコードを追加します。
 
 [!code-csharp[LoadText](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#13 "Load the test dataset")]
 
