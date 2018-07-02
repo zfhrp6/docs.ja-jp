@@ -4,7 +4,7 @@
 #### [方法: 単純な Parallel.For ループを記述する](how-to-write-a-simple-parallel-for-loop.md)
 #### [方法: 単純な Parallel.ForEach ループを記述する](how-to-write-a-simple-parallel-foreach-loop.md)
 #### [方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
-#### [方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する](how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md)
+#### [方法: パーティション ローカル変数を使用する Parallel.ForEach ループを記述する](how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)
 #### [方法: Parallel.For または ForEach ループを取り消す](how-to-cancel-a-parallel-for-or-foreach-loop.md)
 #### [方法: 並列ループの例外を処理する](how-to-handle-exceptions-in-parallel-loops.md)
 #### [方法: 小さいループ本体を高速化する](how-to-speed-up-small-loop-bodies.md)
