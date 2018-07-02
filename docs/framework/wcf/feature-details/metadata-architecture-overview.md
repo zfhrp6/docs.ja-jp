@@ -14,9 +14,9 @@ ms.locfileid: "33496894"
 # <a name="metadata-architecture-overview"></a>メタデータ アーキテクチャの概要
 Windows Communication Foundation (WCF) では、エクスポート、公開、取得、およびサービスのメタデータをインポートするための豊富なインフラストラクチャを提供します。 WCF サービスでは、メタデータを使用して、Svcutil.exe などのツールは、サービスにアクセスするためのクライアント コードを自動的に生成できるように、サービスのエンドポイントと対話する方法について説明します。  
   
- WCF メタデータ インフラストラクチャを構成する型のほとんどが存在する、<xref:System.ServiceModel.Description>名前空間。  
+ WCF メタデータ インフラストラクチャを構成する型のほとんどが <xref:System.ServiceModel.Description> 名前空間に存在しています。
   
- WCF を使用して、<xref:System.ServiceModel.Description.ServiceEndpoint>クラス、サービスのエンドポイントを記述します。 WCF を使用してサービス エンドポイントのメタデータを生成または生成するサービス メタデータをインポートすることができます<xref:System.ServiceModel.Description.ServiceEndpoint>インスタンス。  
+ WCF は <xref:System.ServiceModel.Description.ServiceEndpoint> クラスを使用して、メタデータを生成し、サービスのエンドポイントを記述します。 WCF を使用して、サービス エンドポイントのメタデータを生成、あるいは <xref:System.ServiceModel.Description.ServiceEndpoint>インスタンスを生成するためにサービス メタデータをインポートすることができます。
   
  WCF では、サービスのメタデータを表すのインスタンスとして、<xref:System.ServiceModel.Description.MetadataSet>型、構造が、Ws-metadataexchange で定義されているメタデータのシリアル化形式に強く関連付けられています。 <xref:System.ServiceModel.Description.MetadataSet> 型は、Web サービス記述言語 (WSDL: Web Services Description Language) ドキュメント、XML スキーマ ドキュメント、WS-Policy 表現などの実際のサービス メタデータを <xref:System.ServiceModel.Description.MetadataSection> インスタンスのコレクションとしてバンドルします。 各 <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> インスタンスには、特定のメタデータ言語と識別子が含まれます。 <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> はその <xref:System.ServiceModel.Description.MetadataSection.Metadata%2A?displayProperty=nameWithType> プロパティに、次のアイテムを含むことができます。  
   
