@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 77e0556e4b6d9a22cf76a79ec86d744d9009a39f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e5c7e0acb0496aebce4d9cbe8cb51ced0c7166a2
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577435"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106607"
 ---
 # <a name="designing-the-microservice-application-layer-and-web-api"></a>マイクロサービス アプリケーション レイヤーと Web API を設計する
 
@@ -48,4 +48,5 @@ SOLID の詳細を取り上げた別のガイドがあります。 そのため�
 
 
 >[!div class="step-by-step"]
-[前へ] (nosql-database-persistence-infrastructure.md) [次へ] (microservice-application-layer-implementation-web-api.md)
+[前へ](nosql-database-persistence-infrastructure.md)
+[次へ](microservice-application-layer-implementation-web-api.md)

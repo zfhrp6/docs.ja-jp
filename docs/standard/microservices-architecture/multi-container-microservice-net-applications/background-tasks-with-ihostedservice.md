@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: eb6d412ee91ab8d2c97a4917f23ee914e3fb9068
-ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.openlocfilehash: 79ad437ef809486b3315de223697ac78109556ba
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34805569"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105902"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>IHostedService と BackgroundService クラスを使ってマイクロサービスのバックグラウンド タスクを実装する
 
@@ -260,4 +260,5 @@ ASP.NET Core `WebHost` または .NET Core `Host` を展開する方法が最終
 
 
 >[!div class="step-by-step"]
-[前へ] (test-aspnet-core-services-web-apps.md) [次へ] (../microservice-ddd-cqrs-patterns/index.md)
+[前へ](test-aspnet-core-services-web-apps.md)
+[次へ](../microservice-ddd-cqrs-patterns/index.md)

@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/06/2018
-ms.openlocfilehash: bb2190a4fae6f8a26b220fd12ecb9f65ea6f4b96
-ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
+ms.openlocfilehash: 8664493f3d5d5e03cccbe1c33f2c2abe048e3f57
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2018
-ms.locfileid: "35251117"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105577"
 ---
 # <a name="official-net-docker-images"></a>公式の .NET Docker イメージ
 
@@ -56,4 +56,5 @@ Docker Hub の .NET イメージ リポジトリを探索すると、タグで�
 
 
 >[!div class="step-by-step"]
-[Previous] (net-container-os-targets.md) [Next] (../architect-microservice-container-applications/index.md)
+[前へ](net-container-os-targets.md)
+[次へ](../architect-microservice-container-applications/index.md)

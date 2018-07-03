@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: e8552f79a4196c161ec70d7ea46156215e52db26
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aab939af29849ceeef76d6f61b3d4f59d701094c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578886"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105463"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>高いスケーラビリティと可用性のためにマイクロサービスと複数のコンテナー アプリケーションを調整する
 
@@ -135,4 +135,5 @@ ACS は、現在、Azure の標準 A、D、DS、G、GS シリーズの Linux 仮
 
 
 >[!div class="step-by-step"]
-[Previous] (resilient-high-availability-microservices.md) [Next] (using-azure-service-fabric.md)
+[前へ](resilient-high-availability-microservices.md)
+[次へ](using-azure-service-fabric.md)

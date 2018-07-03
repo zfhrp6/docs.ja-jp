@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: d8dd2da07104d6461d4eec0cb3fccd61c4db71c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 560120db35ae190bdef1f95d72ac1e5de697124e
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580115"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105947"
 ---
 # <a name="storing-application-secrets-safely-during-development"></a>開発時にアプリケーションの機密情報を安全に格納する
 
@@ -53,4 +53,5 @@ Secret Manager で格納されたシークレットをアプリケーション�
 
 
 >[!div class="step-by-step"]
-[Previous] (authorization-net-microservices-web-applications.md) [Next] (azure-key-vault-protects-secrets.md)
+[前へ](authorization-net-microservices-web-applications.md)
+[次へ](azure-key-vault-protects-secrets.md)

@@ -4,12 +4,12 @@ description: ASP.NET Core および Microsoft Azure での最新の Web アプ�
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
-ms.openlocfilehash: 943163ca4c82ad75f177ebe73559d909e7292c52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb9a1d68d4c7c66c6adab3a5e932ee37c3ea22b0
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592497"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106424"
 ---
 # <a name="common-web-application-architectures"></a>一般的な Web アプリケーション アーキテクチャ
 
@@ -153,7 +153,7 @@ UI レイヤーはインフラストラクチャ プロジェクトで定義さ�
 > ### <a name="application-core-types"></a>アプリケーション コアの種類
 > -   エンティティ (永続化されたビジネス モデル クラス)
 > -   インターフェイス
-> -   サービス
+> -   Services
 > -   DTO
 
 インフラストラクチャ プロジェクトには、通常、データ アクセス実装が含まれます。 代表的な ASP.NET Core Web アプリケーションでは、これにはエンティティ フレームワーク DbContext、定義済みの任意の EF コア移行、およびデータ アクセス実装クラスが含まれます。 データ アクセス実装コードを抽象化するには、[リポジトリ デザイン パターン](http://deviq.com/repository-pattern/)を使用するのが最も一般的な方法です。
@@ -170,7 +170,7 @@ ASP.NET Core MVC アプリケーション内のユーザー インターフェ�
 > ### <a name="ui-layer-types"></a>UI レイヤーの種類
 > -   Controllers
 > -   フィルター
-> -   ビュー
+> -   Views
 > -   ViewModels
 > -   スタートアップ
 
@@ -225,4 +225,5 @@ Microsoft Azure のモノリシック アプリケーションは、各インス
 > - **マイクロサービス電子書籍の設計** <http://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
-[前へ] (architectural-principles.md) [次へ] (common-client-side-web-technologies.md)
+[前へ](architectural-principles.md)
+[次へ](common-client-side-web-technologies.md)

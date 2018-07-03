@@ -15,8 +15,7 @@
 ### [Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル](standard/containerized-lifecycle-architecture/)
 ### [.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ](standard/microservices-architecture/)
 ## [サーバー アプリ用 .NET Core と .NET Framework の選択](standard/choosing-core-framework-server.md)
-## 
-  ["マネージド コード" とは](standard/managed-code.md)
+## ["マネージド コード" とは](standard/managed-code.md)
 ### [自動メモリ管理](standard/automatic-memory-management.md)
 ## [共通言語ランタイム (CLR)](standard/clr.md)
 ## [言語の独立性](standard/language-independence.md)
@@ -47,8 +46,7 @@
 ## [.NET における数値](standard/numerics.md)
 ## [日付、時刻、およびタイム ゾーン](standard/datetime/)
 ## [イベント](standard/events/)
-## 
-  [マネージド実行プロセス](standard/managed-execution-process.md)
+## [マネージド実行プロセス](standard/managed-execution-process.md)
 ## [メタデータと自己言及的なコンポーネント](standard/metadata-and-self-describing-components.md)
 ## [コンソール アプリケーションの構築](standard/building-console-apps.md)
 ## [アプリケーションの基本事項](standard/application-essentials.md)
@@ -211,8 +209,7 @@
 ### [配置](framework/deployment/)
 ### [パフォーマンス](framework/performance/)
 ### [動的プログラミング](framework/reflection-and-codedom/)
-### 
-  [MEF (Managed Extensibility Framework)](framework/mef/)
+### [MEF (Managed Extensibility Framework)](framework/mef/)
 ### [アドインおよび拡張機能](framework/add-ins/)
 ### [アンマネージ コードとの相互運用](framework/interop/)
 ### [アンマネージ API リファレンス](framework/unmanaged-api/)
@@ -641,10 +638,8 @@
 #### [Optional](visual-basic/language-reference/modifiers/optional.md)
 #### [Out (ジェネリック修飾子)](visual-basic/language-reference/modifiers/out-generic-modifier.md)
 #### [オーバーロード](visual-basic/language-reference/modifiers/overloads.md)
-#### 
-  [Overridable](visual-basic/language-reference/modifiers/overridable.md)
-#### 
-  [Overrides](visual-basic/language-reference/modifiers/overrides.md)
+#### [Overridable](visual-basic/language-reference/modifiers/overridable.md)
+#### [Overrides](visual-basic/language-reference/modifiers/overrides.md)
 #### [ParamArray](visual-basic/language-reference/modifiers/paramarray.md)
 #### [Partial](visual-basic/language-reference/modifiers/partial.md)
 #### [Private](visual-basic/language-reference/modifiers/private.md)
