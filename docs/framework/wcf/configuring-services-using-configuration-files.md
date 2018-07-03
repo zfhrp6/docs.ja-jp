@@ -12,11 +12,11 @@ ms.lasthandoff: 05/07/2018
 ms.locfileid: "33807434"
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
-構成ファイルで Windows Communication Foundation (WCF) サービスを構成する柔軟性がエンドポイントを提供して、サービス動作のデータではなく、配置時にデザイン時です。 ここでは使用可能な主要な技術について説明します。  
+構成ファイルで Windows Communication Foundation (WCF) サービスを構成することで、設計時ではなく配置の時点で、エンドポイントとサービス動作のデータの提供に柔軟性をもたらします。 ここでは使用可能な主要な技術について説明します。  
   
  WCF サービスが構成可能なを使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]テクノロジ構成します。 ほとんどの場合、XML 要素は、WCF サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 さらに、WCF には、サービスの最も基本的な機能をすばやく選択することはいくつかのシステム指定の要素が含まれています。 以降で[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]WCF の WCF 構成の要件を簡略化する新しい既定の構成モデルが付属します。 特定のサービスの WCF 構成を指定しない場合、ランタイムはサービスを自動的にいくつかの標準エンドポイントおよびバインディング/動作を構成します。 構成ファイルの記述は、メジャー、実際には、WCF アプリケーションのプログラミングの一部です。  
   
- 詳細については、次を参照してください。[を構成するサービスのバインディングの](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)します。 一連の最もよく使用される要素を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 既定のエンドポイント、バインディング、および動作の詳細については、次を参照してください。[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
+詳細については [Windows Communication Foundation サービスのバインディングの構成](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md) を参照してください。 一連の最もよく使用される要素については [システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md) を参照してください。 既定のエンドポイント、バインディング、および動作の詳細については [簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md) と [WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md) を参照してください。
   
 > [!IMPORTANT]
 >  2 つの異なるバージョンのサービスが配置される side-by-side のシナリオを配置する場合、構成ファイルで参照されるアセンブリの部分名を指定する必要があります。 これは構成ファイルがすべてのバージョンのサービスで共有されて、異なるバージョンの .NET Framework で実行される可能性があるためです。  
