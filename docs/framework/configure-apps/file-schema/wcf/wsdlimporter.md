@@ -13,7 +13,7 @@ WS-Policy が添付された Web サービス記述言語 (WSDL) 1.1 メタデ�
   
 \<system.ServiceModel >  
 \<client>  
-\<メタデータ >  
+\<matadata>
 \<wsdlImporters >  
 \<wsdlImporter >  
   
