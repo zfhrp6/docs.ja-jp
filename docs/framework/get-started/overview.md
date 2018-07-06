@@ -45,7 +45,7 @@ ms.locfileid: "33397859"
 
 共通言語ランタイムおよびクラス ライブラリの、アプリケーションおよびシステム全体に対する関係を次の図に示します。 この図には、比較的大規模なアーキテクチャの内部でマネージ コードが動作する方法も示されています。
 
-![大規模アーキテクチャのマネージ コード]の(../../../docs/framework/get-started/media/circle.gif "円グラフ") コンテキスト内の .NET Framework
+![大規模アーキテクチャのマネージ コードの](../../../docs/framework/get-started/media/circle.gif "円グラフ") コンテキスト内の .NET Framework
 
 .NET Framework の主要な機能を以降のセクションでより詳細に説明します。
 
