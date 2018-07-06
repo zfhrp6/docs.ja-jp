@@ -2,12 +2,12 @@
 title: C# 7.3 の新機能
 description: C# 7.3 の新機能の概要
 ms.date: 05/16/2018
-ms.openlocfilehash: 1d1aca2564c26315cf8b3af60a863ea3c70fd385
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: 135351fa06a498e4aa90cb4d9372880b8119de0f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827099"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106776"
 ---
 # <a name="whats-new-in-c-73"></a>C# 7.3 の新機能
 
@@ -72,7 +72,7 @@ class C
 {
     static S s = new S();
 
-    public void M()
+    unsafe public void M()
     {
         fixed (int* ptr = s.myFixedField)
         {
@@ -93,7 +93,7 @@ ref VeryLargeStruct refLocal = ref veryLargeStruct; // initialization
 refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to different storage.
 ```
 
-詳しくは、[`ref` 戻り値と `ref` ローカル変数](../programming-guide/classes-and-structs/ref-returns.md)に関する記事を参照してください。
+詳しくは、[`ref` 戻り値と `ref` ローカル変数](../programming-guide/classes-and-structs/ref-returns.md)に関する記事と [`foreach`](../language-reference/keywords/foreach-in.md) に関する記事を参照してください。
 
 ### <a name="stackalloc-arrays-support-initializers"></a>`stackalloc` 配列による初期化子のサポート
 

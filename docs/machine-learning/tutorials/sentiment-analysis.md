@@ -4,12 +4,12 @@ description: バイナリ分類のシナリオで ML.NET を使用する方法�
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 898b4664120b6eeb0ef18aac3acdc94b0ca0bacd
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: 727718c00b9270e2bbbe0840879b3a7e164a02d8
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314839"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948619"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>チュートリアル: センチメント分析のバイナリ分類のシナリオで ML.NET を使用する
 
@@ -113,13 +113,13 @@ ms.locfileid: "36314839"
 
 [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#1 "Add necessary usings")]
 
-最近ダウンロードしたファイルのパスを保持する 3 つのグローバル変数を作成する必要があります。
+最近ダウンロードしたファイルのパスを保持する 3 つのグローバル フィールドを作成する必要があります。
 
 * `_dataPath` には、モデルのトレーニングに使用するデータ セットのパスが含まれます。
 * `_testDataPath` には、モデルの評価に使用するデータ セットのパスが含まれます。
 * `_modelPath` には、トレーニング済みのモデルを保存するパスが含まれます。
 
-`Main` メソッドのすぐ上にある行に次のコードを追加して、最近ダウンロードしたファイルを指定します。
+`Main` メソッドのすぐ上にある行に次のコードを追加して、それらのパスを指定します。
 
 [!code-csharp[Declare file variables](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#2 "Declare variables to store data files")]
 

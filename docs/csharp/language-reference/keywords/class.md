@@ -1,5 +1,5 @@
 ---
-title: class (C# リファレンス)
+title: class キーワード (C# リファレンス)
 ms.date: 07/18/2017
 f1_keywords:
 - class_CSharpKeyword
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 20968d2f72195db6d16de1b726c6e946b91ffcd5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 04e64e825e4297ceb432393c7bd145a6cf4fcb2c
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216753"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948512"
 ---
 # <a name="class-c-reference"></a>class (C# リファレンス)
 
@@ -21,12 +21,13 @@ ms.locfileid: "33216753"
 ```csharp
 class TestClass
 {
-    // Methods, properties, fields, events, delegates 
+    // Methods, properties, fields, events, delegates
     // and nested classes go here.
 }
 ```
 
 ## <a name="remarks"></a>コメント
+
 C# では、単一継承のみを使用できます。 つまり、クラスは 1 つの基底クラスの実装だけを継承できます。 ただし、クラスは複数のインターフェイスを実装できます。 クラスの継承とインターフェイスの実装の例を次の表に示します。
 
 |継承|例|
@@ -73,11 +74,13 @@ C# では、単一継承のみを使用できます。 つまり、クラスは 
 - [構造体](../../../csharp/programming-guide/classes-and-structs/structs.md)
 
 ## <a name="example"></a>例
+
 ここでは、クラスのフィールド、コンストラクター、メソッドの宣言例を示します。 また、オブジェクト インスタンスの作成とインスタンス データの出力の例も示します。 次の例では、2 つのクラスが宣言されています。 最初の `Child` クラスには、2 つのプライベート フィールド (`name` と `age`)、2 つのパブリック コンストラクター、および 1 つのパブリック メソッドがあります。 2 番目のクラスである `StringTest` は、`Main`の格納に使用されます。
 
-[!code-csharp[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]
+[!code-csharp[csrefKeywordsTypes#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#5)]
 
 ## <a name="comments"></a>コメント
+
 前の例で、プライベート フィールド (`name` および `age`) にアクセスできるのは、`Child` クラスのパブリック メソッドだけであることに注意してください。 たとえば、次のステートメントを使用して `Main` メソッドから子の名前を印刷することはできません。
 
 ```csharp
@@ -91,10 +94,12 @@ Console.Write(child1.name);   // Error
 最後に、既定のコンストラクターを使用して作成されたオブジェクト (`child3`) は、既定で年齢フィールドが 0 に初期化されることに注意してください。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
+
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>参照
- [C# リファレンス](../../../csharp/language-reference/index.md)  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
- [参照型](../../../csharp/language-reference/keywords/reference-types.md)
+## <a name="see-also"></a>関連項目
+
+[C# リファレンス](../../../csharp/language-reference/index.md)  
+[C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+[C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+[参照型](../../../csharp/language-reference/keywords/reference-types.md)

@@ -4,12 +4,12 @@ description: dotnet テストおよび MSTest を使用したサンプル ソリ
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: b76e577d3950dd13b038f47c1b133e3529867c38
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cfc389a1ee526d8dc4383c5efd6fb3299eb08d8
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216097"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105603"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>MSTest と .NET Core による単体テスト C#
 
@@ -17,7 +17,7 @@ ms.locfileid: "33216097"
 
 ### <a name="creating-the-source-project"></a>ソース プロジェクトの作成
 
-シェル ウィンドウを開きます。 ソリューションを保持するための *unit-testing-using-dotnet-test* というディレクトリを作成します。 この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、クラス ライブラリとテスト プロジェクト用の新しいソリューション ファイルを作成します。 次に、*PrimeService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のアウトラインのようになっています。
+シェル ウィンドウを開きます。 ソリューションを保存するための *unit-testing-using-mstest* というディレクトリを作成します。 この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、クラス ライブラリとテスト プロジェクト用の新しいソリューション ファイルを作成します。 次に、*PrimeService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のアウトラインのようになっています。
 
 ```
 /unit-testing-using-mstest

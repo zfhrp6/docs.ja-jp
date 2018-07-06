@@ -3,12 +3,12 @@ title: C# のクラスとオブジェクト - C# 言語のツアー
 description: C# を始めてお使いの方のために、 クラス、オブジェクト、および継承の概要を示します
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 1e89d8b89e5f4f74d637a1e3674fb3959a231a49
-ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
+ms.openlocfilehash: 8e6b327c8391c3a3c97f7806f87dbb9656f0d00d
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36298293"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140282"
 ---
 # <a name="classes-and-objects"></a>クラスとオブジェクト
 
@@ -55,7 +55,7 @@ ms.locfileid: "36298293"
 
 ## <a name="accessibility"></a>ユーザー補助
 
-クラスの各メンバーにはアクセシビリティが関連付けられています。アクセシビリティは、メンバーへのアクセスが可能なプログラムのテキストの範囲を制御します。 アクセシビリティには 5 つの有効な形式があります。 これらの概要を次に示します。
+クラスの各メンバーにはアクセシビリティが関連付けられています。アクセシビリティは、メンバーへのアクセスが可能なプログラムのテキストの範囲を制御します。 アクセシビリティには 6 つの有効な形式があります。 これらの概要を次に示します。
 
 * `public`
     - アクセスは制限されません。
@@ -64,7 +64,7 @@ ms.locfileid: "36298293"
 * `internal`
     - アクセスは、現在のアセンブリ (.exe、.dll など) に制限されます。
 * `protected internal`
-    - アクセスは、それを含んでいるクラスまたは含んでいるクラスから派生されたクラスに制限されます。
+    - アクセスは、それを含んでいるクラス、含んでいるクラスから派生したクラス、または同じアセンブリ内のクラスに制限されます。
 * `private`
     - アクセスはこのクラスに制限されます。
 * `private protected`

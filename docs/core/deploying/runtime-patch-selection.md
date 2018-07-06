@@ -4,12 +4,12 @@ description: 自己完結型展開における dotnet publish の変更につい
 author: jralexander
 ms.author: kdollard
 ms.date: 05/31/2018
-ms.openlocfilehash: 40d28e81e2ac1b27e7fd89e16d2d906a080fd18b
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 39a23917dec1aba5142839265c555da5c1e6f09c
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34697212"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071033"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>自己完結型展開ランタイムのロール フォワード
 
@@ -35,8 +35,8 @@ ms.locfileid: "34697212"
 
 同じプロジェクト ファイルで自己完結型のアプリケーションと[フレームワークに依存するアプリケーション](index.md)の両方を作成する場合、`dotnet publish` で `--no-restore` 引数を使用する場合は、次のいずれかを選択します。
 
-1. フレームワークに依存する動作を優先します。 アプリケーションがフレームワークに依存する場合、これが既定の動作になります。 アプリケーションが自己完結型で、修正プログラムが適用されていない 2.1.0 のローカル ランタイムを使用できる場合、プロジェクト ファイル (csproj / vbproj) で `TargetLatestRuntimePatch` を `false` に設定します。
+1. フレームワークに依存する動作を優先します。 アプリケーションがフレームワークに依存する場合、これが既定の動作になります。 アプリケーションが自己完結型で、修正プログラムが適用されていない 2.1.0 のローカル ランタイムを使用できる場合、プロジェクト ファイルで `TargetLatestRuntimePatch` を `false` に設定します。
 
-2. 自己完結型の動作を優先します。 アプリケーションが自己完結型の場合、これが既定の動作になります。 アプリケーションがフレームワークに依存し、最新の修正プログラムがインストールされている必要がある場合、プロジェクト ファイル (csproj / vbproj) で `TargetLatestRuntimePatch` を `true` に設定します。
+2. 自己完結型の動作を優先します。 アプリケーションが自己完結型の場合、これが既定の動作になります。 アプリケーションがフレームワークに依存し、最新の修正プログラムがインストールされている必要がある場合、プロジェクト ファイルで `TargetLatestRuntimePatch` を `true` に設定します。
 
-3. プロジェクト ファイル (csproj / vbproj) で `RuntimeFrameworkVersion` に特定の修正プログラムのバージョンを設定して、ランタイム フレームワークのバージョンの明示的なコントロールを取得します。
+3. プロジェクト ファイルで `RuntimeFrameworkVersion` に特定の修正プログラムのバージョンを設定して、ランタイム フレームワークのバージョンの明示的なコントロールを取得します。

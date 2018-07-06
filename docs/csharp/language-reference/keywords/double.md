@@ -1,5 +1,5 @@
 ---
-title: double (C# リファレンス)
+title: double キーワード (C# リファレンス)
 ms.date: 07/20/2015
 f1_keywords:
 - double
@@ -7,60 +7,66 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: 3683b51dfd0ef653ab8bfff6705b96a37e21a10a
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 8e3a94bb79d46f2815e46b86f1aca92acc73e5c2
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172517"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027851"
 ---
 # <a name="double-c-reference"></a>double (C# リファレンス)
-`double` キーワードは、64 ビット浮動小数点値を格納する単純な型を示します。 次の表では、`double` 型の有効桁数とおおよその範囲を示します。  
-  
-|型|おおよその範囲|有効桁数|.NET Framework 型|  
-|----------|-----------------------|---------------|-------------------------|  
-|`double`|±5.0 × 10<sup>−324</sup> - ±1.7 × 10<sup>308</sup>|15-16 桁|<xref:System.Double?displayProperty=nameWithType>|  
-  
-## <a name="literals"></a>リテラル  
- 既定では、代入演算子の右辺にある実数値リテラルは `double` として扱われます。 ただし、整数を `double` として処理する場合、次のようにサフィックスの d または D を使用します。  
-  
-```csharp  
-double x = 3D;  
-```  
-  
-## <a name="conversions"></a>変換  
- 整数型と浮動小数点型を 1 つの式の中の混在させることができます。 この場合、整数型が浮動小数点型に変換されます。 式の評価は、次の規則に従って実行されます。  
-  
--   浮動小数点型の 1 つが `double` の場合、式は `double` または [bool](../../../csharp/language-reference/keywords/bool.md) (関係式またはブール式の場合) と評価されます。  
-  
--   式に `double` 型が含まれない場合は、[float](../../../csharp/language-reference/keywords/float.md) または [bool](../../../csharp/language-reference/keywords/bool.md) (関係式またはブール式の場合) と評価されます。  
-  
- 浮動小数点式は、次の値のセットを含むことができます。  
-  
--   正および負のゼロ。  
-  
--   正および負の無限大。  
-  
--   Not-a-Number (NaN) 値。  
-  
--   ゼロ以外の値の有限のセット。  
-  
- これらの値について詳しくは、[IEEE](http://www.ieee.org) の Web サイトで入手できるバイナリ浮動小数点演算の IEEE 標準に関する資料をご覧ください。  
-  
-## <a name="example"></a>例  
- 次の例では、[int](../../../csharp/language-reference/keywords/int.md)、[short](../../../csharp/language-reference/keywords/short.md)、[float](../../../csharp/language-reference/keywords/float.md)、`double` がまとめて追加され、結果として `double` になります。  
-  
- [!code-csharp[csrefKeywordsTypes#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/double_1.cs)]  
-  
-## <a name="c-language-specification"></a>C# 言語仕様  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>参照  
- [C# リファレンス](../../../csharp/language-reference/index.md)  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
- [既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)  
- [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
- [浮動小数点型の一覧表](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
- [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
- [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+
+`double` キーワードは、64 ビット浮動小数点値を格納する単純な型を示します。 次の表では、`double` 型の有効桁数とおおよその範囲を示します。
+
+|型|おおよその範囲|有効桁数|.NET 型|
+|----------|-----------------------|---------------|-------------------------|
+|`double`|±5.0 × 10<sup>−324</sup> - ±1.7 × 10<sup>308</sup>|15-16 桁|<xref:System.Double?displayProperty=nameWithType>|
+
+## <a name="literals"></a>リテラル
+
+既定では、代入演算子の右辺にある実数値リテラルは `double` として扱われます。 ただし、整数を `double` として処理する場合、次のようにサフィックスの d または D を使用します。
+
+```csharp
+double x = 3D;
+```
+
+## <a name="conversions"></a>変換
+
+整数型と浮動小数点型を 1 つの式の中の混在させることができます。 この場合、整数型が浮動小数点型に変換されます。 式の評価は、次の規則に従って実行されます。
+
+- 浮動小数点型の 1 つが `double` の場合、式は `double` または [bool](../../../csharp/language-reference/keywords/bool.md) (関係式またはブール式の場合) と評価されます。
+
+- 式に `double` 型が含まれない場合は、[float](../../../csharp/language-reference/keywords/float.md) または [bool](../../../csharp/language-reference/keywords/bool.md) (関係式またはブール式の場合) と評価されます。
+
+ 浮動小数点式は、次の値のセットを含むことができます。
+
+- 正および負のゼロ。
+
+- 正および負の無限大。
+
+- Not-a-Number (NaN) 値。
+
+- ゼロ以外の値の有限のセット。
+
+これらの値について詳しくは、[IEEE](https://www.ieee.org) の Web サイトで入手できるバイナリ浮動小数点演算の IEEE 標準に関する資料をご覧ください。
+
+## <a name="example"></a>例
+
+次の例では、[int](../../../csharp/language-reference/keywords/int.md)、[short](../../../csharp/language-reference/keywords/short.md)、[float](../../../csharp/language-reference/keywords/float.md)、`double` がまとめて追加され、結果として `double` になります。
+
+[!code-csharp[csrefKeywordsTypes#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#9)]
+
+## <a name="c-language-specification"></a>C# 言語仕様
+
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a>参照
+
+[C# リファレンス](../../../csharp/language-reference/index.md)  
+[C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+[C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+[既定値の一覧表](../../../csharp/language-reference/keywords/default-values-table.md)  
+[組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+[浮動小数点型の一覧表](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
+[暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
+[明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  

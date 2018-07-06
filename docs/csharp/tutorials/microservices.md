@@ -3,12 +3,12 @@ title: Docker でホストされているマイクロサービス - C
 description: Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ
 ms.date: 06/08/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: b043b0109bcf8a67867d2c73a5ab22e43a4963cf
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 1f4b38243beb1210b1374bd701fac66b2fa72cc5
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208003"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106351"
 ---
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
@@ -46,15 +46,17 @@ Docker は、多くの Linux ディストリビューション、macOS、また�
 
 ## <a name="create-the-application"></a>アプリケーションを作成する
 
-すべてのツールをインストールしたら、新しい ASP.NET Core アプリケーションを作成します。 これを行うには、"WeatherMicroservice" という新しいディレクトリを作成し、お好みのシェルで、そのディレクトリ内で次のコマンドを実行します。
+すべてのツールをインストールしたら、お気に入りのシェルを使用して次のコマンドを実行し、"WeatherMicroservice" というディレクトリに新しい ASP.NET Core アプリケーションを作成します。
 
 ```console
-dotnet new web
+dotnet new web -o WeatherMicroservice
 ```
 
 `dotnet` コマンドは、.NET 開発に必要なツールを実行します。 動詞はそれぞれ、別々のコマンドを実行します。
 
 .NET Core プロジェクトを作成するには、`dotnet new` コマンドを使用します。
+
+`dotnet new` コマンドの後の `-o WeatherMicroservice` オプションは、ASP.NET Core アプリケーションの作成場所を指定するために使用されます。
 
 このマイクロサービスでは、できる限り単純で軽量な Web アプリケーションが必要なため、"ASP.NET Core Empty" テンプレートを、テンプレートの短い名前 `web` を指定して使用しました。
 

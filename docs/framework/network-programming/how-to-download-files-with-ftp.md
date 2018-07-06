@@ -1,61 +1,82 @@
 ---
 title: '方法: FTP を使用してファイルをダウンロードする'
-ms.date: 03/30/2017
+description: この記事では、FTP サーバーからファイルをダウンロードする方法のサンプルを示します。
+ms.date: 06/26/2018
+dev_langs:
+- csharp
+- vb
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
-author: mcleblanc
-ms.author: markl
-manager: markl
-ms.openlocfilehash: a3e0b5773a98b42411e4dd76668dafb834b5cbd3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e000aa149a9a02e6f12e9b184d9c43a065b673f
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394850"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028306"
 ---
 # <a name="how-to-download-files-with-ftp"></a>方法: FTP を使用してファイルをダウンロードする
-このサンプルでは、FTP サーバーからファイルをダウンロードする方法を示します。  
-  
-## <a name="example"></a>例  
-  
-```csharp  
-using System;  
-using System.IO;  
-using System.Net;  
-using System.Text;  
-  
-namespace Examples.System.Net  
-{  
-    public class WebRequestGetExample  
-    {  
-        public static void Main ()  
-        {  
-            // Get the object used to communicate with the server.  
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/test.htm");  
-            request.Method = WebRequestMethods.Ftp.DownloadFile;  
-  
-            // This example assumes the FTP site uses anonymous logon.  
-            request.Credentials = new NetworkCredential ("anonymous","janeDoe@contoso.com");  
-  
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();  
-  
-            Stream responseStream = response.GetResponseStream();  
-            StreamReader reader = new StreamReader(responseStream);  
-            Console.WriteLine(reader.ReadToEnd());  
-  
-            Console.WriteLine("Download Complete, status {0}", response.StatusDescription);  
-  
-            reader.Close();  
-            response.Close();    
-        }  
-    }  
-}  
-```  
-  
-## <a name="compiling-the-code"></a>コードのコンパイル  
- この例で必要な要素は次のとおりです。  
-  
--   **System.Net** 名前空間への参照。  
-  
-## <a name="robust-programming"></a>信頼性の高いプログラミング  
-  
-## <a name="net-framework-security"></a>.NET Framework セキュリティ
+
+このサンプルでは、FTP サーバーからファイルをダウンロードする方法を示します。
+
+## <a name="example"></a>例
+
+```csharp
+using System;
+using System.IO;
+using System.Net;
+
+namespace Examples.System.Net
+{
+    public class WebRequestGetExample
+    {
+        public static void Main ()
+        {
+            // Get the object used to communicate with the server.
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/test.htm");
+            request.Method = WebRequestMethods.Ftp.DownloadFile;
+
+            // This example assumes the FTP site uses anonymous logon.
+            request.Credentials = new NetworkCredential("anonymous","janeDoe@contoso.com");
+
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+            Stream responseStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(responseStream);
+            Console.WriteLine(reader.ReadToEnd());
+
+            Console.WriteLine($"Download Complete, status {response.StatusDescription}");
+
+            reader.Close();
+            response.Close();
+        }
+    }
+}
+```
+
+```vb
+Imports System.IO
+Imports System.Net
+
+Namespace Examples.System.Net
+    Public Module WebRequestGetExample
+        Public Sub Main()
+            ' Get the object used to communicate with the server.
+            Dim request As FtpWebRequest = CType(WebRequest.Create("ftp://www.contoso.com/test.htm"), FtpWebRequest)
+            request.Method = WebRequestMethods.Ftp.DownloadFile
+
+            ' This example assumes the FTP site uses anonymous logon.
+            request.Credentials = New NetworkCredential("anonymous", "janeDoe@contoso.com")
+
+            Dim response As FtpWebResponse = CType(request.GetResponse(), FtpWebResponse)
+
+            Dim responseStream As Stream = response.GetResponseStream()
+            Dim reader As StreamReader = New StreamReader(responseStream)
+            Console.WriteLine(reader.ReadToEnd())
+
+            Console.WriteLine($"Download Complete, status {response.StatusDescription}")
+
+            reader.Close()
+            response.Close()
+        End Sub
+    End Module
+End Namespace
+```

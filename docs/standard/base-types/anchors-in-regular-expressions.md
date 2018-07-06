@@ -17,19 +17,20 @@ helpviewer_keywords:
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2cbf0ceb7d5f8e56955f8989e5eb4efba99540bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24a579acacf41df24779252e1064e1c271310edc
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948590"
 ---
 # <a name="anchors-in-regular-expressions"></a>正規表現のアンカー
 <a name="top"></a> アンカー (アトミック ゼロ幅アサーション) は、文字列が一致する位置を指定します。 検索式でアンカーを使用した場合、正規表現エンジンは、後方の文字列を読み込んだり、文字に一致させたりすることはしません。指定された位置での一致のみが検索されます。 たとえば、 `^` は、行または文字列の先頭に一致する必要があることを指定します。 したがって、正規表現 `^http:` は、"http:" が行の先頭にある場合にのみ一致します。 次の表は、.NET の正規表現でサポートされているアンカーの一覧です。  
   
 |アンカー|説明|  
 |------------|-----------------|  
-|`^`|文字列または行の先頭に一致します。 詳細については、「 [文字列または行の先頭](#Start)」を参照してください。|  
-|`$`|文字列または行の末尾に一致するか、文字列または行の末尾にある `\n` の前に一致します。 詳細については、「 [文字列または行の末尾](#End)」を参照してください。|  
+|`^`|既定では、文字列の先頭で一致する必要があります。複数行モードでは、行の先頭で一致する必要があります。 詳細については、「 [文字列または行の先頭](#Start)」を参照してください。|  
+|`$`|既定では、文字列の末尾で一致するか、文字列の末尾にある `\n` の前で一致する必要があります。複数行モードでは、行の末尾で一致するか、行の末尾にある `\n` の前で一致する必要があります。 詳細については、「 [文字列または行の末尾](#End)」を参照してください。|  
 |`\A`|文字列の先頭にのみ一致します (複数行はサポートされません)。 詳細については、「 [文字列の先頭のみ](#StartOnly)」を参照してください。|  
 |`\Z`|文字列の末尾で一致するか、文字列の末尾にある `\n` の前に一致します。 詳細については、「 [文字列の末尾または末尾の改行の前](#EndOrNOnly)」を参照してください。|  
 |`\z`|文字列の末尾にのみ一致します。 詳細については、「 [文字列の末尾のみ](#EndOnly)」を参照してください。|  
@@ -39,7 +40,7 @@ ms.lasthandoff: 05/04/2018
   
 <a name="Start"></a>   
 ## <a name="start-of-string-or-line-"></a>文字列または行の先頭: ^  
- `^` アンカーは、その後に続くパターンが、文字列の最初の文字位置から始まる必要があることを指定します。 <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> オプションを指定して `^` を使用した場合は (「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照)、各行の先頭に一致します。  
+ 既定では、`^` アンカーは、その後に続くパターンが、文字列の最初の文字位置から始まる必要があることを指定します。 <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> オプションを指定して `^` を使用した場合は (「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照)、各行の先頭に一致します。  
   
  次の例では、正規表現で `^` アンカーを使用して、プロ野球チームが存続した年数に関する情報を抽出します。 この例では、<xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドの 2 つのオーバーロードを呼び出しています。  
   

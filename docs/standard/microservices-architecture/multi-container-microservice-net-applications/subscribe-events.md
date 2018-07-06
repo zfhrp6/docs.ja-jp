@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 8ef9f39b0d99db32438e7dcf83318a1aa9054967
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cc5563f93915d1516e5a5f22a104012c1bb85d6
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592445"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106578"
 ---
 # <a name="subscribing-to-events"></a>イベントへのサブスクライブ
 
@@ -319,8 +319,8 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 -   **NServiceBus を使用するフォークされた eShopOnContainers (Particular Software)**
     [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
 
--   **イベント ドリブン メッセージング**
-    [*http://soapatterns.org/design\_パターン/イベント\_ドリブン\_メッセージング*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **イベント駆動型メッセージング**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
 -   **Jimmy Bogard。復元性を目指したリファクタリング: 結合の評価**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
@@ -332,7 +332,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **最終的な整合性**
-    [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Philip Brown。境界コンテキストを統合するための戦略**
     [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
@@ -353,7 +353,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
     *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
 
 -   **CAP 定理**
-    [*https://en.wikipedia.org/wiki/CAP\_定理*](https://en.wikipedia.org/wiki/CAP_theorem)
+    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
 
 -   **CAP 定理とは?**
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
@@ -367,15 +367,16 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 -   **Eric Brewer。CAP の 12 年後: "規則" はどのように変わったのか**
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **外部 (DTC) トランザクションへの参加**(MSMQ) [  *https://msdn.microsoft.com/library/ms978430.aspx \#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+-   **外部 (DTC) トランザクションへの参加** (MSMQ) [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
 -   **Azure Service Bus。ブローカー メッセージング: 重複データ検出**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **信頼性ガイド** (RabbitMQ ドキュメント) [  *https://www.rabbitmq.com/reliability.html\#コンシューマー*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **信頼性ガイド** (RabbitMQ ドキュメント) [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 
 
 >[!div class="step-by-step"]
-[前へ] (rabbitmq-event-bus-development-test-environment.md) [次へ] (test-aspnet-core-services-web-apps.md)
+[前へ](rabbitmq-event-bus-development-test-environment.md)
+[次へ](test-aspnet-core-services-web-apps.md)

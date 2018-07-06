@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 5ad5686909c29eba5916cbcc4b7115a16108a004
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 171d9120e4817065ddafc9dfa9caa362694ddeb3
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580404"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105285"
 ---
 # <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>実稼働時に機密情報を保護するために Azure Key Vault を使用する
 
@@ -55,7 +55,7 @@ var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(asyn
         new DefaultKeyVaultSecretManager());
 ```
 
-この例では、構成プロバイダーの登録処理の末尾で AddAzureKeyVault が呼び出されます。 前のプロバイダーの構成値を上書きし、他のソースの構成値でキー コンテナーの構成値が上書きされないようにするために、最後の構成プロバイダーとして Azure Key Vault を登録することをお勧めします。
+この例では、構成プロバイダーの登録処理の末尾で AddAzureKeyVault が呼び出されます。 前のプロバイダーの構成値をオーバーライドし、他のソースの構成値でキー コンテナーの構成値がオーバーライドされないようにするために、最後の構成プロバイダーとして Azure Key Vault を登録することをお勧めします。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
@@ -75,4 +75,5 @@ var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(asyn
     [*https://github.com/aspnet/Configuration/tree/dev/src/Microsoft.Extensions.Configuration.DockerSecrets*](https://github.com/aspnet/Configuration/tree/dev/src/Microsoft.Extensions.Configuration.DockerSecrets)
 
 >[!div class="step-by-step"]
-[前へ] (developer-app-secrets-storage.md) [次へ] (../key-takeaways.md)
+[前へ](developer-app-secrets-storage.md)
+[次へ](../key-takeaways.md)

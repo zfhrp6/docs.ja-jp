@@ -4,12 +4,12 @@ description: コンテナー化された .NET アプリケーションの .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 2adce39561dd2b97910155ebed595a2df7785c11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c61a08566492a59090b19f99aaf97b5f6082c1fb
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33574674"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104570"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>クライアント側の検証 (プレゼンテーション層での検証)
 
@@ -65,4 +65,5 @@ ms.locfileid: "33574674"
 
 
 >[!div class="step-by-step"]
-[Previous] (domain-model-layer-validations.md) [Next] (domain-events-design-implementation.md)
+[前へ](domain-model-layer-validations.md)
+[次へ](domain-events-design-implementation.md)

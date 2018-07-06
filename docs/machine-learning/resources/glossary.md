@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: dotnet-ml
 ms.devlang: dotnet
 manager: wpickett
-ms.openlocfilehash: 332d9e14bea165992f9f00b048286e185269ea79
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: b7690eb6931f4a491b1a03812fe3f2d8a64cfcd4
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2018
-ms.locfileid: "34860690"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207730"
 ---
 # <a name="machine-learning-glossary"></a>機械学習の用語集
 
@@ -33,7 +33,7 @@ ms.locfileid: "34860690"
 
 ## <a name="binary-classification"></a>二項分類
 
-[ラベル](#label)が 2 つのクラスのうちの 1 つである[分類](#classification)です。 詳しくは、Wikipedia の[二項分類](https://en.wikipedia.org/wiki/Binary_classification)の記事を参照してください。
+[ラベル](#label)が 2 つのクラスのうちの 1 つである[分類](#classification)です。 詳細については、トピック「[機械学習のタスク](tasks.md)」のセクションの「[二項分類](tasks.md#binary-classification)」を参照してください。
 
 ## <a name="classification"></a>分類
 
@@ -85,7 +85,7 @@ ms.locfileid: "34860690"
 
 ## <a name="multiclass-classification"></a>多クラス分類
 
-[ラベル](#label)が 3 つ以上のクラスのうちの 1 つである[分類](#classification)です。 詳しくは、Wikipedia の[多クラス分類](https://en.wikipedia.org/wiki/Multiclass_classification)の記事を参照してください。
+[ラベル](#label)が 3 つ以上のクラスのうちの 1 つである[分類](#classification)です。 詳細については、トピック「[機械学習のタスク](tasks.md)」のセクション「[多クラス分類](tasks.md#multiclass-classification)」を参照してください。
 
 ## <a name="n-gram"></a>N グラム
 
@@ -113,7 +113,7 @@ ms.locfileid: "34860690"
 
 ## <a name="regression"></a>回帰
 
-出力が実際の値 (たとえば、倍精度) である[教師あり機械学習](#supervised-machine-learning)タスクです。 例として、株価の予測などがあります。
+出力が実際の値 (たとえば、倍精度) である[教師あり機械学習](#supervised-machine-learning)タスクです。 例として、株価の予測などがあります。 詳細については、トピック「[機械学習のタスク](tasks.md)」のセクション「[回帰](tasks.md#regression)」を参照してください。
 
 ## <a name="relative-absolute-error"></a>相対絶対誤差
 

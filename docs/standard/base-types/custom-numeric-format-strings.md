@@ -1,6 +1,6 @@
 ---
 title: カスタム数値書式指定文字列
-ms.date: 03/30/2017
+ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -18,16 +18,18 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa1ab1d9a9ff3d652ce97d4fe7e6d04f744aea98
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b9cf18c4893b618d16ef24bab83a19154e19a9c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579237"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106529"
 ---
 # <a name="custom-numeric-format-strings"></a>カスタム数値書式指定文字列
+
 1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。 カスタム数値書式指定文字列は、 [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。  
   
+
  カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。 たとえば、 <xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。 カスタム数値書式指定文字列は、.NET の[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)でもサポートされています。この機能を使用するメソッドには、<xref:System.Console> クラスおよび <xref:System.IO.StreamWriter> クラスの一部の `Write` メソッドと `WriteLine` メソッド、<xref:System.String.Format%2A?displayProperty=nameWithType> メソッド、<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> メソッドがあります。 [文字列補間](../../csharp/language-reference/tokens/interpolated.md)機能は、カスタム数値書式指定文字列もサポートしています。  
   
 > [!TIP]
@@ -45,11 +47,13 @@ ms.locfileid: "33579237"
 |"‰"|パーミル プレースホルダー|数値に 1000 を乗算し、結果の文字列にローカライズされたパーミル記号を挿入します。<br /><br /> 詳細については、「 ["‰" カスタム指定子](#SpecifierPerMille)」を参照してください。|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|  
 |"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "E0"<br /><br /> "E+0"<br /><br /> "E-0"|指数表記|後に 0 (ゼロ) が 1 つ以上続く場合に、指数表記を使用して結果の書式を設定します。 大文字 "E" と小文字 "e" は、結果の文字列の指数記号を大文字にするか小文字にするかを示します。 "E" 文字または "e" 文字の後に続くゼロの数によって、指数部の最小桁数が決まります。 正符号 (+) は、符号文字が指数部の前に常に挿入されることを示します。 負符号 (-) は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。<br /><br /> 詳細については、「 ["E" カスタム指定子と "e" カスタム指定子](#SpecifierExponent)」を参照してください。|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|  
 |"\\"|エスケープ文字|この文字の次の文字はカスタム書式指定子ではなくリテラルとして解釈されます。<br /><br /> 詳細については、「["\\" エスケープ文字](#SpecifierEscape)」を参照してください。|987654 ("\\###00\\#") -> #987654#|  
-|'*文字列*'<br /><br /> "*文字列*"|リテラル文字列区切り記号|囲まれた文字列が結果の文字列にそのままコピーされることを示します。|68 ("#' degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|  
+|'*文字列*'<br /><br /> "*文字列*"|リテラル文字列区切り記号|囲まれた文字列が結果の文字列にそのままコピーされることを示します。<br/><br/>詳細については、「[文字リテラル](#character-literals)」を参照してください。|68 ("#' degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|  
 |;|セクション区切り記号|正の数値、負の数値、およびゼロの数値に対して、別々の書式指定文字列を使用してセクションを定義します。<br /><br /> 詳細については、「 [";" セクション区切り記号](#SectionSeparator)」を参照してください。|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|  
-|その他|上記以外のすべての文字|文字が結果の文字列にそのままコピーされます。|68 ("# °") -> 68 °|  
+|その他|上記以外のすべての文字|文字が結果の文字列にそのままコピーされます。<br/><br/>詳細については、「[文字リテラル](#character-literals)」を参照してください。|68 ("# °") -> 68 °|  
   
  以降では、それぞれのカスタム数値書式指定子について詳しく説明します。  
+
+[!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-culture-note.md)] 
   
 <a name="Specifier0"></a>   
 ## <a name="the-0-custom-specifier"></a>"0" カスタム指定子  
@@ -60,7 +64,7 @@ ms.locfileid: "33579237"
  次の例では、ゼロ プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。  
   
  [!code-cpp[Formatting.Numeric.Custom#1](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#1)]
- [!code-csharp[Formatting.Numeric.Custom#1](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#1)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#1](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#1)]
  [!code-vb[Formatting.Numeric.Custom#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#1)]  
   
  [表のトップへ](#table)  
@@ -76,13 +80,13 @@ ms.locfileid: "33579237"
  次の例では、桁プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。  
   
  [!code-cpp[Formatting.Numeric.Custom#2](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#2)]
- [!code-csharp[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
  [!code-vb[Formatting.Numeric.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#2)]  
   
  欠落している数字や先頭のゼロをスペースに置き換える結果の文字列を戻すには、次の例に示すように、 [複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md) を使用して、フィールド幅を指定します。  
   
  [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
- [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
  [!code-vb[Formatting.Numeric.Custom#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/SpaceOrDigit1.vb#12)]  
   
  [表のトップへ](#table)  
@@ -96,7 +100,7 @@ ms.locfileid: "33579237"
  次の例では、結果として得られるさまざまな文字列の小数点位置を、"." 書式指定子を使って定義しています。  
   
  [!code-cpp[Formatting.Numeric.Custom#3](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#3)]
- [!code-csharp[Formatting.Numeric.Custom#3](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#3)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#3](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#3)]
  [!code-vb[Formatting.Numeric.Custom#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#3)]  
   
  [表のトップへ](#table)  
@@ -116,13 +120,13 @@ ms.locfileid: "33579237"
  桁区切り記号としてコンマを使用する例を次に示します。  
   
  [!code-cpp[Formatting.Numeric.Custom#4](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#4)]
- [!code-csharp[Formatting.Numeric.Custom#4](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#4)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#4](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#4)]
  [!code-vb[Formatting.Numeric.Custom#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#4)]  
   
  数値の位取り指定子としてコンマを使用する例を次に示します。  
   
  [!code-cpp[Formatting.Numeric.Custom#5](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#5)]
- [!code-csharp[Formatting.Numeric.Custom#5](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#5)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#5](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#5)]
  [!code-vb[Formatting.Numeric.Custom#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#5)]  
   
  [表のトップへ](#table)  
@@ -134,7 +138,7 @@ ms.locfileid: "33579237"
  次の例では、"%" カスタム指定子を含むさまざまなカスタム書式指定文字列を定義します。  
   
  [!code-cpp[Formatting.Numeric.Custom#6](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#6)]
- [!code-csharp[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
  [!code-vb[Formatting.Numeric.Custom#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#6)]  
   
  [表のトップへ](#table)  
@@ -146,7 +150,7 @@ ms.locfileid: "33579237"
  次の例では、"‰" カスタム指定子を含むカスタム書式指定文字列を定義します。  
   
  [!code-cpp[Formatting.Numeric.Custom#9](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#9)]
- [!code-csharp[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
  [!code-vb[Formatting.Numeric.Custom#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#9)]  
   
  [表のトップへ](#table)  
@@ -158,7 +162,7 @@ ms.locfileid: "33579237"
  次の例では、指数表記の指定子を使用して、さまざまな数値の書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Custom#7](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#7)]
- [!code-csharp[Formatting.Numeric.Custom#7](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#7)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#7](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#7)]
  [!code-vb[Formatting.Numeric.Custom#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#7)]  
   
  [表のトップへ](#table)  
@@ -177,7 +181,7 @@ ms.locfileid: "33579237"
  次の例では、エスケープ文字を使用して、書式設定操作で "#"、"0"、"\\" の各文字がエスケープ文字としても書式指定子としても解釈されないようにします。 この C# の例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。  
   
  [!code-cpp[Formatting.Numeric.Custom#11](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/escape1.cpp#11)]
- [!code-csharp[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
  [!code-vb[Formatting.Numeric.Custom#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/escape1.vb#11)]  
   
  [表のトップへ](#table)  
@@ -197,11 +201,43 @@ ms.locfileid: "33579237"
  次の例では、";" 書式指定子を使用して、正数、負数、ゼロの各部分に対し、それぞれ異なる書式を設定します。  
   
  [!code-cpp[Formatting.Numeric.Custom#8](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#8)]
- [!code-csharp[Formatting.Numeric.Custom#8](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#8)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#8](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#8)]
  [!code-vb[Formatting.Numeric.Custom#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#8)]  
   
  [表のトップへ](#table)  
+
+## <a name="character-literals"></a>文字リテラル  
+ 
+カスタム数値書式指定文字列に含まれる書式指定子は、常に書式設定文字として解釈され、決してリテラル文字としては解釈されません。 これには以下の文字が含まれます。  
+
+- [0](#Specifier0)
+- [\#](#SpecifierD)
+- [%](#SpecifierPct)
+- [‰](#SpecifierPerMille)
+- '
+- [\\](#SpecifierEscape)
+- [.](#SpecifierPt)
+- [、](#SpecifierTh)
+- [E または e](#SpecifierExponent)。書式指定文字列の位置によって変わります。
+
+その他の文字はすべて、文字リテラルとして常に解釈され、書式設定操作では、変更されずに結果の文字列に含まれます。  解析操作では、これらは入力文字列の文字と完全に一致している必要があります。比較では大文字小文字を区別します。  
   
+次の例は、リテラル文字の単位 (この場合は千単位) の一般的な使用例を示しています。
+  
+ [!code-csharp-interactive[literal characters](~/samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/literal2.cs#1)]
+ [!code-vb[literal characters](~/samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/literal2.vb#1)]  
+  
+ 文字が結果の文字列に含まれるように、または入力文字列で正常に解析されるように、文字が書式指定文字としてではなく、リテラル文字として解釈されることを示すには、次の 2 つの方法があります。  
+  
+- 書式指定文字をエスケープします。 詳細については、["\\" 文字](#SpecifierEscape)のセクションを参照してください。
+  
+- リテラル文字列全体を引用符のアポストロフィで囲みます。
+
+次の例では、両方のアプローチを使用して、カスタム数値書式指定文字列に予約文字を含めています。  
+  
+     [!code-csharp-interactive[including reserved characters](~/samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/literal1.cs#1)]
+     [!code-vb[including reserved characters](~/samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/literal1.vb#1)]  
+    
 <a name="NotesCustomFormatting"></a>   
 ## <a name="notes"></a>メモ  
   
@@ -223,13 +259,13 @@ ms.locfileid: "33579237"
  2 つのカスタム数値書式指定文字列の例を次に示します。 どちらの場合も、桁プレースホルダー (`#`) によって数値データが表示され、それ以外の文字はすべて結果の文字列にコピーされます。  
   
  [!code-cpp[Formatting.Numeric.Custom#10](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/example1.cpp#10)]
- [!code-csharp[Formatting.Numeric.Custom#10](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/example1.cs#10)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#10](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/example1.cs#10)]
  [!code-vb[Formatting.Numeric.Custom#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/example1.vb#10)]  
   
  [表のトップへ](#table)  
   
-## <a name="see-also"></a>参照  
- <xref:System.Globalization.NumberFormatInfo>  
+## <a name="see-also"></a>関連項目  
+ <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>  
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
  [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [方法: 数値に先行するゼロを埋め込む](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  

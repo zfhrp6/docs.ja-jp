@@ -4,12 +4,12 @@ description: dotnet run コマンドは、ソース コードからアプリケ�
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 82c6e44e52aa6af7044edf72fd6e57b7614a70f3
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 609ac27f21e6801992b9e10c7d465a805492859e
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696313"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071761"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
@@ -201,9 +201,9 @@ dotnet myapp.dll
 
 指定されたプロジェクトを実行します。
 
-`dotnet run --project /projects/proj1/proj1.csproj`
+`dotnet run --project ./projects/proj1/proj1.csproj`
 
-現在のディレクトリのプロジェクトを実行します (この例では、`--` 引数が使用されているため、`--help` 引数がアプリケーションに渡されます)。
+現在のディレクトリのプロジェクトを実行します (この例では、空の `--` オプションが使用されているため、`--help` 引数がアプリケーションに渡されます)。
 
 `dotnet run --configuration Release -- --help`
 

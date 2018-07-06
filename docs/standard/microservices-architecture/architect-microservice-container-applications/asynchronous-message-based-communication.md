@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: bee9a6215d2952f6c7f71607b1c4b1f44d1c0faf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5fb5d2f9f4f63ee885752a5dcc45cc45f71dc32f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579133"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106409"
 ---
 # <a name="asynchronous-message-based-communication"></a>メッセージベースの非同期通信
 
@@ -85,8 +85,8 @@ ms.locfileid: "33579133"
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **イベント ドリブン メッセージング**
-    [*http://soapatterns.org/design\_パターン/イベント\_ドリブン\_メッセージング*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **イベント駆動型メッセージング**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
 -   **発行/サブスクライブ チャンネル**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
@@ -101,11 +101,12 @@ ms.locfileid: "33579133"
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **最終的な整合性**
-    [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Jimmy Bogard。復元性を目指したリファクタリング: 結合の評価**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
 
 >[!div class="step-by-step"]
-[前へ] (communication-in-microservice-architecture.md) [次へ] (maintain-microservice-apis.md)
+[前へ](communication-in-microservice-architecture.md)
+[次へ](maintain-microservice-apis.md)

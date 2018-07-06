@@ -1,20 +1,21 @@
 ---
 title: '方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)'
-ms.date: 07/20/2015
+ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: c6af2c0f90d3ebb69438b670a4f0cecb10d8d2fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 444276f6ad68e988b2dbc2cd7401248a6f5da072
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33319170"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071836"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)
+
 この例では、一致するキーとして共通の値を使用する 2 つのコンマ区切りファイルのデータを結合する方法を示します。 この方法は、2 つのスプレッドシートのデータ、またはスプレッドシートのデータと別の形式のファイルのデータを、新しいファイルに結合する必要がある場合に役立ちます。 この例は、変更を加えることで、あらゆる構造化テキスト ファイルに応用できます。  
   
-### <a name="to-create-the-data-files"></a>データ ファイルを作成するには  
+## <a name="to-create-the-data-files"></a>データ ファイルを作成するには
   
-1.  次の行を scores.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、スプレッドシートのデータを表しています。 列 1 は学生の ID、列 2 ～ 5 はテストの得点です。  
+1.  次の行を *scores.csv* という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、スプレッドシートのデータを表しています。 列 1 は学生の ID、列 2 ～ 5 はテストの得点です。  
   
     ```  
     111, 97, 92, 81, 60  
@@ -31,7 +32,7 @@ ms.locfileid: "33319170"
     122, 94, 92, 91, 91  
     ```  
   
-2.  次の行を names.csv という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、学生の姓、名、および学生 ID が含まれるスプレッドシートを表しています。  
+2.  次の行を *names.csv* という名前のファイルにコピーし、プロジェクト フォルダーに保存します。 このファイルは、学生の姓、名、および学生 ID が含まれるスプレッドシートを表しています。  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -49,8 +50,12 @@ ms.locfileid: "33319170"
     ```  
   
 ## <a name="example"></a>例  
-  
-```csharp  
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 class JoinStrings  
 {  
     static void Main()  
@@ -78,7 +83,7 @@ class JoinStrings
             let nameFields = name.Split(',')  
             from id in scores  
             let scoreFields = id.Split(',')  
-            where nameFields[2] == scoreFields[0]  
+            where Convert.ToInt32(nameFields[2]) == Convert.ToInt32(scoreFields[0])
             select nameFields[0] + "," + scoreFields[1] + "," + scoreFields[2]   
                    + "," + scoreFields[3] + "," + scoreFields[4];  
   
@@ -102,26 +107,32 @@ class JoinStrings
     }  
 }  
 /* Output:  
-Merge two spreadsheets:  
-Adams, 99, 82, 81, 79  
-Fakhouri, 99, 86, 90, 94  
-Feng, 93, 92, 80, 87  
-Garcia, 97, 89, 85, 82  
-Garcia, 35, 72, 91, 70  
-Garcia, 92, 90, 83, 78  
-Mortensen, 88, 94, 65, 91  
-O'Donnell, 75, 84, 91, 39  
-Omelchenko, 97, 92, 81, 60  
-Tucker, 68, 79, 88, 92  
-Tucker, 94, 92, 91, 91  
-Zabokritski, 96, 85, 91, 60  
-12 total names in list  
+Merge two spreadsheets:
+Omelchenko, 97, 92, 81, 60
+O'Donnell, 75, 84, 91, 39
+Mortensen, 88, 94, 65, 91
+Garcia, 97, 89, 85, 82
+Garcia, 35, 72, 91, 70
+Fakhouri, 99, 86, 90, 94
+Feng, 93, 92, 80, 87
+Garcia, 92, 90, 83, 78
+Tucker, 68, 79, 88, 92
+Adams, 99, 82, 81, 79
+Zabokritski, 96, 85, 91, 60
+Tucker, 94, 92, 91, 91
+12 total names in list
  */  
-```  
+```
+
+## <a name="compiling-the-code"></a>コードのコンパイル
+
+次のいずれかのオプションを対象とするプロジェクトを作成してコンパイルします。
+
+- System.Core.dll の参照を含む .NET Framework バージョン 3.5。
+- .NET Framework バージョン 4.0 以降
+- .NET Core バージョン 1.0 以降。
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。  
-  
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目
+
  [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
  [LINQ とファイル ディレクトリ (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

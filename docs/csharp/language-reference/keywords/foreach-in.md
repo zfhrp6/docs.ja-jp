@@ -1,6 +1,6 @@
 ---
 title: foreach、in (C# リファレンス)
-ms.date: 05/24/2018
+ms.date: 06/29/2018
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 7613590686f7f7ec6439da4a2bb672e524ab01e8
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: d3ce1122c54c14b1baf35641f28d062a2855d335
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34565707"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140269"
 ---
 # <a name="foreach-in-c-reference"></a>foreach、in (C# リファレンス)
 
@@ -35,7 +35,11 @@ ms.locfileid: "34565707"
 
 次の例では、何のインターフェイスも実装していない <xref:System.Span%601?displayProperty=nameWithType> 型のインスタンスを使用して、`foreach` ステートメントを使用します。
 
-[!code-csharp-interactive[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
+[!code-csharp[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
+
+C# 7.3 以降、列挙子の `Current` プロパティが、[参照戻り値](../../programming-guide/classes-and-structs/ref-returns.md) (`ref T``T` はコレクション要素の種類です) を返す場合、`ref` または `ref readonly` 修飾子を使用して繰り返し変数を宣言することができます。 次の例では、stackalloc 配列内の各項目の値を設定するために、`ref` 繰り返し変数を使用します。 `ref readonly` バージョンは、すべての値を出力するコレクションを反復処理します。 `readonly` 宣言では、暗黙のローカル変数宣言を使用します。 暗黙の変数宣言は、`ref` または `ref readonly` 宣言で使用でき、変数の宣言を明示的に型指定できます。
+
+[!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#RefSpan)]
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 
