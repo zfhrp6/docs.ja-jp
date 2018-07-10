@@ -4,12 +4,12 @@ description: '.NET マイクロサービス: コンテナー化された .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
-ms.openlocfilehash: ded2e5399938be25005776963b0310b6a49d0353
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 430fbe3fc6d63fd3b90b578f32b42831c368ba10
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592354"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106305"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>docker-compose.yml で複数のコンテナー アプリケーションを定義する 
 
@@ -176,7 +176,7 @@ Compose を使用してリモート Docker エンジンに展開することも�
 
 さまざまな環境をターゲットとする場合は、複数の compose ファイルを使用する必要があります。 これにより、環境に応じて複数の構成バリアントを作成できます。
 
-#### <a name="overriding-the-base-docker-compose-file"></a>基本の docker-compose ファイルを上書きする
+#### <a name="overriding-the-base-docker-compose-file"></a>基本の docker-compose ファイルをオーバーライドする
 
 前のセクションで示した簡略化された例のように、1 つの docker-compose.yml ファイルを使用できます。 ただし、これはほとんどのアプリケーションにはお勧めできません。
 
@@ -190,7 +190,7 @@ Visual Studio Code や Sublime などの任意のエディターを使用して 
 
 慣例により、docker-compose.yml ファイルには、基本構成とその他の静的な設定が含まれています。 つまり、ターゲットとしている展開環境に合わせてサービス構成を変更しないでください。
 
-docker-compose.override.yml ファイルには、その名前が示すように、基本構成 (展開環境に依存する構成など) を上書きする構成設定が含まれています。 また、複数の override ファイルを異なる名前で持つことができます。 override ファイルには通常、アプリケーションで必要な、環境または展開に固有の追加情報が含まれています。
+docker-compose.override.yml ファイルには、その名前が示すように、基本構成 (展開環境に依存する構成など) をオーバーライドする構成設定が含まれています。 また、複数の override ファイルを異なる名前で持つことができます。 override ファイルには通常、アプリケーションで必要な、環境または展開に固有の追加情報が含まれています。
 
 #### <a name="targeting-multiple-environments"></a>複数の環境をターゲットにする
 
@@ -198,7 +198,7 @@ docker-compose.override.yml ファイルには、その名前が示すように�
 
 ![](./media/image13.png)
 
-**図 8-12** 基本の docker-compose.yml ファイル内の値を上書きする複数の docker-compose ファイル
+**図 8-12** 基本の docker-compose.yml ファイル内の値をオーバーライドする複数の docker-compose ファイル
 
 基本の docker-compose.yml ファイルから開始します。 この基本ファイルには、環境に合わせて変更されない基本構成または静的な構成設定が含まれている必要があります。 たとえば、eShopOnContainers には、基本ファイルとして次の docker-compose.yml ファイルがあります。
 
@@ -388,9 +388,9 @@ services:
 
 ```
 
-この例では、開発上書き構成でいくつかのポートをホストに公開し、リダイレクト URL で環境変数を定義し、開発環境への接続文字列を指定します。 これらの設定はすべて、開発環境のためだけのものです。
+この例では、開発オーバーライド構成でいくつかのポートをホストに公開し、リダイレクト URL で環境変数を定義し、開発環境への接続文字列を指定します。 これらの設定はすべて、開発環境のためだけのものです。
 
-`docker-compose up` を実行 (または Visual Studio から起動) すると、コマンドは両方の上書きを、2 つのファイルがマージされているかのように、自動的に読み取ります。
+`docker-compose up` を実行 (または Visual Studio から起動) すると、コマンドは両方のオーバーライドを、2 つのファイルがマージされているかのように、自動的に読み取ります。
 
 運用環境用に、異なる構成値、ポート、または接続文字列を持つ別の Compose ファイルが必要だとします。 異なる設定と環境変数を使用して、`docker-compose.prod.yml` という名前の別の override ファイルを作成できます。  そのファイルは、別の Git リポジトリに格納したり、別のチームによって管理および保護することができます。
 
@@ -410,7 +410,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 IdentityUrl=http://${ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP}:5105
 ```
 
-環境変数が作成され、ホスト環境 (Linux、Windows、クラウド クラスターなど) に応じて、さまざまな方法で初期化されます。 しかし、便利な方法は、.env ファイルを使用することです。 docker-compose ファイルは、.env ファイルで既定の環境変数を宣言することをサポートします。 環境変数のこれらの値が既定値です。 ただしこれらは、それぞれの環境 (ホスト OS またはクラスターからの環境変数) で定義した値によって上書きできます。 この .env ファイルを、docker-compose コマンドが実行される場所に配置します。
+環境変数が作成され、ホスト環境 (Linux、Windows、クラウド クラスターなど) に応じて、さまざまな方法で初期化されます。 しかし、便利な方法は、.env ファイルを使用することです。 docker-compose ファイルは、.env ファイルで既定の環境変数を宣言することをサポートします。 環境変数のこれらの値が既定値です。 ただしこれらは、それぞれの環境 (ホスト OS またはクラスターからの環境変数) で定義した値によってオーバーライドできます。 この .env ファイルを、docker-compose コマンドが実行される場所に配置します。
 
 次の例は、eShopOnContainers アプリケーション用の [.env](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/.env) ファイルと同様の .env ファイルを示しています。
 
@@ -424,7 +424,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=10.121.122.92
 
 Docker-compose は、.env ファイル内の各行が &lt;変数&gt;=&lt;値&gt; の形式になることを想定しています。
 
-ランタイム環境で設定された値は、.env ファイル内で定義されている値を常に上書きすることに注意してください。 同様の方法で、コマンドラインのコマンド引数を介して渡される値も、.env ファイルで設定された既定値を上書きします。
+ランタイム環境で設定された値は、.env ファイル内で定義されている値を常にオーバーライドすることに注意してください。 同様の方法で、コマンドラインのコマンド引数を介して渡される値も、.env ファイルで設定された既定値をオーバーライドします。
 
 #### <a name="additional-resources"></a>その他の技術情報
 
@@ -432,7 +432,7 @@ Docker-compose は、.env ファイル内の各行が &lt;変数&gt;=&lt;値&gt;
     [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
 -   **複数の Compose ファイル**
-    [*https://docs.docker.com/compose/extends/\#複数の compose ファイル*](https://docs.docker.com/compose/extends/#multiple-compose-files)
+    [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### <a name="building-optimized-aspnet-core-docker-images"></a>最適化された ASP.NET Core Docker イメージをビルドする
 
@@ -548,4 +548,5 @@ Visual Studio を使用すると、これらすべての手順は内部で実行
 
 
 >[!div class="step-by-step"]
-[前へ] (data-driven-crud-microservice.md) [次へ] (database-server-container.md)
+[前へ](data-driven-crud-microservice.md)
+[次へ](database-server-container.md)

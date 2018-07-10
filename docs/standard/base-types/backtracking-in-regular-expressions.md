@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7caf42ee45f31e374bd2cbf7c700992130281ff0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e05da1c2ed68f482cbb1280c5c40583ab54d71bb
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579770"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071865"
 ---
 # <a name="backtracking-in-regular-expressions"></a>正規表現におけるバックトラッキング
 <a name="top"></a> バックトラッキングは、正規表現パターンに省略可能な [量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) または [代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)が含まれている場合に発生します。この場合、正規表現エンジンは、一致の検索を継続するために、以前に保存した状態に戻ります。 バックトラッキングは、正規表現を強力にするための中心的な機能で、これにより、非常に複雑なパターンを照合できる強力かつ柔軟な正規表現を作成できるようになります。 その一方で、バックトラッキングにはマイナス面もあり、 多くの場合、正規表現エンジンのパフォーマンスを左右する最大の要因になります。 さいわい、正規表現エンジンの動作とバックトラッキングの使用方法は開発者が制御できます。 ここでは、バックトラッキングの動作のしくみと、バックトラッキングを制御する方法について説明します。  
@@ -169,7 +169,7 @@ ms.locfileid: "33579770"
 |`[-.\w]*`|ハイフン、ピリオド、または単語文字の 0 回以上の出現に一致します。|  
 |`[0-9A-Z]`|英数字 1 文字に一致します。|  
 |`([-.\w]*[0-9A-Z])*`|0 個以上のハイフン、ピリオド、または単語文字の後に英数字が続く組み合わせの 0 回以上の出現に一致します。 これが最初のキャプチャ グループです。|  
-|`@`|アット マーク ("@") に一致します。|  
+|`@`|アット マーク ("\@") に一致します。|  
   
  2 つ目の正規表現パターン `^[0-9A-Z][-.\w]*(?<=[0-9A-Z])@`では、肯定後読みアサーションが使用されています。 このパターンは、次の表に示すように定義されています。  
   
@@ -179,7 +179,7 @@ ms.locfileid: "33579770"
 |`[0-9A-Z]`|英数字 1 文字に一致します。 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドが <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> オプションを使用して呼び出されているため、この比較では大文字と小文字が区別されません。|  
 |`[-.\w]*`|ハイフン、ピリオド、または単語文字の 0 回以上の出現と一致します。|  
 |`(?<=[0-9A-Z])`|最後に照合された文字を後読みして、英数字だった場合は照合を継続します。 英数字は、ピリオド、ハイフン、およびすべての単語文字から成るセットのサブセットです。|  
-|`@`|アット マーク ("@") に一致します。|  
+|`@`|アット マーク ("\@") に一致します。|  
   
 <a name="Lookahead"></a>   
 ### <a name="lookahead-assertions"></a>先読みアサーション  
