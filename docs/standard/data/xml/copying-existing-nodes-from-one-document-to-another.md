@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573927"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>ドキュメント間での既存のノードのコピー
 **ImportNode** メソッドを使用すると、ある **XmlDocument** から別の XmlDocument へ、ノードまたはノードのサブツリー全体をコピーできます。 呼び出しから返されるノードは、ソース ドキュメントのノードのコピーであり、そこには属性値、ノード名、ノード型が含まれます。さらに、プレフィックス、ローカル名、名前空間 URI (Uniform Resource Identifier) など、名前空間に関連するすべての属性も含まれます。 ソース ドキュメントは変更されません。 インポートしたノードは、ノードを挿入するメソッドの 1 つを使用してツリーに追加する必要があります。  
