@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 06/18/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 690e39dcbd02d81b8d4afe918a74795aa02f7fc6
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: 9706dad0a8e32651496e0404be4501c2c70e9d75
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314966"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948632"
 ---
 # <a name="tutorial-use-mlnet-to-predict-new-york-taxi-fares-regression"></a>チュートリアル: ML.NET を使用してニューヨークのタクシー運賃を予測する (回帰)
 
@@ -82,7 +82,7 @@ ms.locfileid: "36314966"
 
 1. **ソリューション エクスプローラー**で、プロジェクトを右クリックし、**[追加]** > **[新しい項目]** を選択します。
 1. **[新しい項目の追加]** ダイアログ ボックスで、**[クラス]** を選択し、**[名前]** フィールドを *TaxiTrip.cs* に変更します。 次に、**[追加]** を選択します。
-1. 新しいファイルに次の `using` ステートメントを追加します。
+1. 以下の `using` ディレクティブを新しいファイルに追加します。
 
    [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/TaxiTrip.cs#1 "Add necessary usings")]
 
@@ -96,19 +96,23 @@ ms.locfileid: "36314966"
 
 ## <a name="define-data-and-model-paths"></a>データおよびモデルのパスを定義する
 
-*Program.cs* ファイルに戻り、データ セットが含まれているファイルへのパスを保持するために、およびモデルを保存するために次の 3 つのグローバル定数を作成します。
+*Program.cs* ファイルに戻り、データ セットを含むファイルと、モデルを保存するためのファイルへのパスを保持するための 3 つのフィールドを追加します。
 
-* `_datapath` には、モデルのトレーニングに使用するデータ セットのパスがあります。
-* `_testdatapath` には、モデルの評価に使用するデータ セットのパスがあります。
-* `_modelpath` には、トレーニング済みのモデルを格納するパスがあります。
+* `_datapath` には、モデルのトレーニングに使用するデータ セットがあるファイルへのパスが含まれます。
+* `_testdatapath` には、モデルの評価に使用するデータ セットがあるファイルへのパスが含まれます。
+* `_modelpath` には、トレーニング済みモデルが格納されるファイルへのパスが含まれます。
 
-`Main` メソッドのすぐ上にある行に次のコードを追加して、それらのパスを指定します。
+`Main` メソッドのすぐ上に次のコードを追加して、それらのパスを指定します。
 
 [!code-csharp[InitializePaths](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#2 "Define variables to store the data file paths")]
 
+上記のコードをコンパイルするには、*Program.cs* ファイルの先頭に次の `using` ディレクティブを追加します。
+
+[!code-csharp[AddUsingsForPaths](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#17 "Using statements for path definitions")]
+
 ## <a name="create-a-learning-pipeline"></a>学習パイプラインを作成する
 
-次に示す追加の `using` ステートメントを *Program.cs* ファイルの先頭に追加します。
+以下の追加の `using` ディレクティブを、*Program.cs* ファイルの先頭に追加します。
 
 [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#1 "Add necessary usings")]
 
@@ -135,7 +139,7 @@ var pipeline = new LearningPipeline();
 
 ## <a name="load-and-transform-data"></a>データを読み込んで変換する
 
-学習パイプラインが実行する最初の手順は、トレーニング データ セットからデータを読み込むことです。 ここでは、トレーニング データ セットは、`_datapath` 定数によってパスが定義されるテキスト ファイルに格納されます。 そのファイルには列名を含んだヘッダーがあるので、データの読み込み中に最初の行は無視されます。 ファイル内の列はコンマ (",") で区切られます。 `Train` メソッドに次のコードを追加します。
+学習パイプラインが実行する最初の手順は、トレーニング データ セットからデータを読み込むことです。 ここでは、トレーニング データ セットは、`_datapath` フィールドによってパスが定義されるテキスト ファイルに格納されます。 そのファイルには列名を含んだヘッダーがあるので、データの読み込み中に最初の行は無視されます。 ファイル内の列はコンマ (",") で区切られます。 `Train` メソッドに次のコードを追加します。
 
 ```csharp
 pipeline.Add(new TextLoader(_datapath).CreateFrom<TaxiTrip>(useHeader: true, separator: ','));
@@ -215,7 +219,7 @@ pipeline.Add(new FastTreeRegressor());
 
 [!code-csharp[AsyncMain](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#8 "Make the Main method async and return a task.")]
 
-また、次の `using` ステートメントをファイルの先頭に追加する必要もあります。
+また、次の `using` ディレクティブをファイルの先頭に追加する必要もあります。
 
 [!code-csharp[UsingTasks](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#9 "Add System.Threading.Tasks. to your usings.")]
 
