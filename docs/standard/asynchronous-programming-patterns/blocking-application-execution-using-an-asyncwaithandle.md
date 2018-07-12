@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567326"
 ---
 # <a name="blocking-application-execution-using-an-asyncwaithandle"></a><span data-ttu-id="035cd-102">AsyncWaitHandle の使用によるアプリケーション実行のブロック</span><span class="sxs-lookup"><span data-stu-id="035cd-102">Blocking Application Execution Using an AsyncWaitHandle</span></span>
 <span data-ttu-id="035cd-103">非同期操作の結果の待機中に、他の作業を継続できないアプリケーションは、操作が完了するまでブロックする必要があります。</span><span class="sxs-lookup"><span data-stu-id="035cd-103">Applications that cannot continue to do other work while waiting for the results of an asynchronous operation must block until the operation completes.</span></span> <span data-ttu-id="035cd-104">次のオプションのいずれかを使用して、非同期操作が完了するまでの待機中に、アプリケーションのメイン スレッドをブロックします。</span><span class="sxs-lookup"><span data-stu-id="035cd-104">Use one of the following options to block your application's main thread while waiting for an asynchronous operation to complete:</span></span>  
