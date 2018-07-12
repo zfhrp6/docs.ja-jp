@@ -1,5 +1,5 @@
 ---
-title: '&lt;ヘッダー&gt;'
+title: '&lt;header&gt;'
 ms.date: 03/30/2017
 ms.assetid: c79b897d-8ea3-40b5-a8b6-2471941f7ed3
 ms.openlocfilehash: 7683b07093719cda6b210a4174d47e5785d4644d
@@ -8,7 +8,7 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltheadersgt"></a>&lt;ヘッダー&gt;
+# <a name="ltheadersgt"></a>&lt;header&gt;
 エンドポイントは、基本となる URI だけでなく、1 つ以上の SOAP ヘッダーによってアドレス指定することもできます。 これが役に立つのは、エンドポイントのクライアントに中継局を指す SOAP ヘッダーを含める必要がある、SOAP 中継局のシナリオの場合です。 この構成要素を使用して、カスタムのアドレス ヘッダーを定義できます。 エンドポイント ヘッダー コレクション内のエントリは、ユーザー定義の XML 要素です。 各要素は、正しい形式の XML である必要があります。  
   
  \<system.ServiceModel >  
