@@ -2,12 +2,12 @@
 title: Web サービス ジェネリック シリアル化の技術サンプル
 ms.date: 03/30/2017
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
-ms.openlocfilehash: 29cfa8f66f4b465d30c85c6944b8f3d94203f489
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 799206b1bd86e98c87441771174441d07074a325
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585617"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936777"
 ---
 # <a name="web-services-generics-serialization-technology-sample"></a>Web サービス ジェネリック シリアル化の技術サンプル
 [サンプルのダウンロード](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
@@ -58,9 +58,9 @@ ms.locfileid: "33585617"
   
 1.  Web ブラウザー ウィンドウを開き、アドレス バーをクリックします。  
   
-2.  型 **http://localhost/[仮想 directory]/Service.asmx**, ここで、[仮想ディレクトリ] は、サンプルをビルドしたときに作成した仮想ディレクトリを表します。  
+2.  型`http://localhost/[virtual directory]/Service.asmx`ここで、`[virtual directory]`サンプルのビルド時に作成した仮想ディレクトリを表します。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
  サンプルでは、Web サービスの定義へのリンクを含む既定の ASP.NET ページが表示されます。 Web サービスのソース コードの変更に加えて、表示のカスタマイズも可能です。 詳細については、「[XML Web サービス クライアントの作成](https://msdn.microsoft.com/library/c606f3cb-4111-45b4-ae42-9300420fa16c)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
