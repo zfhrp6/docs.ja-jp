@@ -130,7 +130,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  B3121: WCF では、Ws-metadataexchange (MEX) 仕様のメタデータに含めるエンドポイント参照の値渡しまたは参照渡しのセクション 6 に示すメカニズムを採用しています。  
   
- WCF サービスであるトークン発行者によって発行された Security Assertions Markup Language (SAML) トークンを使用して認証が必要な場合を考えますhttp://sts.fabrikam123.comです。 WCF エンドポイントを使用してこの認証要件を記述する`sp:IssuedToken`が入れ子になったアサーション`sp:Issuer`トークンの発行者を指し示すアサーションです。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、WCF は、トークン発行者のメタデータへの参照を提供します。  
+ WCF サービスであるトークン発行者によって発行された Security Assertions Markup Language (SAML) トークンを使用して認証が必要な場合を考えます http://sts.fabrikam123.com です。 WCF エンドポイントを使用してこの認証要件を記述する`sp:IssuedToken`が入れ子になったアサーション`sp:Issuer`トークンの発行者を指し示すアサーションです。 `sp:Issuer` アサーションにアクセスするクライアント アプリケーションは、トークン発行者のエンドポイントとの通信方法を知る必要があります。 クライアントは、トークン発行者に関するメタデータを知る必要があります。 MEX で定義されたエンドポイント参照のメタデータ拡張を使用して、WCF は、トークン発行者のメタデータへの参照を提供します。  
   
 ```xml  
 <sp:IssuedToken>  
@@ -194,7 +194,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
 -   R3322 : WS-Addressing 2004/08 を使用する場合、`ReplyTo` も要求に含める必要があります。  
   
--   R3323: Ws-addressing 1.0 を使用する場合と`ReplyTo`と等しい [address] プロパティを使用して既定のエンドポイント参照、要求に存在しない"http://www.w3.org/2005/08/addressing/anonymous"を使用します。  
+-   R3323: Ws-addressing 1.0 を使用する場合と`ReplyTo`と等しい [address] プロパティを使用して既定のエンドポイント参照、要求に存在しない" http://www.w3.org/2005/08/addressing/anonymous "を使用します。  
   
 -   R3324: リクエスターを含める必要があります`wsa:To`、 `wsa:Action`、および`wsa:RelatesTo`応答メッセージのヘッダーだけでなくすべての参照パラメーターまたは参照プロパティ (またはその両方) で指定されたヘッダー、`ReplyTo`でエンドポイント参照、要求。  
   
@@ -291,11 +291,11 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  上記のステートメントにより、要求メッセージの `wsa:ReplyTo` ヘッダーに関する以下の要件が発生します。  
   
--   R3514: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティに等しくない"http://www.w3.org/2005/08/addressing/anonymous"エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合、`wsap10:UsingAddressing`または`wsap:UsingAddressing`組み合わせるとアサーション`cdp:CompositeDuplex`添付します。  
+-   R3514: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティに等しくない" http://www.w3.org/2005/08/addressing/anonymous "エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合、`wsap10:UsingAddressing`または`wsap:UsingAddressing`組み合わせるとアサーション`cdp:CompositeDuplex`添付します。  
   
--   R3515: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく"http://www.w3.org/2005/08/addressing/anonymous"、かない、`ReplyTo`ヘッダーはまったく、エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap10:UsingAddressing`アサーションといいえ`cdp:CompositeDuplex`アサーションです。  
+-   R3515: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく" http://www.w3.org/2005/08/addressing/anonymous "、かない、`ReplyTo`ヘッダーはまったく、エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap10:UsingAddressing`アサーションといいえ`cdp:CompositeDuplex`アサーションです。  
   
--   R3516: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく"http://www.w3.org/2005/08/addressing/anonymous"エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap:UsingAddressing`アサーションとありません`cdp:CompositeDuplex`アサーションです。  
+-   R3516: 要求メッセージにするエンドポイントに送信する必要があります、`ReplyTo`ヘッダーを`[address]`プロパティを等しく" http://www.w3.org/2005/08/addressing/anonymous "エンドポイントが WSDL 1.1 SOAP 1.x HTTP バインディングを使用して、ポリシー代替手段を持つ場合`wsap:UsingAddressing`アサーションとありません`cdp:CompositeDuplex`アサーションです。  
   
  WS-Addressing の WSDL 仕様では、`<wsaw:Anonymous/>` ヘッダーの要件を示す 3 つのテキスト値 (required、optional、および prohibited) を持つ `wsa:ReplyTo` 要素を導入することにより、同様のプロトコル バインディングを記述することを試みています (セクション 3.2)。 残念ながら、このような要素の定義では、要素をアサーションとして使用する代替手段の共通部分をサポートするために、ドメイン固有の拡張を必要とするため、特に WS-Policy のコンテキストではアサーションとして使用することはできません。 また、このような要素の定義は、ネットワーク上のエンドポイントの動作に相反する `ReplyTo` ヘッダーの値を示すため、HTTP トランスポートに固有のものになります。  
   
@@ -397,7 +397,7 @@ Content-Length: 0
   
  次の一連の手順は、MTOM 固有のエンコーディング プロセスを示しています。  
   
-1.  エンコードする SOAP エンベロープに記述されている要素情報項目が含まれていないことを確認、`[namespace name]`の"http://www.w3.org/2004/08/xop/include"および`[local name]`の`Include`します。  
+1.  エンコードする SOAP エンベロープに記述されている要素情報項目が含まれていないことを確認、`[namespace name]`の" http://www.w3.org/2004/08/xop/include "および`[local name]`の`Include`します。  
   
 2.  空の MIME パッケージを作成します。  
   

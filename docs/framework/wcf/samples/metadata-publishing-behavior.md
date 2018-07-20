@@ -23,7 +23,7 @@ ms.locfileid: "33505522"
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- サービスでメタデータを公開するには、サービス上に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を構成する必要があります。 この動作が存在する場合は、エンドポイントを構成してメタデータを公開し、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを WS-MetadataExchange (MEX) プロトコルの実装として公開できます。 便宜上、このコントラクトには、構成名を略した "IMetadataExchange" という名前が付けられています。 このサンプルでは、`mexHttpBinding` を使用します。これは使いやすい標準バインディングで、セキュリティ モードが `wsHttpBinding` に設定されている `None` と同等です。 相対アドレスの"mex"が使用されるエンドポイントには、どのに対して解決とサービスのベース アドレスのエンドポイント アドレスhttp://localhost/servicemodelsamples/service.svc/mexです。 この動作の構成を次に示します。  
+ サービスでメタデータを公開するには、サービス上に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を構成する必要があります。 この動作が存在する場合は、エンドポイントを構成してメタデータを公開し、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを WS-MetadataExchange (MEX) プロトコルの実装として公開できます。 便宜上、このコントラクトには、構成名を略した "IMetadataExchange" という名前が付けられています。 このサンプルでは、`mexHttpBinding` を使用します。これは使いやすい標準バインディングで、セキュリティ モードが `wsHttpBinding` に設定されている `None` と同等です。 相対アドレスの"mex"が使用されるエンドポイントには、どのに対して解決とサービスのベース アドレスのエンドポイント アドレス http://localhost/servicemodelsamples/service.svc/mex です。 この動作の構成を次に示します。  
   
 ```xml  
 <behaviors>  
@@ -55,7 +55,7 @@ ms.locfileid: "33505522"
           contract="IMetadataExchange" />  
 ```  
   
- このサンプルでは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。これにより、HTTP GET を使用してサービスのメタデータも公開されます。 HTTP GET メタデータのエンドポイントを有効にするには、サービスに HTTP ベース アドレスが設定されている必要があります。 クエリ文字列 `?wsdl` は、メタデータにアクセスするサービスのベース アドレスで使用されます。 たとえば、Web ブラウザーでサービスの WSDL を表示するとアドレスを使用する、http://localhost/servicemodelsamples/service.svc?wsdlです。 または、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> を `true` に設定してこの動作を使用することにより、HTTPS を通じてメタデータを公開することもできます。 これには、HTTPS ベース アドレスが必要です。  
+ このサンプルでは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。これにより、HTTP GET を使用してサービスのメタデータも公開されます。 HTTP GET メタデータのエンドポイントを有効にするには、サービスに HTTP ベース アドレスが設定されている必要があります。 クエリ文字列 `?wsdl` は、メタデータにアクセスするサービスのベース アドレスで使用されます。 たとえば、Web ブラウザーでサービスの WSDL を表示するとアドレスを使用する、 http://localhost/servicemodelsamples/service.svc?wsdl です。 または、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> を `true` に設定してこの動作を使用することにより、HTTPS を通じてメタデータを公開することもできます。 これには、HTTPS ベース アドレスが必要です。  
   
  サービスの MEX エンドポイントの使用にアクセスする、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "33505522"
   
  これにより、サービスのメタデータに基づくクライアントが生成されます。  
   
- HTTP GET を使用して、サービスのメタデータにアクセスするには、ブラウザーをポイントhttp://localhost/servicemodelsamples/service.svc?wsdlです。  
+ HTTP GET を使用して、サービスのメタデータにアクセスするには、ブラウザーをポイント http://localhost/servicemodelsamples/service.svc?wsdl です。  
   
  この動作を削除してサービスを開こうとすると、例外が発生します。 動作がない場合にこのエラーが発生するのは、`IMetadataExchange` コントラクトを使用して構成されたエンドポイントに実装が存在しないからです。  
   

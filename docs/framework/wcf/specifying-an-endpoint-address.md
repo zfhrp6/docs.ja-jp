@@ -20,7 +20,7 @@ Windows Communication Foundation (WCF) サービスとすべての通信は、�
 ## <a name="definition-of-an-endpoint-address"></a>エンドポイント アドレスの定義  
  WCF では、 <xref:System.ServiceModel.EndpointAddress> Ws-addressing 仕様で定義されているエンドポイント参照 (EPR) をモデル化します。  
   
- ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 この URI をたとえば、"http://www.fabrikam.com:322/mathservice.svc/secureEndpoint"は次の 4 つの部分があります。  
+ ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 この URI をたとえば、" http://www.fabrikam.com:322/mathservice.svc/secureEndpoint "は次の 4 つの部分があります。  
   
 -   スキーム : http:  
   
@@ -45,7 +45,7 @@ Windows Communication Foundation (WCF) サービスとすべての通信は、�
   
  ときに、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>メソッド (つまり、ときに呼び出される、ホスト アプリケーションでは、サービスを開始しようとして)、システム検索、 [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md) "UE を指定する名前の属性を持つ要素。Samples.HelloService"です。 場合、 [\<サービス >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)要素が見つかると、システムが、指定したクラスに読み込んで、構成ファイルで提供されるエンドポイントの定義を使用してエンドポイントを作成します。 このしくみによって、2 行のコードでサービスを読み込んで開始でき、バインディングとアドレス指定情報をコード外に維持することができます。 この方法の利点は、アプリケーションを再度コンパイルしたり、展開したりすることなく、この 2 つの情報を変更できる点です。  
   
- 省略可能なヘッダーがで宣言されている、 [\<ヘッダー >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)です。 2 つのヘッダーを区別する構成ファイルでサービスのエンドポイントを指定するための要素の例を次に示します:"Gold"クライアントからhttp://tempuri1.org/と「標準」のクライアントからhttp://tempuri2.org/です。 適切なクライアントがこのサービスを呼び出す必要があります[\<ヘッダー >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)によって構成ファイルにします。  
+ 省略可能なヘッダーがで宣言されている、 [\<ヘッダー >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)です。 2 つのヘッダーを区別する構成ファイルでサービスのエンドポイントを指定するための要素の例を次に示します:"Gold"クライアントから http://tempuri1.org/ と「標準」のクライアントから http://tempuri2.org/ です。 適切なクライアントがこのサービスを呼び出す必要があります[\<ヘッダー >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)によって構成ファイルにします。  
   
  [!code-xml[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  
   

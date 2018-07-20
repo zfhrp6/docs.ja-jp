@@ -98,7 +98,7 @@ serviceHost.Description.Behaviors.Add(
      new RoutingBehavior(rc));  
 ```  
   
- この例のアドレスを持つ 1 つのエンドポイントを公開するルーティング サービスを構成する"http://localhost:8000/routingservice/router"、ルーティングされるメッセージの受信に使用されます。 メッセージは要求/応答エンドポイントにルーティングされるため、サービス エンドポイントは <xref:System.ServiceModel.Routing.IRequestReplyRouter> コントラクトを使用します。 この構成での 1 つのクライアント エンドポイントも定義"http://localhost:8000/servicemodelsample/service"メッセージをルーティングすることです。 "RoutingTable1"という名前 (表示されません) テーブルのフィルターがメッセージのルーティングに使用されるルーティング ロジックを保持しを使用して、サービス エンドポイントに関連付けられて、 **RoutingBehavior** (用構成ファイルの場合) または**RoutingConfiguration** (プログラムによる構成) 用です。  
+ この例のアドレスを持つ 1 つのエンドポイントを公開するルーティング サービスを構成する" http://localhost:8000/routingservice/router "、ルーティングされるメッセージの受信に使用されます。 メッセージは要求/応答エンドポイントにルーティングされるため、サービス エンドポイントは <xref:System.ServiceModel.Routing.IRequestReplyRouter> コントラクトを使用します。 この構成での 1 つのクライアント エンドポイントも定義" http://localhost:8000/servicemodelsample/service "メッセージをルーティングすることです。 "RoutingTable1"という名前 (表示されません) テーブルのフィルターがメッセージのルーティングに使用されるルーティング ロジックを保持しを使用して、サービス エンドポイントに関連付けられて、 **RoutingBehavior** (用構成ファイルの場合) または**RoutingConfiguration** (プログラムによる構成) 用です。  
   
 ### <a name="routing-logic"></a>ルーティング ロジック  
  メッセージのルーティングに使用されるルーティング ロジックを定義するには、受信メッセージに含まれるデータのうち、一意に識別して処理できるものを特定する必要があります。 たとえば、ルーティング先のすべてのエンドポイントが同じ SOAP アクションを共有する場合、メッセージに含まれる Action の値は、メッセージのルーティング先となる特定のエンドポイントを示す値としては不適切です。 ある特定のエンドポイントにメッセージを一意にルーティングする必要がある場合は、メッセージのルーティング先エンドポイントを一意に識別できるデータを基に、フィルター処理を行います。  
@@ -160,7 +160,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
 -   複数のフィルターが、メッセージの評価時に `true` を返す必要がある。  
   
- これらの条件が満たされる場合は、メッセージが、`true` に評価されたすべてのフィルターのすべてのエンドポイントにルーティングされます。 次の例は、結果、メッセージ内のエンドポイント アドレスがある場合、両方のエンドポイントにルーティングされるメッセージ ルーティングの構成を定義http://localhost:8000/routingservice/router/roundingです。  
+ これらの条件が満たされる場合は、メッセージが、`true` に評価されたすべてのフィルターのすべてのエンドポイントにルーティングされます。 次の例は、結果、メッセージ内のエンドポイント アドレスがある場合、両方のエンドポイントにルーティングされるメッセージ ルーティングの構成を定義 http://localhost:8000/routingservice/router/rounding です。  
   
 ```xml  
 <!--ROUTING SECTION -->  
