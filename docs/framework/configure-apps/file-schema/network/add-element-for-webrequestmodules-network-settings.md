@@ -61,7 +61,7 @@ ms.locfileid: "32742791"
   
  URI の一致のプレフィックスに渡される Web 要求のモジュールが作成された、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>メソッドです。  
   
- 値、`prefix`属性が有効な URI: たとえば、"http"の先頭の文字にする必要がありますか"http://www.contoso.com"です。  
+ 値、`prefix`属性が有効な URI: たとえば、"http"の先頭の文字にする必要がありますか" http://www.contoso.com "です。  
   
  値、`type`属性が有効な型名と対応するアセンブリ名、コンマで区切られたにする必要があります。  
   

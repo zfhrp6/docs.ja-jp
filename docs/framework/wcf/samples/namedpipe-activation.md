@@ -196,7 +196,7 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  このコマンドはテキスト 1 行です。  
   
-         このコマンドにより、/servicemodelsamples アプリケーションに両方を使用してアクセスしてhttp://localhost/servicemodelsamplesと net.tcp://localhost/servicemodelsamples です。  
+         このコマンドにより、/servicemodelsamples アプリケーションに両方を使用してアクセスして http://localhost/servicemodelsamples と net.tcp://localhost/servicemodelsamples です。  
   
 4.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   

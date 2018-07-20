@@ -47,7 +47,7 @@ ms.locfileid: "33496800"
 |`elementFormDefault`|修飾する必要があります。 `DataContractSerializer`でスキーマをサポートするには、すべての要素を修飾する必要があります。 これには、いずれかの設定によってxs:schema/@elementFormDefaultを"qualified"かを設定してxs:element/@form各個々 の要素の宣言を"qualified"にします。|  
 |`finalDefault`|無視されます。|  
 |`Id`|無視されます。|  
-|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約された名前空間をすることはできませんhttp://schemas.microsoft.com/2003/10/Serialization/です。|  
+|`targetNamespace`|サポートされます。データ コントラクト名前空間にマッピングされます。 この属性を指定しなかった場合は、空の名前空間が使用されます。 予約された名前空間をすることはできません http://schemas.microsoft.com/2003/10/Serialization/ です。|  
 |`version`|無視されます。|  
   
 ### <a name="xsschema-contents"></a>\<xs:schema >: コンテンツ  
@@ -524,7 +524,7 @@ public class Employee : Person
 |`positiveInteger`|<xref:System.Int64>。|  
   
 ## <a name="iserializable-types-mapping"></a>ISerializable 型のマッピング  
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。 `DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。 `DataContractSerializer` は、型の QName (修飾名) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、`DataContractSerializer`マップ<xref:System.Exception>で次の XSD 型をhttp://schemas.datacontract.org/2004/07/System名前空間。  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Version 1.0 では、永続性の確保やデータ転送のためにオブジェクトをシリアル化する一般的な機構として `ISerializable` が導入されました。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を実装したり、アプリケーション間で受け渡したりできる、さまざまな `ISerializable` 型があります。 `DataContractSerializer` は、当然ながら `ISerializable` クラスをサポートします。 `DataContractSerializer` は、型の QName (修飾名) のみが異なり、事実上プロパティ コレクションである `ISerializable` 実装スキーマ型をマッピングします。 たとえば、`DataContractSerializer`マップ<xref:System.Exception>で次の XSD 型を http://schemas.datacontract.org/2004/07/System 名前空間。  
   
 ```xml  
 <xs:complexType name="Exception">  

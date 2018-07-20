@@ -21,18 +21,18 @@ ms.locfileid: "33493879"
 セキュリティ トークン サービスは、WS-Trust 仕様に定義されているプロトコルを実装します。 このプロトコルでは、セキュリティ トークンの発行、更新、キャンセル、および検証を行うためのメッセージ形式とメッセージ交換パターンが定義されています。 セキュリティ トークン サービスでは、これらの機能が 1 つ以上提供されます。 ここでは、最も一般的なシナリオであるトークンの発行の実装について説明します。  
   
 ## <a name="issuing-tokens"></a>トークンの発行  
- WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 URI に関連付けられたアクション、`RequestSecurityToken`メッセージはhttp://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issueします。 URI に関連付けられたアクション、`RequestSecurityTokenResponse`メッセージはhttp://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issueします。  
+ WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 URI に関連付けられたアクション、`RequestSecurityToken`メッセージは http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue します。 URI に関連付けられたアクション、`RequestSecurityTokenResponse`メッセージは http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue します。  
   
 ### <a name="request-message-structure"></a>要求メッセージの構造  
  発行要求メッセージの構造は、通常、次の項目で構成されます。  
   
--   要求の値を持つ URI を入力するhttp://schemas.xmlsoap.org/ws/2005/02/trust/Issueです。  
+-   要求の値を持つ URI を入力する http://schemas.xmlsoap.org/ws/2005/02/trust/Issue です。  
   
--   "トークンの種類" URI。 この URI の値は、Security Assertions Markup Language (SAML) 1.1 トークンのhttp://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1します。  
+-   "トークンの種類" URI。 この URI の値は、Security Assertions Markup Language (SAML) 1.1 トークンの http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1 します。  
   
 -   発行済みトークンに関連付けられるキーのビット数を示すキー サイズの値。  
   
--   "キーの種類" URI。 対称キーは、この URI の値はhttp://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKeyします。  
+-   "キーの種類" URI。 対称キーは、この URI の値は http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey します。  
   
  さらに、2 つの項目が含まれている必要があります。  
   

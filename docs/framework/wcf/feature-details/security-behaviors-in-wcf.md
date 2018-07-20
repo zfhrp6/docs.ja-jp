@@ -126,7 +126,7 @@ Windows Communication Foundation (WCF) では、動作は、サービス レベ�
  [ \<IssuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)トークン、またはセキュリティ トークン サービスで使用する動作のローカル発行者を構成するための要素が含まれています。 クライアントを構成するのにはローカル発行者を使用する方法について、次を参照してください。[する方法: ローカル発行者を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)です。  
   
 #### <a name="localissueraddress"></a>\<localIssuerAddress >  
- 既定のセキュリティ トークン サービス アドレスを指定します。 これは、使用時に、<xref:System.ServiceModel.WSFederationHttpBinding>またはフェデレーション バインディングの発行者アドレスが、セキュリティ トークン サービスの URL を指定していませんhttp://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymousまたは`null`です。 そのような場合、<xref:System.ServiceModel.Description.ClientCredentials> は、ローカルの発行者およびバインディングのアドレスと共に構成し、その発行者と通信するために使用する必要があります。  
+ 既定のセキュリティ トークン サービス アドレスを指定します。 これは、使用時に、<xref:System.ServiceModel.WSFederationHttpBinding>またはフェデレーション バインディングの発行者アドレスが、セキュリティ トークン サービスの URL を指定していません http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous または`null`です。 そのような場合、<xref:System.ServiceModel.Description.ClientCredentials> は、ローカルの発行者およびバインディングのアドレスと共に構成し、その発行者と通信するために使用する必要があります。  
   
 #### <a name="issuerchannelbehaviors"></a>\<issuerChannelBehaviors >  
  使用して、 [ \<issuerChannelBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)をセキュリティ トークン サービスと通信するときに使用される WCF クライアントの動作を追加します。 クライアントの動作を定義、 [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)セクションです。 未定義の動作を使用するのには、追加、<`add`> 要素を`<issuerChannelBehaviors>`2 つの属性を持つ要素。 次の例に示すように、`issuerAddress` をセキュリティ トークン サービスの URL に設定し、`behaviorConfiguration` 属性を定義済みのエンドポイントの動作の名前に設定します。  

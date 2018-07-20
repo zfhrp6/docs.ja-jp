@@ -124,7 +124,7 @@ Windows Communication Foundation (WCF) には新しいシリアル化エンジ�
 </PurchaseOrder>  
 ```  
   
- "Ser"名前空間は、標準のシリアル化名前空間を参照http://schemas.microsoft.com/2003/10/Serialization/です。 データの各部分は 1 回だけシリアル化され、ID 番号が与えられます。以降は、既にシリアル化されたデータへの参照を使用することになります。  
+ "Ser"名前空間は、標準のシリアル化名前空間を参照 http://schemas.microsoft.com/2003/10/Serialization/ です。 データの各部分は 1 回だけシリアル化され、ID 番号が与えられます。以降は、既にシリアル化されたデータへの参照を使用することになります。  
   
 > [!IMPORTANT]
 >  "id" および "ref" 属性の両方がデータ コントラクト `XMLElement`に存在する場合、"ref" 属性が使用され、"id" 属性は無視されます。  

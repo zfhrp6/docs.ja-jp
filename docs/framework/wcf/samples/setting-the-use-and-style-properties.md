@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506817"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Use および Style プロパティの設定
 このサンプルでは、<xref:System.ServiceModel.XmlSerializerFormatAttribute> と <xref:System.ServiceModel.DataContractFormatAttribute> で Use および Style プロパティを使用する方法を示します。 これらのプロパティは、メッセージの書式設定の方法を制御します。 既定では、メッセージの本文は、<xref:System.ServiceModel.OperationFormatStyle.Document> に設定されたスタイルを使用して書式設定されます。 こうした設定は、サービス コントラクト レベルと操作コントラクト レベルのどちらのレベルでも指定できます。  
@@ -72,7 +73,7 @@ public interface IUseAndStyleCalculator
 }  
 ```  
   
- それぞれの <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> 設定と <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> 設定との違いを示すには、これらの設定をサービス内で変更してクライアントを再生成し、サンプルを実行します。その後、サービス ビューア ツールを使用して c:\logs\message.logs ファイルを調べます。 表示しても、メタデータへの影響を観察http://localhost/ServiceModelSamples/service.svc?wsdlです。 通常、サービスのメタデータは複数のページに分割されます。 メインの wsdl ページには、WSDL バインディングが含まれていますが、表示http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0メッセージの定義を確認します。  
+ それぞれの <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> 設定と <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> 設定との違いを示すには、これらの設定をサービス内で変更してクライアントを再生成し、サンプルを実行します。その後、サービス ビューア ツールを使用して c:\logs\message.logs ファイルを調べます。 表示しても、メタデータへの影響を観察 http://localhost/ServiceModelSamples/service.svc?wsdl です。 通常、サービスのメタデータは複数のページに分割されます。 メインの wsdl ページには、WSDL バインディングが含まれていますが、表示 http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 メッセージの定義を確認します。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   

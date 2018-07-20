@@ -52,6 +52,6 @@ public interface ICalculator
   
 2.  ソリューションをビルドします PostAjaxService.sln」の説明に従って[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-3.  移動http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx(開かないで PostAjaxClientPage.aspx プロジェクト ディレクトリからブラウザーで)。  
+3.  移動 http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx (開かないで PostAjaxClientPage.aspx プロジェクト ディレクトリからブラウザーで)。  
   
 ## <a name="see-also"></a>関連項目

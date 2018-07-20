@@ -60,7 +60,7 @@ ms.locfileid: "33809915"
   
 7.  Ctrl と Shift キーを押しながら A キーを押して、サービス アドレスを設定します。  
   
-8.  アドレスに設定http://localhost/ServiceModelSamples/Calculator.svcです。  
+8.  アドレスに設定 http://localhost/ServiceModelSamples/Calculator.svc です。  
   
 9. `Add` 操作を実行します。 `n1` パラメーターの値を 10 に、`n2` パラメーターの値を 15 に設定します。  
   

@@ -56,7 +56,7 @@ ms.locfileid: "33502690"
 </system.serviceModel>  
 ```  
   
- HTTPS にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます。 など、ブラウザーでアドレスhttps://localhost/servicemodelsamples/service.svcです。 テスト証明書を使用する Windows Communication Foundation (WCF) クライアントを許可するのには、いくつか追加のコードはセキュリティ アラートの抑制にクライアントに追加されます。 そのためのコードとそれに必要なクラスは、実際の証明書を使用するときには不要です。  
+ HTTPS にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます。 など、ブラウザーでアドレス https://localhost/servicemodelsamples/service.svc です。 テスト証明書を使用する Windows Communication Foundation (WCF) クライアントを許可するのには、いくつか追加のコードはセキュリティ アラートの抑制にクライアントに追加されます。 そのためのコードとそれに必要なクラスは、実際の証明書を使用するときには不要です。  
 
 ```csharp
 // This code is required only for test certificates such as those   

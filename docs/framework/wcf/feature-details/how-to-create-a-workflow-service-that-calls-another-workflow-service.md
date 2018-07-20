@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497192"
 ---
 # <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a>方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する
 ワークフロー サービスでは、別のワークフロー サービスから情報を取得することが必要になる場合があります。  このトピックでは、別のワークフロー サービスからワークフロー サービスを呼び出す方法について説明します。 このトピックでは、2 つのワークフロー サービスを作成します。入力文字列を反転させるメソッドを持つワークフロー サービスと、その最初のサービスを使用して文字列を反転させた後、入力文字列を大文字に変換するワークフロー サービスです。  
@@ -101,7 +102,7 @@ ms.lasthandoff: 05/04/2018
   
     4.  **TargetType**: NestedServices.StringLibrary  
   
-8.  ここで、修正済みの文字列で最初のサービスを呼び出します。 プロジェクトを右クリックし **サービス参照の追加**です。 サービスにサービス参照の追加http://localhost/NestedServices/StringReverserService.xamlx最初の Web サービスにアクセスするカスタム アクティビティを作成するプロジェクトをビルドします。  
+8.  ここで、修正済みの文字列で最初のサービスを呼び出します。 プロジェクトを右クリックし **サービス参照の追加**です。 サービスにサービス参照の追加 http://localhost/NestedServices/StringReverserService.xamlx 最初の Web サービスにアクセスするカスタム アクティビティを作成するプロジェクトをビルドします。  
   
 9. 新しいアクティビティのインスタンス、ワークフローにドラッグ間、 **InvokeMethod**アクティビティおよび**SendReplyToReceive**アクティビティ。 変数 StringToReverse を新しいアクティビティの InputString プロパティに、変数 StringToReturn を StringToReturn プロパティに割り当てます。  
   

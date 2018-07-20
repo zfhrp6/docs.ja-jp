@@ -207,7 +207,7 @@ Press <ENTER> to terminate client.
     > [!NOTE]
     >  セットアップ バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。 path 環境変数が SDK のインストール ディレクトリを指している必要があります。 この環境変数は、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトで自動設定されます。  
   
-3.  アドレスを入力して、ブラウザーを使用して、サービスへのアクセスを確認してくださいhttp://localhost/servicemodelsamples/service.svcです。  
+3.  アドレスを入力して、ブラウザーを使用して、サービスへのアクセスを確認してください http://localhost/servicemodelsamples/service.svc です。  
   
 4.  Client.exe を \client\bin で起動します。 クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
   

@@ -59,7 +59,7 @@ endpointBehaviors セクション
  詳細についてを参照してください「証明書のスコープ」の[する方法: フェデレーション クライアントを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)です。  
   
 ## <a name="example"></a>例  
- 次の例は、ドメインの名前のエンドポイントと通信するときに使用するクライアントのサービス証明書を指定するhttp://www.contoso.comHTTP プロトコル経由します。  
+ 次の例は、ドメインの名前のエンドポイントと通信するときに使用するクライアントのサービス証明書を指定する http://www.contoso.com HTTP プロトコル経由します。  
   
 ```xml  
 <serviceCertificate>  
